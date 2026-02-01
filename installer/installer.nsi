@@ -110,6 +110,8 @@ ShowInstDetails show
 !endif
 Page custom VaultNamePageCreate VaultNamePageLeave
 !insertmacro MUI_PAGE_INSTFILES
+!define MUI_FINISHPAGE_RUN "Abrir el nuevo repositorio de EMIC-QDA"
+!define MUI_FINISHPAGE_RUN_FUNCTION RunOpenVault
 !insertmacro MUI_PAGE_FINISH
 
 !insertmacro MUI_LANGUAGE "Spanish"
@@ -125,6 +127,11 @@ FunctionEnd
 ; Guardar directorio elegido en el registro para ofrecerlo por defecto en la próxima corrida
 Function DirLeave
   WriteRegStr HKCU "Software\Emic-QDA" "InstallPath" "$INSTDIR"
+FunctionEnd
+
+; Si el usuario dejó marcado "Abrir el nuevo repositorio", abrir Obsidian con el vault (obsidian://open?path=...)
+Function RunOpenVault
+  ExecShell "open" "obsidian://open?path=$VaultPath"
 FunctionEnd
 
 Function .onInit
