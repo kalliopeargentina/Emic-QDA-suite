@@ -1,0 +1,575 @@
+{
+  "workspaces": {
+    "QDA": {
+      "main": {
+        "id": "cf6698bf28395517",
+        "type": "split",
+        "children": [
+          {
+            "id": "d3dc9084297e198b",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "21e0ca7b2b7ab506",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "ddc7f15287367495",
+        "type": "split",
+        "children": [
+          {
+            "id": "a3da9c4282a468e9",
+            "type": "tabs",
+            "dimension": 74.04040404040404,
+            "children": [
+              {
+                "id": "0db5d0af345f1eac",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "b3ebbf0923bab5ca",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "visuals",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              }
+            ]
+          },
+          {
+            "id": "37f9ec4d0d71db24",
+            "type": "tabs",
+            "dimension": 25.95959595959596,
+            "children": [
+              {
+                "id": "d1aebe67bd8bf042",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 664.5
+      },
+      "right": {
+        "id": "b7cf2ea94ac6a6e4",
+        "type": "split",
+        "children": [
+          {
+            "id": "a45aee6eb3b57327",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "f763e3de6b35f87b",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-archive",
+                  "title": "All properties"
+                }
+              },
+              {
+                "id": "c7471ac710af28b0",
+                "type": "leaf",
+                "state": {
+                  "type": "copilot-chat-view",
+                  "state": {},
+                  "icon": "message-square",
+                  "title": "Copilot"
+                }
+              },
+              {
+                "id": "cb1505976528cf67",
+                "type": "leaf",
+                "state": {
+                  "type": "highlights-sidebar",
+                  "state": {},
+                  "icon": "highlighter",
+                  "title": "Highlights"
+                }
+              },
+              {
+                "id": "54501435a8f85b0f",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks"
+                }
+              },
+              {
+                "id": "13125b956ef8b662",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links"
+                }
+              },
+              {
+                "id": "238c4d44b5292739",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "a92a16393a4aa04a",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "horizontal",
+        "width": 417.5
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "obsidian-import-json:JSON/CSV Importer": true,
+          "docx-exporter:Export current note to DOCX": true,
+          "cmdr:Zotero Integration: Bibliography Card": true,
+          "cmdr:Zotero Integration: Import notes": true,
+          "cmdr:Zotero Integration: Cite": true,
+          "cmdr:Zotero Integration: Bibliography_Link": true,
+          "cmdr:Zotero Integration: Insert notes into current document": true,
+          "markdown-importer:Open format converter": true,
+          "cmdr:Shell commands: Execute: Transcribir de Youtube": true,
+          "obsidian-shellcommands:Shell commands: Custom variables": true,
+          "templater-obsidian:Templater": true,
+          "templates:Insert template": true,
+          "cmdr:Templater: Create Memo": true,
+          "cmdr:Templater: Create Extractions Overview": true,
+          "cmdr:Templater: Create Coocurrencias de Códigos": true,
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": true,
+          "canvas:Create new canvas": true,
+          "command-palette:Open command palette": true,
+          "bases:Create new base": true,
+          "quadro:Quadro: Assign code to paragraph": false,
+          "quadro:Quadro: Rename code": false,
+          "quadro:Quadro: Remove code from paragraph": false,
+          "quadro:Quadro: Delete Code File and all references to it": false,
+          "quadro:Quadro: Merge another Code File into current Code File": false,
+          "quadro:Quadro: Bulk create new Code Files": false,
+          "quadro:Quadro: Show code overview": false,
+          "quadro:Quadro: Extract from paragraph": false,
+          "quadro:Quadro: Add paragraph as source to existing Extraction File": false,
+          "quadro:Quadro: Merge another Extraction File into current Extraction File": false,
+          "quadro:Quadro: Create new Extraction Type": false,
+          "quadro:Quadro: Export all extractions as .csv": false,
+          "quadro:Quadro: Show extraction type overview": false,
+          "quadro:Quadro: Open random unread Data File": true,
+          "quadro:Quadro: Show data analysis progress file": true,
+          "quadro:Quadro: Mark current Data File as read": false,
+          "cmdr:Zotero Integration: Codification Import": false,
+          "sidebar-highlights:Open highlights": false,
+          "cmdr:AI Suggest Codes": false,
+          "copilot:Open Copilot Chat": false,
+          "daily-notes:Open today's daily note": true,
+          "workspaces:Manage workspace layouts": false,
+          "obsidian-map-view:Open map view": true,
+          "media-extended:Open external media": true,
+          "audio-recorder:Start/stop recording": true
+        }
+      },
+      "active": "0db5d0af345f1eac",
+      "mtime": "2026-01-30T22:10:08-03:00"
+    },
+    "Notas de Campo": {
+      "main": {
+        "id": "cf6698bf28395517",
+        "type": "split",
+        "children": [
+          {
+            "id": "3913d7123ae56232",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "be11b97a31330f3e",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "ddc7f15287367495",
+        "type": "split",
+        "children": [
+          {
+            "id": "a3da9c4282a468e9",
+            "type": "tabs",
+            "dimension": 79.39393939393939,
+            "children": [
+              {
+                "id": "614134f52a66d4e6",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "b3ebbf0923bab5ca",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              }
+            ]
+          },
+          {
+            "id": "5f7aaaa66b21e5df",
+            "type": "tabs",
+            "dimension": 20.606060606060606,
+            "children": [
+              {
+                "id": "d1aebe67bd8bf042",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "right": {
+        "id": "b7cf2ea94ac6a6e4",
+        "type": "split",
+        "children": [],
+        "direction": "horizontal",
+        "width": 780.5,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "obsidian-import-json:JSON/CSV Importer": true,
+          "markdown-importer:Open format converter": true,
+          "docx-exporter:Export current note to DOCX": true,
+          "cmdr:Zotero Integration: Bibliography Card": true,
+          "cmdr:Zotero Integration: Import notes": true,
+          "cmdr:Zotero Integration: Cite": true,
+          "cmdr:Zotero Integration: Bibliography_Link": true,
+          "cmdr:Zotero Integration: Insert notes into current document": true,
+          "cmdr:Zotero Integration: Codification Import": true,
+          "sidebar-highlights:Open highlights": true,
+          "cmdr:Shell commands: Execute: Transcribir de Youtube": true,
+          "cmdr:AI Suggest Codes": true,
+          "obsidian-shellcommands:Shell commands: Custom variables": true,
+          "templater-obsidian:Templater": true,
+          "media-extended:Open external media": true,
+          "cmdr:Templater: Create Memo": true,
+          "audio-recorder:Start/stop recording": false,
+          "switcher:Open quick switcher": false,
+          "copilot:Open Copilot Chat": false,
+          "cmdr:Templater: Create Extractions Overview": true,
+          "cmdr:Templater: Create Coocurrencias de Códigos": true,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "command-palette:Open command palette": true,
+          "bases:Create new base": true,
+          "quadro:Quadro: Assign code to paragraph": true,
+          "quadro:Quadro: Rename code": true,
+          "quadro:Quadro: Remove code from paragraph": true,
+          "quadro:Quadro: Delete Code File and all references to it": true,
+          "quadro:Quadro: Merge another Code File into current Code File": true,
+          "quadro:Quadro: Bulk create new Code Files": true,
+          "quadro:Quadro: Show code overview": true,
+          "quadro:Quadro: Extract from paragraph": true,
+          "quadro:Quadro: Add paragraph as source to existing Extraction File": true,
+          "quadro:Quadro: Merge another Extraction File into current Extraction File": true,
+          "quadro:Quadro: Create new Extraction Type": true,
+          "quadro:Quadro: Export all extractions as .csv": true,
+          "quadro:Quadro: Show extraction type overview": true,
+          "quadro:Quadro: Open random unread Data File": true,
+          "quadro:Quadro: Show data analysis progress file": true,
+          "quadro:Quadro: Mark current Data File as read": true,
+          "daily-notes:Open today's daily note": false,
+          "obsidian-map-view:Open map view": false,
+          "workspaces:Manage workspace layouts": false,
+          "templates:Insert template": true
+        }
+      },
+      "active": "be11b97a31330f3e",
+      "mtime": "2026-01-30T21:15:53-03:00"
+    },
+    "Análisis de Datos": {
+      "main": {
+        "id": "cf6698bf28395517",
+        "type": "split",
+        "children": [
+          {
+            "id": "c559b3cac1a2c4fb",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "b15b18b8cb141ca9",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "ddc7f15287367495",
+        "type": "split",
+        "children": [
+          {
+            "id": "a3da9c4282a468e9",
+            "type": "tabs",
+            "dimension": 72.92929292929293,
+            "children": [
+              {
+                "id": "614134f52a66d4e6",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "b3ebbf0923bab5ca",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "tabaja",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              }
+            ]
+          },
+          {
+            "id": "4900d377398969d3",
+            "type": "tabs",
+            "dimension": 27.070707070707073,
+            "children": [
+              {
+                "id": "d1aebe67bd8bf042",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 360.5
+      },
+      "right": {
+        "id": "b7cf2ea94ac6a6e4",
+        "type": "split",
+        "children": [
+          {
+            "id": "b86efd95e0a8bd26",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "5f93f019f00d72e1",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": true,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-archive",
+                  "title": "All properties"
+                }
+              },
+              {
+                "id": "61d99bfaaabb3636",
+                "type": "leaf",
+                "state": {
+                  "type": "copilot-chat-view",
+                  "state": {},
+                  "icon": "message-square",
+                  "title": "Copilot"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "horizontal",
+        "width": 475.5
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "obsidian-import-json:JSON/CSV Importer": false,
+          "markdown-importer:Open format converter": true,
+          "sidebar-highlights:Open highlights": false,
+          "templater-obsidian:Templater": true,
+          "media-extended:Open external media": true,
+          "audio-recorder:Start/stop recording": true,
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "bases:Create new base": false,
+          "quadro:Quadro: Assign code to paragraph": true,
+          "quadro:Quadro: Rename code": true,
+          "quadro:Quadro: Remove code from paragraph": true,
+          "quadro:Quadro: Delete Code File and all references to it": true,
+          "quadro:Quadro: Merge another Code File into current Code File": true,
+          "quadro:Quadro: Bulk create new Code Files": true,
+          "quadro:Quadro: Show code overview": true,
+          "quadro:Quadro: Extract from paragraph": true,
+          "quadro:Quadro: Add paragraph as source to existing Extraction File": true,
+          "quadro:Quadro: Merge another Extraction File into current Extraction File": true,
+          "quadro:Quadro: Create new Extraction Type": true,
+          "quadro:Quadro: Export all extractions as .csv": true,
+          "quadro:Quadro: Show extraction type overview": true,
+          "quadro:Quadro: Open random unread Data File": true,
+          "quadro:Quadro: Show data analysis progress file": true,
+          "quadro:Quadro: Mark current Data File as read": true,
+          "daily-notes:Open today's daily note": true,
+          "obsidian-map-view:Open map view": true,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": true,
+          "obsidian-shellcommands:Shell commands: Custom variables": true,
+          "docx-exporter:Export current note to DOCX": false,
+          "copilot:Open Copilot Chat": false,
+          "cmdr:Templater: Create Coocurrencias de Códigos": false,
+          "cmdr:Templater: Create Extractions Overview": false,
+          "cmdr:Templater: Create Memo": false,
+          "cmdr:AI Suggest Codes": false,
+          "cmdr:Shell commands: Execute: Transcribir de Youtube": false,
+          "cmdr:Zotero Integration: Bibliography Card": false,
+          "cmdr:Zotero Integration: Import notes": false,
+          "cmdr:Zotero Integration: Cite": false,
+          "cmdr:Zotero Integration: Bibliography_Link": false,
+          "cmdr:Zotero Integration: Insert notes into current document": false,
+          "cmdr:Zotero Integration: Codification Import": true,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "614134f52a66d4e6",
+      "mtime": "2026-01-30T22:09:47-03:00"
+    }
+  },
+  "active": "Análisis de Datos"
+}

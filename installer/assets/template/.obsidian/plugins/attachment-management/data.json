@@ -1,0 +1,24 @@
+{
+  "language": "en",
+  "attachPath": {
+    "attachmentRoot": "/Attachments",
+    "saveAttE": "obsFolder",
+    "attachmentPath": "/Attachments/${notepath}/${notename}",
+    "attachFormat": "IMG-${date}",
+    "type": "GLOBAL",
+    "extensionOverride": []
+  },
+  "dateFormat": "YYYYMMDDHHmmssSSS",
+  "excludeExtensionPattern": "srt|mp3|wav|flac|aac|ogg|wma|m4a|mp4|mkv|mov|avi|wmv|flv|webm|mpeg|mpg|3gp",
+  "autoRenameAttachment": true,
+  "excludedPaths": "Clippings;Bibliografía;Utils",
+  "excludePathsArray": [
+    "Clippings",
+    "Bibliografía",
+    "Utils"
+  ],
+  "excludeSubpaths": false,
+  "originalNameStorage": [],
+  "overridePath": {},
+  "disableNotification": false
+}

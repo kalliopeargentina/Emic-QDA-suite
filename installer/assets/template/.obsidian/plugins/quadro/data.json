@@ -1,0 +1,23 @@
+{
+  "coding": {
+    "folder": "Codes",
+    "displayCount": true,
+    "sortFunc": "last used first"
+  },
+  "extraction": {
+    "folder": "Extractions",
+    "displayCount": true,
+    "openingMode": "tab",
+    "csvSeparator": ";",
+    "ignorePropertyOnMerge": [],
+    "displayProperty": []
+  },
+  "analysis": {
+    "folder": "Analysis"
+  },
+  "suppressSuggestionInFields": [],
+  "propertiesKeysWidthPercent": 35,
+  "statusbar": {
+    "shortened": false
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "targetAttributes": [],
+  "targetTags": true,
+  "getFromInlineField": false,
+  "enableTabHeader": true,
+  "activateSnippet": true,
+  "enableEditor": true,
+  "enableFileList": true,
+  "enableBacklinks": true,
+  "enableQuickSwitcher": true,
+  "enableSuggestor": true,
+  "enableBases": true,
+  "selectors": [
+    {
+      "type": "path",
+      "name": "extraction-date",
+      "value": "Codes/",
+      "matchCaseSensitive": false,
+      "match": "startswith",
+      "uid": "8fae-2aa0",
+      "selectText": true,
+      "selectAppend": false,
+      "selectPrepend": true,
+      "selectBackground": false
+    },
+    {
+      "type": "path",
+      "name": "extraction-date",
+      "value": "Extractions/",
+      "matchCaseSensitive": false,
+      "match": "startswith",
+      "uid": "927e-e9e6",
+      "selectText": true,
+      "selectAppend": false,
+      "selectPrepend": true,
+      "selectBackground": false
+    },
+    {
+      "type": "path",
+      "name": "",
+      "value": "Data/",
+      "matchCaseSensitive": true,
+      "match": "startswith",
+      "uid": "f997-3cec",
+      "selectText": false,
+      "selectAppend": false,
+      "selectPrepend": true,
+      "selectBackground": false
+    },
+    {
+      "type": "path",
+      "name": "",
+      "value": ".canvas",
+      "matchCaseSensitive": false,
+      "match": "endswith",
+      "uid": "363c-2c44",
+      "selectText": true,
+      "selectAppend": false,
+      "selectPrepend": false,
+      "selectBackground": false
+    },
+    {
+      "type": "path",
+      "name": "",
+      "value": "Memos/",
+      "matchCaseSensitive": false,
+      "match": "startswith",
+      "uid": "1c47-f504",
+      "selectText": true,
+      "selectAppend": false,
+      "selectPrepend": true,
+      "selectBackground": false
+    }
+  ]
+}

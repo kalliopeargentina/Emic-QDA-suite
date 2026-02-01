@@ -1,0 +1,25 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "keywords": "multitext",
+    "solutions": "multitext",
+    "OS": "multitext",
+    "code description": "text",
+    "extraction-date": "datetime",
+    "extraction-source": "multitext",
+    "download-date": "date",
+    "extraction date": "datetime",
+    "merge-date": "datetime",
+    "location": "multitext",
+    "Resuelto": "checkbox",
+    "fecha comentario": "date",
+    "tipo comentario": "multitext",
+    "Tipo": "multitext",
+    "Lead Investors": "multitext",
+    "Worked": "multitext",
+    "inverse_of_trabaja_en": "multitext",
+    "source": "multitext"
+  }
+}

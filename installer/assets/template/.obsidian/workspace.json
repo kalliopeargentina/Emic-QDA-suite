@@ -1,0 +1,287 @@
+{
+  "main": {
+    "id": "cf6698bf28395517",
+    "type": "split",
+    "children": [
+      {
+        "id": "f0e8f93ce571f606",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8b946e599a2e0f6e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ddc7f15287367495",
+    "type": "split",
+    "children": [
+      {
+        "id": "a3da9c4282a468e9",
+        "type": "tabs",
+        "dimension": 72.92929292929293,
+        "children": [
+          {
+            "id": "614134f52a66d4e6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b3ebbf0923bab5ca",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          }
+        ]
+      },
+      {
+        "id": "4900d377398969d3",
+        "type": "tabs",
+        "dimension": 27.070707070707073,
+        "children": [
+          {
+            "id": "d1aebe67bd8bf042",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 360.5
+  },
+  "right": {
+    "id": "b7cf2ea94ac6a6e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "b86efd95e0a8bd26",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f93f019f00d72e1",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "61d99bfaaabb3636",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          },
+          {
+            "id": "39ee3398320140fe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "149da53172d64cca",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "c13380b4d9211efe",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b606db0f583fba8a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 475.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "markdown-importer:Open format converter": true,
+      "audio-recorder:Start/stop recording": true,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "bases:Create new base": false,
+      "daily-notes:Open today's daily note": true,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": true,
+      "workspaces:Manage workspace layouts": false,
+      "quadro:Quadro: Assign code to paragraph": false,
+      "quadro:Quadro: Rename code": false,
+      "quadro:Quadro: Remove code from paragraph": false,
+      "quadro:Quadro: Delete Code File and all references to it": false,
+      "quadro:Quadro: Merge another Code File into current Code File": false,
+      "quadro:Quadro: Bulk create new Code Files": false,
+      "quadro:Quadro: Show code overview": false,
+      "quadro:Quadro: Extract from paragraph": false,
+      "quadro:Quadro: Add paragraph as source to existing Extraction File": false,
+      "quadro:Quadro: Merge another Extraction File into current Extraction File": false,
+      "quadro:Quadro: Create new Extraction Type": false,
+      "quadro:Quadro: Export all extractions as .csv": false,
+      "quadro:Quadro: Show extraction type overview": false,
+      "quadro:Quadro: Open random unread Data File": false,
+      "quadro:Quadro: Show data analysis progress file": false,
+      "quadro:Quadro: Mark current Data File as read": false,
+      "copilot:Open Copilot Chat": false,
+      "obsidian-map-view:Open map view": false,
+      "templater-obsidian:Templater": false,
+      "cmdr:Templater: Create Coocurrencias de Códigos": false,
+      "cmdr:Templater: Create Extractions Overview": false,
+      "cmdr:Templater: Create Memo": false,
+      "cmdr:AI Suggest Codes": false,
+      "cmdr:Shell commands: Execute: Transcribir de Youtube": false,
+      "cmdr:Zotero Integration: Bibliography Card": false,
+      "cmdr:Zotero Integration: Import notes": false,
+      "cmdr:Zotero Integration: Cite": false,
+      "cmdr:Zotero Integration: Bibliography_Link": false,
+      "cmdr:Zotero Integration: Insert notes into current document": false,
+      "cmdr:Zotero Integration: Codification Import": false,
+      "media-extended:Open external media": false,
+      "obsidian-shellcommands:Shell commands: Custom variables": false,
+      "sidebar-highlights:Open highlights": false,
+      "docx-exporter:Export current note to DOCX": false,
+      "obsidian-import-json:JSON/CSV Importer": false
+    }
+  },
+  "active": "614134f52a66d4e6",
+  "lastOpenFiles": [
+    "Attachments/Medios/audio.mp3",
+    "Template-v0.1.0.zip",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Deilab.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Danone.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Dannon.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Cresur.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/CREA.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Credicuotas.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Cotragro.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Corteva.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Connect.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/CONICET.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/coinbase.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Coca-cola.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Circular.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Claro.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Bunge.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Brasil.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Bolsa de Comercio de buenos Aires.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Blue River.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Blendit.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Biotoscana Argentina.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/bitcoin.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Biotoscana.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Biopark.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Bio 4.md",
+    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Bill Berry.md",
+    "Analysis/Ontology Analisys/Revision Ontología ND Angels.base",
+    "Bases/Códigos.base",
+    "Attachments/Medios/melina recibe comprador.docx",
+    "Attachments/Medios/melina recibe comprador.srt",
+    "Attachments/Medios/melina recibe comprador.mp3",
+    "Attachments/Medios/pre-process-backup/melina recibe comprador_orig_20260130171133.m4a",
+    "Attachments/Medios/Melina inmo.docx",
+    "Attachments/Medios/belen prepara visita Beiro 4500.docx",
+    "Attachments/Medios/Melina inmo.srt",
+    "Attachments/Data/Documentos/NDAngels/2021-12-09-Reunión-Presencial-NDAngels-Tetaz/IMG-20260124204125787.jpg",
+    "Attachments/Data/Documentos/NDAngels/2020-12-18 Reunión ND Angels - Tetaz/IMG-20260124203913403.jpg",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165258538.png",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735684.png",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165258491.png",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165258384.png",
+    "image-4.png",
+    "image.png",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735752.png",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735832.png",
+    "ND Angels.canvas",
+    "Data/Instituciones/NDAngels.canvas",
+    "Analysis/Examples/Axial Coding Example.canvas"
+  ]
+}

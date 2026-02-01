@@ -1,0 +1,20 @@
+formulas:
+  Child Folder: file.folder.slice(12)
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.folder.startsWith("Extractions/")
+        - '!file.folder.contains("pre-merge-backups")'
+        - file.name != "Template"
+    order:
+      - formula.Child Folder
+      - file.name
+      - extraction-source
+      - extraction-date
+    sort:
+      - property: file.folder
+        direction: ASC
+    columnSize:
+      formula.Child Folder: 209
