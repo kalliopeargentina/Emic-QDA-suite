@@ -3,6 +3,7 @@
 !include "nsDialogs.nsh"
 !include "FileFunc.nsh"
 !include "StrFunc.nsh"
+!include "Sections.nsh"
 
 ${Using:StrFunc} StrStr
 ${Using:StrFunc} StrCase
@@ -63,6 +64,7 @@ Var OverwriteVault
 Var TempDir
 Var DebugLogPath
 Var VenvPath
+Var ObsidianInstalled
 
 ; Escribe una línea en el log. En modo "a" NSIS deja el puntero al inicio; hay que FileSeek 0 END (doc NSIS).
 Function AppendInstallLog
@@ -87,8 +89,16 @@ InstallDir "$DOCUMENTS\\Emic-QDA"
 RequestExecutionLevel highest
 ShowInstDetails show
 
+!define MUI_ICON "assets\favicon.ico"
+!define MUI_UNICON "assets\favicon.ico"
+
+!define MUI_HEADERIMAGE
+!define MUI_HEADERIMAGE_BITMAP "assets\banner.bmp"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "assets\side.bmp"
+
 !define MUI_PAGE_CUSTOMFUNCTION_SHOW CloseSplashWhenDialogShows
 !insertmacro MUI_PAGE_WELCOME
+!define MUI_PAGE_CUSTOMFUNCTION_SHOW ComponentsPageShow
 !insertmacro MUI_PAGE_COMPONENTS
 !define MUI_PAGE_CUSTOMFUNCTION_LEAVE DirLeave
 !insertmacro MUI_PAGE_DIRECTORY
@@ -142,6 +152,10 @@ Function .onInit
   IntOp $3 $1 - 550
   IntOp $3 $3 / 2
   System::Call "user32::SetWindowPos(i $HWNDPARENT, i 0, i $2, i $3, i 700, i 550, i 0x40)"
+  ; Detectar si Obsidian está instalado (%LOCALAPPDATA%\Obsidian\Obsidian.exe)
+  StrCpy $ObsidianInstalled "0"
+  IfFileExists "$LOCALAPPDATA\Obsidian\Obsidian.exe" 0 +2
+    StrCpy $ObsidianInstalled "1"
 FunctionEnd
 
 Function ValidateVaultName
@@ -362,6 +376,7 @@ vault_ok:
   FileOpen $R0 $R9 w
   IfErrors venv_ps1_fail
   FileWrite $R0 "param([string]$$VenvPath, [string]$$LogPath)$\r$\n"
+  FileWrite $R0 "try { $$Host.UI.RawUI.WindowSize = New-Object System.Management.Automation.Host.Size(80, 30); $$Host.UI.RawUI.BufferSize = New-Object System.Management.Automation.Host.Size(80, 30) } catch {}$\r$\n"
   FileWrite $R0 "$$ErrorActionPreference = 'Stop'$\r$\n"
   FileWrite $R0 "if ($$LogPath) { '[venv] VenvPath=' + $$VenvPath | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host '[venv] VenvPath=' $$VenvPath$\r$\n"
 !ifdef POWERSHELL_PAUSE_ON_ERROR
@@ -390,6 +405,7 @@ venv_ps1_ok:
   FileOpen $R0 $R9 w
   IfErrors pip_ps1_fail
   FileWrite $R0 "param([string]$$VenvPath, [string]$$PackageName, [string]$$LogPath, [switch]$$UpgradePip)$\r$\n"
+  FileWrite $R0 "try { $$Host.UI.RawUI.WindowSize = New-Object System.Management.Automation.Host.Size(80, 30); $$Host.UI.RawUI.BufferSize = New-Object System.Management.Automation.Host.Size(80, 30) } catch {}$\r$\n"
   FileWrite $R0 "$$ErrorActionPreference = 'Continue'$\r$\n"
   FileWrite $R0 "function SafeLog { param($$msg) if ($$LogPath) { try { $$msg | Out-File -FilePath $$LogPath -Append -Encoding utf8 } catch {} } }$\r$\n"
   FileWrite $R0 "$$FindLinks = Join-Path $$PSScriptRoot 'assets'$\r$\n"
@@ -419,7 +435,7 @@ venv_ps1_ok:
   Push "pip_ontology_whl_exit=$0"
   Call AppendInstallLog
   ; Verificar por resultado: las ventanas pueden devolver error al cerrar; si el paquete está instalado, continuar
-  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -Command "& $\'$VenvPath\Scripts\python.exe$\' -m pip show ontology_explorer"' $0
+  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "& $\'$VenvPath\Scripts\python.exe$\' -m pip show ontology_explorer"' $0
   Push "pip_verify_ontology_exit=$0"
   Call AppendInstallLog
   IntCmp $0 0 ontology_ok
@@ -431,7 +447,7 @@ ontology_ok:
   ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${QDA_WHL}" -LogPath "$R2"' $0
   Push "pip_qda_whl_exit=$0"
   Call AppendInstallLog
-  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -Command "& $\'$VenvPath\Scripts\python.exe$\' -m pip show obsidian_qda_suite"' $0
+  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "& $\'$VenvPath\Scripts\python.exe$\' -m pip show obsidian_qda_suite"' $0
   Push "pip_verify_qda_exit=$0"
   Call AppendInstallLog
   IntCmp $0 0 pip_done
@@ -461,3 +477,10 @@ pip_done:
   WriteRegStr HKCU "Software\Emic-QDA" "Version" "${VERSION}"
   WriteRegStr HKCU "Software\Emic-QDA" "Build" "${BUILD}"
 SectionEnd
+
+; Al mostrar la página de componentes: si Obsidian está instalado, marcar sección como "ya instalado" y solo lectura
+Function ComponentsPageShow
+  StrCmp $ObsidianInstalled "1" 0 +3
+    SectionSetText ${SEC_OBS} "Obsidian (opcional - ya instalado)"
+    SectionSetFlags ${SEC_OBS} ${SF_RO}
+FunctionEnd
