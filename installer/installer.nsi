@@ -65,6 +65,9 @@ Var TempDir
 Var DebugLogPath
 Var VenvPath
 Var ObsidianInstalled
+Var FFmpegInstalled
+Var ZoteroInstalled
+Var PythonInstalled
 
 ; Escribe una línea en el log. En modo "a" NSIS deja el puntero al inicio; hay que FileSeek 0 END (doc NSIS).
 Function AppendInstallLog
@@ -156,6 +159,158 @@ Function .onInit
   StrCpy $ObsidianInstalled "0"
   IfFileExists "$LOCALAPPDATA\Obsidian\Obsidian.exe" 0 +2
     StrCpy $ObsidianInstalled "1"
+  ; Detectar si FFmpeg está instalado: ejecutar ffmpeg y ffprobe sin ventana vía wscript + .ps1
+  StrCpy $FFmpegInstalled "0"
+  Call CreateRunVbs
+  StrCpy $R8 "$TEMP\EmicQDA-ffcheck.ps1"
+  StrCpy $R7 "$TEMP\EmicQDA-exitcode.txt"
+  FileOpen $R0 $R8 w
+  FileWrite $R0 "$$psi = New-Object System.Diagnostics.ProcessStartInfo$\r$\n"
+  FileWrite $R0 "$$psi.FileName = 'ffmpeg'$\r$\n"
+  FileWrite $R0 "$$psi.Arguments = '-version'$\r$\n"
+  FileWrite $R0 "$$psi.UseShellExecute = $$false$\r$\n"
+  FileWrite $R0 "$$psi.CreateNoWindow = $$true$\r$\n"
+  FileWrite $R0 "$$p = [System.Diagnostics.Process]::Start($$psi)$\r$\n"
+  FileWrite $R0 "$$p.WaitForExit()$\r$\n"
+  FileWrite $R0 "$$p.ExitCode | Out-File -FilePath $$env:TEMP\EmicQDA-exitcode.txt -Encoding ascii$\r$\n"
+  FileClose $R0
+  ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $R0
+  Call ReadExitCode
+  IntCmp $R0 0 0 ffmpeg_check_done
+  FileOpen $R0 $R8 w
+  FileWrite $R0 "$$psi = New-Object System.Diagnostics.ProcessStartInfo$\r$\n"
+  FileWrite $R0 "$$psi.FileName = 'ffprobe'$\r$\n"
+  FileWrite $R0 "$$psi.Arguments = '-version'$\r$\n"
+  FileWrite $R0 "$$psi.UseShellExecute = $$false$\r$\n"
+  FileWrite $R0 "$$psi.CreateNoWindow = $$true$\r$\n"
+  FileWrite $R0 "$$p = [System.Diagnostics.Process]::Start($$psi)$\r$\n"
+  FileWrite $R0 "$$p.WaitForExit()$\r$\n"
+  FileWrite $R0 "$$p.ExitCode | Out-File -FilePath $$env:TEMP\EmicQDA-exitcode.txt -Encoding ascii$\r$\n"
+  FileClose $R0
+  ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $R0
+  Call ReadExitCode
+  IntCmp $R0 0 0 ffmpeg_check_done
+  StrCpy $FFmpegInstalled "1"
+  ffmpeg_check_done:
+  Delete $R8
+  Delete $R7
+  ; Detectar si Zotero está instalado (registro App Paths, sin ventana)
+  StrCpy $ZoteroInstalled "0"
+  Call CheckZoteroByRegistry
+  ; Detectar si Python 3.12+ está instalado: ejecutar py --version oculto y comprobar versión
+  StrCpy $PythonInstalled "0"
+  Call CheckPythonVersion
+FunctionEnd
+
+; Crea $TEMP\EmicQDA-run.vbs: ejecuta PowerShell con el .ps1 indicado sin ventana (WScript.Shell.Run con 0 = oculto)
+Function CreateRunVbs
+  Push $R0
+  Push $R9
+  StrCpy $R9 "$TEMP\EmicQDA-run.vbs"
+  FileOpen $R0 $R9 w
+  FileWrite $R0 "Set sh = CreateObject($\"WScript.Shell$\")$\r$\n"
+  FileWrite $R0 "If WScript.Arguments.Count >= 1 Then$\r$\n"
+  FileWrite $R0 "  sh.Run $\"powershell.exe -NoProfile -ExecutionPolicy Bypass -File $\" & Chr(34) & WScript.Arguments(0) & Chr(34), 0, True$\r$\n"
+  FileWrite $R0 "End If$\r$\n"
+  FileClose $R0
+  Pop $R9
+  Pop $R0
+FunctionEnd
+; Lee el código de salida escrito por el .ps1 en $TEMP\EmicQDA-exitcode.txt y lo deja en $R0
+Function ReadExitCode
+  Push $R1
+  StrCpy $R0 "0"
+  IfFileExists "$TEMP\EmicQDA-exitcode.txt" 0 read_exit_done
+  ClearErrors
+  FileOpen $R1 "$TEMP\EmicQDA-exitcode.txt" r
+  IfErrors read_exit_done
+  FileRead $R1 $R0
+  FileClose $R1
+  read_exit_done:
+  Pop $R1
+FunctionEnd
+
+; Detecta Zotero por registro (App Paths) sin ventana; si hay ruta en HKLM o HKCU, pone $ZoteroInstalled "1"
+Function CheckZoteroByRegistry
+  Push $R0
+  Push $R8
+  StrCpy $R8 "$TEMP\EmicQDA-zotero-check.ps1"
+  FileOpen $R0 $R8 w
+  FileWrite $R0 "$$x = Get-ItemProperty $\"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\zotero.exe$\", $\"HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths\zotero.exe$\" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty $\"(default)$\"$\r$\n"
+  FileWrite $R0 "if ($$x) { $\"1$\" | Out-File -FilePath $$env:TEMP\EmicQDA-zotero-out.txt -Encoding ascii }$\r$\n"
+  FileClose $R0
+  ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $R0
+  Delete $R8
+  IfFileExists "$TEMP\EmicQDA-zotero-out.txt" 0 zotero_reg_done
+  StrCpy $ZoteroInstalled "1"
+  Delete "$TEMP\EmicQDA-zotero-out.txt"
+  zotero_reg_done:
+  Pop $R8
+  Pop $R0
+FunctionEnd
+
+; Ejecuta py --version de forma oculta vía script .ps1 temporal; si la salida contiene alguna versión de PYTHON_VERSIONS_ACCEPTED, pone $PythonInstalled "1"
+Function CheckPythonVersion
+  Push $0
+  Push $1
+  Push $2
+  Push $3
+  StrCpy $0 "$TEMP\EmicQDA-pyver.txt"
+  StrCpy $R8 "$TEMP\EmicQDA-pycheck.ps1"
+  FileOpen $R0 $R8 w
+  FileWrite $R0 "$$outFile = '$0'$\r$\n"
+  FileWrite $R0 "$$psi = New-Object System.Diagnostics.ProcessStartInfo$\r$\n"
+  FileWrite $R0 "$$psi.FileName = 'py'$\r$\n"
+  FileWrite $R0 "$$psi.Arguments = '--version'$\r$\n"
+  FileWrite $R0 "$$psi.UseShellExecute = $$false$\r$\n"
+  FileWrite $R0 "$$psi.CreateNoWindow = $$true$\r$\n"
+  FileWrite $R0 "$$psi.RedirectStandardOutput = $$true$\r$\n"
+  FileWrite $R0 "$$psi.RedirectStandardError = $$true$\r$\n"
+  FileWrite $R0 "$$p = [System.Diagnostics.Process]::Start($$psi)$\r$\n"
+  FileWrite $R0 "$$out = $$p.StandardOutput.ReadToEnd() + $$p.StandardError.ReadToEnd()$\r$\n"
+  FileWrite $R0 "$$p.WaitForExit()$\r$\n"
+  FileWrite $R0 "$$out | Out-File -FilePath $$outFile -Encoding ascii$\r$\n"
+  FileWrite $R0 "$$p.ExitCode | Out-File -FilePath $$env:TEMP\EmicQDA-exitcode.txt -Encoding ascii$\r$\n"
+  FileClose $R0
+  ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $1
+  Delete $R8
+  IfFileExists "$0" 0 pyver_done
+  ClearErrors
+  FileOpen $1 "$0" r
+  IfErrors pyver_close
+  FileRead $1 $R9
+  FileClose $1
+  Delete "$0"
+  ; Recorrer PYTHON_VERSIONS_ACCEPTED (versiones separadas por espacio en config.nsi)
+  StrCpy $0 "${PYTHON_VERSIONS_ACCEPTED}"
+pyver_loop:
+  StrCmp $0 "" pyver_done
+  ${StrStr} $1 $0 " "
+  StrCmp $1 "" pyver_last
+  StrLen $2 $0
+  StrLen $3 $1
+  IntOp $2 $2 - $3
+  StrCpy $R8 $0 $2
+  StrCpy $0 $1 "" 1
+  Goto pyver_check
+pyver_last:
+  StrCpy $R8 $0
+  StrCpy $0 ""
+pyver_check:
+  StrCmp $R8 "" pyver_loop
+  ${StrStr} $1 $R9 $R8
+  StrCmp $1 "" pyver_loop
+  StrCpy $PythonInstalled "1"
+  Goto pyver_done
+  Goto pyver_loop
+pyver_close:
+  FileClose $1
+  Delete "$0"
+pyver_done:
+  Pop $3
+  Pop $2
+  Pop $1
+  Pop $0
 FunctionEnd
 
 Function ValidateVaultName
@@ -279,7 +434,7 @@ Function CopyVaultTemplate
   Call AppendInstallLog
 FunctionEnd
 
-Section /o "Python (opcional)" SEC_PY
+Section /o "Python" SEC_PY
   CreateDirectory "$TempDir"
   SetOutPath "$TempDir"
   File "assets\\${PYTHON_INSTALLER}"
@@ -291,7 +446,7 @@ Section /o "Python (opcional)" SEC_PY
 done:
 SectionEnd
 
-Section /o "Obsidian (opcional)" SEC_OBS
+Section /o "Obsidian" SEC_OBS
   CreateDirectory "$TempDir"
   SetOutPath "$TempDir"
   File "assets\\${OBSIDIAN_INSTALLER}"
@@ -315,7 +470,7 @@ Section /o "Zotero (opcional)" SEC_ZOT
 done:
 SectionEnd
 
-Section /o "FFmpeg (opcional)" SEC_FFMPEG
+Section /o "FFmpeg" SEC_FFMPEG
 !ifdef INCLUDE_FFMPEG
   CreateDirectory "$INSTDIR"
   SetOutPath "$INSTDIR"
@@ -478,9 +633,30 @@ pip_done:
   WriteRegStr HKCU "Software\Emic-QDA" "Build" "${BUILD}"
 SectionEnd
 
-; Al mostrar la página de componentes: si Obsidian está instalado, marcar sección como "ya instalado" y solo lectura
+; Al mostrar la página de componentes: si están instalados, "ya instalado" y solo lectura; si no, Python, FFmpeg y Zotero aparecen marcados
 Function ComponentsPageShow
   StrCmp $ObsidianInstalled "1" 0 +3
-    SectionSetText ${SEC_OBS} "Obsidian (opcional - ya instalado)"
+    SectionSetText ${SEC_OBS} "Obsidian (ya instalado)"
     SectionSetFlags ${SEC_OBS} ${SF_RO}
+  StrCmp $PythonInstalled "1" 0 python_mark_selected
+    SectionSetText ${SEC_PY} "Python (ya instalado)"
+    SectionSetFlags ${SEC_PY} ${SF_RO}
+  Goto python_done
+  python_mark_selected:
+    SectionSetFlags ${SEC_PY} ${SF_SELECTED}
+  python_done:
+  StrCmp $FFmpegInstalled "1" 0 ffmpeg_mark_selected
+    SectionSetText ${SEC_FFMPEG} "FFmpeg (ya instalado)"
+    SectionSetFlags ${SEC_FFMPEG} ${SF_RO}
+  Goto ffmpeg_done
+  ffmpeg_mark_selected:
+    SectionSetFlags ${SEC_FFMPEG} ${SF_SELECTED}
+  ffmpeg_done:
+  StrCmp $ZoteroInstalled "1" 0 zotero_mark_selected
+    SectionSetText ${SEC_ZOT} "Zotero (opcional - ya instalado)"
+    SectionSetFlags ${SEC_ZOT} ${SF_RO}
+  Goto zotero_done
+  zotero_mark_selected:
+    SectionSetFlags ${SEC_ZOT} ${SF_SELECTED}
+  zotero_done:
 FunctionEnd

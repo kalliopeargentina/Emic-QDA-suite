@@ -15,6 +15,8 @@
 
 !define PY_LAUNCHER "py"
 !define PY_MAJOR "3.12"
+; Versiones de Python que se consideran "ya instalado" (la salida de py --version debe contener una de estas; separadas por espacio)
+!define PYTHON_VERSIONS_ACCEPTED "3.12 3.13 3.14 3.15 3.16"
 
 ; Directorio del template (descomprimido): poner la carpeta en installer/assets/template/
 ; Debe contener la raíz del vault (ej. .obsidian, README, etc.) directamente dentro.
