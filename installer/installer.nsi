@@ -81,6 +81,8 @@ FunctionEnd
 
 Name "Emic QDA Suite"
 OutFile "Emic-QDA-Installer-${VERSION}-${BUILD}.exe"
+; Recordar directorio de instalación previa (registro); si no existe, usar Documents\Emic-QDA
+InstallDirRegKey HKCU "Software\Emic-QDA" "InstallPath"
 InstallDir "$DOCUMENTS\\Emic-QDA"
 RequestExecutionLevel highest
 ShowInstDetails show
@@ -88,7 +90,11 @@ ShowInstDetails show
 !define MUI_PAGE_CUSTOMFUNCTION_SHOW CloseSplashWhenDialogShows
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_COMPONENTS
+!define MUI_PAGE_CUSTOMFUNCTION_LEAVE DirLeave
 !insertmacro MUI_PAGE_DIRECTORY
+!ifdef MUI_PAGE_CUSTOMFUNCTION_LEAVE
+!undef MUI_PAGE_CUSTOMFUNCTION_LEAVE
+!endif
 Page custom VaultNamePageCreate VaultNamePageLeave
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
@@ -101,6 +107,11 @@ Function CloseSplashWhenDialogShows
   Sleep 3000
   newadvsplash::stop /FADEOUT
 !endif
+FunctionEnd
+
+; Guardar directorio elegido en el registro para ofrecerlo por defecto en la próxima corrida
+Function DirLeave
+  WriteRegStr HKCU "Software\Emic-QDA" "InstallPath" "$INSTDIR"
 FunctionEnd
 
 Function .onInit
@@ -327,9 +338,7 @@ Section "Vault y entorno Python (requerido)" SEC_VAULT
   CreateDirectory "$TempDir\\assets"
   SetOutPath "$TempDir\\assets"
   File "assets\\${ONTOLOGY_WHL}"
-  File "assets\\${ONTOLOGY_TAR}"
   File "assets\\${QDA_WHL}"
-  File "assets\\${QDA_TAR}"
   Push "tempdir_assets_ready"
   Call AppendInstallLog
 
@@ -380,7 +389,7 @@ venv_ps1_ok:
   StrCpy $R9 "$TempDir\\pip-install.ps1"
   FileOpen $R0 $R9 w
   IfErrors pip_ps1_fail
-  FileWrite $R0 "param([string]$$VenvPath, [string]$$PackageName, [string]$$LogPath)$\r$\n"
+  FileWrite $R0 "param([string]$$VenvPath, [string]$$PackageName, [string]$$LogPath, [switch]$$UpgradePip)$\r$\n"
   FileWrite $R0 "$$ErrorActionPreference = 'Continue'$\r$\n"
   FileWrite $R0 "function SafeLog { param($$msg) if ($$LogPath) { try { $$msg | Out-File -FilePath $$LogPath -Append -Encoding utf8 } catch {} } }$\r$\n"
   FileWrite $R0 "$$FindLinks = Join-Path $$PSScriptRoot 'assets'$\r$\n"
@@ -391,7 +400,7 @@ venv_ps1_ok:
   FileWrite $R0 "$$act = Join-Path $$VenvPath 'Scripts\Activate.ps1'$\r$\n"
   FileWrite $R0 "& $$act 2>&1 | ForEach-Object { Write-Host $$_; SafeLog $$_ }$\r$\n"
   FileWrite $R0 "$$py = Join-Path $$VenvPath 'Scripts\python.exe'$\r$\n"
-  FileWrite $R0 "& $$py -m pip install --upgrade pip 2>&1 | ForEach-Object { Write-Host $$_; SafeLog $$_ }$\r$\n"
+  FileWrite $R0 "if ($$UpgradePip) { & $$py -m pip install --upgrade pip 2>&1 | ForEach-Object { Write-Host $$_; SafeLog $$_ } }$\r$\n"
   FileWrite $R0 "$$env:PYTHONUNBUFFERED = '1'$\r$\n"
   FileWrite $R0 "Write-Host '[pip] Installing package (verbose)...'$\r$\n"
   FileWrite $R0 "& $$py -m pip install -v --find-links $$FindLinks $$Package 2>&1 | ForEach-Object { Write-Host $$_; SafeLog $$_ }$\r$\n"
@@ -406,11 +415,8 @@ venv_ps1_ok:
   FileWrite $R0 "exit [int]$$pipExit$\r$\n"
   FileClose $R0
   StrCpy $R2 "$INSTDIR\EmicQDA-install-${BUILD}.log"
-  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${ONTOLOGY_WHL}" -LogPath "$R2"' $0
+  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${ONTOLOGY_WHL}" -LogPath "$R2" -UpgradePip' $0
   Push "pip_ontology_whl_exit=$0"
-  Call AppendInstallLog
-  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${ONTOLOGY_TAR}" -LogPath "$R2"' $0
-  Push "pip_ontology_tar_exit=$0"
   Call AppendInstallLog
   ; Verificar por resultado: las ventanas pueden devolver error al cerrar; si el paquete está instalado, continuar
   ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -Command "& $\'$VenvPath\Scripts\python.exe$\' -m pip show ontology_explorer"' $0
@@ -424,9 +430,6 @@ venv_ps1_ok:
 ontology_ok:
   ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${QDA_WHL}" -LogPath "$R2"' $0
   Push "pip_qda_whl_exit=$0"
-  Call AppendInstallLog
-  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${QDA_TAR}" -LogPath "$R2"' $0
-  Push "pip_qda_tar_exit=$0"
   Call AppendInstallLog
   ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -Command "& $\'$VenvPath\Scripts\python.exe$\' -m pip show obsidian_qda_suite"' $0
   Push "pip_verify_qda_exit=$0"
@@ -453,4 +456,8 @@ pip_done:
   Call DumpLog
   ; Eliminar directorio temporal (scripts, assets copiados); los logs quedan en $INSTDIR
   RMDir /r "$TempDir"
+  ; Registrar ruta, versión y build instalados para reutilizar (actualizador, detección, etc.)
+  WriteRegStr HKCU "Software\Emic-QDA" "InstallPath" "$INSTDIR"
+  WriteRegStr HKCU "Software\Emic-QDA" "Version" "${VERSION}"
+  WriteRegStr HKCU "Software\Emic-QDA" "Build" "${BUILD}"
 SectionEnd
