@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f0e8f93ce571f606",
+        "id": "3913d7123ae56232",
         "type": "tabs",
         "children": [
           {
-            "id": "8b946e599a2e0f6e",
+            "id": "be11b97a31330f3e",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -29,7 +29,7 @@
       {
         "id": "a3da9c4282a468e9",
         "type": "tabs",
-        "dimension": 72.92929292929293,
+        "dimension": 79.39393939393939,
         "children": [
           {
             "id": "614134f52a66d4e6",
@@ -64,9 +64,9 @@
         ]
       },
       {
-        "id": "4900d377398969d3",
+        "id": "5f7aaaa66b21e5df",
         "type": "tabs",
-        "dimension": 27.070707070707073,
+        "dimension": 20.606060606060606,
         "children": [
           {
             "id": "d1aebe67bd8bf042",
@@ -82,42 +82,18 @@
       }
     ],
     "direction": "horizontal",
-    "width": 360.5
+    "width": 300
   },
   "right": {
     "id": "b7cf2ea94ac6a6e4",
     "type": "split",
     "children": [
       {
-        "id": "b86efd95e0a8bd26",
+        "id": "5459cc5d08454b62",
         "type": "tabs",
         "children": [
           {
-            "id": "5f93f019f00d72e1",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": true,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "61d99bfaaabb3636",
-            "type": "leaf",
-            "state": {
-              "type": "copilot-chat-view",
-              "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
-            }
-          },
-          {
-            "id": "39ee3398320140fe",
+            "id": "fda1734c12258b08",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -135,7 +111,7 @@
             }
           },
           {
-            "id": "149da53172d64cca",
+            "id": "4aed2ff7551ca33b",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -148,7 +124,7 @@
             }
           },
           {
-            "id": "c13380b4d9211efe",
+            "id": "96eb4ce6a690e26a",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -163,7 +139,21 @@
             }
           },
           {
-            "id": "b606db0f583fba8a",
+            "id": "07c61f9be21e4675",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "d748c681960f96c7",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -176,63 +166,63 @@
               "title": "Outline"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 475.5
+    "width": 780.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-import-json:JSON/CSV Importer": true,
       "markdown-importer:Open format converter": true,
-      "audio-recorder:Start/stop recording": true,
+      "docx-exporter:Export current note to DOCX": true,
+      "cmdr:Zotero Integration: Bibliography Card": true,
+      "cmdr:Zotero Integration: Import notes": true,
+      "cmdr:Zotero Integration: Cite": true,
+      "cmdr:Zotero Integration: Bibliography_Link": true,
+      "cmdr:Zotero Integration: Insert notes into current document": true,
+      "cmdr:Zotero Integration: Codification Import": true,
+      "sidebar-highlights:Open highlights": true,
+      "cmdr:Shell commands: Execute: Transcribir de Youtube": true,
+      "cmdr:AI Suggest Codes": true,
+      "obsidian-shellcommands:Shell commands: Custom variables": true,
+      "templater-obsidian:Templater": true,
+      "media-extended:Open external media": true,
+      "cmdr:Templater: Create Memo": true,
+      "audio-recorder:Start/stop recording": false,
       "switcher:Open quick switcher": false,
+      "copilot:Open Copilot Chat": false,
+      "cmdr:Templater: Create Extractions Overview": true,
+      "cmdr:Templater: Create Coocurrencias de Códigos": true,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
-      "bases:Create new base": false,
-      "daily-notes:Open today's daily note": true,
-      "templates:Insert template": false,
       "command-palette:Open command palette": true,
-      "workspaces:Manage workspace layouts": false,
-      "quadro:Quadro: Assign code to paragraph": false,
-      "quadro:Quadro: Rename code": false,
-      "quadro:Quadro: Remove code from paragraph": false,
-      "quadro:Quadro: Delete Code File and all references to it": false,
-      "quadro:Quadro: Merge another Code File into current Code File": false,
-      "quadro:Quadro: Bulk create new Code Files": false,
-      "quadro:Quadro: Show code overview": false,
-      "quadro:Quadro: Extract from paragraph": false,
-      "quadro:Quadro: Add paragraph as source to existing Extraction File": false,
-      "quadro:Quadro: Merge another Extraction File into current Extraction File": false,
-      "quadro:Quadro: Create new Extraction Type": false,
-      "quadro:Quadro: Export all extractions as .csv": false,
-      "quadro:Quadro: Show extraction type overview": false,
-      "quadro:Quadro: Open random unread Data File": false,
-      "quadro:Quadro: Show data analysis progress file": false,
-      "quadro:Quadro: Mark current Data File as read": false,
-      "copilot:Open Copilot Chat": false,
+      "bases:Create new base": true,
+      "quadro:Quadro: Assign code to paragraph": true,
+      "quadro:Quadro: Rename code": true,
+      "quadro:Quadro: Remove code from paragraph": true,
+      "quadro:Quadro: Delete Code File and all references to it": true,
+      "quadro:Quadro: Merge another Code File into current Code File": true,
+      "quadro:Quadro: Bulk create new Code Files": true,
+      "quadro:Quadro: Show code overview": true,
+      "quadro:Quadro: Extract from paragraph": true,
+      "quadro:Quadro: Add paragraph as source to existing Extraction File": true,
+      "quadro:Quadro: Merge another Extraction File into current Extraction File": true,
+      "quadro:Quadro: Create new Extraction Type": true,
+      "quadro:Quadro: Export all extractions as .csv": true,
+      "quadro:Quadro: Show extraction type overview": true,
+      "quadro:Quadro: Open random unread Data File": true,
+      "quadro:Quadro: Show data analysis progress file": true,
+      "quadro:Quadro: Mark current Data File as read": true,
+      "daily-notes:Open today's daily note": false,
       "obsidian-map-view:Open map view": false,
-      "templater-obsidian:Templater": false,
-      "cmdr:Templater: Create Coocurrencias de Códigos": false,
-      "cmdr:Templater: Create Extractions Overview": false,
-      "cmdr:Templater: Create Memo": false,
-      "cmdr:AI Suggest Codes": false,
-      "cmdr:Shell commands: Execute: Transcribir de Youtube": false,
-      "cmdr:Zotero Integration: Bibliography Card": false,
-      "cmdr:Zotero Integration: Import notes": false,
-      "cmdr:Zotero Integration: Cite": false,
-      "cmdr:Zotero Integration: Bibliography_Link": false,
-      "cmdr:Zotero Integration: Insert notes into current document": false,
-      "cmdr:Zotero Integration: Codification Import": false,
-      "media-extended:Open external media": false,
-      "obsidian-shellcommands:Shell commands: Custom variables": false,
-      "sidebar-highlights:Open highlights": false,
-      "docx-exporter:Export current note to DOCX": false,
-      "obsidian-import-json:JSON/CSV Importer": false
+      "workspaces:Manage workspace layouts": false,
+      "templates:Insert template": true
     }
   },
-  "active": "614134f52a66d4e6",
+  "active": "be11b97a31330f3e",
   "lastOpenFiles": [
     "Attachments/Medios/audio.mp3",
     "Template-v0.1.0.zip",
