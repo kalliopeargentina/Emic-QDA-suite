@@ -19,8 +19,41 @@ Desde `installer/`:
 makensis installer.nsi
 ```
 
+**Importante:** al pegar comandos en PowerShell, pegá solo la línea del comando (ej. `.\build-and-sign.ps1`), no el prompt `PS ...>` ni la salida anterior, o PowerShell intentará ejecutar todo y dará errores.
+
+## Firmar el instalador (opcional)
+Para firmar el .exe con un certificado (reduce retrasos de UAC/SmartScreen):
+
+1. **Requisitos:** Windows SDK instalado (para `signtool.exe`). Certificado en .pfx (self-signed o de una CA).
+
+2. **Primera vez — certificado autofirmado:** desde `installer/` en PowerShell:
+   ```powershell
+   .\create-signing-cert.ps1
+   ```
+   Crea el certificado, lo exporta a `installer/EmicQDA-CodeSign.pfx` y te muestra los comandos para las variables de entorno.
+
+3. **Variables de entorno** (una sola vez por sesión, o en el perfil):
+   ```powershell
+   $env:SIGNING_PFX_PATH   = "C:\ruta\EmicQDA-CodeSign.pfx"
+   $env:SIGNING_PFX_PASSWORD = "tu_contraseña"
+   ```
+
+4. **Compilar y firmar en un solo paso:**
+   ```powershell
+   cd installer
+   .\build-and-sign.ps1
+   ```
+   Para solo compilar sin firmar: `.\build-and-sign.ps1 -SkipSign`
+
+5. **Solo firmar** (si ya tenés el .exe generado):
+   ```powershell
+   .\sign-installer.ps1
+   ```
+   Por defecto firma el `Emic-QDA-Installer-*.exe` más reciente en esta carpeta. Para otro archivo: `.\sign-installer.ps1 -ExePath ".\ruta\al\instalador.exe"`
+
 ## Configuración
 Editar `installer/config.nsi` para actualizar URLs y versiones de:
+- **VERSION** y **BUILD** — versión del suite y build (el .exe se nombra `Emic-QDA-Installer-<VERSION>-<BUILD>.exe`)
 - Python
 - Obsidian
 - Zotero

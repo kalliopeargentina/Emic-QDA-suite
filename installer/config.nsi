@@ -9,7 +9,9 @@
 !define ZOTERO_URL "https://www.zotero.org/download/client/dl?channel=release&platform=win-x64"
 !define ZOTERO_INSTALLER "Zotero-8.0.1_x64_setup.exe"
 
-!define BUILD_ID "2026-01-31-1505"
+; Versión del suite (ej. 1.0.0) y build (ej. fecha-hora). El .exe se nombra Emic-QDA-Installer-<VERSION>-<BUILD>.exe
+!define VERSION "1.0.0"
+!define BUILD "2026-02-01-0327"
 
 !define PY_LAUNCHER "py"
 !define PY_MAJOR "3.12"
@@ -19,8 +21,8 @@
 !define TEMPLATE_DIR "template"
 !define ONTOLOGY_WHL "ontology_explorer-0.1.1-py3-none-any.whl"
 !define ONTOLOGY_TAR "ontology_explorer-0.1.1.tar.gz"
-!define QDA_WHL "obsidian_qda_suite-0.1.0-py3-none-any.whl"
-!define QDA_TAR "obsidian_qda_suite-0.1.0.tar.gz"
+!define QDA_WHL "obsidian_qda_suite-0.1.1-py3-none-any.whl"
+!define QDA_TAR "obsidian_qda_suite-0.1.1.tar.gz"
 
 ; Incluir ffmpeg: poné la carpeta ffmpeg (con subcarpeta bin) en installer/assets/ffmpeg/
 ; Comentá la línea siguiente si no incluís los binarios en esta build.

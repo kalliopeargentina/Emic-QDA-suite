@@ -80,7 +80,7 @@ FunctionEnd
 !include "pages\\vault-name.nsh"
 
 Name "Emic QDA Suite"
-OutFile "Emic-QDA-Installer-${BUILD_ID}.exe"
+OutFile "Emic-QDA-Installer-${VERSION}-${BUILD}.exe"
 InstallDir "$DOCUMENTS\\Emic-QDA"
 RequestExecutionLevel highest
 ShowInstDetails show
@@ -111,17 +111,26 @@ Function .onInit
   newadvsplash::show /NOUNLOAD 3600000 500 500 -1 /BANNER "$PLUGINSDIR\Emic-Splash.bmp"
 !endif
   StrCpy $OverwriteVault "0"
-  StrCpy $TempDir "$TEMP\\EmicQDA-${BUILD_ID}"
+  StrCpy $TempDir "$TEMP\\EmicQDA-${BUILD}"
   ; Un solo log en $TEMP; crearlo ya con "w" para que exista (el modo "a" no siempre crea el archivo en NSIS)
-  StrCpy $DebugLogPath "$TEMP\\EmicQDA-install-${BUILD_ID}.log"
+  StrCpy $DebugLogPath "$TEMP\\EmicQDA-install-${BUILD}.log"
   ClearErrors
   FileOpen $R0 $DebugLogPath w
   IfErrors +4
-    FileWrite $R0 "build=${BUILD_ID}$\r$\n"
+    FileWrite $R0 "build=${BUILD}$\r$\n"
     FileWrite $R0 "exedir=$EXEDIR$\r$\n"
     FileClose $R0
   ; VenvPath se fija en SEC_VAULT con el $INSTDIR que eligió el usuario (en .onInit $INSTDIR es el valor por defecto)
-  DetailPrint "Build: ${BUILD_ID}"
+  DetailPrint "Build: ${BUILD}"
+  ; Ventana centrada en la mitad derecha de la pantalla (700x550)
+  System::Call "user32::GetSystemMetrics(i 0) i .r0"
+  System::Call "user32::GetSystemMetrics(i 1) i .r1"
+  IntOp $2 $0 * 3
+  IntOp $2 $2 / 4
+  IntOp $2 $2 - 350
+  IntOp $3 $1 - 550
+  IntOp $3 $3 / 2
+  System::Call "user32::SetWindowPos(i $HWNDPARENT, i 0, i $2, i $3, i 700, i 550, i 0x40)"
 FunctionEnd
 
 Function ValidateVaultName
@@ -339,7 +348,6 @@ vault_ok:
   IfFileExists "$VenvPath\Scripts\python.exe" venv_ps1_ok
   Push "venv_begin"
   Call AppendInstallLog
-  MessageBox MB_OK "Creando entorno Python en el directorio de instalación..."
   ; Ejecutar venv por PowerShell sin ventana; stdout/stderr al log
   StrCpy $R9 "$TempDir\\create-venv.ps1"
   FileOpen $R0 $R9 w
@@ -353,7 +361,7 @@ vault_ok:
   FileWrite $R0 "$$exitCode = 0; try { & py -${PY_MAJOR} -m venv $$VenvPath 2>&1 | ForEach-Object { Write-Host $$_; if ($$LogPath) { $$_ | Out-File -FilePath $$LogPath -Append -Encoding utf8 } }; $$exitCode = $$LASTEXITCODE; if ($$LogPath) { '[venv] exit=' + $$exitCode | Out-File -FilePath $$LogPath -Append -Encoding utf8 } } catch { if ($$LogPath) { $$_.ToString() | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host $$_.ToString(); $$exitCode = 1 }; exit $$exitCode$\r$\n"
 !endif
   FileClose $R0
-  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -LogPath "$INSTDIR\\EmicQDA-install-${BUILD_ID}.log"' $0
+  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -LogPath "$INSTDIR\\EmicQDA-install-${BUILD}.log"' $0
   Push "venv_exit=$0"
   Call AppendInstallLog
   ; Verificar por resultado: la ventana puede devolver error al cerrar; si el venv existe, continuar
@@ -397,7 +405,7 @@ venv_ps1_ok:
 !endif
   FileWrite $R0 "exit [int]$$pipExit$\r$\n"
   FileClose $R0
-  StrCpy $R2 "$INSTDIR\EmicQDA-install-${BUILD_ID}.log"
+  StrCpy $R2 "$INSTDIR\EmicQDA-install-${BUILD}.log"
   ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${ONTOLOGY_WHL}" -LogPath "$R2"' $0
   Push "pip_ontology_whl_exit=$0"
   Call AppendInstallLog
@@ -439,9 +447,9 @@ pip_done:
 
   ; Copiar log desde $TEMP a $INSTDIR para que quede en la carpeta de instalación
   IfFileExists $DebugLogPath 0 +3
-    CopyFiles /SILENT $DebugLogPath "$INSTDIR\\EmicQDA-install-nsis-${BUILD_ID}.log"
+    CopyFiles /SILENT $DebugLogPath "$INSTDIR\\EmicQDA-install-nsis-${BUILD}.log"
   ; Volcar el log de la ventana de detalles (todo lo que vio el usuario en "Detalles")
-  Push "$INSTDIR\\EmicQDA-install-details-${BUILD_ID}.log"
+  Push "$INSTDIR\\EmicQDA-install-details-${BUILD}.log"
   Call DumpLog
   ; Eliminar directorio temporal (scripts, assets copiados); los logs quedan en $INSTDIR
   RMDir /r "$TempDir"

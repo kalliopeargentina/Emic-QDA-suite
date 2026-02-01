@@ -1,3 +1,5 @@
 # Installer outputs (large binaries)
 installer/*.exe
 installer/dist/
+# Certificado de firma (no subir)
+installer/*.pfx
