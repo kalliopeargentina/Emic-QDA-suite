@@ -129,9 +129,9 @@ Function DirLeave
   WriteRegStr HKCU "Software\Emic-QDA" "InstallPath" "$INSTDIR"
 FunctionEnd
 
-; Si el usuario dejó marcado "Abrir el nuevo repositorio", abrir Obsidian con el vault (obsidian://open?path=...)
+; Si el usuario dejó marcado "Abrir el nuevo repositorio", abrir Obsidian con el vault vía PowerShell
 Function RunOpenVault
-  ExecShell "open" "obsidian://open?path=$VaultPath"
+  Exec 'powershell.exe -NoProfile -Command $\"& \$\"$$env:LOCALAPPDATA\Obsidian\Obsidian.exe\$\" \$\"$VaultPath\$\"$\"'
 FunctionEnd
 
 Function .onInit
