@@ -133,5 +133,5 @@ Si quieres usar esta bóveda para tu propio proyecto, puedes simplemente elimina
 > Algunos plugins requieren APIs o claves específicas para funcionar:
 >
 > - **Copilot**: Necesita APIs de IA configuradas. Usa la sección de configuración propia del plugin (Ajustes → Copilot) para definir el proveedor y las claves.
-> - **Shell commands**: Para comandos que usen IA (p. ej. Hugging Face u otros servicios), hay que definir las variables (claves, tokens) en la sección de *Variables* del plugin (Ajustes → Shell commands → Variables).
+> - **Shell commands**: Para comandos que usen IA (p. ej. Hugging Face u otros servicios), hay que definir las variables (claves, tokens) en el *keychain* de Obsidian 
 > - **Chronos Timeline**: Utiliza el *keychain* de Obsidian para guardar credenciales de forma segura; no hace falta configurar claves en archivos externos.
