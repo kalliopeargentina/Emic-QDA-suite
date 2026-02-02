@@ -117,7 +117,6 @@ Hacé clic en **“Siguiente”**.
 
 ## Desinstalación
 
-- Para **desinstalar el instalador** (entrada en “Agregar o quitar programas”): usá **Configuración de Windows → Aplicaciones** y buscá “Emic QDA Suite” o el nombre del instalador.
 - La **carpeta de instalación** (p. ej. `Documentos\Emic-QDA`) y su contenido (vault, entorno virtual) **no se borran** de forma automática; podés eliminarla a mano si querés quitar todo.
 - **Python, Obsidian y Zotero** instalados por el instalador hay que desinstalarlos por separado desde “Agregar o quitar programas” si deseas eliminarlos.
 
