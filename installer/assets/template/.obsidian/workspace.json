@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3913d7123ae56232",
+        "id": "d3dc9084297e198b",
         "type": "tabs",
         "children": [
           {
-            "id": "be11b97a31330f3e",
+            "id": "21e0ca7b2b7ab506",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Referencia/EMIC QDA - Introducción.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "EMIC QDA - Introducción"
             }
           }
         ]
@@ -29,10 +33,10 @@
       {
         "id": "a3da9c4282a468e9",
         "type": "tabs",
-        "dimension": 79.39393939393939,
+        "dimension": 74.04040404040404,
         "children": [
           {
-            "id": "614134f52a66d4e6",
+            "id": "0db5d0af345f1eac",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -41,7 +45,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Explorador de archivos"
             }
           },
           {
@@ -50,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "visuals",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -64,9 +68,9 @@
         ]
       },
       {
-        "id": "5f7aaaa66b21e5df",
+        "id": "37f9ec4d0d71db24",
         "type": "tabs",
-        "dimension": 20.606060606060606,
+        "dimension": 25.95959595959596,
         "children": [
           {
             "id": "d1aebe67bd8bf042",
@@ -75,25 +79,59 @@
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "Marcadores"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 303.5
   },
   "right": {
     "id": "b7cf2ea94ac6a6e4",
     "type": "split",
     "children": [
       {
-        "id": "5459cc5d08454b62",
+        "id": "a45aee6eb3b57327",
         "type": "tabs",
         "children": [
           {
-            "id": "fda1734c12258b08",
+            "id": "f763e3de6b35f87b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "c7471ac710af28b0",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          },
+          {
+            "id": "cb1505976528cf67",
+            "type": "leaf",
+            "state": {
+              "type": "highlights-sidebar",
+              "state": {},
+              "icon": "highlighter",
+              "title": "Highlights"
+            }
+          },
+          {
+            "id": "54501435a8f85b0f",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -111,7 +149,7 @@
             }
           },
           {
-            "id": "4aed2ff7551ca33b",
+            "id": "13125b956ef8b662",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -124,7 +162,7 @@
             }
           },
           {
-            "id": "96eb4ce6a690e26a",
+            "id": "238c4d44b5292739",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -139,21 +177,7 @@
             }
           },
           {
-            "id": "07c61f9be21e4675",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "d748c681960f96c7",
+            "id": "a92a16393a4aa04a",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -166,64 +190,69 @@
               "title": "Outline"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 780.5,
-    "collapsed": true
+    "width": 308.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": true,
+      "canvas:Crear nuevo lienzo": true,
+      "daily-notes:Abrir la nota de hoy": true,
+      "templates:Insertar plantilla": true,
+      "command-palette:Abrir paleta de comandos": false,
+      "markdown-importer:Abrir el importador de Markdown": true,
+      "audio-recorder:Iniciar/Detener la grabación": true,
+      "bases:Crear nueva base": true,
+      "docx-exporter:Exportar nota actual a DOCX": true,
       "obsidian-import-json:JSON/CSV Importer": true,
-      "markdown-importer:Open format converter": true,
-      "docx-exporter:Export current note to DOCX": true,
       "cmdr:Zotero Integration: Bibliography Card": true,
       "cmdr:Zotero Integration: Import notes": true,
       "cmdr:Zotero Integration: Cite": true,
       "cmdr:Zotero Integration: Bibliography_Link": true,
       "cmdr:Zotero Integration: Insert notes into current document": true,
-      "cmdr:Zotero Integration: Codification Import": true,
-      "sidebar-highlights:Open highlights": true,
       "cmdr:Shell commands: Execute: Transcribir de Youtube": true,
-      "cmdr:AI Suggest Codes": true,
       "obsidian-shellcommands:Shell commands: Custom variables": true,
       "templater-obsidian:Templater": true,
-      "media-extended:Open external media": true,
       "cmdr:Templater: Create Memo": true,
-      "audio-recorder:Start/stop recording": false,
-      "switcher:Open quick switcher": false,
-      "copilot:Open Copilot Chat": false,
       "cmdr:Templater: Create Extractions Overview": true,
       "cmdr:Templater: Create Coocurrencias de Códigos": true,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "command-palette:Open command palette": true,
-      "bases:Create new base": true,
-      "quadro:Quadro: Assign code to paragraph": true,
-      "quadro:Quadro: Rename code": true,
-      "quadro:Quadro: Remove code from paragraph": true,
-      "quadro:Quadro: Delete Code File and all references to it": true,
-      "quadro:Quadro: Merge another Code File into current Code File": true,
-      "quadro:Quadro: Bulk create new Code Files": true,
-      "quadro:Quadro: Show code overview": true,
-      "quadro:Quadro: Extract from paragraph": true,
-      "quadro:Quadro: Add paragraph as source to existing Extraction File": true,
-      "quadro:Quadro: Merge another Extraction File into current Extraction File": true,
-      "quadro:Quadro: Create new Extraction Type": true,
-      "quadro:Quadro: Export all extractions as .csv": true,
-      "quadro:Quadro: Show extraction type overview": true,
+      "quadro:Quadro: Assign code to paragraph": false,
+      "quadro:Quadro: Rename code": false,
+      "quadro:Quadro: Remove code from paragraph": false,
+      "quadro:Quadro: Delete Code File and all references to it": false,
+      "quadro:Quadro: Merge another Code File into current Code File": false,
+      "quadro:Quadro: Bulk create new Code Files": false,
+      "quadro:Quadro: Split selected references into another Code File": false,
+      "quadro:Quadro: Show code overview": false,
+      "quadro:Quadro: Extract from paragraph": false,
+      "quadro:Quadro: Add paragraph as source to existing Extraction File": false,
+      "quadro:Quadro: Merge another Extraction File into current Extraction File": false,
+      "quadro:Quadro: Create new Extraction Type": false,
+      "quadro:Quadro: Export all extractions as .csv": false,
+      "quadro:Quadro: Show extraction type overview": false,
       "quadro:Quadro: Open random unread Data File": true,
       "quadro:Quadro: Show data analysis progress file": true,
-      "quadro:Quadro: Mark current Data File as read": true,
-      "daily-notes:Open today's daily note": false,
-      "obsidian-map-view:Open map view": false,
-      "workspaces:Manage workspace layouts": false,
-      "templates:Insert template": true
+      "quadro:Quadro: Mark current Data File as read": false,
+      "cmdr:Zotero Integration: Codification Import": false,
+      "sidebar-highlights:Open highlights": false,
+      "cmdr:AI Suggest Codes": false,
+      "copilot:Open Copilot Chat": false,
+      "obsidian-map-view:Open map view": true,
+      "media-extended:Open external media": true,
+      "workspaces:Gestionar disposiciones de espacio de trabajo": false
     }
   },
-  "active": "be11b97a31330f3e",
+  "active": "0db5d0af345f1eac",
   "lastOpenFiles": [
+    "Referencia/EMIC QDA - Introducción.md",
+    "Referencia",
+    "LEAME.md",
+    "Notas de Campo/2026-02-02_00_45.md",
     "Attachments/Medios/audio.mp3",
     "Template-v0.1.0.zip",
     "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Deilab.md",
@@ -248,9 +277,6 @@
     "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Biotoscana Argentina.md",
     "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/bitcoin.md",
     "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Biotoscana.md",
-    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Biopark.md",
-    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Bio 4.md",
-    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Bill Berry.md",
     "Analysis/Ontology Analisys/Revision Ontología ND Angels.base",
     "Bases/Códigos.base",
     "Attachments/Medios/melina recibe comprador.docx",
@@ -258,8 +284,6 @@
     "Attachments/Medios/melina recibe comprador.mp3",
     "Attachments/Medios/pre-process-backup/melina recibe comprador_orig_20260130171133.m4a",
     "Attachments/Medios/Melina inmo.docx",
-    "Attachments/Medios/belen prepara visita Beiro 4500.docx",
-    "Attachments/Medios/Melina inmo.srt",
     "Attachments/Data/Documentos/NDAngels/2021-12-09-Reunión-Presencial-NDAngels-Tetaz/IMG-20260124204125787.jpg",
     "Attachments/Data/Documentos/NDAngels/2020-12-18 Reunión ND Angels - Tetaz/IMG-20260124203913403.jpg",
     "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165258538.png",

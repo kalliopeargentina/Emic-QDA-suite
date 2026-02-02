@@ -277,7 +277,9 @@
   "displayLintOnFileChangeNotice": false,
   "settingsConvertedToConfigKeyValues": true,
   "foldersToIgnore": [
-    "Utils"
+    "Utils",
+    "",
+    "Referencia"
   ],
   "filesToIgnore": [],
   "linterLocale": "system-default",

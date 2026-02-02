@@ -5,8 +5,8 @@
   "enabledCssSnippets": [
     "minor-adjustments",
     "supercharged-links-gen",
-    "file_explorer",
-    "startup"
+    "startup",
+    "file_explorer"
   ],
   "nativeMenus": false,
   "theme": "obsidian"

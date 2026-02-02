@@ -1,3 +1,10 @@
+---
+aliases: []
+tags: []
+date created: sábado, enero 31º 2026, 4:06:15 pm
+date modified: lunes, febrero 2º 2026, 12:57:34 am
+---
+
 Claro, aquí tienes la traducción completa de la nota al español:
 
 # Quadro: Bóveda de Plantilla

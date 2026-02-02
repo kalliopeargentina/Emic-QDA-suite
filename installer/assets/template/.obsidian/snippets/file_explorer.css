@@ -1,3 +1,11 @@
+/* Folder named "Referencia" */
+.nav-folder-title[data-path="Referencia"] {
+  color: #125d98;
+  font-weight: 600;
+}
+.nav-folder-title[data-path="Referencia"]::before {
+  content: "📙 ";
+}
 /* Folder named "Data" */
 .nav-folder-title[data-path="Data"] {
   color: #ffb400;

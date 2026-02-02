@@ -10,8 +10,8 @@
 !define ZOTERO_INSTALLER "Zotero-8.0.1_x64_setup.exe"
 
 ; Versión del suite (ej. 1.0.0) y build (ej. fecha-hora). El .exe se nombra Emic-QDA-Installer-<VERSION>-<BUILD>.exe
-!define VERSION "1.0.0"
-!define BUILD "2026-02-01-1328"
+!define VERSION "0.5.0"
+!define BUILD "2026-02-01-2055"
 
 !define PY_LAUNCHER "py"
 !define PY_MAJOR "3.12"
