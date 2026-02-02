@@ -1,3 +1,6 @@
+; Instalador Unicode para que los diálogos muestren bien caracteres acentuados (á, é, ñ, etc.).
+; Guardar este archivo como UTF-8 con BOM si los acentos no se ven correctamente al compilar.
+Unicode true
 !include "MUI2.nsh"
 !include "LogicLib.nsh"
 !include "nsDialogs.nsh"
@@ -65,7 +68,6 @@ Var TempDir
 Var DebugLogPath
 Var VenvPath
 Var ObsidianInstalled
-Var FFmpegInstalled
 Var ZoteroInstalled
 Var PythonInstalled
 
@@ -162,48 +164,10 @@ Function .onInit
   IntOp $3 $1 - 550
   IntOp $3 $3 / 2
   System::Call "user32::SetWindowPos(i $HWNDPARENT, i 0, i $2, i $3, i 700, i 550, i 0x40)"
-  ; Detectar si Obsidian está instalado (%LOCALAPPDATA%\Obsidian\Obsidian.exe); si no, comprobar HKCU:\Software\Classes\obsidian
+  ; Detectar si Obsidian está instalado (%LOCALAPPDATA%\Obsidian\Obsidian.exe)
   StrCpy $ObsidianInstalled "0"
   IfFileExists "$LOCALAPPDATA\Obsidian\Obsidian.exe" 0 +2
     StrCpy $ObsidianInstalled "1"
-  StrCmp $ObsidianInstalled "0" 0 obsidian_detect_done
-  Call CheckObsidianByRegistry
-  obsidian_detect_done:
-  ; Detectar si FFmpeg está instalado: ejecutar ffmpeg y ffprobe sin ventana vía wscript + .ps1
-  StrCpy $FFmpegInstalled "0"
-  Call CreateRunVbs
-  StrCpy $R8 "$TEMP\EmicQDA-ffcheck.ps1"
-  StrCpy $R7 "$TEMP\EmicQDA-exitcode.txt"
-  FileOpen $R0 $R8 w
-  FileWrite $R0 "$$psi = New-Object System.Diagnostics.ProcessStartInfo$\r$\n"
-  FileWrite $R0 "$$psi.FileName = 'ffmpeg'$\r$\n"
-  FileWrite $R0 "$$psi.Arguments = '-version'$\r$\n"
-  FileWrite $R0 "$$psi.UseShellExecute = $$false$\r$\n"
-  FileWrite $R0 "$$psi.CreateNoWindow = $$true$\r$\n"
-  FileWrite $R0 "$$p = [System.Diagnostics.Process]::Start($$psi)$\r$\n"
-  FileWrite $R0 "$$p.WaitForExit()$\r$\n"
-  FileWrite $R0 "$$p.ExitCode | Out-File -FilePath $$env:TEMP\EmicQDA-exitcode.txt -Encoding ascii$\r$\n"
-  FileClose $R0
-  ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $R0
-  Call ReadExitCode
-  IntCmp $R0 0 0 ffmpeg_check_done
-  FileOpen $R0 $R8 w
-  FileWrite $R0 "$$psi = New-Object System.Diagnostics.ProcessStartInfo$\r$\n"
-  FileWrite $R0 "$$psi.FileName = 'ffprobe'$\r$\n"
-  FileWrite $R0 "$$psi.Arguments = '-version'$\r$\n"
-  FileWrite $R0 "$$psi.UseShellExecute = $$false$\r$\n"
-  FileWrite $R0 "$$psi.CreateNoWindow = $$true$\r$\n"
-  FileWrite $R0 "$$p = [System.Diagnostics.Process]::Start($$psi)$\r$\n"
-  FileWrite $R0 "$$p.WaitForExit()$\r$\n"
-  FileWrite $R0 "$$p.ExitCode | Out-File -FilePath $$env:TEMP\EmicQDA-exitcode.txt -Encoding ascii$\r$\n"
-  FileClose $R0
-  ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $R0
-  Call ReadExitCode
-  IntCmp $R0 0 0 ffmpeg_check_done
-  StrCpy $FFmpegInstalled "1"
-  ffmpeg_check_done:
-  Delete $R8
-  Delete $R7
   ; Detectar si Zotero está instalado (registro App Paths, sin ventana)
   StrCpy $ZoteroInstalled "0"
   Call CheckZoteroByRegistry
@@ -226,36 +190,34 @@ Function CreateRunVbs
   Pop $R9
   Pop $R0
 FunctionEnd
-; Lee el código de salida escrito por el .ps1 en $TEMP\EmicQDA-exitcode.txt y lo deja en $R0
+; Recibe en la pila la ruta del archivo; lee el código (0 o 1) y lo deja en $R0. Si no existe el archivo = fallo, $R0 "1". Quita \r y \n del valor leído.
 Function ReadExitCode
-  Push $R1
-  StrCpy $R0 "0"
-  IfFileExists "$TEMP\EmicQDA-exitcode.txt" 0 read_exit_done
+  Exch $R1
+  Push $R2
+  Push $R3
+  StrCpy $R0 "1"
+  IfFileExists "$R1" 0 read_exit_done
   ClearErrors
-  FileOpen $R1 "$TEMP\EmicQDA-exitcode.txt" r
+  FileOpen $R2 "$R1" r
   IfErrors read_exit_done
-  FileRead $R1 $R0
-  FileClose $R1
+  FileRead $R2 $R0
+  FileClose $R2
+  ; Quitar \r y \n del final para que IntCmp interprete bien
+  read_exit_trim_loop:
+  StrLen $R2 $R0
+  IntCmp $R2 0 read_exit_done read_exit_done
+  IntOp $R2 $R2 - 1
+  StrCpy $R3 $R0 1 $R2
+  StrCmp $R3 "$\r" read_exit_trim_one
+  StrCmp $R3 "$\n" read_exit_trim_one
+  Goto read_exit_done
+  read_exit_trim_one:
+  StrCpy $R0 $R0 $R2
+  Goto read_exit_trim_loop
   read_exit_done:
-  Pop $R1
-FunctionEnd
-
-; Si el chequeo por archivo falló: detecta Obsidian por registro (HKCU:\Software\Classes\obsidian); si existe la clave, pone $ObsidianInstalled "1"
-Function CheckObsidianByRegistry
-  Push $R0
-  Push $R8
-  StrCpy $R8 "$TEMP\EmicQDA-obsidian-check.ps1"
-  FileOpen $R0 $R8 w
-  FileWrite $R0 "if (Get-Item $\"HKCU:\Software\Classes\obsidian$\" -ErrorAction SilentlyContinue) { $\"1$\" | Out-File -FilePath $$env:TEMP\EmicQDA-obsidian-out.txt -Encoding ascii }$\r$\n"
-  FileClose $R0
-  ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $R0
-  Delete $R8
-  IfFileExists "$TEMP\EmicQDA-obsidian-out.txt" 0 obsidian_reg_done
-  StrCpy $ObsidianInstalled "1"
-  Delete "$TEMP\EmicQDA-obsidian-out.txt"
-  obsidian_reg_done:
-  Pop $R8
-  Pop $R0
+  Pop $R3
+  Pop $R2
+  Exch $R1
 FunctionEnd
 
 ; Detecta Zotero por registro (App Paths) sin ventana; si hay ruta en HKLM o HKCU, pone $ZoteroInstalled "1"
@@ -465,8 +427,14 @@ FunctionEnd
 Section /o "Python" SEC_PY
   CreateDirectory "$TempDir"
   SetOutPath "$TempDir"
-  File "assets\\${PYTHON_INSTALLER}"
-  MessageBox MB_OK "Se abrirá el instalador de Python ${PYTHON_VERSION}. Completá la instalación y luego continuá aquí."
+  DetailPrint "Descargando Python..."
+  inetc::get /POPUP "" /CAPTION "Descargando Python..." "${PYTHON_URL}" "$TempDir\${PYTHON_INSTALLER}"
+  Pop $0
+  StrCmp $0 "OK" python_download_ok
+  MessageBox MB_ICONSTOP "Error descargando Python.$\r$\nDetalle: $0"
+  Abort
+  python_download_ok:
+  DetailPrint "Python descargado correctamente."
   ExecWait '"$TempDir\\${PYTHON_INSTALLER}"' $0
   IntCmp $0 0 done
     MessageBox MB_ICONSTOP "La instalación de Python falló (código $0)." /SD IDOK
@@ -477,8 +445,14 @@ SectionEnd
 Section /o "Obsidian" SEC_OBS
   CreateDirectory "$TempDir"
   SetOutPath "$TempDir"
-  File "assets\\${OBSIDIAN_INSTALLER}"
-  MessageBox MB_OK "Se abrirá el instalador de Obsidian ${OBSIDIAN_VERSION}. Completá la instalación y luego continuá aquí."
+  DetailPrint "Descargando Obsidian..."
+  inetc::get /POPUP "" /CAPTION "Descargando Obsidian..." "${OBSIDIAN_URL}" "$TempDir\${OBSIDIAN_INSTALLER}"
+  Pop $0
+  StrCmp $0 "OK" obsidian_download_ok
+  MessageBox MB_ICONSTOP "Error descargando Obsidian.$\r$\nDetalle: $0"
+  Abort
+  obsidian_download_ok:
+  DetailPrint "Obsidian descargado correctamente."
   ExecWait '"$TempDir\\${OBSIDIAN_INSTALLER}"' $0
   IntCmp $0 0 done
     MessageBox MB_ICONSTOP "La instalación de Obsidian falló (código $0)." /SD IDOK
@@ -489,9 +463,15 @@ SectionEnd
 Section /o "Zotero (opcional)" SEC_ZOT
   CreateDirectory "$TempDir"
   SetOutPath "$TempDir"
-  File "assets\\${ZOTERO_INSTALLER}"
-  MessageBox MB_OK "Se abrirá el instalador de Zotero. Completá la instalación y luego continuá aquí."
-  ExecWait '"$TempDir\\${ZOTERO_INSTALLER}"' $0
+  DetailPrint "Descargando Zotero..."
+  inetc::get /POPUP "" /CAPTION "Descargando Zotero..." "${ZOTERO_URL}" "$TempDir\Zotero_setup.exe"
+  Pop $0
+  StrCmp $0 "OK" zotero_download_ok
+  MessageBox MB_ICONSTOP "Error descargando Zotero.$\r$\nDetalle: $0"
+  Abort
+  zotero_download_ok:
+  DetailPrint "Zotero descargado correctamente."
+  ExecWait '"$TempDir\Zotero_setup.exe"' $0
   IntCmp $0 0 done
     MessageBox MB_ICONSTOP "La instalación de Zotero falló (código $0)." /SD IDOK
     Abort
@@ -558,22 +538,29 @@ vault_ok:
   StrCpy $R9 "$TempDir\\create-venv.ps1"
   FileOpen $R0 $R9 w
   IfErrors venv_ps1_fail
-  FileWrite $R0 "param([string]$$VenvPath, [string]$$LogPath)$\r$\n"
+  FileWrite $R0 "param([string]$$VenvPath, [string]$$LogPath, [string]$$Versions)$\r$\n"
   FileWrite $R0 "try { $$Host.UI.RawUI.WindowSize = New-Object System.Management.Automation.Host.Size(80, 30); $$Host.UI.RawUI.BufferSize = New-Object System.Management.Automation.Host.Size(80, 30) } catch {}$\r$\n"
   FileWrite $R0 "$$ErrorActionPreference = 'Stop'$\r$\n"
   FileWrite $R0 "if ($$LogPath) { '[venv] VenvPath=' + $$VenvPath | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host '[venv] VenvPath=' $$VenvPath$\r$\n"
+  FileWrite $R0 "$$versions = ($$Versions.Trim() -split '\s+') | Where-Object { $$_.Length -gt 0 }$\r$\n"
+  FileWrite $R0 "$$regPaths = $$versions | ForEach-Object { $$v = $$_; 'HKCU:\Software\Python\PythonCore\' + $$v + '\InstallPath'; 'HKLM:\Software\Python\PythonCore\' + $$v + '\InstallPath' }$\r$\n"
+  FileWrite $R0 "$$installPath = $$regPaths | Where-Object { Test-Path $$_ } | ForEach-Object { (Get-ItemProperty $$_).'(default)' } | Select-Object -First 1$\r$\n"
+  FileWrite $R0 "$$pythonExe = $$null; if ($$installPath) { $$p = Join-Path $$installPath 'python.exe'; if (Test-Path $$p) { $$pythonExe = $$p } }$\r$\n"
+  FileWrite $R0 "$$venvExe = if ($$pythonExe) { $$pythonExe } else { 'py' }; $$venvArgs = if ($$pythonExe) { '-m', 'venv', $$VenvPath } else { '-${PY_MAJOR}', '-m', 'venv', $$VenvPath }$\r$\n"
+  FileWrite $R0 "if ($$LogPath) { '[venv] Python=' + $$venvExe | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host '[venv] Python=' $$venvExe$\r$\n"
 !ifdef POWERSHELL_PAUSE_ON_ERROR
-  FileWrite $R0 "$$exitCode = 0; try { & py -${PY_MAJOR} -m venv $$VenvPath 2>&1 | ForEach-Object { Write-Host $$_; if ($$LogPath) { $$_ | Out-File -FilePath $$LogPath -Append -Encoding utf8 } }; $$exitCode = $$LASTEXITCODE; if ($$LogPath) { '[venv] exit=' + $$exitCode | Out-File -FilePath $$LogPath -Append -Encoding utf8 } } catch { if ($$LogPath) { $$_.ToString() | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host $$_.ToString(); $$exitCode = 1 }; if ($$exitCode -ne 0) { Read-Host 'Error. Presione Enter para cerrar' }; exit $$exitCode$\r$\n"
+  FileWrite $R0 "$$exitCode = 0; try { & $$venvExe @venvArgs 2>&1 | ForEach-Object { Write-Host $$_; if ($$LogPath) { $$_ | Out-File -FilePath $$LogPath -Append -Encoding utf8 } }; $$exitCode = $$LASTEXITCODE; if ($$LogPath) { '[venv] exit=' + $$exitCode | Out-File -FilePath $$LogPath -Append -Encoding utf8 } } catch { if ($$LogPath) { $$_.ToString() | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host $$_.ToString(); $$exitCode = 1 }; if ($$exitCode -ne 0) { Read-Host 'Error. Presione Enter para cerrar' }; exit $$exitCode$\r$\n"
 !else
-  FileWrite $R0 "$$exitCode = 0; try { & py -${PY_MAJOR} -m venv $$VenvPath 2>&1 | ForEach-Object { Write-Host $$_; if ($$LogPath) { $$_ | Out-File -FilePath $$LogPath -Append -Encoding utf8 } }; $$exitCode = $$LASTEXITCODE; if ($$LogPath) { '[venv] exit=' + $$exitCode | Out-File -FilePath $$LogPath -Append -Encoding utf8 } } catch { if ($$LogPath) { $$_.ToString() | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host $$_.ToString(); $$exitCode = 1 }; exit $$exitCode$\r$\n"
+  FileWrite $R0 "$$exitCode = 0; try { & $$venvExe @venvArgs 2>&1 | ForEach-Object { Write-Host $$_; if ($$LogPath) { $$_ | Out-File -FilePath $$LogPath -Append -Encoding utf8 } }; $$exitCode = $$LASTEXITCODE; if ($$LogPath) { '[venv] exit=' + $$exitCode | Out-File -FilePath $$LogPath -Append -Encoding utf8 } } catch { if ($$LogPath) { $$_.ToString() | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host $$_.ToString(); $$exitCode = 1 }; exit $$exitCode$\r$\n"
 !endif
   FileClose $R0
-  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -LogPath "$INSTDIR\\EmicQDA-install-${BUILD}.log"' $0
+  StrCpy $R7 "${PYTHON_VERSIONS_ACCEPTED}"
+  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -LogPath "$INSTDIR\\EmicQDA-install-${BUILD}.log" -Versions "$R7"' $0
   Push "venv_exit=$0"
   Call AppendInstallLog
   ; Verificar por resultado: la ventana puede devolver error al cerrar; si el venv existe, continuar
   IfFileExists "$VenvPath\Scripts\python.exe" venv_ps1_ok
-  MessageBox MB_ICONSTOP "No se pudo crear el entorno virtual (código $0). Verificá que el launcher de Python esté instalado. Revisá el log en la carpeta de instalación." /SD IDOK
+  MessageBox MB_ICONSTOP "No se pudo crear el entorno virtual (código $0). Verificá que Python esté instalado (registro o PATH). Revisá el log en la carpeta de instalación." /SD IDOK
   Abort
 venv_ps1_fail:
   Push "venv_error=ps1_create_fail"
@@ -661,11 +648,15 @@ pip_done:
   WriteRegStr HKCU "Software\Emic-QDA" "Build" "${BUILD}"
 SectionEnd
 
-; Al mostrar la página de componentes: si están instalados, "ya instalado" y solo lectura; si no, Python, FFmpeg y Zotero aparecen marcados
+; Al mostrar la página de componentes: si están instalados, "ya instalado" y solo lectura; si no, Python, Obsidian y Zotero aparecen marcados. FFmpeg siempre marcado por defecto (el usuario puede desmarcar).
 Function ComponentsPageShow
-  StrCmp $ObsidianInstalled "1" 0 +3
+  StrCmp $ObsidianInstalled "1" 0 obsidian_mark_selected
     SectionSetText ${SEC_OBS} "Obsidian (ya instalado)"
     SectionSetFlags ${SEC_OBS} ${SF_RO}
+  Goto obsidian_done
+  obsidian_mark_selected:
+    SectionSetFlags ${SEC_OBS} ${SF_SELECTED}
+  obsidian_done:
   StrCmp $PythonInstalled "1" 0 python_mark_selected
     SectionSetText ${SEC_PY} "Python (ya instalado)"
     SectionSetFlags ${SEC_PY} ${SF_RO}
@@ -673,13 +664,7 @@ Function ComponentsPageShow
   python_mark_selected:
     SectionSetFlags ${SEC_PY} ${SF_SELECTED}
   python_done:
-  StrCmp $FFmpegInstalled "1" 0 ffmpeg_mark_selected
-    SectionSetText ${SEC_FFMPEG} "FFmpeg (ya instalado)"
-    SectionSetFlags ${SEC_FFMPEG} ${SF_RO}
-  Goto ffmpeg_done
-  ffmpeg_mark_selected:
-    SectionSetFlags ${SEC_FFMPEG} ${SF_SELECTED}
-  ffmpeg_done:
+  SectionSetFlags ${SEC_FFMPEG} ${SF_SELECTED}
   StrCmp $ZoteroInstalled "1" 0 zotero_mark_selected
     SectionSetText ${SEC_ZOT} "Zotero (opcional - ya instalado)"
     SectionSetFlags ${SEC_ZOT} ${SF_RO}

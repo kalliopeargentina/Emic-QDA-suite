@@ -7,7 +7,7 @@
 !define OBSIDIAN_INSTALLER "Obsidian-1.11.5.exe"
 
 !define ZOTERO_URL "https://www.zotero.org/download/client/dl?channel=release&platform=win-x64"
-!define ZOTERO_INSTALLER "Zotero-8.0.1_x64_setup.exe"
+; Nombre del instalador: fijo "Zotero_setup.exe" en installer.nsi (no depende de la versión devuelta por el servidor)
 
 ; Versión del suite (ej. 1.0.0) y build (ej. fecha-hora). El .exe se nombra Emic-QDA-Installer-<VERSION>-<BUILD>.exe
 !define VERSION "0.5.0"
