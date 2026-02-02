@@ -70,6 +70,7 @@ Var VenvPath
 Var ObsidianInstalled
 Var ZoteroInstalled
 Var PythonInstalled
+Var FFmpegInstalled
 
 ; Escribe una línea en el log. En modo "a" NSIS deja el puntero al inicio; hay que FileSeek 0 END (doc NSIS).
 Function AppendInstallLog
@@ -172,12 +173,17 @@ Function .onInit
   obsidian_try_reg:
   Call CheckObsidianByRegistry
   obsidian_done:
+  ; Crear VBS para ejecutar .ps1 sin ventana (lo usan CheckZoteroByRegistry y CheckPythonVersion)
+  Call CreateRunVbs
   ; Detectar si Zotero está instalado (registro App Paths, sin ventana)
   StrCpy $ZoteroInstalled "0"
   Call CheckZoteroByRegistry
   ; Detectar si Python 3.12+ está instalado: ejecutar py --version oculto y comprobar versión
   StrCpy $PythonInstalled "0"
   Call CheckPythonVersion
+  ; Detectar si FFmpeg está en PATH: rutas que contengan "ffmpeg" y tengan ffmpeg.exe y ffprobe.exe
+  StrCpy $FFmpegInstalled "0"
+  Call CheckFFmpegInPath
 FunctionEnd
 
 ; Crea $TEMP\EmicQDA-run.vbs: ejecuta PowerShell con el .ps1 indicado sin ventana (WScript.Shell.Run con 0 = oculto)
@@ -193,35 +199,6 @@ Function CreateRunVbs
   FileClose $R0
   Pop $R9
   Pop $R0
-FunctionEnd
-; Recibe en la pila la ruta del archivo; lee el código (0 o 1) y lo deja en $R0. Si no existe el archivo = fallo, $R0 "1". Quita \r y \n del valor leído.
-Function ReadExitCode
-  Exch $R1
-  Push $R2
-  Push $R3
-  StrCpy $R0 "1"
-  IfFileExists "$R1" 0 read_exit_done
-  ClearErrors
-  FileOpen $R2 "$R1" r
-  IfErrors read_exit_done
-  FileRead $R2 $R0
-  FileClose $R2
-  ; Quitar \r y \n del final para que IntCmp interprete bien
-  read_exit_trim_loop:
-  StrLen $R2 $R0
-  IntCmp $R2 0 read_exit_done read_exit_done
-  IntOp $R2 $R2 - 1
-  StrCpy $R3 $R0 1 $R2
-  StrCmp $R3 "$\r" read_exit_trim_one
-  StrCmp $R3 "$\n" read_exit_trim_one
-  Goto read_exit_done
-  read_exit_trim_one:
-  StrCpy $R0 $R0 $R2
-  Goto read_exit_trim_loop
-  read_exit_done:
-  Pop $R3
-  Pop $R2
-  Exch $R1
 FunctionEnd
 
 ; Fallback Obsidian: lee ruta del registro (App Paths o protocolo obsidian:) y solo pone $ObsidianInstalled "1" si el exe existe (evitar registros huérfanos)
@@ -343,6 +320,37 @@ pyver_done:
   Pop $2
   Pop $1
   Pop $0
+FunctionEnd
+
+; Detecta FFmpeg por PATH (usuario + sistema): segmentos que contengan "ffmpeg" (case-insensitive); solo si en ese directorio existen ffmpeg.exe y ffprobe.exe pone $FFmpegInstalled "1"
+Function CheckFFmpegInPath
+  Push $R0
+  Push $R8
+  StrCpy $R8 "$TEMP\EmicQDA-ffmpeg-check.ps1"
+  FileOpen $R0 $R8 w
+  FileWrite $R0 "$$userPath = [Environment]::GetEnvironmentVariable('Path', 'User')$\r$\n"
+  FileWrite $R0 "$$machinePath = [Environment]::GetEnvironmentVariable('Path', 'Machine')$\r$\n"
+  FileWrite $R0 "$$combined = $$userPath + ';' + $$machinePath$\r$\n"
+  FileWrite $R0 "$$segments = $$combined -split ';' | ForEach-Object { $$_.Trim() } | Where-Object { $$_.Length -gt 0 }$\r$\n"
+  FileWrite $R0 "foreach ($$dir in $$segments) {$\r$\n"
+  FileWrite $R0 "  if ($$dir -match 'ffmpeg') {$\r$\n"
+  FileWrite $R0 "    $$ffmpegExe = Join-Path $$dir 'ffmpeg.exe'$\r$\n"
+  FileWrite $R0 "    $$ffprobeExe = Join-Path $$dir 'ffprobe.exe'$\r$\n"
+  FileWrite $R0 "    if ((Test-Path -LiteralPath $$ffmpegExe) -and (Test-Path -LiteralPath $$ffprobeExe)) {$\r$\n"
+  FileWrite $R0 "      $\"1$\" | Out-File -FilePath (Join-Path $$env:TEMP 'EmicQDA-ffmpeg-out.txt') -Encoding ascii$\r$\n"
+  FileWrite $R0 "      exit 0$\r$\n"
+  FileWrite $R0 "    }$\r$\n"
+  FileWrite $R0 "  }$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileClose $R0
+  ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $R0
+  Delete $R8
+  IfFileExists "$TEMP\EmicQDA-ffmpeg-out.txt" 0 ffmpeg_path_done
+  StrCpy $FFmpegInstalled "1"
+  Delete "$TEMP\EmicQDA-ffmpeg-out.txt"
+ffmpeg_path_done:
+  Pop $R8
+  Pop $R0
 FunctionEnd
 
 Function ValidateVaultName
@@ -690,7 +698,7 @@ pip_done:
   WriteRegStr HKCU "Software\Emic-QDA" "Build" "${BUILD}"
 SectionEnd
 
-; Al mostrar la página de componentes: si están instalados, "ya instalado" y solo lectura; si no, Python, Obsidian y Zotero aparecen marcados. FFmpeg siempre marcado por defecto (el usuario puede desmarcar).
+; Al mostrar la página de componentes: si están instalados, "ya instalado" y solo lectura; si no, Python, Obsidian, Zotero y FFmpeg aparecen marcados.
 Function ComponentsPageShow
   StrCmp $ObsidianInstalled "1" 0 obsidian_mark_selected
     SectionSetText ${SEC_OBS} "Obsidian (ya instalado)"
@@ -706,7 +714,13 @@ Function ComponentsPageShow
   python_mark_selected:
     SectionSetFlags ${SEC_PY} ${SF_SELECTED}
   python_done:
-  SectionSetFlags ${SEC_FFMPEG} ${SF_SELECTED}
+  StrCmp $FFmpegInstalled "1" 0 ffmpeg_mark_selected
+    SectionSetText ${SEC_FFMPEG} "FFmpeg (ya instalado)"
+    SectionSetFlags ${SEC_FFMPEG} ${SF_RO}
+  Goto ffmpeg_done
+  ffmpeg_mark_selected:
+    SectionSetFlags ${SEC_FFMPEG} ${SF_SELECTED}
+  ffmpeg_done:
   StrCmp $ZoteroInstalled "1" 0 zotero_mark_selected
     SectionSetText ${SEC_ZOT} "Zotero (opcional - ya instalado)"
     SectionSetFlags ${SEC_ZOT} ${SF_RO}
