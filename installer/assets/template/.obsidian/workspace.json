@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6de517371f102fbf",
+        "id": "158559b8e9f3842f",
         "type": "tabs",
         "children": [
           {
-            "id": "cfb45e92527e5ccd",
+            "id": "f2e3bc45916c67fd",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -247,7 +247,7 @@
       "workspaces:Gestionar disposiciones de espacio de trabajo": false
     }
   },
-  "active": "cfb45e92527e5ccd",
+  "active": "0db5d0af345f1eac",
   "lastOpenFiles": [
     "Referencia/EMIC.md",
     "Referencia",
