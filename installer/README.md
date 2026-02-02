@@ -1,5 +1,9 @@
 # Emic QDA Installer (NSIS)
-![https://emic-consultora.com.ar/assets/media/019ca9bc8f05f14410054b389468cb46.png|700x700](https://emic-consultora.com.ar/_assets/media/019ca9bc8f05f14410054b389468cb46.png)
+
+<div align="center" style="background-color:#125d98; border-radius: 14px; padding: 18px 0; margin-bottom: 16px;">
+  <img src="https://emic-consultora.com.ar/_assets/media/019ca9bc8f05f14410054b389468cb46.png" alt="Emic QDA logo" width="500"/>
+</div>
+
 
 ## Requisitos
 - NSIS 3.x (`NSISdl` incluido por defecto).

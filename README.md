@@ -6,9 +6,9 @@ Esta guía describe los pasos para instalar **Emic QDA Suite** en Windows usando
 
 # Emic QDA Installer (NSIS)
 
-<p align="center">
+<div align="center" style="background-color:#125d98; border-radius: 16px; padding: 24px 0; margin-bottom: 16px;">
   <img src="https://emic-consultora.com.ar/_assets/media/019ca9bc8f05f14410054b389468cb46.png" alt="Emic QDA logo" width="550"/>
-</p>
+</div>
 
 <!--
 Note: The <p align="center">...</p> HTML with <img> works in GitHub README files.
