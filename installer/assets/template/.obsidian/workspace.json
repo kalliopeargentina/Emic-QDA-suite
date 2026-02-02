@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Referencia/EMIC QDA - Introducción.md",
+                "file": "Referencia/EMIC.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EMIC QDA - Introducción"
+              "title": "EMIC"
             }
           }
         ]
@@ -249,7 +249,7 @@
   },
   "active": "0db5d0af345f1eac",
   "lastOpenFiles": [
-    "Referencia/EMIC QDA - Introducción.md",
+    "Referencia/EMIC.md",
     "Referencia",
     "LEAME.md",
     "Notas de Campo/2026-02-02_00_45.md",

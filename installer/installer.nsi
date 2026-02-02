@@ -129,9 +129,9 @@ Function DirLeave
   WriteRegStr HKCU "Software\Emic-QDA" "InstallPath" "$INSTDIR"
 FunctionEnd
 
-; Si el usuario dejó marcado "Abrir el nuevo repositorio", abrir Obsidian con el vault vía PowerShell
+; Si el usuario dejó marcado "Abrir el nuevo repositorio", abrir Obsidian vía PowerShell
 Function RunOpenVault
-  Exec 'powershell.exe -NoProfile -Command $\"& \$\"$$env:LOCALAPPDATA\Obsidian\Obsidian.exe\$\" \$\"$VaultPath\$\"$\"'
+  Exec 'powershell.exe -NoProfile -Command $\"Start-Process \$\"obsidian:$\"$\"'
 FunctionEnd
 
 Function .onInit
@@ -162,10 +162,13 @@ Function .onInit
   IntOp $3 $1 - 550
   IntOp $3 $3 / 2
   System::Call "user32::SetWindowPos(i $HWNDPARENT, i 0, i $2, i $3, i 700, i 550, i 0x40)"
-  ; Detectar si Obsidian está instalado (%LOCALAPPDATA%\Obsidian\Obsidian.exe)
+  ; Detectar si Obsidian está instalado (%LOCALAPPDATA%\Obsidian\Obsidian.exe); si no, comprobar HKCU:\Software\Classes\obsidian
   StrCpy $ObsidianInstalled "0"
   IfFileExists "$LOCALAPPDATA\Obsidian\Obsidian.exe" 0 +2
     StrCpy $ObsidianInstalled "1"
+  StrCmp $ObsidianInstalled "0" 0 obsidian_detect_done
+  Call CheckObsidianByRegistry
+  obsidian_detect_done:
   ; Detectar si FFmpeg está instalado: ejecutar ffmpeg y ffprobe sin ventana vía wscript + .ps1
   StrCpy $FFmpegInstalled "0"
   Call CreateRunVbs
@@ -235,6 +238,24 @@ Function ReadExitCode
   FileClose $R1
   read_exit_done:
   Pop $R1
+FunctionEnd
+
+; Si el chequeo por archivo falló: detecta Obsidian por registro (HKCU:\Software\Classes\obsidian); si existe la clave, pone $ObsidianInstalled "1"
+Function CheckObsidianByRegistry
+  Push $R0
+  Push $R8
+  StrCpy $R8 "$TEMP\EmicQDA-obsidian-check.ps1"
+  FileOpen $R0 $R8 w
+  FileWrite $R0 "if (Get-Item $\"HKCU:\Software\Classes\obsidian$\" -ErrorAction SilentlyContinue) { $\"1$\" | Out-File -FilePath $$env:TEMP\EmicQDA-obsidian-out.txt -Encoding ascii }$\r$\n"
+  FileClose $R0
+  ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $R0
+  Delete $R8
+  IfFileExists "$TEMP\EmicQDA-obsidian-out.txt" 0 obsidian_reg_done
+  StrCpy $ObsidianInstalled "1"
+  Delete "$TEMP\EmicQDA-obsidian-out.txt"
+  obsidian_reg_done:
+  Pop $R8
+  Pop $R0
 FunctionEnd
 
 ; Detecta Zotero por registro (App Paths) sin ventana; si hay ruta en HKLM o HKCU, pone $ZoteroInstalled "1"

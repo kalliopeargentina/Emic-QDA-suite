@@ -7,5 +7,6 @@
   "useAI": true,
   "showChangelogOnUpdate": true,
   "enableCaching": false,
-  "lastSeenVersion": "3.3.0"
+  "lastSeenVersion": "3.3.0",
+  "openaiSecretName": "openai"
 }
