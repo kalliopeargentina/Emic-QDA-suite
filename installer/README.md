@@ -1,8 +1,5 @@
 # Emic QDA Installer (NSIS)
-
-<div align="center" style="background-color:#125d98; border-radius: 14px; padding: 18px 0; margin-bottom: 16px;">
-  <img src="https://emic-consultora.com.ar/_assets/media/019ca9bc8f05f14410054b389468cb46.png" alt="Emic QDA logo" width="500"/>
-</div>
+  <img src="installer\img\logo-emic.png" alt="Emic QDA logo" width="550"/>
 
 
 ## Requisitos
