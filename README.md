@@ -123,11 +123,3 @@ Hacé clic en **“Siguiente”**.
 
 ---
 
-## Resumen rápido
-
-1. Descargar `Emic-QDA-Installer-....exe`.
-2. Ejecutarlo y, si aparece, aceptar SmartScreen y UAC.
-3. Siguiente → elegir componentes → elegir carpeta → poner nombre del vault → Siguiente.
-4. Esperar a que termine y, si querés, abrir el repositorio en Obsidian al finalizar.
-
-Para **crear o compilar** el instalador (desarrolladores), consultá el archivo `installer/README.md` del repositorio.
