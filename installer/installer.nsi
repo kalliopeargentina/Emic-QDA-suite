@@ -164,10 +164,14 @@ Function .onInit
   IntOp $3 $1 - 550
   IntOp $3 $3 / 2
   System::Call "user32::SetWindowPos(i $HWNDPARENT, i 0, i $2, i $3, i 700, i 550, i 0x40)"
-  ; Detectar si Obsidian está instalado (%LOCALAPPDATA%\Obsidian\Obsidian.exe)
+  ; Detectar si Obsidian está instalado: primero ruta por defecto; si no, registro (App Paths o protocolo obsidian:) verificando que el exe exista
   StrCpy $ObsidianInstalled "0"
-  IfFileExists "$LOCALAPPDATA\Obsidian\Obsidian.exe" 0 +2
+  IfFileExists "$LOCALAPPDATA\Obsidian\Obsidian.exe" 0 obsidian_try_reg
     StrCpy $ObsidianInstalled "1"
+  Goto obsidian_done
+  obsidian_try_reg:
+  Call CheckObsidianByRegistry
+  obsidian_done:
   ; Detectar si Zotero está instalado (registro App Paths, sin ventana)
   StrCpy $ZoteroInstalled "0"
   Call CheckZoteroByRegistry
@@ -218,6 +222,44 @@ Function ReadExitCode
   Pop $R3
   Pop $R2
   Exch $R1
+FunctionEnd
+
+; Fallback Obsidian: lee ruta del registro (App Paths o protocolo obsidian:) y solo pone $ObsidianInstalled "1" si el exe existe (evitar registros huérfanos)
+Function CheckObsidianByRegistry
+  Push $R0
+  Push $R1
+  Push $R2
+  ; App Paths HKLM
+  ReadRegStr $R0 HKLM "Software\Microsoft\Windows\CurrentVersion\App Paths\Obsidian.exe" ""
+  StrCmp $R0 "" 0 obsidian_verify_path
+  ; App Paths HKCU
+  ReadRegStr $R0 HKCU "Software\Microsoft\Windows\CurrentVersion\App Paths\Obsidian.exe" ""
+  StrCmp $R0 "" 0 obsidian_verify_path
+  ; Protocolo obsidian: shell\open\command (valor tipo "C:\path\Obsidian.exe" "%1")
+  ReadRegStr $R0 HKCU "Software\Classes\obsidian\shell\open\command" ""
+  StrCmp $R0 "" obsidian_reg_done
+  ; Extraer ruta entre comillas: primer " en 0, path hasta el siguiente "
+  StrCpy $R1 $R0 1 0
+  StrCmp $R1 "$\"" 0 obsidian_reg_done
+  StrCpy $R1 1
+  obsidian_parse_loop:
+  StrCpy $R2 $R0 1 $R1
+  StrCmp $R2 "" obsidian_reg_done
+  StrCmp $R2 "$\"" 0 obsidian_parse_next
+  IntOp $R2 $R1 - 1
+  IntCmp $R2 0 obsidian_reg_done obsidian_reg_done
+  StrCpy $R0 $R0 $R2 1
+  Goto obsidian_verify_path
+  obsidian_parse_next:
+  IntOp $R1 $R1 + 1
+  Goto obsidian_parse_loop
+  obsidian_verify_path:
+  IfFileExists "$R0" 0 obsidian_reg_done
+  StrCpy $ObsidianInstalled "1"
+  obsidian_reg_done:
+  Pop $R2
+  Pop $R1
+  Pop $R0
 FunctionEnd
 
 ; Detecta Zotero por registro (App Paths) sin ventana; si hay ruta en HKLM o HKCU, pone $ZoteroInstalled "1"
