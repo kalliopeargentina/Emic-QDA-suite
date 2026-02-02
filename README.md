@@ -4,6 +4,11 @@ Esta guía describe los pasos para instalar **Emic QDA Suite** en Windows usando
 
 ---
 
+# Emic QDA Installer (NSIS)
+![https://emic-consultora.com.ar/assets/media/019ca9bc8f05f14410054b389468cb46.png|700x700](https://emic-consultora.com.ar/_assets/media/019ca9bc8f05f14410054b389468cb46.png)
+
+
+
 ## Requisitos del sistema
 
 - **Sistema operativo:** Windows 10 o Windows 11 (64 bits).
