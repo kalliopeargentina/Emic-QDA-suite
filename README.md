@@ -5,7 +5,17 @@ Esta guía describe los pasos para instalar **Emic QDA Suite** en Windows usando
 ---
 
 # Emic QDA Installer (NSIS)
-![https://emic-consultora.com.ar/assets/media/019ca9bc8f05f14410054b389468cb46.png|700x700](https://emic-consultora.com.ar/_assets/media/019ca9bc8f05f14410054b389468cb46.png)
+
+<p align="center">
+  <img src="https://emic-consultora.com.ar/_assets/media/019ca9bc8f05f14410054b389468cb46.png" alt="Emic QDA logo" width="550"/>
+</p>
+
+<!--
+Note: The <p align="center">...</p> HTML with <img> works in GitHub README files.
+If you only want a centered image, this is a common cross-platform way to do it.
+Markdown's native image syntax (![alt](url)) does not support centering or resizing directly.
+-->
+
 
 
 
