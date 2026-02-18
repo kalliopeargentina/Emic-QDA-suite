@@ -24,5 +24,6 @@
   "file-explorer-note-count",
   "file-diff",
   "docx-exporter",
-  "obsidian-import-json"
+  "obsidian-import-json",
+  "extended-markdown-syntax"
 ]
