@@ -683,7 +683,7 @@
     {
       "id": "kh8atjq93w",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\.venv\\Scripts\\ontology-explorer.exe\" --input-dir \"{{event_folder_path:absolute}}\" --config-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\\Config\" --domain \"venture-capital\" --provider \"openai\" --model \"gpt-5.2\" --api-key \"{{_OpenAIKey}}\" --output-format \"ontologia\" --ontology-format \"vault\"  --workers 4 --output-name  \"Ontology\" --cache-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\\.cache\" --output-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\ontology-explorer.exe\" --input-dir \"{{event_folder_path:absolute}}\" --config-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\\Config\" --domain \"venture-capital\" --provider \"openai\" --model \"gpt-5.2\" --api-key \"{{_OpenAIKey}}\" --output-format \"ontologia\" --ontology-format \"vault\"  --workers 4 --output-name  \"Ontology\" --cache-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\\.cache\" --output-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\""
       },
       "shells": {},
       "alias": "Ontology Analisys",

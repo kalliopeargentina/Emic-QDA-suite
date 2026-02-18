@@ -7,6 +7,15 @@
   "useAI": true,
   "showChangelogOnUpdate": true,
   "enableCaching": false,
-  "lastSeenVersion": "3.3.0",
-  "openaiSecretName": "openai"
+  "lastSeenVersion": "3.6.0",
+  "openaiSecretName": "openai",
+  "basesPropNames": {
+    "start": "start",
+    "end": "end",
+    "group": "group",
+    "color": "color",
+    "type": "type",
+    "content": "content",
+    "description": "description"
+  }
 }
