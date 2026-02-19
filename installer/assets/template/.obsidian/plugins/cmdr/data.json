@@ -62,12 +62,6 @@
       "mode": "any"
     },
     {
-      "id": "obsidian-zotero-desktop-connector:zdc-import-notes",
-      "icon": "lucide-book-up",
-      "name": "Zotero Integration: Import notes",
-      "mode": "any"
-    },
-    {
       "id": "obsidian-zotero-desktop-connector:zdc-Cite",
       "icon": "lucide-book-plus",
       "name": "Zotero Integration: Cite",
@@ -89,6 +83,12 @@
       "id": "obsidian-zotero-desktop-connector:zdc-exp-Codification Import",
       "icon": "lucide-book-up-2",
       "name": "Zotero Integration: Codification Import",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-zotero-desktop-connector:zdc-exp-Research Notes",
+      "icon": "lucide-book-up",
+      "name": "Zotero Integration: Research Notes",
       "mode": "any"
     }
   ],

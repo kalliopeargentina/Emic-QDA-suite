@@ -1,0 +1,122 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [],
+    "recentlyUsedIconsSize": 5,
+    "rules": [
+      {
+        "rule": "Data",
+        "icon": "LiFileText",
+        "for": "everything",
+        "order": 0
+      },
+      {
+        "rule": "Entidades",
+        "icon": "LiPersonStanding",
+        "for": "everything",
+        "order": 1
+      },
+      {
+        "rule": "Codes",
+        "icon": "LiTags",
+        "for": "everything",
+        "order": 2
+      },
+      {
+        "rule": "Memos",
+        "icon": "LiNotebookText",
+        "for": "everything",
+        "order": 3
+      },
+      {
+        "rule": "Bibliografía",
+        "icon": "SiZotero",
+        "for": "everything",
+        "order": 4
+      },
+      {
+        "rule": "Medios",
+        "icon": "LiFileVideo",
+        "for": "everything",
+        "order": 5
+      },
+      {
+        "rule": "Bases",
+        "icon": "LiDatabase",
+        "for": "everything",
+        "order": 6
+      },
+      {
+        "rule": "Attachments",
+        "icon": "LiPaperclip",
+        "for": "everything",
+        "order": 7
+      },
+      {
+        "rule": "Analysis",
+        "icon": "LiChartPie",
+        "for": "everything",
+        "order": 8
+      },
+      {
+        "rule": "Notas de Campo",
+        "icon": "LiLandPlot",
+        "for": "everything",
+        "order": 9
+      },
+      {
+        "rule": "Clippings",
+        "icon": "LiScissors",
+        "for": "everything",
+        "order": 10
+      },
+      {
+        "rule": "Excalidraw",
+        "icon": "SiExcalidraw",
+        "for": "everything",
+        "order": 11
+      },
+      {
+        "rule": "Extractions",
+        "icon": "LiTextSelect",
+        "for": "everything",
+        "order": 12
+      },
+      {
+        "rule": "Utils",
+        "icon": "LiToolCase",
+        "for": "everything",
+        "order": 13
+      },
+      {
+        "rule": "Referencia",
+        "icon": "LiBookMarked",
+        "for": "everything",
+        "order": 14
+      }
+    ],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  }
+}

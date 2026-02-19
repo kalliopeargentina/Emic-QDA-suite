@@ -1,8 +1,6 @@
 [
   "obsidian-another-quick-switcher",
   "quadro",
-  "supercharged-links-obsidian",
-  "obsidian-style-settings",
   "multi-properties",
   "maps",
   "copilot",
@@ -25,5 +23,7 @@
   "file-diff",
   "docx-exporter",
   "obsidian-import-json",
-  "extended-markdown-syntax"
+  "extended-markdown-syntax",
+  "obsidian-icon-folder",
+  "obsidian-excalidraw-plugin"
 ]

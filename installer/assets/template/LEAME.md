@@ -5,16 +5,13 @@ date created: sábado, enero 31º 2026, 4:06:15 pm
 date modified: lunes, febrero 2º 2026, 12:57:34 am
 ---
 
-Claro, aquí tienes la traducción completa de la nota al español:
+# Bóveda de Plantilla
 
-# Quadro: Bóveda de Plantilla
-
-Por favor, visita la [documentación de Quadro](https://github.com/chrisgrieser/obsidian-quadro) para obtener información detallada sobre cómo usar *Quadro*.
 
 Para obtener ayuda sobre Obsidian en general, consulta la [Documentación de Obsidian](https://help.obsidian.md/Home).
 
 > [!summary] Contenido
-> - [[#quadro-bóveda-de-plantilla|Quadro: Bóveda de Plantilla]]
+> - [[#quadro-bóveda-de-plantilla|Bóveda de Plantilla]]
 > - [[#instalando-esta-bóveda|Instalando esta bóveda]]
 > - [[#configuración-de-plugins-preconfigurados|Configuración de Plugins Preconfigurados]]
 >   - [[#plugins-del-núcleo-de-obsidian|Plugins del Núcleo de Obsidian]]

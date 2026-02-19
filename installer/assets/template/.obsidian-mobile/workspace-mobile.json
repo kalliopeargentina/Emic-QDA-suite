@@ -1,0 +1,247 @@
+{
+  "main": {
+    "id": "676549e57b9e9904",
+    "type": "split",
+    "children": [
+      {
+        "id": "96bd2bd89701ce6c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "82e65d70d13bae58",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nueva pestaña"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b179d05fb25fde12",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "71999e722845a96c",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Explorador de archivos"
+        }
+      },
+      {
+        "id": "9a0a0427534867a8",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "b00edb002ecfe00c",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "ed6f860306b4a15d",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "All properties"
+        }
+      },
+      {
+        "id": "1526f923acf9d68f",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "a727ba19f8a785d8",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "f0c21680dd585af8",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Enlaces entrantes"
+        }
+      },
+      {
+        "id": "29f5e4353fcb1474",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "1418e58ab4b76b7b",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      },
+      {
+        "id": "be18b94e18fac80a",
+        "type": "leaf",
+        "state": {
+          "type": "footnotes",
+          "state": {},
+          "icon": "lucide-file-signature",
+          "title": "Footnotes"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-map-view:Open map view": false,
+      "audio-recorder:Iniciar/Detener la grabación": false,
+      "switcher:Abrir selector rápido": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "canvas:Crear nuevo lienzo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "templates:Insertar plantilla": true,
+      "bases:Crear nueva base": false,
+      "templater-obsidian:Templater": true,
+      "copilot:Open Copilot Chat": false,
+      "quadro:Quadro: Assign code to paragraph": true,
+      "quadro:Quadro: Rename code": true,
+      "quadro:Quadro: Remove code from paragraph": true,
+      "quadro:Quadro: Delete Code File and all references to it": true,
+      "quadro:Quadro: Merge another Code File into current Code File": true,
+      "quadro:Quadro: Split selected references into another Code File": true,
+      "quadro:Quadro: Bulk create new Code Files": true,
+      "quadro:Quadro: Show code overview": true,
+      "quadro:Quadro: Extract from paragraph": true,
+      "quadro:Quadro: Add paragraph as source to existing Extraction File": true,
+      "quadro:Quadro: Merge another Extraction File into current Extraction File": true,
+      "quadro:Quadro: Create new Extraction Type": true,
+      "quadro:Quadro: Export all extractions as .csv": true,
+      "quadro:Quadro: Show extraction type overview": true,
+      "quadro:Quadro: Open random unread Data File": true,
+      "quadro:Quadro: Show data analysis progress file": true,
+      "quadro:Quadro: Mark current Data File as read": true,
+      "graph:Abrir vista gráfica": false,
+      "docx-exporter:Exportar nota actual a DOCX": false,
+      "workspaces:Gestionar disposiciones de espacio de trabajo": false
+    }
+  },
+  "active": "82e65d70d13bae58",
+  "lastOpenFiles": [
+    "Bibliografía/MCD/Bakker-2024-Ontology Learning from Text - an Analysis on LLM Performance-CONFERENCEPAPER-annotations.md",
+    "Bibliografía/MCD/Bakker-2025-Ontology Learning with LLMs - A Benchmark Study on Axiom Identification-PREPRINT.md",
+    "Sin título.md",
+    "Notas de Campo/2026-02-19.md",
+    "Utils/Templater/Documento.md",
+    "Excalidraw/Drawing 2026-02-19 08.54.35.excalidraw.md",
+    "Excalidraw/Drawing 2026-02-19 08.54.22.excalidraw.md",
+    "Excalidraw/Drawing 2026-02-19 01.30.11.excalidraw.md",
+    "Excalidraw/Drawing 2026-02-19 01.30.11.excalidraw.light.svg",
+    "Excalidraw/Drawing 2026-02-19 01.30.11.excalidraw.dark.svg",
+    "Excalidraw",
+    "2022-04-27 Marcio Algranti.docx",
+    "Data/Entrevistas/NDAngels/2022-04-27 Marcio Algranti.md",
+    "Data/Entrevistas/NDAngels/2022-05-17 Pedro Cavanna.docx",
+    "Data/Entrevistas/NDAngels/2022-05-17 Pedro Cavanna.md",
+    "Data/Documentos/Circular/2020-09-08 charla ideación de evento agtech.md",
+    "Data/Documentos/Vinculación Científica/2023-08-23 Susana Levy - UNSAM.md",
+    "Sin título.docx",
+    "Sin título.canvas",
+    "Data/Documentos/NDAngels/2020-04-13 Primera Reunión Virtual NDAngels.md",
+    "Bases/Datos sin Procesar.base",
+    "Sin título.base",
+    "Data/Documentos/NDAngels/2020-04-13 Primera Reunión Virtual NDAngels (conflict 2026-02-18-19-43-17).md",
+    "Attachments/Bibliografía/negroKnowledgeGraphsLLMs/image-42-x51-y209.png",
+    "Attachments/Bibliografía/negroKnowledgeGraphsLLMs",
+    "Data/Documentos/Jorge De María/2020-06-17 Reunión Jorge-Eduardo - Kabinnet.mp4",
+    "Memos/Proyecto/Proyecto de Tesis v1.1.md",
+    "Memos/Proyecto/Indice Comentado V2.md",
+    "Memos/Proyecto/2020-09-24 Devolución Quinta entrega Taller I DAS.md",
+    "Memos/Proyecto/2020-07-24 Devolucion segunda entrega taller.md",
+    "Memos/2020-06-16 Ontología y códigos.md",
+    "Data/Entrevistas/NDAngels/2020-07-15 Primera entrevista a Sergio Postigo.md",
+    "Data/Documentos/Vinculación Científica/2023-10-30 Segunda reunión UBA-Exactas - Juliana Gamboa.md",
+    "Data/Documentos/Vinculación Científica/2023-09-27-Exactas-Innovación-Incubación-Bloque 5 y 6.md",
+    "Data/Documentos/Vinculación Científica/2023-09-27-Exactas-Innovación-Incubación-Bloque 3.md",
+    "Data/Documentos/Vinculación Científica/2023-09-27-Exactas-Innovación-Incubación-Bloque 1 y 2.md",
+    "Data/Documentos/SF500/2024-04-04 - Sesión SFBuild Fall 2024 - Mau Messina - Fundraising.md",
+    "Data/Documentos/SF500/2024-03-26 - Sesion SFBuild Fall 2024 - Marina Slutzky - Decks.md",
+    "Data/Documentos/Jorge De María/2020-06-17 Primer cuestionario de preguntas Kabinnet.pdf",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735903.png",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735832.png",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735752.png",
+    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735684.png",
+    "Attachments/Data/Documentos/Jorge De María/2020-06-17 Eduardo Costantini’s Kabinett Launches Streaming Platform/IMG-20260124162250408.webp",
+    "copilot/copilot-custom-prompts",
+    "Attachments/Data/Documentos/NDAngels/2020-06-15 Referencia Pedro Cavanna/IMG-20260124161257227.jpeg"
+  ]
+}
