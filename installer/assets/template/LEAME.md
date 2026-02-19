@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 date created: sábado, enero 31º 2026, 4:06:15 pm
-date modified: lunes, febrero 2º 2026, 12:57:34 am
+date modified: jueves, febrero 19º 2026, 3:49:34 pm
 ---
 
 # Bóveda de Plantilla
