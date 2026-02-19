@@ -1,4 +1,7 @@
 {
   "cssTheme": "Minimal",
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "minor-adjustments"
+  ]
 }

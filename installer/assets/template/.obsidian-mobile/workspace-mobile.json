@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "96bd2bd89701ce6c",
+        "id": "1dd708d5a76fb693",
         "type": "tabs",
         "children": [
           {
-            "id": "82e65d70d13bae58",
+            "id": "0892e7b903236d94",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -167,7 +167,6 @@
       "switcher:Abrir selector rápido": false,
       "daily-notes:Abrir la nota de hoy": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "canvas:Crear nuevo lienzo": false,
       "command-palette:Abrir paleta de comandos": false,
       "templates:Insertar plantilla": true,
       "bases:Crear nueva base": false,
@@ -192,14 +191,18 @@
       "quadro:Quadro: Mark current Data File as read": true,
       "graph:Abrir vista gráfica": false,
       "docx-exporter:Exportar nota actual a DOCX": false,
-      "workspaces:Gestionar disposiciones de espacio de trabajo": false
+      "workspaces:Gestionar disposiciones de espacio de trabajo": false,
+      "open-other-app:Open other app": false
     }
   },
-  "active": "82e65d70d13bae58",
+  "active": "0892e7b903236d94",
   "lastOpenFiles": [
+    "Sin título.md",
+    "Attachments/Sin título",
+    "Attachments/Sin título/IMG-20260219171703405.jpg",
+    "Attachments/IMG-20260219165537358.jpg",
     "Bibliografía/MCD/Bakker-2024-Ontology Learning from Text - an Analysis on LLM Performance-CONFERENCEPAPER-annotations.md",
     "Bibliografía/MCD/Bakker-2025-Ontology Learning with LLMs - A Benchmark Study on Axiom Identification-PREPRINT.md",
-    "Sin título.md",
     "Notas de Campo/2026-02-19.md",
     "Utils/Templater/Documento.md",
     "Excalidraw/Drawing 2026-02-19 08.54.35.excalidraw.md",
@@ -234,14 +237,11 @@
     "Data/Documentos/Vinculación Científica/2023-09-27-Exactas-Innovación-Incubación-Bloque 3.md",
     "Data/Documentos/Vinculación Científica/2023-09-27-Exactas-Innovación-Incubación-Bloque 1 y 2.md",
     "Data/Documentos/SF500/2024-04-04 - Sesión SFBuild Fall 2024 - Mau Messina - Fundraising.md",
-    "Data/Documentos/SF500/2024-03-26 - Sesion SFBuild Fall 2024 - Marina Slutzky - Decks.md",
     "Data/Documentos/Jorge De María/2020-06-17 Primer cuestionario de preguntas Kabinnet.pdf",
     "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735903.png",
     "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735832.png",
     "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735752.png",
     "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735684.png",
-    "Attachments/Data/Documentos/Jorge De María/2020-06-17 Eduardo Costantini’s Kabinett Launches Streaming Platform/IMG-20260124162250408.webp",
-    "copilot/copilot-custom-prompts",
-    "Attachments/Data/Documentos/NDAngels/2020-06-15 Referencia Pedro Cavanna/IMG-20260124161257227.jpeg"
+    "Attachments/Data/Documentos/Jorge De María/2020-06-17 Eduardo Costantini’s Kabinett Launches Streaming Platform/IMG-20260124162250408.webp"
   ]
 }
