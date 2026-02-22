@@ -12,8 +12,8 @@ Colocar estos archivos en `installer/assets/`:
 - `Template-v0.1.0.zip`
 - `ontology_explorer-0.1.1-py3-none-any.whl`
 - `ontology_explorer-0.1.1.tar.gz`
-- `obsidian_qda_suite-0.1.0-py3-none-any.whl`
-- `obsidian_qda_suite-0.1.0.tar.gz`
+- `obsidian_qda_suite-0.1.3-py3-none-any.whl`
+- `obsidian_qda_suite-0.1.3.tar.gz`
 
 ## Compilar
 Desde `installer/`:
