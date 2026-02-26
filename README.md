@@ -1,4 +1,4 @@
-# Guía de instalación — Emic QDA Suite
+# Emic QDA Suite
 
 Esta guía describe los pasos para instalar **Emic QDA Suite** en Windows usando el instalador oficial.
 
