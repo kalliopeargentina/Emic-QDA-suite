@@ -15,8 +15,44 @@ If you only want a centered image, this is a common cross-platform way to do it.
 Markdown's native image syntax (![alt](url)) does not support centering or resizing directly.
 -->
 
+---
 
+## ¿Qué es Emic QDA Suite?
 
+**Emic QDA Suite** es un conjunto de herramientas para **análisis cualitativo de datos (QDA)** y **ciencias sociales computacionales**, pensado para que **no hace falta programar** para usarlo.
+
+Es un **suite** que instala en Windows todo lo necesario para trabajar en un solo entorno: **Obsidian** como editor y centro del flujo de trabajo, un **repositorio (vault) de plantilla** con documentación y ejemplos listos para QDA, **Python** (y paquetes propios del suite), y opcionalmente **Zotero** y **FFmpeg**. Todo queda integrado en una misma bóveda.
+
+### ¿Qué habilita?
+
+El conjunto de extensiones y herramientas incluidas permite:
+
+- **Análisis cualitativo en Markdown:** codificar datos (entrevistas, textos, artículos), definir códigos, hacer extracciones por dimensiones y consultar todo desde la misma bóveda.
+- **Análisis de coocurrencias:** ver relaciones entre códigos y entre dimensiones de extracción; explorar redes entre datos y códigos en vistas de grafo.
+- **Gestión de propiedades y dimensiones:** ver, buscar y renombrar propiedades (dimensiones de extracción) en toda la bóveda; editar propiedades en lote en varias notas.
+- **Referencias y literatura:** integrar citas, bibliografías y notas desde un gestor de referencias; mantener fichas y notas de literatura en la bóveda.
+- **Medios (audio y video):** reproducir y anotar audio y video con marcas de tiempo, transcripciones y capturas; extraer y manipular fragmentos (con apoyo de herramientas externas de medios).
+- **Visualización:** mapas interactivos (incl. geolocalización de notas), líneas de tiempo y gráficos de datos a partir del contenido de la bóveda.
+- **Uso de IA en la bóveda:** consultar el contenido del vault, generar texto/tablas/listas y resumir notas o selecciones (según configuración del usuario).
+- **Automatización:** plantillas con variables y lógica para crear notas, tablas de coocurrencias y análisis de extracciones; comandos de sistema ejecutables desde la bóveda con atajos.
+- **Importación y exportación:** traer documentos Word, JSON/CSV (p. ej. encuestas o bases) y contenido web; exportar notas a Word.
+- **Organización y mantenimiento:** copias de seguridad versionadas de los archivos, formateo y estilo de notas, comparación entre archivos y conversión/gestión de imágenes.
+
+### Herramientas desarrolladas para el suite
+
+Además, el suite incluye **herramientas propias** (paquetes Python) que amplían el análisis:
+
+- **Análisis ontológico:** creación de **redes semánticas y grafos** a partir de la estructura de códigos y categorías del proyecto.
+- **Análisis de tópicos:** extracción de tópicos sobre el contenido de la bóveda (p. ej. LDA, BERTopic y otros métodos), integrable con el flujo de trabajo desde la interfaz de notas.
+- **Análisis de sentimientos:** detección y clasificación de polaridad sentimental en textos.
+- **Análisis de emociones:** identificación de dimensiones emocionales en el material cualitativo.
+- **Análisis de contextos:** procesamiento y etiquetado de contextos discursivos o situacionales en los datos.
+
+### ¿Para quién es?
+
+Para quienes hacen **investigación cualitativa** o **ciencias sociales** y quieren una alternativa abierta, en Markdown, que permita codificar, extraer, analizar coocurrencias y acercarse a técnicas computacionales sin programar. Es un aporte de **Emic+ Consultora** ([emic-consultora.com.ar](https://emic-consultora.com.ar)).
+
+---
 
 ## Requisitos del sistema
 
