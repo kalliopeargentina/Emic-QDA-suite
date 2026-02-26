@@ -400,7 +400,7 @@
   "autocompleteAcceptKey": "Tab",
   "allowAdditionalContext": true,
   "enableWordCompletion": false,
-  "lastDismissedVersion": null,
+  "lastDismissedVersion": "3.2.3",
   "passMarkdownImages": true,
   "enableAutonomousAgent": false,
   "enableCustomPromptTemplating": true,
@@ -434,5 +434,7 @@
   "autoAcceptEdits": false,
   "chatHistorySortStrategy": "recent",
   "projectListSortStrategy": "recent",
-  "userSystemPromptsFolder": "copilot/system-prompts"
+  "userSystemPromptsFolder": "copilot/system-prompts",
+  "enableMiyo": false,
+  "selfHostSearchProvider": "firecrawl"
 }

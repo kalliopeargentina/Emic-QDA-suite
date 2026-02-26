@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "7e50e711be8f5582",
+        "id": "3b6776f8d0fb2422",
         "type": "tabs",
         "children": [
           {
-            "id": "2b1861b172df48c8",
+            "id": "8f67947476fd49ee",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Referencia/EMIC.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "EMIC"
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -33,10 +29,10 @@
       {
         "id": "a3da9c4282a468e9",
         "type": "tabs",
-        "dimension": 79.39393939393939,
+        "dimension": 74.04040404040404,
         "children": [
           {
-            "id": "614134f52a66d4e6",
+            "id": "0db5d0af345f1eac",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -54,7 +50,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "visuals",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -68,9 +64,9 @@
         ]
       },
       {
-        "id": "5f7aaaa66b21e5df",
+        "id": "37f9ec4d0d71db24",
         "type": "tabs",
-        "dimension": 20.606060606060606,
+        "dimension": 25.95959595959596,
         "children": [
           {
             "id": "d1aebe67bd8bf042",
@@ -86,18 +82,52 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 348.5
   },
   "right": {
     "id": "b7cf2ea94ac6a6e4",
     "type": "split",
     "children": [
       {
-        "id": "5459cc5d08454b62",
+        "id": "a45aee6eb3b57327",
         "type": "tabs",
         "children": [
           {
-            "id": "fda1734c12258b08",
+            "id": "f763e3de6b35f87b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "c7471ac710af28b0",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          },
+          {
+            "id": "cb1505976528cf67",
+            "type": "leaf",
+            "state": {
+              "type": "highlights-sidebar",
+              "state": {},
+              "icon": "highlighter",
+              "title": "Highlights"
+            }
+          },
+          {
+            "id": "54501435a8f85b0f",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -115,7 +145,7 @@
             }
           },
           {
-            "id": "4aed2ff7551ca33b",
+            "id": "13125b956ef8b662",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -128,7 +158,7 @@
             }
           },
           {
-            "id": "96eb4ce6a690e26a",
+            "id": "238c4d44b5292739",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -143,21 +173,7 @@
             }
           },
           {
-            "id": "07c61f9be21e4675",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "d748c681960f96c7",
+            "id": "a92a16393a4aa04a",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -170,67 +186,67 @@
               "title": "Outline"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 780.5,
-    "collapsed": true
+    "width": 417.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "cmdr:Zotero Integration: Research Notes": true,
       "switcher:Abrir selector rápido": false,
+      "emic-qda:Emic-QDA: Assign code to paragraph": false,
+      "emic-qda:Emic-QDA: Rename code": false,
+      "emic-qda:Emic-QDA: Remove code from paragraph": false,
+      "emic-qda:Emic-QDA: Delete Code File and all references to it": false,
+      "emic-qda:Emic-QDA: Merge another Code File into current Code File": false,
+      "emic-qda:Emic-QDA: Split selected references into another Code File": false,
+      "emic-qda:Emic-QDA: Bulk create new Code Files": false,
+      "emic-qda:Emic-QDA: Show code overview": false,
+      "emic-qda:Emic-QDA: Extract from paragraph": false,
+      "emic-qda:Emic-QDA: Add paragraph as source to existing Extraction File": false,
+      "emic-qda:Emic-QDA: Merge another Extraction File into current Extraction File": false,
+      "emic-qda:Emic-QDA: Create new Extraction Type": false,
+      "emic-qda:Emic-QDA: Export all extractions as .csv": false,
+      "emic-qda:Emic-QDA: Show extraction type overview": false,
+      "emic-qda:Emic-QDA: Open random unread Data File": false,
+      "emic-qda:Emic-QDA: Show data analysis progress file": true,
+      "emic-qda:Emic-QDA: Mark current Data File as read": false,
+      "cmdr:Zotero Integration: Research Notes": true,
+      "obsidian-excalidraw-plugin:Nuevo Bosquejo": true,
       "graph:Abrir vista gráfica": true,
-      "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
-      "daily-notes:Abrir la nota de hoy": false,
-      "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false,
+      "daily-notes:Abrir la nota de hoy": true,
+      "templates:Insertar plantilla": true,
       "markdown-importer:Abrir el importador de Markdown": true,
-      "audio-recorder:Iniciar/Detener la grabación": false,
+      "audio-recorder:Iniciar/Detener la grabación": true,
       "bases:Crear nueva base": true,
       "docx-exporter:Exportar nota actual a DOCX": true,
-      "quadro:Quadro: Split selected references into another Code File": true,
       "obsidian-import-json:JSON/CSV Importer": true,
       "cmdr:Zotero Integration: Bibliography Card": true,
       "cmdr:Zotero Integration: Cite": true,
       "cmdr:Zotero Integration: Bibliography_Link": true,
       "cmdr:Zotero Integration: Insert notes into current document": true,
-      "cmdr:Zotero Integration: Codification Import": true,
-      "sidebar-highlights:Open highlights": true,
       "cmdr:Shell commands: Execute: Transcribir de Youtube": true,
-      "cmdr:AI Suggest Codes": true,
       "obsidian-shellcommands:Shell commands: Custom variables": true,
       "templater-obsidian:Templater": true,
-      "media-extended:Open external media": true,
       "cmdr:Templater: Create Memo": true,
-      "copilot:Open Copilot Chat": false,
       "cmdr:Templater: Create Extractions Overview": true,
       "cmdr:Templater: Create Coocurrencias de Códigos": true,
-      "quadro:Quadro: Assign code to paragraph": true,
-      "quadro:Quadro: Rename code": true,
-      "quadro:Quadro: Remove code from paragraph": true,
-      "quadro:Quadro: Delete Code File and all references to it": true,
-      "quadro:Quadro: Merge another Code File into current Code File": true,
-      "quadro:Quadro: Bulk create new Code Files": true,
-      "quadro:Quadro: Show code overview": true,
-      "quadro:Quadro: Extract from paragraph": true,
-      "quadro:Quadro: Add paragraph as source to existing Extraction File": true,
-      "quadro:Quadro: Merge another Extraction File into current Extraction File": true,
-      "quadro:Quadro: Create new Extraction Type": true,
-      "quadro:Quadro: Export all extractions as .csv": true,
-      "quadro:Quadro: Show extraction type overview": true,
-      "quadro:Quadro: Open random unread Data File": true,
-      "quadro:Quadro: Show data analysis progress file": true,
-      "quadro:Quadro: Mark current Data File as read": true,
-      "obsidian-map-view:Open map view": false,
+      "cmdr:Zotero Integration: Codification Import": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "sidebar-highlights:Open highlights": false,
+      "cmdr:AI Suggest Codes": false,
+      "copilot:Open Copilot Chat": false,
+      "obsidian-map-view:Open map view": true,
+      "media-extended:Open external media": true,
       "workspaces:Gestionar disposiciones de espacio de trabajo": false
     }
   },
-  "active": "2b1861b172df48c8",
+  "active": "8f67947476fd49ee",
   "lastOpenFiles": [
-    "LEAME.md",
     "Referencia/EMIC.md",
+    "LEAME.md",
     "Excalidraw/Drawing 2026-02-19 13.33.28.excalidraw.md",
     "Excalidraw",
     "Notas de Campo/2026-02-05_19_07.md",

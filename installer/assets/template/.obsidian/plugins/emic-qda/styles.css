@@ -1,0 +1,100 @@
+/* NOTE
+Overwriting of (some) core styling is done on purpose. As noted in the README,
+Emic-QDA is intended to be used in specialized vaults, solely dedicated to QDA.
+
+I assume that running multiple document.querySelector on every file-open and
+adding classes to quite a few elements would have somewhat of a performance
+impact, which I wanted to avoid if Emic-QDA is to be run in dedicated vaults only
+anyway.
+*/
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* BLOCK IDS */
+
+/* Make them less visible */
+.cm-line .cm-blockid {
+	opacity: 0.3;
+}
+
+/* Hide Block Id on non-active line */
+.cm-line:not(.cm-active) .cm-blockid {
+	display: none;
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* EMBEDDED LINKS */
+
+body .markdown-embed.internal-embed.internal-embed {
+	border: none;
+	padding: 0;
+	padding-bottom: 2rem; /* i.e., spacing between embeddings */
+
+	/* show location of embedded block links */
+	&::after {
+		content: attr(alt); /* destination is saved in `alt` attribute */
+		color: var(--text-faint);
+		padding-left: 1.75rem;
+		padding-top: 4px;
+		font-size: 90%;
+	}
+
+	/* move link down to destination text */
+	.markdown-embed-link {
+		top: unset;
+		left: 0;
+	}
+
+	/* remove space wasters */
+	.markdown-embed-title {
+		display: none;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	.markdown-embed-content {
+		padding: 0; /* added by some themes */
+		.markdown-preview-view {
+			padding: 0;
+		}
+	}
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* EMIC-QDA UI ELEMENTS */
+
+.emic-qda-settings-textarea {
+	min-height: 5rem;
+	min-width: 15rem;
+}
+
+.emic-qda-settings-input {
+	min-width: 15rem;
+}
+
+.emic-qda-ribbon-button {
+	border: 1px solid var(--text-faint);
+}
+
+.emic-qda-wide-input {
+	width: 100%;
+	min-width: 20rem;
+}
+
+.emic-qda-large-textarea {
+	width: 100%;
+	min-height: 10rem;
+}
+
+.emic-qda-modal__body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.emic-qda-modal__actions {
+	display: flex;
+	gap: 0.75rem;
+	justify-content: flex-start;
+}

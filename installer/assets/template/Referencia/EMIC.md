@@ -19,7 +19,7 @@
 
 Este template para Obsidian te permite:
 
-- Realizar **análisis cualitativo de datos (QDA)** en Markdown con Quadro y las herramientas preconfiguradas en esta bóveda.
+- Realizar **análisis cualitativo de datos (QDA)** en Markdown con las herramientas preconfiguradas en esta bóveda.
 - Aproximarte a flujos de trabajo de **ciencias sociales computacionales** (codificación, extracciones, análisis de coocurrencias, visualizaciones) sin necesidad de programar.
 - Organizar datos, códigos, extracciones y análisis en una misma bóveda, con [[LEAME|documentación]] y ejemplos listos para usar.
 

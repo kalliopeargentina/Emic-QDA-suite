@@ -1,0 +1,203 @@
+{
+  "main": {
+    "id": "676549e57b9e9904",
+    "type": "split",
+    "children": [
+      {
+        "id": "1781fdb6da82c3aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d7d4d5c61d22ba8e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nueva pestaña"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5c0a211121c76439",
+    "type": "split",
+    "children": [
+      {
+        "id": "30650249ac17dfe1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9dce8cbeeeb0e830",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "c163140856174c65",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "0b1fcf84dbfe06f9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "38b33ee4ebe6431c",
+    "type": "split",
+    "children": [
+      {
+        "id": "8588466073b93678",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "db8d2e0c54506d86",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes"
+            }
+          },
+          {
+            "id": "19ba214a7a8d88b0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes"
+            }
+          },
+          {
+            "id": "cd64bf84f0a454b6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "16480a02c6090431",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "6c71e7a10358d52a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
+      "emic-qda:Emic-QDA: Assign code to paragraph": false,
+      "emic-qda:Emic-QDA: Rename code": false,
+      "emic-qda:Emic-QDA: Remove code from paragraph": false,
+      "emic-qda:Emic-QDA: Delete Code File and all references to it": false,
+      "emic-qda:Emic-QDA: Merge another Code File into current Code File": false,
+      "emic-qda:Emic-QDA: Split selected references into another Code File": false,
+      "emic-qda:Emic-QDA: Bulk create new Code Files": false,
+      "emic-qda:Emic-QDA: Show code overview": false,
+      "emic-qda:Emic-QDA: Extract from paragraph": false,
+      "emic-qda:Emic-QDA: Add paragraph as source to existing Extraction File": false,
+      "emic-qda:Emic-QDA: Merge another Extraction File into current Extraction File": false,
+      "emic-qda:Emic-QDA: Create new Extraction Type": false,
+      "emic-qda:Emic-QDA: Export all extractions as .csv": false,
+      "emic-qda:Emic-QDA: Show extraction type overview": false,
+      "emic-qda:Emic-QDA: Open random unread Data File": false,
+      "emic-qda:Emic-QDA: Show data analysis progress file": false,
+      "emic-qda:Emic-QDA: Mark current Data File as read": false,
+      "docx-exporter:Exportar nota actual a DOCX": true,
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": true,
+      "daily-notes:Abrir la nota de hoy": true,
+      "command-palette:Abrir paleta de comandos": false,
+      "audio-recorder:Iniciar/Detener la grabación": true,
+      "bases:Crear nueva base": true,
+      "obsidian-map-view:Open map view": true,
+      "templater-obsidian:Templater": true,
+      "copilot:Open Copilot Chat": false,
+      "workspaces:Gestionar disposiciones de espacio de trabajo": false
+    }
+  },
+  "active": "d7d4d5c61d22ba8e",
+  "lastOpenFiles": []
+}

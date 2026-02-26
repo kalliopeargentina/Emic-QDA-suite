@@ -13,10 +13,14 @@
                 "id": "21e0ca7b2b7ab506",
                 "type": "leaf",
                 "state": {
-                  "type": "empty",
-                  "state": {},
+                  "type": "markdown",
+                  "state": {
+                    "file": "Referencia/EMIC.md",
+                    "mode": "source",
+                    "source": false
+                  },
                   "icon": "lucide-file",
-                  "title": "Nueva pestaña"
+                  "title": "EMIC"
                 }
               }
             ]
@@ -197,14 +201,29 @@
       },
       "left-ribbon": {
         "hiddenItems": {
+          "switcher:Abrir selector rápido": false,
+          "emic-qda:Emic-QDA: Assign code to paragraph": false,
+          "emic-qda:Emic-QDA: Rename code": false,
+          "emic-qda:Emic-QDA: Remove code from paragraph": false,
+          "emic-qda:Emic-QDA: Delete Code File and all references to it": false,
+          "emic-qda:Emic-QDA: Merge another Code File into current Code File": false,
+          "emic-qda:Emic-QDA: Split selected references into another Code File": false,
+          "emic-qda:Emic-QDA: Bulk create new Code Files": false,
+          "emic-qda:Emic-QDA: Show code overview": false,
+          "emic-qda:Emic-QDA: Extract from paragraph": false,
+          "emic-qda:Emic-QDA: Add paragraph as source to existing Extraction File": false,
+          "emic-qda:Emic-QDA: Merge another Extraction File into current Extraction File": false,
+          "emic-qda:Emic-QDA: Create new Extraction Type": false,
+          "emic-qda:Emic-QDA: Export all extractions as .csv": false,
+          "emic-qda:Emic-QDA: Show extraction type overview": false,
+          "emic-qda:Emic-QDA: Open random unread Data File": false,
+          "emic-qda:Emic-QDA: Show data analysis progress file": true,
+          "emic-qda:Emic-QDA: Mark current Data File as read": false,
           "cmdr:Zotero Integration: Research Notes": true,
           "obsidian-excalidraw-plugin:Nuevo Bosquejo": true,
-          "switcher:Abrir selector rápido": false,
           "graph:Abrir vista gráfica": true,
-          "canvas:Crear nuevo lienzo": true,
           "daily-notes:Abrir la nota de hoy": true,
           "templates:Insertar plantilla": true,
-          "command-palette:Abrir paleta de comandos": false,
           "markdown-importer:Abrir el importador de Markdown": true,
           "audio-recorder:Iniciar/Detener la grabación": true,
           "bases:Crear nueva base": true,
@@ -220,24 +239,8 @@
           "cmdr:Templater: Create Memo": true,
           "cmdr:Templater: Create Extractions Overview": true,
           "cmdr:Templater: Create Coocurrencias de Códigos": true,
-          "quadro:Quadro: Assign code to paragraph": false,
-          "quadro:Quadro: Rename code": false,
-          "quadro:Quadro: Remove code from paragraph": false,
-          "quadro:Quadro: Delete Code File and all references to it": false,
-          "quadro:Quadro: Merge another Code File into current Code File": false,
-          "quadro:Quadro: Bulk create new Code Files": false,
-          "quadro:Quadro: Split selected references into another Code File": false,
-          "quadro:Quadro: Show code overview": false,
-          "quadro:Quadro: Extract from paragraph": false,
-          "quadro:Quadro: Add paragraph as source to existing Extraction File": false,
-          "quadro:Quadro: Merge another Extraction File into current Extraction File": false,
-          "quadro:Quadro: Create new Extraction Type": false,
-          "quadro:Quadro: Export all extractions as .csv": false,
-          "quadro:Quadro: Show extraction type overview": false,
-          "quadro:Quadro: Open random unread Data File": true,
-          "quadro:Quadro: Show data analysis progress file": true,
-          "quadro:Quadro: Mark current Data File as read": false,
           "cmdr:Zotero Integration: Codification Import": false,
+          "command-palette:Abrir paleta de comandos": false,
           "sidebar-highlights:Open highlights": false,
           "cmdr:AI Suggest Codes": false,
           "copilot:Open Copilot Chat": false,
@@ -247,7 +250,7 @@
         }
       },
       "active": "0db5d0af345f1eac",
-      "mtime": "2026-02-19T13:31:25-03:00"
+      "mtime": "2026-02-26T19:27:05-03:00"
     },
     "Notas de Campo": {
       "main": {
@@ -255,11 +258,11 @@
         "type": "split",
         "children": [
           {
-            "id": "dfc55862cf67436a",
+            "id": "7e50e711be8f5582",
             "type": "tabs",
             "children": [
               {
-                "id": "4c3b1d2dcd741c81",
+                "id": "2b1861b172df48c8",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -430,10 +433,26 @@
       },
       "left-ribbon": {
         "hiddenItems": {
+          "emic-qda:Emic-QDA: Assign code to paragraph": true,
+          "emic-qda:Emic-QDA: Rename code": true,
+          "emic-qda:Emic-QDA: Remove code from paragraph": true,
+          "emic-qda:Emic-QDA: Delete Code File and all references to it": true,
+          "emic-qda:Emic-QDA: Merge another Code File into current Code File": true,
+          "emic-qda:Emic-QDA: Split selected references into another Code File": true,
+          "emic-qda:Emic-QDA: Bulk create new Code Files": true,
+          "emic-qda:Emic-QDA: Show code overview": true,
+          "emic-qda:Emic-QDA: Extract from paragraph": true,
+          "emic-qda:Emic-QDA: Add paragraph as source to existing Extraction File": true,
+          "emic-qda:Emic-QDA: Merge another Extraction File into current Extraction File": true,
+          "emic-qda:Emic-QDA: Create new Extraction Type": true,
+          "emic-qda:Emic-QDA: Export all extractions as .csv": true,
+          "emic-qda:Emic-QDA: Show extraction type overview": true,
+          "emic-qda:Emic-QDA: Open random unread Data File": true,
+          "emic-qda:Emic-QDA: Show data analysis progress file": true,
+          "emic-qda:Emic-QDA: Mark current Data File as read": true,
           "cmdr:Zotero Integration: Research Notes": true,
           "switcher:Abrir selector rápido": false,
           "graph:Abrir vista gráfica": true,
-          "canvas:Crear nuevo lienzo": false,
           "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
           "daily-notes:Abrir la nota de hoy": false,
           "templates:Insertar plantilla": false,
@@ -442,7 +461,6 @@
           "audio-recorder:Iniciar/Detener la grabación": false,
           "bases:Crear nueva base": true,
           "docx-exporter:Exportar nota actual a DOCX": true,
-          "quadro:Quadro: Split selected references into another Code File": true,
           "obsidian-import-json:JSON/CSV Importer": true,
           "cmdr:Zotero Integration: Bibliography Card": true,
           "cmdr:Zotero Integration: Cite": true,
@@ -459,28 +477,12 @@
           "copilot:Open Copilot Chat": false,
           "cmdr:Templater: Create Extractions Overview": true,
           "cmdr:Templater: Create Coocurrencias de Códigos": true,
-          "quadro:Quadro: Assign code to paragraph": true,
-          "quadro:Quadro: Rename code": true,
-          "quadro:Quadro: Remove code from paragraph": true,
-          "quadro:Quadro: Delete Code File and all references to it": true,
-          "quadro:Quadro: Merge another Code File into current Code File": true,
-          "quadro:Quadro: Bulk create new Code Files": true,
-          "quadro:Quadro: Show code overview": true,
-          "quadro:Quadro: Extract from paragraph": true,
-          "quadro:Quadro: Add paragraph as source to existing Extraction File": true,
-          "quadro:Quadro: Merge another Extraction File into current Extraction File": true,
-          "quadro:Quadro: Create new Extraction Type": true,
-          "quadro:Quadro: Export all extractions as .csv": true,
-          "quadro:Quadro: Show extraction type overview": true,
-          "quadro:Quadro: Open random unread Data File": true,
-          "quadro:Quadro: Show data analysis progress file": true,
-          "quadro:Quadro: Mark current Data File as read": true,
           "obsidian-map-view:Open map view": false,
           "workspaces:Gestionar disposiciones de espacio de trabajo": false
         }
       },
-      "active": "4c3b1d2dcd741c81",
-      "mtime": "2026-02-19T13:31:37-03:00"
+      "active": "2b1861b172df48c8",
+      "mtime": "2026-02-26T19:18:33-03:00"
     },
     "Análisis de Datos": {
       "main": {
@@ -609,10 +611,26 @@
       },
       "left-ribbon": {
         "hiddenItems": {
+          "emic-qda:Emic-QDA: Assign code to paragraph": true,
+          "emic-qda:Emic-QDA: Rename code": true,
+          "emic-qda:Emic-QDA: Remove code from paragraph": true,
+          "emic-qda:Emic-QDA: Delete Code File and all references to it": true,
+          "emic-qda:Emic-QDA: Merge another Code File into current Code File": true,
+          "emic-qda:Emic-QDA: Split selected references into another Code File": true,
+          "emic-qda:Emic-QDA: Bulk create new Code Files": true,
+          "emic-qda:Emic-QDA: Show code overview": true,
+          "emic-qda:Emic-QDA: Extract from paragraph": true,
+          "emic-qda:Emic-QDA: Add paragraph as source to existing Extraction File": true,
+          "emic-qda:Emic-QDA: Merge another Extraction File into current Extraction File": true,
+          "emic-qda:Emic-QDA: Create new Extraction Type": true,
+          "emic-qda:Emic-QDA: Export all extractions as .csv": true,
+          "emic-qda:Emic-QDA: Show extraction type overview": true,
+          "emic-qda:Emic-QDA: Open random unread Data File": true,
+          "emic-qda:Emic-QDA: Show data analysis progress file": true,
+          "emic-qda:Emic-QDA: Mark current Data File as read": true,
           "switcher:Abrir selector rápido": false,
           "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
           "graph:Abrir vista gráfica": false,
-          "canvas:Crear nuevo lienzo": false,
           "daily-notes:Abrir la nota de hoy": true,
           "templates:Insertar plantilla": false,
           "command-palette:Abrir paleta de comandos": false,
@@ -620,27 +638,10 @@
           "audio-recorder:Iniciar/Detener la grabación": true,
           "bases:Crear nueva base": false,
           "docx-exporter:Exportar nota actual a DOCX": false,
-          "quadro:Quadro: Split selected references into another Code File": true,
           "obsidian-import-json:JSON/CSV Importer": false,
           "sidebar-highlights:Open highlights": false,
           "templater-obsidian:Templater": true,
           "media-extended:Open external media": true,
-          "quadro:Quadro: Assign code to paragraph": true,
-          "quadro:Quadro: Rename code": true,
-          "quadro:Quadro: Remove code from paragraph": true,
-          "quadro:Quadro: Delete Code File and all references to it": true,
-          "quadro:Quadro: Merge another Code File into current Code File": true,
-          "quadro:Quadro: Bulk create new Code Files": true,
-          "quadro:Quadro: Show code overview": true,
-          "quadro:Quadro: Extract from paragraph": true,
-          "quadro:Quadro: Add paragraph as source to existing Extraction File": true,
-          "quadro:Quadro: Merge another Extraction File into current Extraction File": true,
-          "quadro:Quadro: Create new Extraction Type": true,
-          "quadro:Quadro: Export all extractions as .csv": true,
-          "quadro:Quadro: Show extraction type overview": true,
-          "quadro:Quadro: Open random unread Data File": true,
-          "quadro:Quadro: Show data analysis progress file": true,
-          "quadro:Quadro: Mark current Data File as read": true,
           "obsidian-map-view:Open map view": true,
           "obsidian-shellcommands:Shell commands: Custom variables": true,
           "copilot:Open Copilot Chat": false,
@@ -659,8 +660,8 @@
         }
       },
       "active": "b15b18b8cb141ca9",
-      "mtime": "2026-02-19T13:31:09-03:00"
+      "mtime": "2026-02-26T19:19:44-03:00"
     }
   },
-  "active": "Notas de Campo"
+  "active": "QDA"
 }
