@@ -42,7 +42,7 @@ El conjunto de extensiones y herramientas incluidas permite:
 
 Además, el suite incluye **herramientas propias** (paquetes Python) que amplían el análisis:
 
-- **Análisis ontológico:** creación de **redes semánticas y grafos** a partir de la estructura de códigos y categorías del proyecto.
+- **Análisis ontológico:** creación de **redes semánticas y grafos** a partir de los documentos y los datos de la bóveda.
 - **Análisis de tópicos:** extracción de tópicos sobre el contenido de la bóveda (p. ej. LDA, BERTopic y otros métodos), integrable con el flujo de trabajo desde la interfaz de notas.
 - **Análisis de sentimientos:** detección y clasificación de polaridad sentimental en textos.
 - **Análisis de emociones:** identificación de dimensiones emocionales en el material cualitativo.
