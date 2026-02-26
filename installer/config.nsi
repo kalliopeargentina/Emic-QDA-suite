@@ -10,7 +10,7 @@
 ; Nombre del instalador: fijo "Zotero_setup.exe" en installer.nsi (no depende de la versión devuelta por el servidor)
 
 ; Versión del suite (ej. 1.0.0) y build (ej. fecha-hora). El .exe se nombra Emic-QDA-Installer-<VERSION>-<BUILD>.exe
-!define VERSION "0.5.2"
+!define VERSION "0.5.3"
 !define BUILD "2026-02-02"
 
 !define PY_LAUNCHER "py"
