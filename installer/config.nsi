@@ -11,7 +11,7 @@
 
 ; Versión del suite (ej. 1.0.0) y build (ej. fecha-hora). El .exe se nombra Emic-QDA-Installer-<VERSION>-<BUILD>.exe
 !define VERSION "0.5.3"
-!define BUILD "2026-02-02"
+!define BUILD "2026-02-26"
 
 !define PY_LAUNCHER "py"
 !define PY_MAJOR "3.12"
