@@ -1,4 +1,4 @@
-.chartsview-donation {
+.emic-charts-view-donation {
   width: fit-content;
   margin: 25px auto;
   text-align: center;
@@ -8,36 +8,36 @@
   bottom: 0;
 }
 
-.chartsview-donation a.paypal {
+.emic-charts-view-donation a.paypal {
   display: inline-block;
 }
 
-.chartsview-thumbnail-container.is-selected .chartsview-thumbnail {
+.emic-charts-view-thumbnail-container.is-selected .emic-charts-view-thumbnail {
   display: unset;
   position: fixed;
   top: 0;
   right: 0;
 }
 
-.chartsview-thumbnail-container .chartsview-thumbnail {
+.emic-charts-view-thumbnail-container .emic-charts-view-thumbnail {
   display: none;
 }
 
 /* #### Desktops #### */
 @media screen and (min-width: 1024px) {
-  .chartsview-thumbnail-container .chartsview-thumbnail img {
+  .emic-charts-view-thumbnail-container .emic-charts-view-thumbnail img {
     width: 500px;
   }
 }
 
 /* #### Mobile Phones Portrait or Landscape #### */
 @media screen and (max-device-width: 640px) {
-  .chartsview-thumbnail-container .chartsview-thumbnail img {
+  .emic-charts-view-thumbnail-container .emic-charts-view-thumbnail img {
     width: 300px;
   }
 }
 
-.chartsview-export-button {
+.emic-charts-view-export-button {
   padding: 5px;
   position: relative;
   width: fit-content;
@@ -50,6 +50,6 @@
   cursor: pointer;
 }
 
-.block-language-chartsview:hover .chartsview-export-button {
+.block-language-emic-charts-view:hover .emic-charts-view-export-button {
   opacity: 1;
 }

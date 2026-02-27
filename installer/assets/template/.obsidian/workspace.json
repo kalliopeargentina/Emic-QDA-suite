@@ -11,10 +11,14 @@
             "id": "8f67947476fd49ee",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Referencia/EMIC.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "EMIC"
             }
           }
         ]
@@ -245,6 +249,7 @@
   },
   "active": "8f67947476fd49ee",
   "lastOpenFiles": [
+    "Data/CSV",
     "Referencia/EMIC.md",
     "LEAME.md",
     "Excalidraw/Drawing 2026-02-19 13.33.28.excalidraw.md",
@@ -274,7 +279,6 @@
     "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/CONICET.md",
     "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/coinbase.md",
     "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Coca-cola.md",
-    "Analysis/Ontology Analisys/Ontology-NDAngels/Organización/Circular.md",
     "Analysis/Ontology Analisys/Revision Ontología ND Angels.base",
     "Bases/Códigos.base",
     "Attachments/Medios/melina recibe comprador.docx",

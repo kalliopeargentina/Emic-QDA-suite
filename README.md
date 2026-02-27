@@ -4,7 +4,7 @@ Esta guía describe los pasos para instalar **Emic QDA Suite** en Windows usando
 
 ---
 
-# Emic QDA Installer (NSIS)
+
 
 
   <img src="installer\img\logo-emic.png" alt="Emic QDA logo" width="550"/>
@@ -52,7 +52,17 @@ Además, el suite incluye **herramientas propias** (paquetes Python) que amplía
 
 Para quienes hacen **investigación cualitativa** o **ciencias sociales** y quieren una alternativa abierta, en Markdown, que permita codificar, extraer, analizar coocurrencias y acercarse a técnicas computacionales sin programar. Es un aporte de **Emic+ Consultora** ([emic-consultora.com.ar](https://emic-consultora.com.ar)).
 
+### Repositorios que componen Emic-QDA-Suite
+
+- https://github.com/kalliopeargentina/Emic-Charts-View
+- https://github.com/kalliopeargentina/ObsidianQDA-Suite
+- https://github.com/kalliopeargentina/emic-qda
+- https://github.com/kalliopeargentina/OntologyExplorer
+- https://github.com/kalliopeargentina/OntologyMiner
+- https://github.com/kalliopeargentina/obsidian-shellcommands
+
 ---
+# Emic QDA Installer (NSIS)
 
 ## Requisitos del sistema
 

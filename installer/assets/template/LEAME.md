@@ -46,16 +46,26 @@ Para obtener ayuda sobre Obsidian en general, consulta la [Documentación de Obs
 
 ### Plugins de la Comunidad
 
-Listado según lo instalado en esta bóveda (`.obsidian/plugins` y `community-plugins.json`). **27 plugins.**
+Listado según lo instalado en esta bóveda (`.obsidian/plugins`). **28 plugins.**
 
 **QDA y flujo de trabajo**
-- [Quadro](https://github.com/chrisgrieser/obsidian-quadro): Análisis cualitativo de datos (QDA) para ciencias sociales. Alternativa abierta a MAXQDA y atlas.ti; almacena datos y códigos en Markdown. Botones en el extremo izquierdo para los comandos; pasa el cursor sobre ellos para ver qué hace cada uno.
+- [Emic-QDA](https://github.com/kalliopeargentina/emic-qda): Análisis cualitativo de datos (QDA) para ciencias sociales. Alternativa abierta a MAXQDA y atlas.ti; almacena datos y códigos en Markdown. Botones en el extremo izquierdo para los comandos; pasa el cursor sobre ellos para ver qué hace cada uno.
 - [Another Quick Switcher](https://github.com/tadashi-aikawa/obsidian-another-quick-switcher): Alternativa al cambiador rápido. Busca solo Archivos de Código con `alt+c`, solo Extracciones con `alt+e`, solo Datos con `alt+d`.
-- [Supercharged Links](https://github.com/mdelobelle/obsidian_supercharged_links): Añade propiedades y opciones de menú a los enlaces y les da estilo (color, iconos). La apariencia se configura con **Style Settings**.
-- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings): Ajusta variables CSS de temas, plugins y snippets desde la interfaz (sin tocar CSS a mano).
 - [Multi Properties](https://github.com/technohiker/obsidian-multi-properties): Añade o edita propiedades en varias notas a la vez (clic derecho en carpeta o en una selección múltiple).
-
 - [Dynamic Highlights](https://github.com/nothingislost/obsidian-dynamic-highlights): Resalta texto según la selección del cursor o una búsqueda, con soporte para regex y vista previa en vivo.
+- [Extended Markdown Syntax](https://github.com/kotaindah55/obsidian-extended-markdown-syntax): Añade sintaxis extendida (subrayado, subíndice, superíndice, resaltado y spoiler) sin usar HTML.
+- [Templater](https://github.com/SilentVoid13/Templater): Plantillas con variables y funciones (JavaScript). Automatiza creación de notas, coocurrencias, análisis de extracciones, etc.
+- [Commander](https://github.com/phibr0/obsidian-commander): Personaliza el espacio de trabajo añadiendo comandos donde quieras, crea macros y mejora la barra de herramientas móvil. *(ID: cmdr.)*
+- [Shell commands](https://github.com/Taitava/obsidian-shellcommands): Define comandos del sistema que quieras ejecutar con frecuencia y asígnales atajos; soporta ejecución automática y por enlaces URI.
+- [Custom File Viewer](https://github.com/peabody28/obsidian-custom-file-viewer): Abre archivos con aplicaciones externas según la extensión.
+- [CSV Lite](https://github.com/LIUBINfighter/obsidian-csv-lite): Edita archivos CSV directamente desde Obsidian con una interfaz simple.
+- [Docxer](https://github.com/Developer-Mike/obsidian-docxer): Importa Word: vista previa de .docx y conversión a Markdown.
+- [DOCX Exporter](https://github.com/Kanshurichard/obsidian-docx-exporter): Exporta notas a Word (.docx), con soporte en dispositivos móviles.
+- [JSON/CSV Importer](https://github.com/farling42/obsidian-import-json): Importa un archivo JSON/CSV (o bloque de texto) y crea notas a partir de una plantilla Handlebars. Útil para cargar datos de encuestas o bases en la bóveda.
+- [File Explorer Note Count](https://github.com/ozntel/file-explorer-note-count): Muestra el número de notas bajo cada carpeta en el explorador de archivos.
+- [File Diff](https://github.com/friebetill/obsidian-file-diff): Muestra las diferencias entre dos archivos.
+- [Iconize](https://github.com/FlorianWoelki/obsidian-icon-folder): Añade iconos a archivos, carpetas y texto dentro de la bóveda.
+- [Attachment Management](https://github.com/trganda/obsidian-attachment-management): Personaliza la ruta de adjuntos por nota con variables y renombrado automático al cambiar.
 
 **IA, mapas y visualización**
 - [Maps](https://help.obsidian.md/Plugins/Maps): Plugin oficial de Obsidian para Bases: añade un mapa a las bases para mostrar notas en una vista de mapa interactiva.
@@ -64,20 +74,11 @@ Listado según lo instalado en esta bóveda (`.obsidian/plugins` y `community-pl
 - [Linter](https://github.com/platers/obsidian-linter): Formatea y estiliza notas (YAML, tags, aliases, encabezados, espaciado, listas, bloques matemáticos, etc.) con reglas personalizables.
 - [Zotero Integration](https://github.com/mgmeyers/obsidian-zotero-integration): Inserta e importa citas, bibliografías, notas y anotaciones de PDF desde Zotero. Fichas bibliográficas y notas de literatura. *(ID del plugin: obsidian-zotero-desktop-connector.)*
 - [Chronos Timeline](https://github.com/Taitava/obsidian-chronos): Líneas de tiempo interactivas a partir de Markdown; útil para eventos, proyectos o entradas de diario.
-- [Templater](https://github.com/SilentVoid13/Templater): Plantillas con variables y funciones (JavaScript). Automatiza creación de notas, coocurrencias, análisis de extracciones, etc.
-- [Commander](https://github.com/phibr0/obsidian-commander): Personaliza el espacio de trabajo añadiendo comandos donde quieras, crea macros y mejora la barra de herramientas móvil. *(ID: cmdr.)*
 - [Media Extended](https://github.com/aidenlx/media-extended): Mejora la reproducción de video y audio: notas con marcas de tiempo, transcripciones, capturas de pantalla, control de YouTube y archivos locales.
-- [Shell commands](https://github.com/Taitava/obsidian-shellcommands): Define comandos del sistema que quieras ejecutar con frecuencia y asígnales atajos; soporta ejecución automática y por enlaces URI.
 - [Image Converter](https://github.com/xryul/obsidian-image-converter): Convierte, comprime, redimensiona, anota y edita imágenes (WebP, JPG, PNG, HEIC, TIF); procesamiento por lotes y variables para nombres.
-- [Custom File Viewer](https://github.com/peabody28/obsidian-custom-file-viewer): Abre archivos con aplicaciones externas según la extensión.
-- [Charts View](https://github.com/caronchen/obsidian-chartsview-plugin): Visualización de datos en Obsidian basada en Ant Design Charts.
+- [Emic Charts View](https://github.com/kalliopeargentina/Emic-Charts-View): Visualización de datos en Obsidian basada en Ant Design Charts.
+- [Excalidraw](https://github.com/zsviczian/obsidian-excalidraw-plugin): Dibujos y pizarras con Excalidraw dentro de la bóveda.
 - [Sidebar Highlights](https://github.com/trevware/obsidian-sidebar-highlights): Gestiona resaltados de texto, comentarios sobre resaltados y colecciones en la barra lateral.
-- [Attachment Management](https://github.com/trganda/obsidian-attachment-management): Personaliza la ruta de adjuntos por nota con variables y renombrado automático al cambiar.
-- [Docxer](https://github.com/Developer-Mike/obsidian-docxer): Importa Word: vista previa de .docx y conversión a Markdown.
-- [File Explorer Note Count](https://github.com/ozntel/file-explorer-note-count): Muestra el número de notas bajo cada carpeta en el explorador de archivos.
-- [File Diff](https://github.com/friebetill/obsidian-file-diff): Muestra las diferencias entre dos archivos.
-- [DOCX Exporter](https://github.com/Kanshurichard/obsidian-docx-exporter): Exporta notas a Word (.docx), con soporte en dispositivos móviles.
-- [JSON/CSV Importer](https://github.com/farling42/obsidian-import-json): Importa un archivo JSON/CSV (o bloque de texto) y crea notas a partir de una plantilla Handlebars. Útil para cargar datos de encuestas o bases en la bóveda.
 
 > [!INFO]
 > Para obtener ayuda sobre cada plugin, consulta la documentación enlazada o la página del plugin en Obsidian.

@@ -14,7 +14,6 @@
   "obsidian-shellcommands",
   "image-converter",
   "custom-file-viewer",
-  "obsidian-chartsview-plugin",
   "obsidian-dynamic-highlights",
   "sidebar-highlights",
   "attachment-management",
@@ -26,5 +25,8 @@
   "extended-markdown-syntax",
   "obsidian-icon-folder",
   "obsidian-excalidraw-plugin",
-  "emic-qda"
+  "emic-qda",
+  "csv-lite",
+  "obsidian-chartsview-plugin",
+  "emic-charts-view"
 ]
