@@ -61,6 +61,13 @@ body .markdown-embed.internal-embed.internal-embed {
 	}
 }
 
+/* Match highlight color inside multiline embeds in Live Preview + Reading */
+.markdown-source-view .emic-qda-multiline-embed mark,
+.markdown-preview-view .emic-qda-multiline-embed mark {
+	background-color: var(--text-highlight-bg);
+	color: var(--text-highlight-fg, inherit);
+}
+
 /* ────────────────────────────────────────────────────────────────────────── */
 /* EMIC-QDA UI ELEMENTS */
 

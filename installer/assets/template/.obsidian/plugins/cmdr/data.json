@@ -4,12 +4,6 @@
   "debug": false,
   "editorMenu": [
     {
-      "id": "semantic-canvas:create-canvas-from-note",
-      "icon": "lucide-git-graph",
-      "name": "Semantic Canvas: Create canvas based on note",
-      "mode": "any"
-    },
-    {
       "id": "copilot:suggest%20codes",
       "icon": "lucide-square-code",
       "name": "AI Suggest Codes",
@@ -71,12 +65,6 @@
       "id": "obsidian-zotero-desktop-connector:zdc-Bibliography_Link",
       "icon": "lucide-book-a",
       "name": "Zotero Integration: Bibliography_Link",
-      "mode": "any"
-    },
-    {
-      "id": "obsidian-zotero-desktop-connector:zdc-insert-notes",
-      "icon": "lucide-book-down",
-      "name": "Zotero Integration: Insert notes into current document",
       "mode": "any"
     },
     {

@@ -52,7 +52,7 @@ const content = `_Este archivo se actualiza automáticamente, cualquier cambio m
 > [!INFO]
 > Puedes usar la propiedad "filter" del bloque de código para mostrar solo valores específicos. Haz clic en el ícono \`</>\` para editar el filtro, por ejemplo: \`filter: 'word'\`, y mueve el cursor fuera del bloque de código. (Déjalo vacío para mostrar todos los valores.)
 
-\`\`\`quadro-extractiontype-overview
+\`\`\`emic-qda-extractiontype-overview
 extraction-type: "${selectedFolderName}"
 filter: ""
 \`\`\`

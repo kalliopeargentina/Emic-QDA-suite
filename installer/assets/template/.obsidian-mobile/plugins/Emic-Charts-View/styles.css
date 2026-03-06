@@ -8,10 +8,6 @@
   bottom: 0;
 }
 
-.emic-charts-view-donation a.paypal {
-  display: inline-block;
-}
-
 .emic-charts-view-thumbnail-container.is-selected .emic-charts-view-thumbnail {
   display: unset;
   position: fixed;

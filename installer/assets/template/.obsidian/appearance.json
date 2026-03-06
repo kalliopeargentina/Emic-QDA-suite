@@ -8,5 +8,6 @@
     "startup"
   ],
   "nativeMenus": false,
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "cssTheme": "Minimal"
 }

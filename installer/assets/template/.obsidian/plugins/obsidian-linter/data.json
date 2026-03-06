@@ -278,15 +278,48 @@
   "lintOnFileChange": true,
   "displayLintOnFileChangeNotice": false,
   "settingsConvertedToConfigKeyValues": true,
+  "additionalFileExtensions": [],
   "foldersToIgnore": [
     "Utils",
-    "",
+    "Excalidraw",
     "Referencia"
   ],
-  "filesToIgnore": [],
+  "filesToIgnore": [
+    {
+      "label": "Excalidraw",
+      "match": "\\.excalidraw$",
+      "flags": "i"
+    },
+    {
+      "label": "Json",
+      "match": "\\.json$",
+      "flags": "i"
+    },
+    {
+      "label": "CSV",
+      "match": "\\.csv$",
+      "flags": "i"
+    },
+    {
+      "label": "Doc",
+      "match": "\\.doc$",
+      "flags": "i"
+    },
+    {
+      "label": "Docx",
+      "match": "\\.docx$",
+      "flags": "i"
+    }
+  ],
   "linterLocale": "system-default",
   "logLevel": "ERROR",
-  "lintCommands": [],
+  "lintCommands": [
+    {
+      "id": "emic-table-tools:assign-all-tables-block-id",
+      "name": "Emic Table Tools: Asignar block-id a todas las tablas de esta nota que no tengan",
+      "enabled": true
+    }
+  ],
   "customRegexes": [
     {
       "label": "Remove double highlight",

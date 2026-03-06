@@ -10,7 +10,7 @@ color: grey
 data-type: Documento
 Actores: []
 read: false
-date:  <% tp.date.now("YYYY-MM-DD") %>
+tags:
 ---
 
 

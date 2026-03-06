@@ -1,10 +1,91 @@
 {
-  "confirmDeletion": true,
+  "confirmDeletion": false,
   "showAddCommand": false,
   "debug": false,
-  "editorMenu": [],
-  "fileMenu": [],
-  "leftRibbon": [],
+  "editorMenu": [
+    {
+      "id": "semantic-canvas:create-canvas-from-note",
+      "icon": "lucide-git-graph",
+      "name": "Semantic Canvas: Create canvas based on note",
+      "mode": "any"
+    },
+    {
+      "id": "copilot:suggest%20codes",
+      "icon": "lucide-square-code",
+      "name": "AI Suggest Codes",
+      "mode": "any"
+    }
+  ],
+  "fileMenu": [
+    {
+      "id": "obsidian-shellcommands:shell-command-wfx9n9sf0m",
+      "icon": "lucide-subtitles",
+      "name": "Shell commands: Execute: Regenerar SRT",
+      "mode": "any"
+    }
+  ],
+  "leftRibbon": [
+    {
+      "id": "templater-obsidian:create-Utils/Templater/Coocurrencias de Códigos.md",
+      "icon": "lucide-tablets",
+      "name": "Templater: Create Coocurrencias de Códigos",
+      "mode": "any"
+    },
+    {
+      "id": "templater-obsidian:create-Utils/Templater/Extractions Overview.md",
+      "icon": "lucide-arrow-down-left-from-square",
+      "name": "Templater: Create Extractions Overview",
+      "mode": "any"
+    },
+    {
+      "id": "templater-obsidian:create-Utils/Templater/Memo.md",
+      "icon": "lucide-notebook-text",
+      "name": "Templater: Create Memo",
+      "mode": "any"
+    },
+    {
+      "id": "copilot:suggest%20codes",
+      "icon": "lucide-code-square",
+      "name": "AI Suggest Codes",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-shellcommands:shell-command-eng7fyzd3o",
+      "icon": "lucide-youtube",
+      "name": "Shell commands: Execute: Transcribir de Youtube",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-zotero-desktop-connector:zdc-exp-Bibliography Card",
+      "icon": "lucide-book-key",
+      "name": "Zotero Integration: Bibliography Card",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-zotero-desktop-connector:zdc-Cite",
+      "icon": "lucide-book-plus",
+      "name": "Zotero Integration: Cite",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-zotero-desktop-connector:zdc-Bibliography_Link",
+      "icon": "lucide-book-a",
+      "name": "Zotero Integration: Bibliography_Link",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-zotero-desktop-connector:zdc-exp-Codification Import",
+      "icon": "lucide-book-up-2",
+      "name": "Zotero Integration: Codification Import",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-zotero-desktop-connector:zdc-exp-Research Notes",
+      "icon": "lucide-book-up",
+      "name": "Zotero Integration: Research Notes",
+      "mode": "any"
+    }
+  ],
   "rightRibbon": [],
   "titleBar": [],
   "statusBar": [],
@@ -15,14 +96,23 @@
     "statusbar": [],
     "leftRibbon": []
   },
-  "spacing": 8,
+  "spacing": "8",
   "advancedToolbar": {
     "rowHeight": 48,
-    "rowCount": 1,
+    "rowCount": 3,
     "spacing": 0,
     "buttonWidth": 48,
-    "columnLayout": false,
-    "mappedIcons": [],
+    "columnLayout": true,
+    "mappedIcons": [
+      {
+        "commandID": "obsidian-excalidraw-plugin:excalidraw-insert-transclusion",
+        "iconID": "excalidraw-icon"
+      },
+      {
+        "commandID": "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed",
+        "iconID": "excalidraw-icon"
+      }
+    ],
     "tooltips": false,
     "heightOffset": 0
   }

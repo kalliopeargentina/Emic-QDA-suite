@@ -4,8 +4,7 @@
 	"version": "1.2.8",
 	"minAppVersion": "0.9.12",
 	"description": "Data visualization solution in Obsidian based on Ant Design Charts.",
-	"author": "caronchen",
+	"author": "Marcos Buccellato",
 	"authorUrl": "https://github.com/kalliopeargentina/Emic-Charts-View",
-	"isDesktopOnly": false,
-	"fundingUrl": "https://paypal.me/caronchenhz"
+	"isDesktopOnly": false
 }
