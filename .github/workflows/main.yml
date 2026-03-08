@@ -1,2 +1,0 @@
-- name: Generate Release Notes from Milestone
-  uses: mod-posh/Issue2ReleaseNotes@v0.0.4.0
