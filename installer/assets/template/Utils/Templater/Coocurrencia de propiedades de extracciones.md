@@ -1,10 +1,11 @@
 <%*
-// --- CONFIGURACIÓN ---
-const TARGET_FOLDER = "Analysis";
-const EXTRACTIONS_FOLDER = "Extractions"; // Carpeta de donde se tomarán las propiedades
+// Carpetas desde Emic-QDA (fallback si el plugin no está cargado)
+const emic = app.plugins?.plugins?.['emic-qda'];
+const TARGET_FOLDER = emic?.settings?.analysis?.folder ?? "Analysis";
+const EXTRACTIONS_FOLDER = emic?.settings?.extraction?.folder ?? "Extractions";
 // --- FIN DE LA CONFIGURACIÓN ---
 
-// --- PASO 1: OBTENER CLAVES DE PROPIEDAD DE LA CARPETA "Extractions" ---
+// --- PASO 1: OBTENER CLAVES DE PROPIEDAD DE LA CARPETA DE EXTRACCIONES ---
 const allFiles = app.vault.getMarkdownFiles();
 const extractionFiles = allFiles.filter(file => file.path.startsWith(EXTRACTIONS_FOLDER + "/"));
 

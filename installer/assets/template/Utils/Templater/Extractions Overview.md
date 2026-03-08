@@ -1,11 +1,16 @@
 <%*
-// 1. Definir la carpeta principal a escanear.
-const FOLDER_TO_SCAN = "Extractions";
+// Carpetas desde Emic-QDA (fallback a valores por defecto si el plugin no está cargado)
+const emic = app.plugins?.plugins?.['emic-qda'];
+const EXTRACTIONS_FOLDER = emic?.settings?.extraction?.folder ?? "Extractions";
+const ANALYSIS_FOLDER = emic?.settings?.analysis?.folder ?? "Analysis";
 
-// 2. Obtener el objeto de la carpeta "Extractions".
+// 1. Carpeta principal a escanear = carpeta de extracciones de Emic-QDA
+const FOLDER_TO_SCAN = EXTRACTIONS_FOLDER;
+
+// 2. Obtener el objeto de la carpeta de extracciones.
 const extractionsFolder = app.vault.getAbstractFileByPath(FOLDER_TO_SCAN);
 
-// 3. Validar que la carpeta "Extractions" existe y es una carpeta.
+// 3. Validar que la carpeta de extracciones existe y es una carpeta.
 if (!extractionsFolder || !extractionsFolder.children) {
     new Notice(`❌ Error: La carpeta "${FOLDER_TO_SCAN}" no fue encontrada.`, 5000);
     return ""; // Detener y no dejar contenido
@@ -34,7 +39,7 @@ if (!selectedFolderName) {
 
 // 8. Preparar el nombre y la ruta del nuevo archivo.
 const newFileTitle = `Extraction Overview – ${selectedFolderName}`;
-const newFilePath = `/Analysis/${newFileTitle}.md`;
+const newFilePath = `/${ANALYSIS_FOLDER}/${newFileTitle}.md`;
 
 // 9. Comprobar si el archivo ya existe para evitar duplicados.
 const existingFile = app.vault.getAbstractFileByPath(newFilePath);

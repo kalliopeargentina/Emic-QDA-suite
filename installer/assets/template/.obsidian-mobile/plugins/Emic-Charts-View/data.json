@@ -1,6 +1,6 @@
 {
   "theme": "emicDark",
-  "dataPath": "Data/CSV",
+  "dataPath": "Datos/CSV",
   "backgroundColor": "transparent",
   "paddingTop": 0,
   "paddingRight": 0,

@@ -9,7 +9,7 @@
     "recentlyUsedIconsSize": 5,
     "rules": [
       {
-        "rule": "Data",
+        "rule": "Datos",
         "icon": "LiFileText",
         "for": "folders",
         "order": 0
@@ -21,13 +21,13 @@
         "order": 1
       },
       {
-        "rule": "Codes",
+        "rule": "Códigos",
         "icon": "LiTags",
         "for": "folders",
         "order": 2
       },
       {
-        "rule": "Memos",
+        "rule": "Notas Analíticas",
         "icon": "LiNotebookText",
         "for": "folders",
         "order": 3
@@ -57,7 +57,7 @@
         "order": 7
       },
       {
-        "rule": "Analysis",
+        "rule": "Análisis",
         "icon": "LiChartPie",
         "for": "folders",
         "order": 8
@@ -81,7 +81,7 @@
         "order": 11
       },
       {
-        "rule": "Extractions",
+        "rule": "Extracciones",
         "icon": "LiTextSelect",
         "for": "folders",
         "order": 12

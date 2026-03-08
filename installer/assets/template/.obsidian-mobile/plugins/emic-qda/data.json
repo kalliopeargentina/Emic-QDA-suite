@@ -1,0 +1,29 @@
+{
+  "coding": {
+    "folder": "Códigos",
+    "displayCount": true,
+    "sortFunc": "last used first"
+  },
+  "extraction": {
+    "folder": "Extracciones",
+    "displayCount": true,
+    "openingMode": "tab",
+    "csvSeparator": ",",
+    "ignorePropertyOnMerge": [],
+    "displayProperty": []
+  },
+  "analysis": {
+    "folder": "Análisis"
+  },
+  "memos": {
+    "folder": "Notas Analíticas"
+  },
+  "data": {
+    "folder": "Datos"
+  },
+  "suppressSuggestionInFields": [],
+  "propertiesKeysWidthPercent": 35,
+  "statusbar": {
+    "shortened": false
+  }
+}

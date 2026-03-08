@@ -1,9 +1,12 @@
 <%*
-// --- CONFIGURATION ---
-const sourceFolder = "Codes"; 
-const defaultSearchPath = "Data";
-const targetFolder = "Analysis"; // <-- Carpeta de destino para la nota
-const folderToIgnore = "/pre-merge-backups/"; // <-- Carpeta a ignorar
+// Carpetas desde Emic-QDA (fallback si el plugin no está cargado)
+const emic = app.plugins?.plugins?.['emic-qda'];
+const sourceFolder = emic?.settings?.coding?.folder ?? "Codes";
+const targetFolder = emic?.settings?.analysis?.folder ?? "Analysis";
+
+// Resto de configuración (no definido en Emic-QDA)
+const defaultSearchPath = emic?.settings?.data?.folder ?? "Data";
+const folderToIgnore = "/pre-merge-backups/";
 // --- END CONFIGURATION ---
 
 const allFiles = app.vault.getMarkdownFiles();

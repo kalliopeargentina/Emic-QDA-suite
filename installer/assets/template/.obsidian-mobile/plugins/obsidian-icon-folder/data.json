@@ -9,93 +9,93 @@
     "recentlyUsedIconsSize": 5,
     "rules": [
       {
-        "rule": "Data",
+        "rule": "Datos",
         "icon": "LiFileText",
-        "for": "everything",
+        "for": "folders",
         "order": 0
       },
       {
         "rule": "Entidades",
         "icon": "LiPersonStanding",
-        "for": "everything",
+        "for": "folders",
         "order": 1
       },
       {
-        "rule": "Codes",
+        "rule": "Códigos",
         "icon": "LiTags",
-        "for": "everything",
+        "for": "folders",
         "order": 2
       },
       {
-        "rule": "Memos",
+        "rule": "Notas Analíticas",
         "icon": "LiNotebookText",
-        "for": "everything",
+        "for": "folders",
         "order": 3
       },
       {
         "rule": "Bibliografía",
         "icon": "SiZotero",
-        "for": "everything",
+        "for": "folders",
         "order": 4
       },
       {
         "rule": "Medios",
         "icon": "LiFileVideo",
-        "for": "everything",
+        "for": "folders",
         "order": 5
       },
       {
         "rule": "Bases",
         "icon": "LiDatabase",
-        "for": "everything",
+        "for": "folders",
         "order": 6
       },
       {
         "rule": "Attachments",
         "icon": "LiPaperclip",
-        "for": "everything",
+        "for": "folders",
         "order": 7
       },
       {
-        "rule": "Analysis",
+        "rule": "Análisis",
         "icon": "LiChartPie",
-        "for": "everything",
+        "for": "folders",
         "order": 8
       },
       {
         "rule": "Notas de Campo",
         "icon": "LiLandPlot",
-        "for": "everything",
+        "for": "folders",
         "order": 9
       },
       {
         "rule": "Clippings",
         "icon": "LiScissors",
-        "for": "everything",
+        "for": "folders",
         "order": 10
       },
       {
         "rule": "Excalidraw",
         "icon": "SiExcalidraw",
-        "for": "everything",
+        "for": "folders",
         "order": 11
       },
       {
-        "rule": "Extractions",
+        "rule": "Extracciones",
         "icon": "LiTextSelect",
-        "for": "everything",
+        "for": "folders",
         "order": 12
       },
       {
         "rule": "Utils",
         "icon": "LiToolCase",
-        "for": "everything",
+        "for": "folders",
         "order": 13
       },
       {
         "rule": "Referencia",
         "icon": "LiBookMarked",
-        "for": "everything",
+        "for": "folders",
         "order": 14
       }
     ],

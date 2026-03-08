@@ -1001,7 +1001,7 @@
           "type": "single-line-text",
           "label": "Output",
           "description": "Carpeta de Salida",
-          "default_value": "Analysis/Sentiment Analysis",
+          "default_value": "Análisis/Análisis de Sentimiento",
           "target_variable_id": "z9238qhcif",
           "required": true
         },
@@ -1131,7 +1131,7 @@
           "type": "single-line-text",
           "label": "Carpeta de salida",
           "description": "Carpeta de salida",
-          "default_value": "Analysis/Emotion Analysis",
+          "default_value": "Análisis/Análisis de Emociones",
           "target_variable_id": "u7au3r12dl",
           "required": true
         },
@@ -1242,7 +1242,7 @@
       "description": "Palabras semilla para reconocer temas",
       "default_value": {
         "type": "value",
-        "value": "Analysis/Text Analysis/Temas-LDA-Guiado.md"
+        "value": "Análisis/Análisis de Tópicos/Temas-LDA-Guiado.md"
       }
     },
     {

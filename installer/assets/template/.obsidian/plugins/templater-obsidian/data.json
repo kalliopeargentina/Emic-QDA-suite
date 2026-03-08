@@ -15,7 +15,7 @@
   "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "Data/Documentos",
+      "folder": "Datos/Documentos",
       "template": "Utils/Templater/Documento.md"
     },
     {
