@@ -368,7 +368,7 @@
     {
       "id": "eng7fyzd3o",
       "platform_specific_commands": {
-        "default": " {{vault_path}}\\.venv\\Scripts\\python {{vault_path}}\\Utils\\PythonScripts\\WhisperAI-Transcribe\\transcribe_youtube.py {{_youtube_link}} --output-dir {{vault_path}} --api-key {{_OpenAIKey}}"
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe-youtube.exe\" \"{{_youtube_link}}\" --output-dir \"{{vault_path}}\" --api-key \"{{_OpenAIKey}}\""
       },
       "shells": {},
       "alias": "Transcribir de Youtube",
@@ -408,10 +408,6 @@
       "variable_default_values": {
         "24d68weajg": {
           "type": "show-errors",
-          "value": ""
-        },
-        "n0zn0o303s": {
-          "type": "value",
           "value": ""
         }
       }
