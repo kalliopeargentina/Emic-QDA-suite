@@ -12,12 +12,13 @@
   "quadro",
   "extended-markdown-syntax",
   "docxer",
-  "docx-exporter",
   "obsidian-excalidraw-plugin",
   "cmdr",
   "obsidian-icon-folder",
-  "emic-qda",
-  "emic-charts-view",
   "emic-table-tools",
-  "emic-camera"
+  "emic-camera",
+  "note-toolbar",
+  "emic-qda",
+  "emic-reports",
+  "emic-charts-view"
 ]

@@ -11,7 +11,7 @@
   "auto_jump_to_cursor": true,
   "enable_system_commands": false,
   "shell_path": "",
-  "user_scripts_folder": "Utils/Templeter-JS",
+  "user_scripts_folder": "Utils/Templater-JS",
   "enable_folder_templates": true,
   "folder_templates": [
     {

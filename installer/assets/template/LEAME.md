@@ -1,8 +1,9 @@
 ---
+read:
 aliases: []
 tags: []
 date created: sábado, enero 31º 2026, 4:06:15 pm
-date modified: jueves, febrero 19º 2026, 3:49:34 pm
+date modified: jueves, marzo 19º 2026, 10:04:48 pm
 ---
 
 # Bóveda de Plantilla
@@ -22,6 +23,7 @@ Para obtener ayuda sobre Obsidian en general, consulta la [Documentación de Obs
 >   - [[#extracciones-de-ejemplo|Extracciones de Ejemplo]]
 > - [[#guardar-rápidamente-contenido-web-en-obsidian|Guardar rápidamente contenido web en Obsidian]]
 > - [[#usando-esta-bóveda-para-tu-propia-investigación|Usando esta bóveda para tu propia investigación]]
+^tabla-2
 ## Instalando esta bóveda
 1. Asegúrate de que tu versión de Obsidian sea al menos la 1.5.8.
 2. [Descarga esta bóveda](https://github.com/chrisgrieser/quadro-example-vault/releases/latest/download/quadro-example-vault.zip).
@@ -110,6 +112,7 @@ Algunos códigos de ejemplo se pueden encontrar en la carpeta `Codes`.
 - Se ha realizado una [[Example Code Co-occurrence]] ilustrativa para y 
 - Puedes hacer clic en el Botón de Gráfico en la barra lateral izquierda (o `ctrl+g`/ `cmd+g`) para abrir la Vista de Gráfico. Se ha configurado para mostrar solo Archivos de Datos y Archivos de Código.
 - Usando el plugin **Canvas**, se pueden explorar las relaciones entre códigos. Aquí, se utiliza como un [[Axial Coding Example.canvas|Ejemplo de Codificación Axial]].
+^tabla-1
 
 ### Extracciones de Ejemplo
 Algunas extracciones de ejemplo se pueden encontrar en la carpeta `Extractions`.

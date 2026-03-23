@@ -32,7 +32,7 @@
     },
     "insert-yaml-attributes": {
       "enabled": true,
-      "text-to-insert": "aliases: \ntags: "
+      "text-to-insert": "aliases: \ntags: \nread:"
     },
     "move-tags-to-yaml": {
       "enabled": true,
@@ -278,9 +278,10 @@
   "lintOnFileChange": true,
   "displayLintOnFileChangeNotice": false,
   "settingsConvertedToConfigKeyValues": true,
+  "additionalFileExtensions": [],
   "foldersToIgnore": [
     "Utils",
-    "Excalidraw",
+    "Pizarra",
     "Referencia"
   ],
   "filesToIgnore": [

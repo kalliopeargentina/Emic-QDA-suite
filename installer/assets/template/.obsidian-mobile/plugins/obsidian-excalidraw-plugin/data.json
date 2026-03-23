@@ -2,12 +2,12 @@
   "copyLinkToElemenetAnchorTo100": false,
   "copyFrameLinkByName": false,
   "disableDoubleClickTextEditing": false,
-  "folder": "Excalidraw",
+  "folder": "Pizarra",
   "cropFolder": "",
   "annotateFolder": "",
   "embedUseExcalidrawFolder": true,
-  "templateFilePath": "Excalidraw/Template.excalidraw",
-  "scriptFolderPath": "Excalidraw/Scripts",
+  "templateFilePath": "Utils/Templates/Template.excalidraw",
+  "scriptFolderPath": "Utils/Excalidraw-Scripts",
   "fontAssetsPath": "Excalidraw/CJK Fonts",
   "loadChineseFonts": false,
   "loadJapaneseFonts": false,
@@ -806,7 +806,7 @@
       "key": "G"
     }
   ],
-  "showSplashscreen": true,
+  "showSplashscreen": false,
   "pdfSettings": {
     "pageSize": "A4",
     "pageOrientation": "portrait",

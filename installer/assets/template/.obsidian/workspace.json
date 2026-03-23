@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b78c4230bd0b77e8",
+        "id": "7e50e711be8f5582",
         "type": "tabs",
         "children": [
           {
-            "id": "d5e88fddab4d4f2e",
+            "id": "2b1861b172df48c8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Referencia/EMIC.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "EMIC"
             }
           }
         ]
@@ -29,7 +33,7 @@
       {
         "id": "a3da9c4282a468e9",
         "type": "tabs",
-        "dimension": 72.92929292929293,
+        "dimension": 79.39393939393939,
         "children": [
           {
             "id": "614134f52a66d4e6",
@@ -50,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tabaja",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -64,9 +68,9 @@
         ]
       },
       {
-        "id": "4900d377398969d3",
+        "id": "5f7aaaa66b21e5df",
         "type": "tabs",
-        "dimension": 27.070707070707073,
+        "dimension": 20.606060606060606,
         "children": [
           {
             "id": "d1aebe67bd8bf042",
@@ -82,47 +86,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 266.5
+    "width": 300
   },
   "right": {
     "id": "b7cf2ea94ac6a6e4",
     "type": "split",
     "children": [
       {
-        "id": "b86efd95e0a8bd26",
+        "id": "5459cc5d08454b62",
         "type": "tabs",
         "children": [
           {
-            "id": "5f93f019f00d72e1",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": true,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "61d99bfaaabb3636",
-            "type": "leaf",
-            "state": {
-              "type": "copilot-chat-view",
-              "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
-            }
-          },
-          {
-            "id": "2bc26cfe49c81c9a",
+            "id": "fda1734c12258b08",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Referencia/EMIC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,25 +111,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de EMIC"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "5d82ff590d323c89",
+            "id": "4aed2ff7551ca33b",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Referencia/EMIC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Enlaces salientes de EMIC"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "49e133d4e41e4e3d",
+            "id": "96eb4ce6a690e26a",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -161,30 +139,43 @@
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "Etiquetas"
+              "title": "Tags"
             }
           },
           {
-            "id": "5d2ff9cd3bddfc79",
+            "id": "07c61f9be21e4675",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "d748c681960f96c7",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Referencia/EMIC.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de EMIC"
+              "title": "Outline"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 370.5
+    "width": 780.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -206,40 +197,41 @@
       "emic-qda:Emic-QDA: Open random unread Data File": true,
       "emic-qda:Emic-QDA: Show data analysis progress file": true,
       "emic-qda:Emic-QDA: Mark current Data File as read": true,
-      "switcher:Abrir selector rápido": false,
+      "cmdr:Zotero Integration: Research Notes": true,
+      "switcher:Abrir selector rápido": true,
+      "graph:Abrir vista gráfica": true,
       "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
-      "graph:Abrir vista gráfica": false,
-      "daily-notes:Abrir la nota de hoy": true,
+      "daily-notes:Abrir la nota de hoy": false,
       "templates:Insertar plantilla": false,
       "command-palette:Abrir paleta de comandos": false,
       "markdown-importer:Abrir el importador de Markdown": true,
-      "audio-recorder:Iniciar/Detener la grabación": true,
-      "bases:Crear nueva base": false,
-      "docx-exporter:Exportar nota actual a DOCX": false,
-      "obsidian-import-json:JSON/CSV Importer": false,
-      "sidebar-highlights:Open highlights": false,
+      "audio-recorder:Iniciar/Detener la grabación": false,
+      "bases:Crear nueva base": true,
+      "docx-exporter:Exportar nota actual a DOCX": true,
+      "obsidian-import-json:JSON/CSV Importer": true,
+      "cmdr:Zotero Integration: Bibliography Card": true,
+      "cmdr:Zotero Integration: Cite": true,
+      "cmdr:Zotero Integration: Bibliography_Link": true,
+      "cmdr:Zotero Integration: Codification Import": true,
+      "sidebar-highlights:Open highlights": true,
+      "cmdr:Shell commands: Execute: Transcribir de Youtube": true,
+      "cmdr:AI Suggest Codes": true,
+      "obsidian-shellcommands:Shell commands: Custom variables": true,
       "templater-obsidian:Templater": true,
       "media-extended:Open external media": true,
-      "obsidian-map-view:Open map view": true,
-      "obsidian-shellcommands:Shell commands: Custom variables": true,
+      "cmdr:Templater: Create Memo": true,
       "copilot:Open Copilot Chat": false,
-      "cmdr:Templater: Create Coocurrencias de Códigos": false,
-      "cmdr:Templater: Create Extractions Overview": false,
-      "cmdr:Templater: Create Memo": false,
-      "cmdr:AI Suggest Codes": false,
-      "cmdr:Shell commands: Execute: Transcribir de Youtube": false,
-      "cmdr:Zotero Integration: Bibliography Card": false,
-      "cmdr:Zotero Integration: Research Notes": false,
-      "cmdr:Zotero Integration: Cite": false,
-      "cmdr:Zotero Integration: Bibliography_Link": false,
-      "cmdr:Zotero Integration: Codification Import": true,
+      "cmdr:Templater: Create Extractions Overview": true,
+      "cmdr:Templater: Create Coocurrencias de Códigos": true,
+      "obsidian-map-view:Open map view": false,
       "workspaces:Gestionar disposiciones de espacio de trabajo": false
     }
   },
   "active": "614134f52a66d4e6",
   "lastOpenFiles": [
-    "Utils/Templater/Coocurrencias de Códigos.md",
+    "Entidades",
     "Referencia/EMIC.md",
+    "Utils/Templater/Coocurrencias de Códigos.md",
     "Datos/Documentos/2025-03-04 Percepción del riesgo y seguridad.md",
     "Datos/Documentos/2025-03-03 Rituales de café y redes informales.md",
     "Datos/Documentos/2025-03-02 Lenguaje y jerga técnica en la oficina.md",
@@ -257,7 +249,7 @@
     "Datos/CSV",
     "LEAME.md",
     "Excalidraw/Drawing 2026-02-19 13.33.28.excalidraw.md",
-    "Excalidraw",
+    "Pizarra",
     "Notas de Campo/2026-02-05_19_07.md",
     "Utils/Templater/Nota de Campo.md",
     "Notas de Campo/2026-02-05_18_58.md",
@@ -266,7 +258,6 @@
     "Notas de Campo/2026-02-05_18_53.md",
     "Notas de Campo/2026-02-05_18_51.md",
     "Notas de Campo/2026-02-05_18_50.md",
-    "Notas de Campo/2026-02-05_18_46.md",
     "Referencia",
     "Attachments/Medios/audio.mp3",
     "Template-v0.1.0.zip",

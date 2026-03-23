@@ -1,10 +1,13 @@
 ---
+aliases: 
 date: 2025-03-01
 location: Obra Norte, sitio de construcción
 data-type: Documento
 Actores: [Jefe de obra, capataces, cuadrilla]
 read: false
 tags: [etnografía, obra, jerarquía, seguridad]
+date created: sábado, marzo 7º 2026, 5:40:05 pm
+date modified: domingo, marzo 22º 2026, 8:46:56 pm
 ---
 
 # 2025-03-01 Reunión de obra y jerarquías en campo

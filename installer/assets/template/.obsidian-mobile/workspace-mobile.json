@@ -1,20 +1,22 @@
 {
   "main": {
-    "id": "676549e57b9e9904",
+    "id": "7c06fa2ab4376dc2",
     "type": "split",
     "children": [
       {
-        "id": "1dd708d5a76fb693",
+        "id": "90468b6b029791f4",
         "type": "tabs",
         "children": [
           {
-            "id": "0892e7b903236d94",
+            "id": "3ab0c966a0cb1e65",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "type": "excalidraw",
+              "state": {
+                "file": "Pizarra/Dib2026-03-08 02.08.58.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Dib2026-03-08 02.08.58.excalidraw"
             }
           }
         ]
@@ -23,11 +25,11 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "b179d05fb25fde12",
+    "id": "3aab1dd3c96ce282",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "71999e722845a96c",
+        "id": "adb034489fbd37f3",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -40,7 +42,7 @@
         }
       },
       {
-        "id": "9a0a0427534867a8",
+        "id": "39eb0cb069a843d4",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -53,11 +55,11 @@
             "sortOrder": "alphabetical"
           },
           "icon": "lucide-search",
-          "title": "Search"
+          "title": "Buscar"
         }
       },
       {
-        "id": "b00edb002ecfe00c",
+        "id": "55803490c18a209c",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -68,11 +70,11 @@
             "searchQuery": ""
           },
           "icon": "lucide-tags",
-          "title": "Tags"
+          "title": "Etiquetas"
         }
       },
       {
-        "id": "ed6f860306b4a15d",
+        "id": "cb79aa8f95a718e0",
         "type": "leaf",
         "state": {
           "type": "all-properties",
@@ -82,28 +84,28 @@
             "searchQuery": ""
           },
           "icon": "lucide-archive",
-          "title": "All properties"
+          "title": "Todas las propiedades"
         }
       },
       {
-        "id": "1526f923acf9d68f",
+        "id": "89239e35dc3357f1",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
           "state": {},
           "icon": "lucide-bookmark",
-          "title": "Bookmarks"
+          "title": "Marcadores"
         }
       }
     ],
     "currentTab": 0
   },
   "right": {
-    "id": "a727ba19f8a785d8",
+    "id": "efc55f6f01308c3e",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "f0c21680dd585af8",
+        "id": "bfad07f0fe2f602e",
         "type": "leaf",
         "state": {
           "type": "backlink",
@@ -121,7 +123,7 @@
         }
       },
       {
-        "id": "29f5e4353fcb1474",
+        "id": "04179f9bf5a25fba",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
@@ -130,11 +132,11 @@
             "unlinkedCollapsed": true
           },
           "icon": "links-going-out",
-          "title": "Outgoing links"
+          "title": "Enlaces salientes"
         }
       },
       {
-        "id": "1418e58ab4b76b7b",
+        "id": "aa18c54073113710",
         "type": "leaf",
         "state": {
           "type": "outline",
@@ -144,17 +146,7 @@
             "searchQuery": ""
           },
           "icon": "lucide-list",
-          "title": "Outline"
-        }
-      },
-      {
-        "id": "be18b94e18fac80a",
-        "type": "leaf",
-        "state": {
-          "type": "footnotes",
-          "state": {},
-          "icon": "lucide-file-signature",
-          "title": "Footnotes"
+          "title": "Esquema"
         }
       }
     ],
@@ -162,86 +154,97 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-map-view:Open map view": false,
-      "audio-recorder:Iniciar/Detener la grabación": false,
-      "switcher:Abrir selector rápido": false,
-      "daily-notes:Abrir la nota de hoy": false,
+      "remotely-save:Remotely Save": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "command-palette:Abrir paleta de comandos": false,
-      "templates:Insertar plantilla": true,
-      "bases:Crear nueva base": false,
-      "templater-obsidian:Templater": true,
-      "copilot:Open Copilot Chat": false,
-      "quadro:Quadro: Assign code to paragraph": true,
-      "quadro:Quadro: Rename code": true,
-      "quadro:Quadro: Remove code from paragraph": true,
-      "quadro:Quadro: Delete Code File and all references to it": true,
-      "quadro:Quadro: Merge another Code File into current Code File": true,
-      "quadro:Quadro: Split selected references into another Code File": true,
-      "quadro:Quadro: Bulk create new Code Files": true,
-      "quadro:Quadro: Show code overview": true,
-      "quadro:Quadro: Extract from paragraph": true,
-      "quadro:Quadro: Add paragraph as source to existing Extraction File": true,
-      "quadro:Quadro: Merge another Extraction File into current Extraction File": true,
-      "quadro:Quadro: Create new Extraction Type": true,
-      "quadro:Quadro: Export all extractions as .csv": true,
-      "quadro:Quadro: Show extraction type overview": true,
-      "quadro:Quadro: Open random unread Data File": true,
-      "quadro:Quadro: Show data analysis progress file": true,
-      "quadro:Quadro: Mark current Data File as read": true,
+      "emic-camera:Emic-Camera": false,
+      "cmdr:Templater: Create Coocurrencias de Códigos": true,
+      "cmdr:Templater: Create Extractions Overview": true,
+      "cmdr:Templater: Create Memo": false,
+      "cmdr:AI Suggest Codes": true,
+      "cmdr:Shell commands: Execute: Transcribir de Youtube": true,
+      "cmdr:Zotero Integration: Bibliography Card": true,
+      "cmdr:Zotero Integration: Cite": true,
+      "cmdr:Zotero Integration: Bibliography_Link": true,
+      "cmdr:Zotero Integration: Codification Import": true,
+      "cmdr:Zotero Integration: Research Notes": true,
+      "switcher:Abrir selector rápido": true,
       "graph:Abrir vista gráfica": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "audio-recorder:Iniciar/Detener la grabación": false,
+      "bases:Crear nueva base": false,
+      "templater-obsidian:Templater": false,
+      "copilot:Open Copilot Chat": false,
+      "obsidian-map-view:Open map view": false,
       "docx-exporter:Exportar nota actual a DOCX": false,
-      "workspaces:Gestionar disposiciones de espacio de trabajo": false,
-      "open-other-app:Open other app": false
+      "emic-qda:Emic-QDA: Assign code to paragraph": true,
+      "emic-qda:Emic-QDA: Rename code": true,
+      "emic-qda:Emic-QDA: Remove code from paragraph": true,
+      "emic-qda:Emic-QDA: Delete Code File and all references to it": true,
+      "emic-qda:Emic-QDA: Merge another Code File into current Code File": true,
+      "emic-qda:Emic-QDA: Split selected references into another Code File": true,
+      "emic-qda:Emic-QDA: Bulk create new Code Files": true,
+      "emic-qda:Emic-QDA: Show code overview": true,
+      "emic-qda:Emic-QDA: Extract from paragraph": true,
+      "emic-qda:Emic-QDA: Add paragraph as source to existing Extraction File": true,
+      "emic-qda:Emic-QDA: Merge another Extraction File into current Extraction File": true,
+      "emic-qda:Emic-QDA: Create new Extraction Type": true,
+      "emic-qda:Emic-QDA: Export all extractions as .csv": true,
+      "emic-qda:Emic-QDA: Show extraction type overview": true,
+      "emic-qda:Emic-QDA: Open random unread Data File": true,
+      "emic-qda:Emic-QDA: Show data analysis progress file": true,
+      "emic-qda:Emic-QDA: Mark current Data File as read": true,
+      "workspaces:Gestionar disposiciones de espacio de trabajo": false
     }
   },
-  "active": "0892e7b903236d94",
+  "active": "3ab0c966a0cb1e65",
   "lastOpenFiles": [
-    "Sin título.md",
-    "Attachments/Sin título",
+    "Pizarra/Dib2026-03-08 02.08.58.excalidraw.md",
+    "Pizarra/Dib2026-03-08 02.45.00.excalidraw.md",
+    "Análisis/progress.json",
+    "Análisis/Code Overview.md",
+    "Códigos/Conflictos.md",
+    "Códigos/Imaginario.md",
+    "Códigos/Estructura Legal.md",
+    "Códigos/Pensar en grande.md",
+    "Códigos/CodeBook-1/Soledad.md",
+    "Códigos/Estructura empresa.md",
+    "Códigos/CodeBook-1/Expertos.md",
+    "Códigos/Impacto del Proyecto.md",
+    "Códigos/Fase de una inversión.md",
+    "Códigos/Dimensión del mercado.md",
+    "Códigos/Modalidad de inversión.md",
+    "Códigos/CodeBook-1/Competencia.md",
+    "Códigos/CodeBook-1/Mirada Global.md",
+    "Códigos/CodeBook-1/Financiación.md",
+    "Códigos/Ciclo de vida de proyecto.md",
+    "Códigos/Regulaciones y marco legal.md",
+    "Códigos/CodeBook-1/Rol del Mediador.md",
+    "Códigos/CodeBook-1/Opiniones Sociales.md",
+    "Códigos/Excel o instrumentos técnicos.md",
+    "Códigos/CodeBook-1/Experiencia Previa.md",
+    "Códigos/CodeBook-1/Optimizar el tiempo.md",
+    "Análisis/Análisis de Tópicos/StopWords.md",
+    "Códigos/CodeBook-1/Etapas de proyectos.md",
+    "Notas Analíticas/MCD/2026-02-13-01-Baseline.json",
+    "Notas Analíticas/MCD/2026-02-13-02-Baseline-with Ruler.json",
+    "Análisis/CSV Export/Comentarios Director_2026-02-26_19-11-57.csv",
+    "Análisis/Análisis de Ontología/Revision Ontología ND Angels.base",
+    "Datos/Documentos/Jorge De María/2020-06-17 Reunión Jorge-Eduardo - Kabinnet.mp4",
+    "Attachments/Notas Analíticas/Proyecto/Indice Comentado V2/IMG-20260307170655255.docx",
+    "Attachments/Notas Analíticas/2020-06-16 Ontología y códigos/IMG-20260307170658677.png",
+    "Attachments/Notas Analíticas/2020-06-16 Ontología y códigos/IMG-20260307170656738.png",
+    "Attachments/Notas Analíticas/2020-06-16 Ontología y códigos/IMG-20260307170657653.png",
+    "Attachments/Notas Analíticas/2020-06-16 Ontología y códigos/IMG-20260307170655221.png",
+    "Attachments/Notas Analíticas/Proyecto/Proyecto de Tesis v1.1/IMG-20260307170655270.docx",
+    "Datos/Documentos/Jorge De María/2020-06-17 Primer cuestionario de preguntas Kabinnet.pdf",
+    "Attachments/Notas Analíticas/MCD/2026-02-20 Desambiguación de entidades/IMG-20260307170657216.png",
+    "Attachments/Notas Analíticas/MCD/2026-02-20 Desambiguación de entidades/IMG-20260307170655240.png",
+    "Attachments/Notas Analíticas/MCD/2026-02-20 Desambiguación de entidades/IMG-20260307170655794.png",
+    "Attachments/Datos/Documentos/NDAngels/2021-12-09-Reunión-Presencial-NDAngels-Tetaz/IMG-20260307170704472.jpg",
+    "Attachments/Datos/Documentos/NDAngels/2021-12-09-Reunión-Presencial-NDAngels-Tetaz",
     "Attachments/Sin título/IMG-20260219171703405.jpg",
     "Attachments/IMG-20260219165537358.jpg",
-    "Bibliografía/MCD/Bakker-2024-Ontology Learning from Text - an Analysis on LLM Performance-CONFERENCEPAPER-annotations.md",
-    "Bibliografía/MCD/Bakker-2025-Ontology Learning with LLMs - A Benchmark Study on Axiom Identification-PREPRINT.md",
-    "Notas de Campo/2026-02-19.md",
-    "Utils/Templater/Documento.md",
-    "Excalidraw/Drawing 2026-02-19 08.54.35.excalidraw.md",
-    "Excalidraw/Drawing 2026-02-19 08.54.22.excalidraw.md",
-    "Excalidraw/Drawing 2026-02-19 01.30.11.excalidraw.md",
-    "Excalidraw/Drawing 2026-02-19 01.30.11.excalidraw.light.svg",
-    "Excalidraw/Drawing 2026-02-19 01.30.11.excalidraw.dark.svg",
-    "Excalidraw",
-    "2022-04-27 Marcio Algranti.docx",
-    "Data/Entrevistas/NDAngels/2022-04-27 Marcio Algranti.md",
-    "Data/Entrevistas/NDAngels/2022-05-17 Pedro Cavanna.docx",
-    "Data/Entrevistas/NDAngels/2022-05-17 Pedro Cavanna.md",
-    "Data/Documentos/Circular/2020-09-08 charla ideación de evento agtech.md",
-    "Data/Documentos/Vinculación Científica/2023-08-23 Susana Levy - UNSAM.md",
-    "Sin título.docx",
-    "Sin título.canvas",
-    "Data/Documentos/NDAngels/2020-04-13 Primera Reunión Virtual NDAngels.md",
-    "Bases/Datos sin Procesar.base",
-    "Sin título.base",
-    "Data/Documentos/NDAngels/2020-04-13 Primera Reunión Virtual NDAngels (conflict 2026-02-18-19-43-17).md",
-    "Attachments/Bibliografía/negroKnowledgeGraphsLLMs/image-42-x51-y209.png",
-    "Attachments/Bibliografía/negroKnowledgeGraphsLLMs",
-    "Data/Documentos/Jorge De María/2020-06-17 Reunión Jorge-Eduardo - Kabinnet.mp4",
-    "Memos/Proyecto/Proyecto de Tesis v1.1.md",
-    "Memos/Proyecto/Indice Comentado V2.md",
-    "Memos/Proyecto/2020-09-24 Devolución Quinta entrega Taller I DAS.md",
-    "Memos/Proyecto/2020-07-24 Devolucion segunda entrega taller.md",
-    "Memos/2020-06-16 Ontología y códigos.md",
-    "Data/Entrevistas/NDAngels/2020-07-15 Primera entrevista a Sergio Postigo.md",
-    "Data/Documentos/Vinculación Científica/2023-10-30 Segunda reunión UBA-Exactas - Juliana Gamboa.md",
-    "Data/Documentos/Vinculación Científica/2023-09-27-Exactas-Innovación-Incubación-Bloque 5 y 6.md",
-    "Data/Documentos/Vinculación Científica/2023-09-27-Exactas-Innovación-Incubación-Bloque 3.md",
-    "Data/Documentos/Vinculación Científica/2023-09-27-Exactas-Innovación-Incubación-Bloque 1 y 2.md",
-    "Data/Documentos/SF500/2024-04-04 - Sesión SFBuild Fall 2024 - Mau Messina - Fundraising.md",
-    "Data/Documentos/Jorge De María/2020-06-17 Primer cuestionario de preguntas Kabinnet.pdf",
-    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735903.png",
-    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735832.png",
-    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735752.png",
-    "Attachments/Memos/2020-06-16 Ontología y códigos/IMG-20260124165735684.png",
-    "Attachments/Data/Documentos/Jorge De María/2020-06-17 Eduardo Costantini’s Kabinett Launches Streaming Platform/IMG-20260124162250408.webp"
+    "Sin título.canvas"
   ]
 }

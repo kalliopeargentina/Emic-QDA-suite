@@ -75,7 +75,7 @@
         "order": 10
       },
       {
-        "rule": "Excalidraw",
+        "rule": "Pizarra",
         "icon": "SiExcalidraw",
         "for": "folders",
         "order": 11

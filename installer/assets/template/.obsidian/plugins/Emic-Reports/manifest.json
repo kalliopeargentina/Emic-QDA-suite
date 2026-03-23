@@ -1,0 +1,10 @@
+{
+	"id": "emic-reports",
+	"name": "Emic Report Architect",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Compose multiple notes into professionally styled reports and export to PDF or DOCX.",
+	"author": "Emic Reports",
+	"authorUrl": "https://github.com",
+	"isDesktopOnly": true
+}

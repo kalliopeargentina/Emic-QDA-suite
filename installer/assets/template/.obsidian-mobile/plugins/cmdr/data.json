@@ -4,12 +4,6 @@
   "debug": false,
   "editorMenu": [
     {
-      "id": "semantic-canvas:create-canvas-from-note",
-      "icon": "lucide-git-graph",
-      "name": "Semantic Canvas: Create canvas based on note",
-      "mode": "any"
-    },
-    {
       "id": "copilot:suggest%20codes",
       "icon": "lucide-square-code",
       "name": "AI Suggest Codes",
@@ -84,6 +78,18 @@
       "icon": "lucide-book-up",
       "name": "Zotero Integration: Research Notes",
       "mode": "any"
+    },
+    {
+      "id": "emic-charts-view:emic-charts-view-wizard",
+      "icon": "lucide-chart-area",
+      "name": "Emic Charts View: Wizard",
+      "mode": "any"
+    },
+    {
+      "id": "emic-qda:toggle-highlights-sidebar",
+      "icon": "lucide-highlighter",
+      "name": "Emic-QDA: Emic-QDA: alternar barra lateral de resaltados",
+      "mode": "any"
     }
   ],
   "rightRibbon": [],
@@ -94,25 +100,18 @@
   "explorer": [],
   "hide": {
     "statusbar": [],
-    "leftRibbon": []
+    "leftRibbon": [
+      "Emic-QDA: Open Codebook Definition"
+    ]
   },
   "spacing": "8",
   "advancedToolbar": {
     "rowHeight": 48,
-    "rowCount": 3,
+    "rowCount": 1,
     "spacing": 0,
     "buttonWidth": 48,
-    "columnLayout": true,
-    "mappedIcons": [
-      {
-        "commandID": "obsidian-excalidraw-plugin:excalidraw-insert-transclusion",
-        "iconID": "excalidraw-icon"
-      },
-      {
-        "commandID": "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed",
-        "iconID": "excalidraw-icon"
-      }
-    ],
+    "columnLayout": false,
+    "mappedIcons": [],
     "tooltips": false,
     "heightOffset": 0
   }
