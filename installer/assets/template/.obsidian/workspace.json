@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2b92e0297e95e0f3",
+        "id": "ae8d559b8744cfe5",
         "type": "tabs",
         "children": [
           {
-            "id": "4e35b21aefca32a9",
+            "id": "beec26d8e39b8782",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -238,12 +238,12 @@
       "emic-camera:Emic-Camera": false,
       "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
       "obsidian-map-view:Open map view": false,
+      "cmdr:Templater: Create Nota Analítica": false,
       "bases:Crear nueva base": false,
       "graph:Abrir vista gráfica": false,
       "command-palette:Abrir paleta de comandos": false,
       "copilot:Open Copilot Chat": false,
       "switcher:Abrir selector rápido": true,
-      "templater-obsidian:Templater": true,
       "emic-qda:Emic-QDA: Abrir definicion del libro de codigos": true,
       "emic-qda:Emic-QDA: Eliminar tipo de extraccion": true,
       "media-extended:Open external media": false,
@@ -252,12 +252,11 @@
       "emic-reports:Open style template editor": false,
       "cmdr:Templater: Create Coocurrencias de Códigos": false,
       "cmdr:Templater: Create Extractions Overview": false,
-      "cmdr:Templater: Create Memo": false,
       "cmdr:AI Suggest Codes": false,
       "cmdr:Shell commands: Execute: Transcribir de Youtube": false,
       "cmdr:Zotero Integration: Bibliography Card": false,
-      "cmdr:Zotero Integration: Cite": false,
-      "cmdr:Zotero Integration: Bibliography_Link": false,
+      "cmdr:Zotero Integration: Cite": true,
+      "cmdr:Zotero Integration: Bibliography_Link": true,
       "cmdr:Zotero Integration: Codification Import": true,
       "cmdr:Zotero Integration: Research Notes": false,
       "cmdr:Emic-QDA: Emic-QDA: alternar barra lateral de resaltados": false,
@@ -266,6 +265,8 @@
   },
   "active": "932813b69dbbff3d",
   "lastOpenFiles": [
+    "Notas de Campo/2026-03-30.md",
+    "Utils/Templater/Nota de Campo.md",
     "Análisis/Reportes/2025-03-02 Lenguaje y jerga técnica en la oficina.pdf",
     "Análisis/Reportes",
     "Notas Analíticas/Sin título.md",

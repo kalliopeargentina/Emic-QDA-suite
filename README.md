@@ -57,6 +57,8 @@ Para quienes hacen **investigación cualitativa** o **ciencias sociales** y quie
 - https://github.com/kalliopeargentina/Emic-Charts-View
 - https://github.com/kalliopeargentina/Emic-Camera
 - https://github.com/kalliopeargentina/Emic-Table-Tools
+- https://github.com/kalliopeargentina/Emic-Reports
+- https://github.com/kalliopeargentina/Emic-pdf-plus
 - https://github.com/kalliopeargentina/ObsidianQDA-Suite
 - https://github.com/kalliopeargentina/emic-qda
 - https://github.com/kalliopeargentina/OntologyExplorer
@@ -65,47 +67,46 @@ Para quienes hacen **investigación cualitativa** o **ciencias sociales** y quie
 
 ### Plugins de Obsidian incluidos en la plantilla
 
-La plantilla del instalador incluye los siguientes plugins en `installer/assets/template/.obsidian/plugins` y en `community-plugins.json`:
 
 #### Plugins Emic (con enlace al repositorio)
 
 | Plugin | Descripción | Repositorio |
 |--------|-------------|-------------|
-| **Emic-QDA** | Análisis cualitativo (QDA) en Markdown. | [github.com/kalliopeargentina/emic-qda](https://github.com/kalliopeargentina/emic-qda) |
-| **Emic Charts View** | Visualización de datos con gráficos (Ant Design Charts). | [github.com/kalliopeargentina/Emic-Charts-View](https://github.com/kalliopeargentina/Emic-Charts-View) |
-| **Emic Table Tools** | Herramientas para tablas: exportar a CSV, block-id, transponer. | [github.com/kalliopeargentina/Emic-Table-Tools](https://github.com/kalliopeargentina/Emic-Table-Tools) |
-| **Emic-Camera** | Plugin de cámara para Obsidian (fotos, vídeo, subida desde dispositivo). | [github.com/kalliopeargentina/Emic-Camera](https://github.com/kalliopeargentina/Emic-Camera) |
+| **Emic-QDA** | Análisis cualitativo (QDA) en Markdown; códigos, datos y extracciones. | [emic-qda](https://github.com/kalliopeargentina/emic-qda) |
+| **Emic PDF++** | PDF y anotación en el flujo QDA (carpeta `Emic-Pdf-Plus`, ID de comunidad `pdf-plus`). | [Emic-pdf-plus](https://github.com/kalliopeargentina/Emic-pdf-plus) |
+| **Emic Report Architect** | Armar informes a partir de varias notas; exportar a PDF o DOCX. | [Emic-Reports](https://github.com/kalliopeargentina/Emic-Reports) |
+| **Emic Charts View** | Gráficos en la bóveda (Ant Design Charts). | [Emic-Charts-View](https://github.com/kalliopeargentina/Emic-Charts-View) |
+| **Emic Table Tools** | Tablas: exportar CSV, block-id, transponer, etc. | [Emic-Table-Tools](https://github.com/kalliopeargentina/Emic-Table-Tools) |
+| **Emic-Camera** | Cámara en Obsidian (fotos, vídeo, capturas). | [Emic-Camera](https://github.com/kalliopeargentina/Emic-Camera) |
 
-#### Otros plugins de la comunidad
+#### Otros plugins de la comunidad (empaquetados en la plantilla)
 
-- **Another Quick Switcher** — Alternativa al Quick Switcher.
-- **Quadro** — QDA en Obsidian (codificación y extracciones).
-- **Multi Properties** — Añadir propiedades a varias notas a la vez.
-- **Maps** (Obsidian) — Vista de mapa para las bases.
-- **Copilot** — Asistente IA en el vault.
-- **Map View** — Vista de mapa interactiva.
-- **Linter** — Formato y estilo de notas.
-- **Zotero Integration** — Citas y bibliografías desde Zotero.
-- **Chronos Timeline** — Líneas de tiempo en notas.
-- **Templater** — Plantillas con variables y lógica.
-- **Commander** — Comandos y macros en la interfaz.
-- **Media Extended** — Mejora de reproducción de audio/video.
-- **Shell commands** — Comandos de sistema y atajos ([kalliopeargentina/obsidian-shellcommands](https://github.com/kalliopeargentina/obsidian-shellcommands)).
-- **Image Converter** — Convertir, redimensionar y editar imágenes.
-- **Custom File Viewer** — Abrir archivos con aplicaciones externas.
-- **Dynamic Highlights** — Resaltado dinámico según búsqueda o selección.
-- **Sidebar Highlights** — Gestión de resaltados y comentarios.
-- **Attachment Management** — Rutas y renombrado de adjuntos.
-- **Docxer** — Importar y previsualizar .docx.
-- **File Explorer Note Count** — Contador de notas por carpeta.
-- **File Diff** — Diferencias entre dos archivos.
-- **DOCX Exporter** — Exportar notas a Word.
-- **JSON/CSV Importer** — Importar JSON/CSV y crear notas desde plantillas.
-- **Extended Markdown Syntax** — Sintaxis extendida (subíndice, resaltado, etc.).
-- **Iconize** (obsidian-icon-folder) — Iconos para archivos y carpetas.
-- **Excalidraw** — Dibujos y esquemas.
-- **CSV Lite** — Abrir y editar CSV en Obsidian.
-- **Charts View** (obsidian-chartsview-plugin) — Gráficos desde datos/CSV (complementario a Emic Charts View).
+Orden alfabético por nombre visible en el manifiesto:
+
+- **Attachment Management** (`attachment-management`) — Rutas y renombrado de adjuntos.
+- **Chronos Timeline** (`chronos`) — Líneas de tiempo en Markdown.
+- **Commander** (`cmdr`) — Comandos y macros en la interfaz.
+- **Copilot** (`copilot`) — Asistente de IA con contexto del vault.
+- **Custom File Viewer** (`custom-file-viewer`) — Abrir archivos con aplicaciones externas.
+- **Docxer** (`docxer`) — Importar y previsualizar .docx.
+- **Dynamic Highlights** (`obsidian-dynamic-highlights`) — Resaltados dinámicos (regex, selección).
+- **Excalidraw** (`obsidian-excalidraw-plugin`) — Dibujos y diagramas.
+- **Extended Markdown Syntax** (`extended-markdown-syntax`) — Sintaxis extendida sin HTML.
+- **File Explorer Note Count** (`file-explorer-note-count`) — Contador de notas por carpeta.
+- **Iconize** (`obsidian-icon-folder`) — Iconos en archivos y carpetas.
+- **Image Converter** (`image-converter`) — Convertir, comprimir y editar imágenes.
+- **Linter** (`obsidian-linter`) — Formato y estilo de notas.
+- **Maps** (`maps`) — Mapa en vistas Bases (plugin oficial).
+- **Map View** (`obsidian-map-view`) — Mapa a partir de notas geolocalizadas.
+- **Media Extended** (`media-extended`) — Audio/video con marcas de tiempo y notas.
+- **Multi Properties** (`multi-properties`) — Editar propiedades en muchas notas a la vez.
+- **Note Toolbar** (`note-toolbar`) — Barras de herramientas por nota o carpeta.
+- **Shell commands** (`obsidian-shellcommands`) — Comandos del sistema y atajos; en este suite se usa el fork [kalliopeargentina/obsidian-shellcommands](https://github.com/kalliopeargentina/obsidian-shellcommands).
+- **Templater** (`templater-obsidian`) — Plantillas con lógica y variables.
+- **Zotero Integration** (`obsidian-zotero-desktop-connector`) — Citas, bibliografía y notas desde Zotero.
+
+#### Habilitados en la plantilla pero no empaquetados en `plugins/`
+
 
 ---
 # Emic QDA Installer (NSIS)

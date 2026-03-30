@@ -32,12 +32,6 @@
       "mode": "any"
     },
     {
-      "id": "templater-obsidian:create-Utils/Templater/Memo.md",
-      "icon": "lucide-notebook-text",
-      "name": "Templater: Create Memo",
-      "mode": "any"
-    },
-    {
       "id": "copilot:suggest%20codes",
       "icon": "lucide-code-square",
       "name": "AI Suggest Codes",
@@ -89,6 +83,12 @@
       "id": "emic-charts-view:emic-charts-view-wizard",
       "icon": "lucide-chart-area",
       "name": "Emic Charts View: Wizard",
+      "mode": "any"
+    },
+    {
+      "id": "templater-obsidian:create-Utils/Templater/Nota Analítica.md",
+      "icon": "lucide-notebook-pen",
+      "name": "Templater: Create Nota Analítica",
       "mode": "any"
     }
   ],
