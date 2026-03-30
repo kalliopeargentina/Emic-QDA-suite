@@ -3,3 +3,5 @@ installer/*.exe
 installer/dist/
 # Certificado de firma (no subir)
 installer/*.pfx
+# Variables de firma locales (contraseña del PFX)
+installer/.env

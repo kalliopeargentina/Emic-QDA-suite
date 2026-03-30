@@ -25,12 +25,32 @@
 #>
 param(
   [string] $ExePath,
-  [string] $PfxPath = $env:SIGNING_PFX_PATH,
-  [string] $Password = $env:SIGNING_PFX_PASSWORD
+  [string] $PfxPath,
+  [string] $Password
 )
 
 $ErrorActionPreference = "Stop"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+# Cargar installer/.env (SIGNING_PFX_PATH, SIGNING_PFX_PASSWORD) si existe
+$dotEnv = Join-Path $ScriptDir ".env"
+if (Test-Path -LiteralPath $dotEnv) {
+  Get-Content -LiteralPath $dotEnv -Encoding UTF8 | ForEach-Object {
+    $line = $_.Trim()
+    if (-not $line -or $line.StartsWith("#")) { return }
+    $eq = $line.IndexOf("=")
+    if ($eq -lt 1) { return }
+    $k = $line.Substring(0, $eq).Trim()
+    $v = $line.Substring($eq + 1).Trim()
+    if (($v.Length -ge 2) -and (($v[0] -eq '"' -and $v[-1] -eq '"') -or ($v[0] -eq "'" -and $v[-1] -eq "'"))) {
+      $v = $v.Substring(1, $v.Length - 2)
+    }
+    Set-Item -Path "Env:$k" -Value $v
+  }
+}
+
+if (-not $PfxPath) { $PfxPath = $env:SIGNING_PFX_PATH }
+if (-not $Password) { $Password = $env:SIGNING_PFX_PASSWORD }
 
 # --- Buscar signtool (Windows SDK) ---
 $sdkRoot = "${env:ProgramFiles(x86)}\Windows Kits\10\bin"
@@ -66,10 +86,13 @@ if (-not $ExePath) {
 
 # --- Certificado ---
 if (-not $PfxPath) {
-  Write-Error "Falta el certificado. Definí SIGNING_PFX_PATH o pasá -PfxPath."
+  Write-Error "Falta el certificado. Definí SIGNING_PFX_PATH, usá installer/.env, o pasá -PfxPath."
 }
-if (-not (Test-Path $PfxPath)) { Write-Error "No existe el PFX: $PfxPath" }
-$PfxPath = (Resolve-Path $PfxPath).Path
+if (-not [System.IO.Path]::IsPathRooted($PfxPath)) {
+  $PfxPath = Join-Path $ScriptDir $PfxPath
+}
+if (-not (Test-Path -LiteralPath $PfxPath)) { Write-Error "No existe el PFX: $PfxPath" }
+$PfxPath = (Resolve-Path -LiteralPath $PfxPath).Path
 
 if (-not $Password) {
   Write-Error "Falta la contraseña del PFX. Definí SIGNING_PFX_PASSWORD o pasá -Password."

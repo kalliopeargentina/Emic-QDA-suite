@@ -1,5 +1,5 @@
-; Instalador Unicode para que los diálogos muestren bien caracteres acentuados (á, é, ñ, etc.).
-; Guardar este archivo como UTF-8 con BOM si los acentos no se ven correctamente al compilar.
+﻿; Instalador Unicode para que los diálogos muestren bien caracteres acentuados (á, é, ñ, etc.).
+; Guardar este .nsi (y los .nsh/.nsi incluidos con tildes) como UTF-8 con BOM: si no, makensis usa ACP y las cadenas salen mal (mojibake).
 Unicode true
 !include "MUI2.nsh"
 !include "LogicLib.nsh"
@@ -102,7 +102,12 @@ ShowInstDetails show
 !define MUI_HEADERIMAGE_BITMAP "assets\banner.bmp"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "assets\side.bmp"
 
+; Términos tras el splash (splash se cierra con CloseSplashWhenDialogShows).
+; assets\terms.txt: guardar como UTF-16 LE con BOM; si está en UTF-8 sin BOM, los acentos fallan en la página de licencia.
+!define MUI_LICENSEPAGE_TEXT_TOP "Leé los términos y condiciones. Para continuar con la instalación tenés que aceptarlos."
+!define MUI_LICENSEPAGE_TEXT_BOTTOM "Si no aceptás, pulsá Rechazar: el instalador se cerrará sin instalar nada."
 !define MUI_PAGE_CUSTOMFUNCTION_SHOW CloseSplashWhenDialogShows
+!insertmacro MUI_PAGE_LICENSE "assets\terms.txt"
 !insertmacro MUI_PAGE_WELCOME
 !define MUI_PAGE_CUSTOMFUNCTION_SHOW ComponentsPageShow
 !insertmacro MUI_PAGE_COMPONENTS
@@ -119,7 +124,11 @@ Page custom VaultNamePageCreate VaultNamePageLeave
 
 !insertmacro MUI_LANGUAGE "Spanish"
 
-; Cerrar el splash 3 segundos después de que va a mostrarse el diálogo Welcome
+; Botones de la página de términos (el título/subtítulo ya vienen en español con MUI_LANGUAGE)
+LangString MUI_INNEXTPAGE_LICENSE_BUTTON ${LANG_SPANISH} "Acepto"
+LangString MUI_INNEXTPAGE_LICENSE_BUTTON_DISAGREE ${LANG_SPANISH} "Rechazar"
+
+; Cerrar el splash 3 segundos después de que se muestra la primera página del asistente (términos)
 Function CloseSplashWhenDialogShows
 !ifdef INCLUDE_SPLASH
   Sleep 3000

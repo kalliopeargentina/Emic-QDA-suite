@@ -1,4 +1,4 @@
-!define PYTHON_VERSION "3.12.10"
+﻿!define PYTHON_VERSION "3.12.10"
 !define PYTHON_URL "https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe"
 !define PYTHON_INSTALLER "python-3.12.10-amd64.exe"
 
@@ -10,8 +10,8 @@
 ; Nombre del instalador: fijo "Zotero_setup.exe" en installer.nsi (no depende de la versión devuelta por el servidor)
 
 ; Versión del suite (ej. 1.0.0) y build (ej. fecha-hora). El .exe se nombra Emic-QDA-Installer-<VERSION>-<BUILD>.exe
-!define VERSION "0.5.6"
-!define BUILD "2026-03-22"
+!define VERSION "0.5.7"
+!define BUILD "2026-03-29"
 
 !define PY_LAUNCHER "py"
 !define PY_MAJOR "3.12"
