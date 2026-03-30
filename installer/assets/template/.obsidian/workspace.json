@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a7f89bc92ef981d8",
+        "id": "2b92e0297e95e0f3",
         "type": "tabs",
         "children": [
           {
-            "id": "b56e7ef06c63fea0",
+            "id": "4e35b21aefca32a9",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -177,9 +177,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "pdf-plus:EMIC PDF++: Toggle auto-copy": true,
-      "pdf-plus:EMIC PDF++: Toggle auto-focus": true,
-      "pdf-plus:EMIC PDF++: Toggle auto-paste": true,
       "emic-qda:Emic-QDA: Asignar codigo al parrafo": true,
       "emic-qda:Emic-QDA: Renombrar codigo": true,
       "emic-qda:Emic-QDA: Quitar codigo del parrafo": true,
@@ -267,8 +264,13 @@
       "cmdr:Emic Charts View: Wizard": false
     }
   },
-  "active": "f8d4b6b03dba691e",
+  "active": "932813b69dbbff3d",
   "lastOpenFiles": [
+    "Análisis/Reportes/2025-03-02 Lenguaje y jerga técnica en la oficina.pdf",
+    "Análisis/Reportes",
+    "Notas Analíticas/Sin título.md",
+    "Emic report architect/Sin título.pdf",
+    "Emic report architect",
     "Datos/Documentos/2025-03-01 Reunión de obra y jerarquías en campo.md",
     "Extracciones/Citas de Prueba/Untitled.md",
     "LEAME.md",

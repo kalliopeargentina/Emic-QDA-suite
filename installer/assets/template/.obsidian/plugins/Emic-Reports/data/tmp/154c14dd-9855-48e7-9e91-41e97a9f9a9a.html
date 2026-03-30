@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="referrer" content="no-referrer" />
+<style>:root {
+	--ra-font-body: "Latin Modern Roman", "Times New Roman", serif;
+	--ra-font-heading: "Latin Modern Roman", "Times New Roman", serif;
+	--ra-font-mono: "Latin Modern Mono", Consolas, monospace;
+	--ra-text: #000000;
+	--ra-muted: #333333;
+	--ra-accent: #111111;
+	--ra-body-size: 10pt;
+	--ra-body-line-height: 1.2;
+	--ra-p-spacing: 5px;
+	--ra-section-spacing: 20px;
+	--ra-page-margin-top: 2cm;
+	--ra-page-margin-right: 2cm;
+	--ra-page-margin-bottom: 2cm;
+	--ra-page-margin-left: 2cm;
+	--ra-page-width: 210mm;
+	--ra-page-height: 297mm;
+	--ra-code-bg: #ffffff;
+	--ra-code-normal: #000000;
+	--ra-export-link-external-color: #0563C1;
+	--ra-export-link-external-underline: 1;
+	--ra-export-link-internal-color: #0563C1;
+	--ra-export-link-internal-underline: 1;
+	/* Blockquote (HTML/PDF); mirrors style template tokens */
+	--ra-blockquote-text-align: left;
+	--ra-blockquote-font-size: 10pt;
+	--ra-blockquote-margin-y: 6px;
+	--ra-blockquote-italic: 1;
+	--ra-blockquote-font-style: italic;
+	--ra-blockquote-bar-visible: 1;
+	--ra-blockquote-bar: #555555;
+	--ra-blockquote-bar-width: 3px;
+	--ra-blockquote-nested-bar-width: 2px;
+}
+
+.ra-render-frame {
+	color: var(--ra-text);
+	font-family: var(--ra-font-body);
+	font-size: var(--ra-body-size);
+	line-height: var(--ra-body-line-height);
+	tab-size: 4 !important;
+	--code-background: #ffffff !important;
+	--code-normal: #000000 !important;
+	background: #ffffff !important;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+/* Generic anchor fallback (TOC/plugins); refined by external/internal rules below. */
+.ra-render-frame a:link,
+.ra-render-frame a:visited,
+.ra-render-frame a {
+	color: #0563C1 !important;
+	text-decoration: underline !important;
+}
+
+.ra-render-frame a[href^="http://"],
+.ra-render-frame a[href^="https://"],
+.ra-render-frame a[href^="mailto:"] {
+	color: #0563C1 !important;
+	text-decoration: underline !important;
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
+}
+
+.ra-render-frame a[href]:not([href^="http://"]):not([href^="https://"]):not([href^="mailto:"]) {
+	color: #0563C1 !important;
+	text-decoration: underline !important;
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
+}
+
+.ra-render-frame p {
+	font-family: var(--ra-font-body) !important;
+	font-size: 10pt !important;
+	text-align: justify !important;
+	line-height: 1.2 !important;
+	margin-top: 5px !important;
+}
+
+.ra-render-frame strong {
+	font-weight: bold !important;
+	color: #000000 !important;
+}
+
+.ra-render-frame em {
+	font-style: italic !important;
+	color: #000000 !important;
+}
+
+.ra-render-frame h1,
+.ra-render-frame h2,
+.ra-render-frame h3,
+.ra-render-frame h4,
+.ra-render-frame h5,
+.ra-render-frame h6 {
+	font-family: var(--ra-font-heading) !important;
+	color: var(--ra-text) !important;
+	page-break-after: avoid;
+	page-break-inside: avoid;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+	margin-bottom: 0px !important;
+	padding-bottom: 0px !important;
+	margin-top: 20px !important;
+}
+
+.ra-render-frame h1 {
+	font-family: "Latin Modern Roman Caps", "Times New Roman", serif !important;
+	text-align: center !important;
+	font-size: 18pt !important;
+	font-weight: normal !important;
+	margin-top: 0 !important;
+}
+
+.ra-render-frame h6 {
+	font-family: "Latin Modern Roman Caps", "Times New Roman", serif !important;
+	text-align: center !important;
+	font-size: 11pt !important;
+	font-weight: normal !important;
+	margin-top: 6px !important;
+}
+
+.ra-render-frame h2 { font-size: 12pt !important; }
+.ra-render-frame h3 { font-size: 12pt !important; }
+.ra-render-frame h4 { font-size: 12pt !important; }
+.ra-render-frame h5 { font-size: 11pt !important; }
+
+.ra-render-frame del {
+	font-family: var(--ra-font-body) !important;
+	display: block !important;
+	text-align: center !important;
+	font-size: 10pt !important;
+	text-decoration: none !important;
+	margin-top: 8px !important;
+	padding-bottom: 10px !important;
+}
+
+.ra-render-frame pre {
+	background-color: #ffffff !important;
+	border-style: dashed !important;
+	border-radius: 0px !important;
+	border-width: 1px 0 !important;
+	border-color: #a9a9a9 !important;
+	line-height: 1 !important;
+	white-space: pre-wrap !important;
+	overflow-wrap: anywhere !important;
+	page-break-inside: avoid !important;
+}
+
+.ra-render-frame code {
+	font-family: var(--ra-font-mono) !important;
+	font-size: 10pt !important;
+	color: #292929 !important;
+}
+
+/* --- Export syntax highlighting (hljs token classes inside pre code) --- */
+.ra-render-frame pre code.hljs { color: #24292e !important; }
+.ra-render-frame .hljs-comment,
+.ra-render-frame .hljs-quote { color: #6a737d !important; font-style: italic !important; }
+.ra-render-frame .hljs-keyword,
+.ra-render-frame .hljs-selector-tag,
+.ra-render-frame .hljs-subst,
+.ra-render-frame .hljs-doctag { color: #d73a49 !important; }
+.ra-render-frame .hljs-number,
+.ra-render-frame .hljs-literal,
+.ra-render-frame .hljs-regexp,
+.ra-render-frame .hljs-variable,
+.ra-render-frame .hljs-template-variable,
+.ra-render-frame .hljs-link,
+.ra-render-frame .hljs-selector-attr,
+.ra-render-frame .hljs-selector-pseudo { color: #005cc5 !important; }
+.ra-render-frame .hljs-string,
+.ra-render-frame .hljs-meta .hljs-string,
+.ra-render-frame .hljs-attribute { color: #032f62 !important; }
+.ra-render-frame .hljs-title,
+.ra-render-frame .hljs-section,
+.ra-render-frame .hljs-built_in,
+.ra-render-frame .hljs-name,
+.ra-render-frame .hljs-type { color: #6f42c1 !important; }
+.ra-render-frame .hljs-symbol,
+.ra-render-frame .hljs-bullet,
+.ra-render-frame .hljs-addition { color: #22863a !important; }
+.ra-render-frame .hljs-deletion { color: #b31d28 !important; }
+.ra-render-frame .hljs-meta,
+.ra-render-frame .hljs-meta-keyword { color: #005cc5 !important; }
+.ra-render-frame .hljs-emphasis { font-style: italic !important; }
+.ra-render-frame .hljs-strong { font-weight: bold !important; }
+.ra-render-frame .hljs-formula { color: #005cc5 !important; }
+.ra-render-frame .hljs-params { color: #24292e !important; }
+.ra-render-frame .hljs-function .hljs-keyword,
+.ra-render-frame .hljs-class .hljs-keyword { color: #d73a49 !important; }
+.ra-render-frame .hljs-tag,
+.ra-render-frame .hljs-selector-id,
+.ra-render-frame .hljs-selector-class { color: #22863a !important; }
+.ra-render-frame .hljs-attr,
+.ra-render-frame .hljs-attribute { color: #005cc5 !important; }
+.ra-render-frame .hljs-punctuation,
+.ra-render-frame .hljs-operator { color: #24292e !important; }
+
+/* Prism-style tokens (some Obsidian builds / plugins) */
+.ra-render-frame pre .token.comment,
+.ra-render-frame pre .token.prolog,
+.ra-render-frame pre .token.doctype,
+.ra-render-frame pre .token.cdata { color: #6a737d !important; font-style: italic !important; }
+.ra-render-frame pre .token.punctuation { color: #24292e !important; }
+.ra-render-frame pre .token.property,
+.ra-render-frame pre .token.tag,
+.ra-render-frame pre .token.boolean,
+.ra-render-frame pre .token.number,
+.ra-render-frame pre .token.constant,
+.ra-render-frame pre .token.symbol,
+.ra-render-frame pre .token.deleted { color: #005cc5 !important; }
+.ra-render-frame pre .token.selector,
+.ra-render-frame pre .token.attr-name,
+.ra-render-frame pre .token.string,
+.ra-render-frame pre .token.char,
+.ra-render-frame pre .token.builtin,
+.ra-render-frame pre .token.inserted { color: #032f62 !important; }
+.ra-render-frame pre .token.operator,
+.ra-render-frame pre .token.entity,
+.ra-render-frame pre .token.url,
+.ra-render-frame pre .language-css .token.string,
+.ra-render-frame pre .style .token.string { color: #d73a49 !important; }
+.ra-render-frame pre .token.atrule,
+.ra-render-frame pre .token.attr-value,
+.ra-render-frame pre .token.keyword { color: #d73a49 !important; }
+.ra-render-frame pre .token.function,
+.ra-render-frame pre .token.class-name { color: #6f42c1 !important; }
+.ra-render-frame pre .token.regex,
+.ra-render-frame pre .token.important,
+.ra-render-frame pre .token.variable { color: #e36209 !important; }
+.ra-render-frame pre button,
+.ra-render-frame [class*="code-block"] button,
+.ra-render-frame .markdown-code-block button,
+.ra-render-frame .copy-code-button,
+.ra-render-frame .markdown-rendered pre + button {
+	display: none !important;
+	visibility: hidden !important;
+	width: 0 !important;
+	height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	pointer-events: none !important;
+}
+
+.ra-render-frame mark {
+	background: rgba(255, 235, 59, 0.45) !important;
+	border-radius: 2px !important;
+	padding: 0 0.12em !important;
+	color: var(--ra-text) !important;
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
+}
+
+.ra-render-frame mjx-math {
+	color: #0a0a0a !important;
+	font-size: calc(10pt * 100 / 100) !important;
+}
+
+.ra-render-frame math-block mjx-math {
+	font-size: calc(10pt * 120 / 100) !important;
+}
+
+.ra-render-frame math-block {
+	page-break-before: avoid !important;
+	color: #0a0a0a !important;
+}
+
+.ra-render-frame svg,
+.ra-render-frame img:not(.ra-math-export-img) {
+	display: block !important;
+	page-break-inside: avoid !important;
+	page-break-after: avoid !important;
+	margin: 10px auto 5px !important;
+	/* Respect Obsidian wikilink width/height attrs; max-* caps oversize; object-fit keeps aspect inside box */
+	max-width: 100% !important;
+	max-height: calc(
+		var(--ra-page-height) - var(--ra-page-margin-top) - var(--ra-page-margin-bottom)
+	) !important;
+	object-fit: contain !important;
+	object-position: center !important;
+	box-sizing: border-box !important;
+}
+
+/* Raster math PNGs: do not force display:block on inline formulas (breaks line flow). */
+.ra-render-frame img.ra-math-export-img--inline {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	margin: 0 0.1em !important;
+	max-width: 100% !important;
+	page-break-inside: avoid !important;
+}
+
+.ra-render-frame img.ra-math-export-img--display {
+	display: block !important;
+	margin: 0.75em auto !important;
+	max-width: 100% !important;
+	page-break-inside: avoid !important;
+	page-break-after: avoid !important;
+}
+
+.ra-render-frame figcaption {
+	font-family: var(--ra-font-body) !important;
+	text-align: center;
+	text-align: center; font-size: 8pt; margin-bottom: 16px;
+}
+
+.ra-render-frame table,
+.ra-render-frame pre {
+	page-break-inside: avoid !important;
+}
+
+.ra-render-frame table {
+	font-family: Times, serif !important;
+	font-size: 10pt !important;
+	text-align: center !important;
+	margin: 10px auto 5px !important;
+	border-top: 1px solid #292929 !important;
+	border-bottom: 1px solid #292929 !important;
+}
+
+.ra-render-frame th {
+	color: var(--ra-text) !important;
+	font-weight: normal !important;
+	border: none !important;
+	border-bottom: 1px solid #a9a9a9 !important;
+	padding: 2px 5px !important;
+}
+
+.ra-render-frame td {
+	border: none !important;
+	padding: 2px 5px !important;
+}
+
+.ra-render-frame ul,
+.ra-render-frame ol,
+.ra-render-frame dl {
+	page-break-before: avoid !important;
+	font-family: var(--ra-font-body) !important;
+	font-size: 11pt !important;
+	line-height: 1.1 !important;
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+
+.ra-render-frame ul li {
+	list-style-type: none !important;
+	position: relative !important;
+}
+.ra-render-frame ul li::before {
+	content: '•' !important;
+	position: absolute !important;
+	left: -1.15em !important;
+	top: -0.05em !important;
+	font-size: 1.1em !important;
+}
+
+.ra-render-frame hr {
+	border: none !important;
+	border-top: 0 solid #d3d3d3 !important;
+	page-break-after: always !important;
+}
+
+/* Expanded HTML <details> (export unwraps to .ra-export-details + summary paragraph) */
+.ra-render-frame .ra-export-details {
+	margin: 0.65em 0 !important;
+}
+.ra-render-frame .ra-export-details-summary {
+	font-weight: bold !important;
+	margin: 0 0 0.35em 0 !important;
+}
+
+.ra-render-frame blockquote:not(.callout) {
+	display: block !important;
+	text-align: var(--ra-blockquote-text-align) !important;
+	font-size: var(--ra-blockquote-font-size) !important;
+	color: var(--ra-text) !important;
+	border: none !important;
+	border-left: var(--ra-blockquote-bar-width) solid var(--ra-blockquote-bar) !important;
+	padding: 0.35em 0.65em 0.35em 0.95em !important;
+	margin: var(--ra-blockquote-margin-y) 0 !important;
+	font-style: var(--ra-blockquote-font-style) !important;
+	box-sizing: border-box !important;
+}
+.ra-render-frame blockquote:not(.callout) blockquote:not(.callout) {
+	margin-top: 0.45em !important;
+	margin-bottom: 0.3em !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 0.85em !important;
+	border-left: var(--ra-blockquote-nested-bar-width) solid color-mix(in srgb, #555555 78%, #ffffff) !important;
+}
+.ra-render-frame blockquote:not(.callout) > p {
+	margin: 0.22em 0 !important;
+}
+.ra-render-frame blockquote:not(.callout) > p:first-child {
+	margin-top: 0 !important;
+}
+.ra-render-frame blockquote:not(.callout) > p:last-child {
+	margin-bottom: 0 !important;
+}
+.ra-render-frame blockquote:not(.callout) code,
+.ra-render-frame blockquote:not(.callout) pre {
+	font-style: normal !important;
+}
+
+.ra-render-frame .callout[data-callout="note"] { --ra-callout-color: 68, 138, 255; }
+.ra-render-frame .callout[data-callout="abstract"] { --ra-callout-color: 0, 176, 255; }
+.ra-render-frame .callout[data-callout="summary"] { --ra-callout-color: 0, 176, 255; }
+.ra-render-frame .callout[data-callout="tldr"] { --ra-callout-color: 0, 176, 255; }
+.ra-render-frame .callout[data-callout="info"] { --ra-callout-color: 0, 184, 212; }
+.ra-render-frame .callout[data-callout="todo"] { --ra-callout-color: 68, 138, 255; }
+.ra-render-frame .callout[data-callout="tip"] { --ra-callout-color: 0, 191, 165; }
+.ra-render-frame .callout[data-callout="hint"] { --ra-callout-color: 0, 191, 165; }
+.ra-render-frame .callout[data-callout="important"] { --ra-callout-color: 0, 191, 165; }
+.ra-render-frame .callout[data-callout="success"] { --ra-callout-color: 0, 200, 83; }
+.ra-render-frame .callout[data-callout="check"] { --ra-callout-color: 0, 200, 83; }
+.ra-render-frame .callout[data-callout="done"] { --ra-callout-color: 0, 200, 83; }
+.ra-render-frame .callout[data-callout="question"] { --ra-callout-color: 255, 193, 7; }
+.ra-render-frame .callout[data-callout="help"] { --ra-callout-color: 255, 193, 7; }
+.ra-render-frame .callout[data-callout="faq"] { --ra-callout-color: 255, 193, 7; }
+.ra-render-frame .callout[data-callout="warning"] { --ra-callout-color: 255, 152, 0; }
+.ra-render-frame .callout[data-callout="caution"] { --ra-callout-color: 255, 152, 0; }
+.ra-render-frame .callout[data-callout="attention"] { --ra-callout-color: 255, 152, 0; }
+.ra-render-frame .callout[data-callout="failure"] { --ra-callout-color: 244, 67, 54; }
+.ra-render-frame .callout[data-callout="fail"] { --ra-callout-color: 244, 67, 54; }
+.ra-render-frame .callout[data-callout="missing"] { --ra-callout-color: 244, 67, 54; }
+.ra-render-frame .callout[data-callout="danger"] { --ra-callout-color: 255, 82, 82; }
+.ra-render-frame .callout[data-callout="error"] { --ra-callout-color: 255, 82, 82; }
+.ra-render-frame .callout[data-callout="bug"] { --ra-callout-color: 244, 67, 54; }
+.ra-render-frame .callout[data-callout="example"] { --ra-callout-color: 124, 77, 255; }
+.ra-render-frame .callout[data-callout="quote"] { --ra-callout-color: 158, 158, 158; }
+.ra-render-frame .callout[data-callout="cite"] { --ra-callout-color: 158, 158, 158; }
+
+.ra-render-frame .callout {
+	--ra-callout-color: 68, 138, 255;
+	background-color: rgba(var(--ra-callout-color), 0.12) !important;
+	border: 1px solid rgba(var(--ra-callout-color), 0.35) !important;
+	border-left: 4px solid rgb(var(--ra-callout-color)) !important;
+	border-radius: 6px !important;
+	padding: 0 !important;
+	margin: 16px 0 !important;
+	overflow: hidden !important;
+	color: var(--ra-text) !important;
+	-webkit-print-color-adjust: exact !important;
+	print-color-adjust: exact !important;
+	break-inside: avoid-page;
+	page-break-inside: avoid;
+}
+
+.ra-render-frame .callout .callout-title {
+	display: flex !important;
+	align-items: center !important;
+	gap: 8px !important;
+	padding: 8px 14px !important;
+	font-weight: 600 !important;
+	font-size: 0.82em !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.04em !important;
+	color: rgb(var(--ra-callout-color)) !important;
+	background-color: rgba(var(--ra-callout-color), 0.1) !important;
+	border-bottom: 1px solid rgba(var(--ra-callout-color), 0.22) !important;
+}
+
+.ra-render-frame .callout .callout-title-inner {
+	flex: 1 !important;
+}
+
+.ra-render-frame .callout .callout-icon {
+	flex-shrink: 0 !important;
+	width: 1.1em !important;
+	height: 1.1em !important;
+	opacity: 0.85 !important;
+}
+
+.ra-render-frame .callout .callout-icon svg {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.ra-render-frame .callout .callout-content {
+	padding: 10px 14px 12px !important;
+	font-size: var(--ra-body-size) !important;
+	/* Foldable callouts ([-]/[+]) render collapsed in DOM; export has no Obsidian JS to expand them */
+	display: block !important;
+	max-height: none !important;
+	height: auto !important;
+	overflow: visible !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+.ra-render-frame .callout.is-collapsed .callout-content {
+	padding: 10px 14px 12px !important;
+}
+
+.ra-render-frame .callout .callout-content > :first-child {
+	margin-top: 0 !important;
+}
+
+.ra-render-frame .callout .callout-content > :last-child {
+	margin-bottom: 0 !important;
+}
+
+.ra-render-frame .callout .callout-content p {
+	text-align: inherit !important;
+}
+
+/* In-app preview: beat Obsidian theme rules on .markdown-preview-view .callout (collapsed / folded) */
+.ra-render-frame.markdown-preview-view.markdown-reading-view.markdown-rendered .callout .callout-content {
+	display: block !important;
+	max-height: none !important;
+	height: auto !important;
+	overflow: visible !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	color: var(--ra-text) !important;
+}
+
+/* Older/alternate DOM: body blocks directly under callout without .callout-content */
+.ra-render-frame .callout > p,
+.ra-render-frame .callout > ul,
+.ra-render-frame .callout > ol {
+	color: var(--ra-text) !important;
+}
+
+.ra-render-frame .mermaid {
+	color: #000000 !important;
+}
+
+.ra-cover-page {
+	position: relative;
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.ra-cover-bg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.2;
+}
+
+.ra-cover-content {
+	position: relative;
+	z-index: 1;
+}
+
+.ra-cover-title {
+	font-size: 18pt;
+	margin-bottom: 8px;
+}
+
+.ra-cover-subtitle {
+	font-size: 12pt;
+	margin-bottom: 6px;
+}
+
+.ra-cover-authors {
+	font-size: 10pt;
+}
+
+.ra-toc {
+	margin: 1.5em 0;
+	padding: 0 0 1em;
+	border-bottom: 1px solid var(--ra-text);
+	opacity: 0.85;
+}
+.ra-toc-title {
+	font-size: 12pt;
+	margin: 0 0 0.75em;
+	font-family: var(--ra-font-heading);
+}
+.ra-toc-entries {
+	margin: 0;
+	padding: 0;
+}
+.ra-toc-entry {
+	display: flex;
+	align-items: baseline;
+	gap: 0.45em;
+	font-size: 10pt;
+	margin: 0.28em 0;
+	line-height: 1.35;
+}
+.ra-toc-text {
+	flex: 0 1 auto;
+	min-width: 0;
+	max-width: 78%;
+}
+.ra-toc-link {
+	text-decoration: none;
+	color: inherit;
+}
+.ra-toc-link:hover {
+	text-decoration: underline;
+}
+.ra-toc-leader {
+	flex: 1 1 auto;
+	min-width: 1.25em;
+	border-bottom: 1px dotted currentColor;
+	opacity: 0.42;
+	height: 0;
+	align-self: flex-end;
+	margin-bottom: 0.22em;
+}
+.ra-toc-page {
+	flex: 0 0 2.75em;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+}
+.ra-toc-level-1 .ra-toc-text { padding-left: 0; }
+.ra-toc-level-2 .ra-toc-text { padding-left: 0.85rem; }
+.ra-toc-level-3 .ra-toc-text { padding-left: 1.7rem; }
+.ra-toc-level-4 .ra-toc-text { padding-left: 2.55rem; }
+.ra-toc-level-5 .ra-toc-text { padding-left: 3.4rem; }
+.ra-toc-level-6 .ra-toc-text { padding-left: 4.25rem; }
+
+.ra-render-frame h2[data-ra-section]::before { content: attr(data-ra-section) ".  "; }
+.ra-render-frame h3[data-ra-section]::before { content: attr(data-ra-section) ".  "; }
+.ra-render-frame h4[data-ra-section]::before { content: attr(data-ra-section) ".  "; }
+body .ra-render-frame h1.ra-cover-title::before,
+body .ra-render-frame h2.ra-toc-title::before {
+	content: none !important;
+}
+
+
+@media print {
+	@page {
+		size: 210mm 297mm;
+		margin: var(--ra-page-margin-top) var(--ra-page-margin-right) var(--ra-page-margin-bottom) var(--ra-page-margin-left);
+	}
+	body {
+		color: var(--ra-text) !important;
+	}
+	.ra-page-break {
+		page-break-after: always;
+	}
+	.ra-toc {
+		page-break-after: always;
+	}
+}</style>
+<style>
+html, body { margin: 0; background: #ffffff !important; }
+.ra-print-sheet {
+	width: 210mm;
+	height: 297mm;
+	margin: 0 auto;
+	page-break-after: always;
+	box-sizing: border-box;
+	background: #ffffff;
+}
+.ra-export-page-body {
+	height: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding-top: 2cm;
+	padding-right: 2cm;
+	padding-bottom: 2cm;
+	padding-left: 2cm;
+}
+/* Large figures: cap to sheet; keep wikilink img dimensions when smaller (no width/height override). */
+.ra-print-sheet .ra-export-page-body img:not(.ra-math-export-img),
+.ra-print-sheet .ra-export-page-body svg {
+	max-width: 100% !important;
+	max-height: calc(297mm - 2cm - 2cm) !important;
+	object-fit: contain !important;
+	object-position: center !important;
+	box-sizing: border-box !important;
+}
+</style>
+<script>
+async function waitForAssets() {
+	const images = Array.from(document.images || []);
+	await Promise.all(images.map(async (img) => {
+		try {
+			if (img.decode) await img.decode();
+		} catch {}
+		if (img.complete && img.naturalWidth > 0) return;
+		return new Promise((resolve) => {
+			img.addEventListener("load", resolve, { once: true });
+			img.addEventListener("error", resolve, { once: true });
+		});
+	}));
+	if (document.fonts && document.fonts.ready) {
+		try { await document.fonts.ready; } catch {}
+	}
+	await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+	document.body.setAttribute("data-ra-ready", "1");
+}
+window.addEventListener("load", () => { void waitForAssets(); });
+</script>
+</head>
+<body>
+<div class="ra-print-sheet">
+<div class="ra-render-frame ra-export-page-body"><h1 data-heading="2025-03-02 Lenguaje y jerga técnica en la oficina" dir="auto" id="2025-03-02-lenguaje-y-jerga-tcnica-en-la-oficina">2025-03-02 Lenguaje y jerga técnica en la oficina</h1>
+<p dir="auto"><strong>Contexto:</strong> Día en la oficina de proyectos. Observación en sala abierta y en reuniones con subcontratistas.</p>
+<p dir="auto">En la oficina coexisten dos registros: el técnico (planos, partidas, plazos, "replanteo", "nivelación", "recepción de obra") y el administrativo ("facturación", "anticipo", "certificado", "cierre de mes"). Quienes hacen de bisagra —los jefes de proyecto— alternan ambos códigos según el interlocutor. En una llamada con un subcontratista escuché: "Necesitamos el albarán firmado para poder certificar la partida y liberar el siguiente anticipo." El subcontratista respondió con jerga de obra: "El replanteo ya está, lo que falta es que pasen revisión de seguridad." La conversación siguió hasta que alguien tradujo "revisión de seguridad" al protocolo interno (checklist, firma del encargado). Esa necesidad de traducción constante entre "campo" y "oficina" genera fricciones: retrasos en pagos, malentendidos sobre plazos, sensación en obra de que "la oficina no entiende".</p>
+<p dir="auto">En los pasillos se usa mucho "la obra" como sujeto: "La obra pide más tiempo", "la obra dice que el material llegó dañado". Es una personificación que diluye responsabilidades individuales y refuerza la frontera entre sede y sitio. Útil para el análisis de cultura organizacional y para diseñar códigos sobre comunicación interárea.</p></div>
+</div>
+</body>
+</html>

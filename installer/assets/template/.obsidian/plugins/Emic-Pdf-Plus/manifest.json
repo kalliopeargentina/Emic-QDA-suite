@@ -1,13 +1,14 @@
 {
-    "id": "pdf-plus",
-    "name": "EMIC PDF++",
-    "version": "1.0.0",
-    "minAppVersion": "1.5.8",
-    "description": "PDF tooling for Obsidian built around Emic-QDA: highlights and annotations stay in sync over the vault file bridge, with backlinks, copy-link workflows, and QDA actions on PDFs (codes, entities, relations, extractions).",
-    "author": "Marcos Buccellato",
-    "authorUrl": "",
-    "fundingUrl": {
-        "Ko-fi": "https://ko-fi.com/pseudometa"
-    },
-    "isDesktopOnly": false
+	"id": "emic-qda",
+	"name": "Emic-QDA",
+	"description": "Qualitative Data Analysis (QDA) for social scientists. An open alternative to `MAXQDA` and `atlas.ti`, using Markdown to store data and research codes.",
+	"version": "1.3.0",
+	"minAppVersion": "1.7.4",
+	"isDesktopOnly": false,
+	"author": "Marcos Buccellato",
+	"fundingUrl": {
+		"Ko-Fi": "https://ko-fi.com/pseudometa"
+	},
+	"authorUrl": "",
+	"helpUrl": ""
 }

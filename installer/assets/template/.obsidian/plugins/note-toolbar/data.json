@@ -34,6 +34,10 @@
     {
       "folder": "Entidades",
       "toolbar": "4a96ea46-a3e3-4a2c-90c5-d548e3c08f06"
+    },
+    {
+      "folder": "Notas Analíticas",
+      "toolbar": "d114640a-82ad-4a53-840e-6cd917ebd377"
     }
   ],
   "icon": "circle-ellipsis",
@@ -618,6 +622,42 @@
             },
             "viewMode": "source"
           }
+        },
+        {
+          "uuid": "c666d632-e091-43ec-89be-f0d1428813fd",
+          "icon": "lucide-printer",
+          "label": "Imprimir",
+          "tooltip": "Imprime la nota activa",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Emic Report Architect: Print active note",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "emic-reports:print-active-note",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
         }
       ],
       "mobileStyles": [],
@@ -639,7 +679,7 @@
           }
         }
       },
-      "updated": "2026-03-19T23:06:30.423Z"
+      "updated": "2026-03-30T05:22:14.290Z"
     },
     {
       "uuid": "1fb91de9-86e7-4517-b932-5c6342f5b718",
@@ -1908,6 +1948,42 @@
             },
             "viewMode": "source"
           }
+        },
+        {
+          "uuid": "eb35620b-ae04-4bff-935e-6ffc53c7521b",
+          "icon": "lucide-printer",
+          "label": "Imprimir",
+          "tooltip": "Imprime la nota activa",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Emic Report Architect: Print active note",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "emic-reports:print-active-note",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
         }
       ],
       "mobileStyles": [],
@@ -1929,7 +2005,7 @@
           }
         }
       },
-      "updated": "2026-03-20T00:58:30.676Z"
+      "updated": "2026-03-30T05:22:59.066Z"
     },
     {
       "uuid": "3ad6d422-5bdc-4957-85d9-4fb0700ebbce",
@@ -2219,7 +2295,7 @@
     },
     {
       "uuid": "d114640a-82ad-4a53-840e-6cd917ebd377",
-      "commandPosition": "float",
+      "commandPosition": "quicktools",
       "customClasses": "",
       "defaultItem": null,
       "defaultStyles": [
@@ -2227,7 +2303,7 @@
         "even",
         "sticky"
       ],
-      "hasCommand": true,
+      "hasCommand": false,
       "items": [
         {
           "uuid": "df566b00-bc79-4ccc-b5ef-6d50dc8da202",
@@ -2336,28 +2412,100 @@
             },
             "viewMode": "source"
           }
+        },
+        {
+          "uuid": "a1a5ef94-447e-40c1-b512-e77e99b3741f",
+          "icon": "lucide-printer",
+          "label": "Imprimir nota",
+          "tooltip": "Imprime la nota activa",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Emic Report Architect: Print active note",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "emic-reports:print-active-note",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "67736512-4c0d-4338-be28-7fc23c380ae2",
+          "icon": "lucide-printer-check",
+          "label": "Imprimir reporte activo",
+          "tooltip": "imprime el reporte activo en el Report Architect",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Emic Report Architect: Export active report project",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "emic-reports:export-active-report-project",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
         }
       ],
       "mobileStyles": [],
-      "name": "General",
+      "name": "Notas Analíticas",
       "position": {
         "desktop": {
           "allViews": {
-            "position": "bottom"
+            "position": "top"
           }
         },
         "mobile": {
           "allViews": {
-            "position": "bottom"
+            "position": "top"
           }
         },
         "tablet": {
           "allViews": {
-            "position": "bottom"
+            "position": "top"
           }
         }
       },
-      "updated": "2026-03-22T23:39:45.656Z"
+      "updated": "2026-03-30T05:17:46.517Z"
     },
     {
       "uuid": "9bdedf4c-ce76-4cd2-a4c7-87d4945558fc",
@@ -2802,6 +2950,42 @@
             },
             "viewMode": "source"
           }
+        },
+        {
+          "uuid": "d4810b57-5332-4faa-96ea-4dbac0ce2c2f",
+          "icon": "lucide-printer",
+          "label": "Imprimir",
+          "tooltip": "Imprime la nota activa",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Emic Report Architect: Print active note",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "emic-reports:print-active-note",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
         }
       ],
       "mobileStyles": [],
@@ -2823,7 +3007,7 @@
           }
         }
       },
-      "updated": "2026-03-29T22:49:21.754Z"
+      "updated": "2026-03-30T05:23:51.581Z"
     },
     {
       "uuid": "b1705b88-cd62-4133-9f79-a68186fdf8c4",
@@ -3268,6 +3452,114 @@
             },
             "viewMode": "source"
           }
+        },
+        {
+          "uuid": "37a71a0c-694f-427f-8f57-c63e6b90d2c2",
+          "icon": "",
+          "label": "",
+          "tooltip": "",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "separator"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "8dfcd5b8-d5d9-42ff-9593-642a70b405ff",
+          "icon": "lucide-printer",
+          "label": "",
+          "tooltip": "Imprime la nota activa",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Emic Report Architect: Print active note",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "emic-reports:print-active-note",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "db8ccb05-3efe-4681-878c-0e5abdc93177",
+          "icon": "lucide-printer-check",
+          "label": "",
+          "tooltip": "imprime el reporte activo en el Report Architect",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Emic Report Architect: Export active report project",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "emic-reports:export-active-report-project",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
         }
       ],
       "mobileStyles": [],
@@ -3289,10 +3581,10 @@
           }
         }
       },
-      "updated": "2026-03-19T21:26:44.834Z"
+      "updated": "2026-03-30T05:27:11.259Z"
     }
   ],
   "version": 20260122.1,
   "webviewerToolbar": null,
-  "whatsnew_version": "1.29"
+  "whatsnew_version": "1.30"
 }

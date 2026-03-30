@@ -97,6 +97,12 @@
         "icon": "LiBookMarked",
         "for": "folders",
         "order": 14
+      },
+      {
+        "rule": "Reportes",
+        "icon": "LiPrinter",
+        "for": "everything",
+        "order": 15
       }
     ],
     "extraMargin": {

@@ -1,5 +1,5 @@
 {
-  "defaultOutputFolder": "Emic report architect",
+  "defaultOutputFolder": "Análisis/Reportes",
   "templatesFolder": "Utils/Emic-Report-Arquitect",
   "defaultPaperSize": "A4",
   "defaultFormat": "pdf",
