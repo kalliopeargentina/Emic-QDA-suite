@@ -1,0 +1,15 @@
+{
+  "defaultOutputFolder": "Emic report architect",
+  "templatesFolder": "Utils/Emic-Report-Arquitect",
+  "defaultPaperSize": "A4",
+  "defaultFormat": "pdf",
+  "openPreviewOnExport": true,
+  "projectsIndex": [
+    {
+      "id": "846175e2-94b2-40c6-af07-9e0e42188c13",
+      "name": "Report project",
+      "updatedAt": "2026-03-23T06:09:40.839Z"
+    }
+  ],
+  "quickPrintTemplateId": ""
+}

@@ -1,8 +1,9 @@
 {
+  "language": "auto",
   "coding": {
     "folder": "Códigos",
     "storageRoot": "Utils/Emic-QDA/Codebooks",
-    "activeCodebookId": "testcolor",
+    "activeCodebookId": "codebook-de-prueba",
     "displayCount": true,
     "sortFunc": "last used first"
   },
@@ -18,7 +19,7 @@
   "entity": {
     "folder": "Entidades",
     "storageRoot": "Utils/Emic-QDA/Ontología",
-    "activeDomainId": "test",
+    "activeDomainId": "dominio-2",
     "displayCount": true,
     "openingMode": "tab",
     "coder": "default-coder",
@@ -63,5 +64,10 @@
       "entityTypes": {},
       "extractionTypes": {}
     }
+  },
+  "bridge": {
+    "enabled": true,
+    "storageRoot": "Utils/Emic-QDA/bridge",
+    "pollIntervalMs": 1200
   }
 }

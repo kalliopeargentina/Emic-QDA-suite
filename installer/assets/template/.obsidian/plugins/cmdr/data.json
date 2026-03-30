@@ -78,6 +78,18 @@
       "icon": "lucide-book-up",
       "name": "Zotero Integration: Research Notes",
       "mode": "any"
+    },
+    {
+      "id": "emic-qda:toggle-highlights-sidebar",
+      "icon": "lucide-highlighter",
+      "name": "Emic-QDA: Emic-QDA: alternar barra lateral de resaltados",
+      "mode": "any"
+    },
+    {
+      "id": "emic-charts-view:emic-charts-view-wizard",
+      "icon": "lucide-chart-area",
+      "name": "Emic Charts View: Wizard",
+      "mode": "any"
     }
   ],
   "rightRibbon": [],

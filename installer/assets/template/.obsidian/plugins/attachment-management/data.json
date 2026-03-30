@@ -9,7 +9,7 @@
     "extensionOverride": []
   },
   "dateFormat": "YYYYMMDDHHmmssSSS",
-  "excludeExtensionPattern": "srt|mp3|wav|flac|aac|ogg|wma|m4a|mp4|mkv|mov|avi|wmv|flv|webm|mpeg|mpg|3gp",
+  "excludeExtensionPattern": "|ogg|wma|m4a|mp4|mkv|mov|avi|wmv|flv|webm|mpeg|mpg|3gp|excalidraw",
   "autoRenameAttachment": true,
   "excludedPaths": "Clippings;Bibliografía;Utils",
   "excludePathsArray": [

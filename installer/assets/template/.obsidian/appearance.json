@@ -1,13 +1,7 @@
 {
-  "accentColor": "#5ca6f5",
-  "baseFontSize": 16,
-  "showViewHeader": true,
-  "enabledCssSnippets": [
-    "minor-adjustments",
-    "supercharged-links-gen",
-    "startup"
-  ],
-  "nativeMenus": false,
+  "cssTheme": "Minimal",
   "theme": "obsidian",
-  "cssTheme": "Minimal"
+  "enabledCssSnippets": [
+    "minor-adjustments"
+  ]
 }

@@ -2,7 +2,7 @@
 	"id": "emic-qda",
 	"name": "Emic-QDA",
 	"description": "Qualitative Data Analysis (QDA) for social scientists. An open alternative to `MAXQDA` and `atlas.ti`, using Markdown to store data and research codes.",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"minAppVersion": "1.7.4",
 	"isDesktopOnly": false,
 	"author": "Marcos Buccellato",

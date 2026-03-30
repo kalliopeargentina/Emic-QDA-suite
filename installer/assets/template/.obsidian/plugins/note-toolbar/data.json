@@ -2666,10 +2666,10 @@
           "tooltip": "Crear relacion entre entidades",
           "hasCommand": false,
           "inGallery": false,
-          "link": "Emic-QDA: Crear relacion",
+          "link": "Emic-QDA: Crear nuevo tipo de relacion",
           "linkAttr": {
             "commandCheck": false,
-            "commandId": "emic-qda:create-relation",
+            "commandId": "emic-qda:create-new-relation-type",
             "hasVars": false,
             "type": "command"
           },
@@ -2823,7 +2823,7 @@
           }
         }
       },
-      "updated": "2026-03-19T22:44:58.612Z"
+      "updated": "2026-03-29T22:49:21.754Z"
     },
     {
       "uuid": "b1705b88-cd62-4133-9f79-a68186fdf8c4",
