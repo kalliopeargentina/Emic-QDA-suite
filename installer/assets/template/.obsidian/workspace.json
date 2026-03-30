@@ -177,6 +177,9 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "pdf-plus:EMIC PDF++: Toggle auto-copy": true,
+      "pdf-plus:EMIC PDF++: Toggle auto-focus": true,
+      "pdf-plus:EMIC PDF++: Toggle auto-paste": true,
       "emic-qda:Emic-QDA: Asignar codigo al parrafo": true,
       "emic-qda:Emic-QDA: Renombrar codigo": true,
       "emic-qda:Emic-QDA: Quitar codigo del parrafo": true,
@@ -258,7 +261,7 @@
       "cmdr:Zotero Integration: Bibliography Card": false,
       "cmdr:Zotero Integration: Cite": false,
       "cmdr:Zotero Integration: Bibliography_Link": false,
-      "cmdr:Zotero Integration: Codification Import": false,
+      "cmdr:Zotero Integration: Codification Import": true,
       "cmdr:Zotero Integration: Research Notes": false,
       "cmdr:Emic-QDA: Emic-QDA: alternar barra lateral de resaltados": false,
       "cmdr:Emic Charts View: Wizard": false
