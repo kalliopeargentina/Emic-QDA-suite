@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ae8d559b8744cfe5",
+        "id": "2b911d1caff03228",
         "type": "tabs",
         "children": [
           {
-            "id": "beec26d8e39b8782",
+            "id": "aa9e03757d47bee2",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -74,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221.5
+    "width": 353.5
   },
   "right": {
     "id": "2c7fb10812b4d53f",
@@ -159,7 +159,7 @@
             }
           },
           {
-            "id": "f8d4b6b03dba691e",
+            "id": "8686cf8bb8572c6f",
             "type": "leaf",
             "state": {
               "type": "emic-qda-highlights-sidebar",
@@ -173,10 +173,11 @@
       }
     ],
     "direction": "horizontal",
-    "width": 418.5
+    "width": 431.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "templater-obsidian:Templater": true,
       "emic-qda:Emic-QDA: Asignar codigo al parrafo": true,
       "emic-qda:Emic-QDA: Renombrar codigo": true,
       "emic-qda:Emic-QDA: Quitar codigo del parrafo": true,
@@ -260,10 +261,11 @@
       "cmdr:Zotero Integration: Codification Import": true,
       "cmdr:Zotero Integration: Research Notes": false,
       "cmdr:Emic-QDA: Emic-QDA: alternar barra lateral de resaltados": false,
-      "cmdr:Emic Charts View: Wizard": false
+      "cmdr:Emic Charts View: Wizard": false,
+      "workspaces:Gestionar disposiciones de espacio de trabajo": true
     }
   },
-  "active": "932813b69dbbff3d",
+  "active": "aa9e03757d47bee2",
   "lastOpenFiles": [
     "Notas de Campo/2026-03-30.md",
     "Utils/Templater/Nota de Campo.md",

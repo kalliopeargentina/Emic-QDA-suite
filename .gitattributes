@@ -1,0 +1,4 @@
+# Bash/macOS: CRLF in the shebang causes "bad interpreter: /bin/bash^M"
+installer/macos/install.sh text eol=lf
+installer/macos-distribution/build-dmg.sh text eol=lf
+**/emicqda-installer text eol=lf

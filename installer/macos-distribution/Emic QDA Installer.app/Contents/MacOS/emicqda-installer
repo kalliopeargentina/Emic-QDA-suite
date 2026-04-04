@@ -1,0 +1,22 @@
+#!/bin/bash
+# Lanzador del bundle .app: abre Terminal y ejecuta install.sh desde Contents/Resources.
+set -euo pipefail
+
+CONTENTS="$(cd "$(dirname "$0")/.." && pwd)"
+RES="$CONTENTS/Resources"
+
+if [[ ! -f "$RES/install.sh" ]]; then
+	osascript -e 'display alert "Emic QDA" message "Falta install.sh en Contents/Resources. Ejecutá build-dmg.sh en una Mac para armar el paquete." as critical' 2>/dev/null || \
+		echo "Falta install.sh en $RES" >&2
+	exit 1
+fi
+
+exec osascript - "$RES" <<'APPLESCRIPT'
+on run argv
+	set res to item 1 of argv
+	tell application "Terminal"
+		activate
+		do script "cd " & quoted form of res & " && bash ./install.sh; echo; printf %s 'Presiona Enter para cerrar... '; read -r _"
+	end tell
+end run
+APPLESCRIPT

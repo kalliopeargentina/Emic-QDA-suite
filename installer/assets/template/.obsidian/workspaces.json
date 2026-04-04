@@ -1,22 +1,26 @@
 {
   "workspaces": {
-    "Notas de Campo": {
+    "Default": {
       "main": {
-        "id": "7c06fa2ab4376dc2",
+        "id": "676549e57b9e9904",
         "type": "split",
         "children": [
           {
-            "id": "8c692944763e8341",
+            "id": "2b911d1caff03228",
             "type": "tabs",
             "children": [
               {
-                "id": "f1a0b4a5cc65b546",
+                "id": "aa9e03757d47bee2",
                 "type": "leaf",
                 "state": {
-                  "type": "empty",
-                  "state": {},
+                  "type": "markdown",
+                  "state": {
+                    "file": "Datos/Documentos/NDAngels/2019-12-13 Segunda reunión ND Angels 1.md",
+                    "mode": "preview",
+                    "source": false
+                  },
                   "icon": "lucide-file",
-                  "title": "Nueva pestaña"
+                  "title": "2019-12-13 Segunda reunión ND Angels 1"
                 }
               }
             ]
@@ -25,381 +29,253 @@
         "direction": "vertical"
       },
       "left": {
-        "id": "3aab1dd3c96ce282",
-        "type": "mobile-drawer",
+        "id": "2e310a0d0deffe09",
+        "type": "split",
         "children": [
           {
-            "id": "adb034489fbd37f3",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
+            "id": "8dac1a9b1d188b69",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "932813b69dbbff3d",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Explorador de archivos"
+                }
               },
-              "icon": "lucide-folder-closed",
-              "title": "Explorador de archivos"
-            }
-          },
-          {
-            "id": "39eb0cb069a843d4",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
+              {
+                "id": "d1002bc2d1a0f929",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Buscar"
+                }
               },
-              "icon": "lucide-search",
-              "title": "Buscar"
-            }
-          },
-          {
-            "id": "55803490c18a209c",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Etiquetas"
-            }
-          },
-          {
-            "id": "cb79aa8f95a718e0",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "Todas las propiedades"
-            }
-          },
-          {
-            "id": "89239e35dc3357f1",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Marcadores"
-            }
+              {
+                "id": "5309ae42aa00f7e4",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Marcadores"
+                }
+              }
+            ]
           }
         ],
-        "currentTab": 0
+        "direction": "horizontal",
+        "width": 353.5
       },
       "right": {
-        "id": "efc55f6f01308c3e",
-        "type": "mobile-drawer",
+        "id": "2c7fb10812b4d53f",
+        "type": "split",
         "children": [
           {
-            "id": "bfad07f0fe2f602e",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+            "id": "3f71240ac9047fab",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "bc434fa6e6a5e4bf",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Enlaces entrantes"
+                }
               },
-              "icon": "links-coming-in",
-              "title": "Enlaces entrantes"
-            }
-          },
-          {
-            "id": "04179f9bf5a25fba",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
+              {
+                "id": "25e7f9841247661f",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Enlaces salientes"
+                }
               },
-              "icon": "links-going-out",
-              "title": "Enlaces salientes"
-            }
-          },
-          {
-            "id": "aa18c54073113710",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
+              {
+                "id": "6f34324427acaf20",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Etiquetas"
+                }
               },
-              "icon": "lucide-list",
-              "title": "Esquema"
-            }
+              {
+                "id": "2cced6f56488871f",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-archive",
+                  "title": "Todas las propiedades"
+                }
+              },
+              {
+                "id": "36cacee107650325",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Esquema"
+                }
+              },
+              {
+                "id": "8686cf8bb8572c6f",
+                "type": "leaf",
+                "state": {
+                  "type": "emic-qda-highlights-sidebar",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "Resaltados"
+                }
+              }
+            ],
+            "currentTab": 5
           }
         ],
-        "currentTab": 0
+        "direction": "horizontal",
+        "width": 431.5
       },
       "left-ribbon": {
         "hiddenItems": {
-          "remotely-save:Remotely Save": false,
-          "obsidian-excalidraw-plugin:New drawing": false,
-          "emic-camera:Emic-Camera": false,
-          "cmdr:Templater: Create Coocurrencias de Códigos": true,
-          "cmdr:Templater: Create Extractions Overview": true,
-          "cmdr:Templater: Create Memo": false,
-          "cmdr:AI Suggest Codes": true,
-          "cmdr:Shell commands: Execute: Transcribir de Youtube": true,
-          "cmdr:Zotero Integration: Bibliography Card": true,
-          "cmdr:Zotero Integration: Cite": true,
-          "cmdr:Zotero Integration: Bibliography_Link": true,
-          "cmdr:Zotero Integration: Codification Import": true,
-          "cmdr:Zotero Integration: Research Notes": true,
-          "switcher:Abrir selector rápido": true,
-          "graph:Abrir vista gráfica": false,
+          "templater-obsidian:Templater": true,
+          "emic-qda:Emic-QDA: Asignar codigo al parrafo": true,
+          "emic-qda:Emic-QDA: Renombrar codigo": true,
+          "emic-qda:Emic-QDA: Quitar codigo del parrafo": true,
+          "emic-qda:Emic-QDA: Eliminar Code File y todas sus referencias": true,
+          "emic-qda:Emic-QDA: Fusionar otro Code File en el Code File actual": true,
+          "emic-qda:Emic-QDA: Crear relacion entre codigos": true,
+          "emic-qda:Emic-QDA: Crear tipo de relacion de codigo": true,
+          "emic-qda:Emic-QDA: Editar tipo de relacion de codigo": true,
+          "emic-qda:Emic-QDA: Eliminar tipo de relacion de codigo": true,
+          "emic-qda:Emic-QDA: Editar relacion del codigo actual": true,
+          "emic-qda:Emic-QDA: Eliminar relacion del codigo actual": true,
+          "emic-qda:Emic-QDA: Dividir referencias seleccionadas hacia otro Code File": true,
+          "emic-qda:Emic-QDA: Crear multiples Code Files": true,
+          "emic-qda:Emic-QDA: Mostrar resumen de codigos": true,
+          "emic-qda:Emic-QDA: Regenerar markdown de codigos desde JSON canonico": true,
+          "emic-qda:Emic-QDA: Exportar definicion del libro de codigos (JSON/CSV)": true,
+          "emic-qda:Emic-QDA: Exportar codigos del libro de codigos (CSV)": true,
+          "emic-qda:Emic-QDA: Eliminar libro de codigos": true,
+          "emic-qda:Emic-QDA: Extraer desde parrafo": true,
+          "emic-qda:Emic-QDA: Agregar parrafo como fuente a un Extraction File existente": true,
+          "emic-qda:Emic-QDA: Quitar parrafo de extraccion": true,
+          "emic-qda:Emic-QDA: Editar atributos de extraccion": true,
+          "emic-qda:Emic-QDA: Eliminar Extraction File actual": true,
+          "emic-qda:Emic-QDA: Fusionar otro Extraction File en el Extraction File actual": true,
+          "emic-qda:Emic-QDA: Crear nuevo tipo de extraccion": true,
+          "emic-qda:Emic-QDA: Exportar todas las extracciones como .csv": true,
+          "emic-qda:Emic-QDA: Exportar todas las extracciones como .json": true,
+          "emic-qda:Emic-QDA: Mostrar resumen de tipo de extraccion": true,
+          "emic-qda:Emic-QDA: Regenerar markdown de extracciones desde JSON canonico": true,
+          "emic-qda:Emic-QDA: Extraer entidad desde parrafo": true,
+          "emic-qda:Emic-QDA: Extraer relacion desde parrafo": true,
+          "emic-qda:Emic-QDA: Crear relacion": true,
+          "emic-qda:Emic-QDA: Agregar relacion a la entidad actual": true,
+          "emic-qda:Emic-QDA: Eliminar relacion de la entidad actual": true,
+          "emic-qda:Emic-QDA: Eliminar entidad actual": true,
+          "emic-qda:Emic-QDA: Agregar evidencia a la relacion": true,
+          "emic-qda:Emic-QDA: Eliminar evidencia de la relacion de la entidad actual": true,
+          "emic-qda:Emic-QDA: Eliminar dominio": true,
+          "emic-qda:Emic-QDA: Crear nuevo tipo de entidad": true,
+          "emic-qda:Emic-QDA: Editar propiedades literales del tipo de entidad": true,
+          "emic-qda:Emic-QDA: Editar propiedades literales de la entidad": true,
+          "emic-qda:Emic-QDA: Crear nuevo tipo de relacion": true,
+          "emic-qda:Emic-QDA: Editar tipo de relacion": true,
+          "emic-qda:Emic-QDA: Abrir Domain Definition": true,
+          "emic-qda:Emic-QDA: Fusionar otro Entity File en el Entity File actual": true,
+          "emic-qda:Emic-QDA: Validar/Reconciliar grafo de dominio": true,
+          "emic-qda:Emic-QDA: Regenerar todos los archivos markdown de entidades": true,
+          "emic-qda:Emic-QDA: Exportar Domain Definition (JSON/Turtle)": true,
+          "emic-qda:Emic-QDA: Exportar Knowledge Graph (JSON/GraphML/GML/CSV)": true,
+          "emic-qda:Emic-QDA: Abrir Data File no leido aleatorio": true,
+          "emic-qda:Emic-QDA: Mostrar archivo de progreso del analisis": true,
+          "emic-qda:Emic-QDA: Marcar Data File actual como leido": true,
+          "emic-qda:Emic-QDA: Cambiar libro de codigos activo": false,
+          "emic-qda:Emic-QDA: Crear definicion del libro de codigos": false,
+          "emic-qda:Emic-QDA: Crear Domain Definition": false,
+          "emic-qda:Emic-QDA: Cambiar dominio activo": false,
           "daily-notes:Abrir la nota de hoy": false,
-          "command-palette:Abrir paleta de comandos": false,
           "audio-recorder:Iniciar/Detener la grabación": false,
-          "bases:Crear nueva base": false,
-          "templater-obsidian:Templater": false,
-          "copilot:Open Copilot Chat": false,
+          "emic-camera:Emic-Camera": false,
+          "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
           "obsidian-map-view:Open map view": false,
-          "docx-exporter:Exportar nota actual a DOCX": false,
-          "emic-qda:Emic-QDA: Assign code to paragraph": true,
-          "emic-qda:Emic-QDA: Rename code": true,
-          "emic-qda:Emic-QDA: Remove code from paragraph": true,
-          "emic-qda:Emic-QDA: Delete Code File and all references to it": true,
-          "emic-qda:Emic-QDA: Merge another Code File into current Code File": true,
-          "emic-qda:Emic-QDA: Split selected references into another Code File": true,
-          "emic-qda:Emic-QDA: Bulk create new Code Files": true,
-          "emic-qda:Emic-QDA: Show code overview": true,
-          "emic-qda:Emic-QDA: Extract from paragraph": true,
-          "emic-qda:Emic-QDA: Add paragraph as source to existing Extraction File": true,
-          "emic-qda:Emic-QDA: Merge another Extraction File into current Extraction File": true,
-          "emic-qda:Emic-QDA: Create new Extraction Type": true,
-          "emic-qda:Emic-QDA: Export all extractions as .csv": true,
-          "emic-qda:Emic-QDA: Show extraction type overview": true,
-          "emic-qda:Emic-QDA: Open random unread Data File": true,
-          "emic-qda:Emic-QDA: Show data analysis progress file": true,
-          "emic-qda:Emic-QDA: Mark current Data File as read": true,
-          "workspaces:Gestionar disposiciones de espacio de trabajo": false
-        }
-      },
-      "active": "adb034489fbd37f3",
-      "mtime": "2026-03-08T23:02:41-03:00"
-    },
-    "QDA": {
-      "main": {
-        "id": "7c06fa2ab4376dc2",
-        "type": "split",
-        "children": [
-          {
-            "id": "8c692944763e8341",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "f1a0b4a5cc65b546",
-                "type": "leaf",
-                "state": {
-                  "type": "empty",
-                  "state": {},
-                  "icon": "lucide-file",
-                  "title": "Nueva pestaña"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical"
-      },
-      "left": {
-        "id": "3aab1dd3c96ce282",
-        "type": "mobile-drawer",
-        "children": [
-          {
-            "id": "adb034489fbd37f3",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "Explorador de archivos"
-            }
-          },
-          {
-            "id": "39eb0cb069a843d4",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Buscar"
-            }
-          },
-          {
-            "id": "55803490c18a209c",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Etiquetas"
-            }
-          },
-          {
-            "id": "cb79aa8f95a718e0",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "Todas las propiedades"
-            }
-          },
-          {
-            "id": "89239e35dc3357f1",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Marcadores"
-            }
-          }
-        ],
-        "currentTab": 0
-      },
-      "right": {
-        "id": "efc55f6f01308c3e",
-        "type": "mobile-drawer",
-        "children": [
-          {
-            "id": "bfad07f0fe2f602e",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Enlaces entrantes"
-            }
-          },
-          {
-            "id": "04179f9bf5a25fba",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Enlaces salientes"
-            }
-          },
-          {
-            "id": "aa18c54073113710",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Esquema"
-            }
-          }
-        ],
-        "currentTab": 0
-      },
-      "left-ribbon": {
-        "hiddenItems": {
-          "remotely-save:Remotely Save": false,
-          "obsidian-excalidraw-plugin:New drawing": false,
-          "emic-camera:Emic-Camera": true,
+          "cmdr:Templater: Create Nota Analítica": false,
+          "bases:Crear nueva base": false,
+          "graph:Abrir vista gráfica": false,
+          "command-palette:Abrir paleta de comandos": false,
+          "copilot:Open Copilot Chat": false,
+          "switcher:Abrir selector rápido": true,
+          "emic-qda:Emic-QDA: Abrir definicion del libro de codigos": true,
+          "emic-qda:Emic-QDA: Eliminar tipo de extraccion": true,
+          "media-extended:Open external media": false,
+          "obsidian-shellcommands:Shell commands: Custom variables": false,
+          "emic-reports:Open report composer": false,
+          "emic-reports:Open style template editor": false,
           "cmdr:Templater: Create Coocurrencias de Códigos": false,
           "cmdr:Templater: Create Extractions Overview": false,
-          "cmdr:Templater: Create Memo": false,
           "cmdr:AI Suggest Codes": false,
-          "cmdr:Shell commands: Execute: Transcribir de Youtube": true,
-          "cmdr:Zotero Integration: Bibliography Card": true,
+          "cmdr:Shell commands: Execute: Transcribir de Youtube": false,
+          "cmdr:Zotero Integration: Bibliography Card": false,
           "cmdr:Zotero Integration: Cite": true,
           "cmdr:Zotero Integration: Bibliography_Link": true,
           "cmdr:Zotero Integration: Codification Import": true,
-          "cmdr:Zotero Integration: Research Notes": true,
-          "switcher:Abrir selector rápido": true,
-          "graph:Abrir vista gráfica": false,
-          "daily-notes:Abrir la nota de hoy": true,
-          "command-palette:Abrir paleta de comandos": false,
-          "audio-recorder:Iniciar/Detener la grabación": true,
-          "bases:Crear nueva base": false,
-          "templater-obsidian:Templater": false,
-          "copilot:Open Copilot Chat": false,
-          "obsidian-map-view:Open map view": true,
-          "docx-exporter:Exportar nota actual a DOCX": true,
-          "emic-qda:Emic-QDA: Assign code to paragraph": false,
-          "emic-qda:Emic-QDA: Rename code": false,
-          "emic-qda:Emic-QDA: Remove code from paragraph": false,
-          "emic-qda:Emic-QDA: Delete Code File and all references to it": false,
-          "emic-qda:Emic-QDA: Merge another Code File into current Code File": false,
-          "emic-qda:Emic-QDA: Split selected references into another Code File": false,
-          "emic-qda:Emic-QDA: Bulk create new Code Files": false,
-          "emic-qda:Emic-QDA: Show code overview": false,
-          "emic-qda:Emic-QDA: Extract from paragraph": false,
-          "emic-qda:Emic-QDA: Add paragraph as source to existing Extraction File": false,
-          "emic-qda:Emic-QDA: Merge another Extraction File into current Extraction File": false,
-          "emic-qda:Emic-QDA: Create new Extraction Type": false,
-          "emic-qda:Emic-QDA: Export all extractions as .csv": true,
-          "emic-qda:Emic-QDA: Show extraction type overview": false,
-          "emic-qda:Emic-QDA: Open random unread Data File": true,
-          "emic-qda:Emic-QDA: Show data analysis progress file": true,
-          "emic-qda:Emic-QDA: Mark current Data File as read": false,
-          "workspaces:Gestionar disposiciones de espacio de trabajo": false
+          "cmdr:Zotero Integration: Research Notes": false,
+          "cmdr:Emic-QDA: Emic-QDA: alternar barra lateral de resaltados": false,
+          "cmdr:Emic Charts View: Wizard": false,
+          "remotely-save:Remotely Save": false,
+          "obsidian-import-json:JSON/CSV Importer": false,
+          "workspaces:Gestionar disposiciones de espacio de trabajo": true
         }
       },
-      "active": "adb034489fbd37f3",
-      "mtime": "2026-03-08T23:01:53-03:00"
+      "active": "aa9e03757d47bee2",
+      "mtime": "2026-03-30T20:30:25-03:00"
     }
   },
-  "active": "Notas de Campo"
+  "active": "Default"
 }

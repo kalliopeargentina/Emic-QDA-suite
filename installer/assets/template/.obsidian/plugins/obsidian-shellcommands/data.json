@@ -6,7 +6,8 @@
   "show_autocomplete_menu": true,
   "working_directory": "",
   "default_shells": {
-    "win32": "pwsh.exe"
+    "win32": "pwsh.exe",
+    "darwin": "/bin/zsh"
   },
   "environment_variable_path_augmentations": {},
   "show_installation_warnings": true,
@@ -28,10 +29,13 @@
     {
       "id": "pybhxwnyve",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-clean-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-clean-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-clean-audio\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-clean-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
       },
       "shells": {
-        "win32": "pwsh.exe"
+        "win32": "pwsh.exe",
+        "darwin": "/bin/zsh"
       },
       "alias": "Limpiar Audio",
       "icon": "lucide-wand-2",
@@ -70,10 +74,13 @@
     {
       "id": "hmlv247ie6",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-convert-compress-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-convert-compress-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-convert-compress-audio\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-convert-compress-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
       },
       "shells": {
-        "win32": "pwsh.exe"
+        "win32": "pwsh.exe",
+        "darwin": "/bin/zsh"
       },
       "alias": "Convertir y Comprimir",
       "icon": "lucide-file-audio",
@@ -112,10 +119,13 @@
     {
       "id": "ia3a6xknii",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-split-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-split-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-split-audio\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-split-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
       },
       "shells": {
-        "win32": "pwsh.exe"
+        "win32": "pwsh.exe",
+        "darwin": "/bin/zsh"
       },
       "alias": "Dividir Audio",
       "icon": "lucide-split-square-horizontal",
@@ -154,7 +164,9 @@
     {
       "id": "wfx9n9sf0m",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-regenerate-srt.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{file_path:absolute}}\" --media-path \"{{_mediaPath}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-regenerate-srt.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{file_path:absolute}}\" --media-path \"{{_mediaPath}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-regenerate-srt\" --vault-path \"./\" --file-path \"{{file_path:absolute}}\" --media-path \"{{_mediaPath}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-regenerate-srt.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{file_path:absolute}}\" --media-path \"{{_mediaPath}}\""
       },
       "shells": {},
       "alias": "Regenerar SRT",
@@ -190,7 +202,9 @@
     {
       "id": "e0h7g5awek",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-extract-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-extract-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-extract-audio\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-extract-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
       },
       "shells": {},
       "alias": "Extraer Audio",
@@ -230,7 +244,9 @@
     {
       "id": "q8zetxe00s",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-topic.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-topic.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-topic\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-topic.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\""
       },
       "shells": {},
       "alias": "Análisis de Tópicos",
@@ -276,7 +292,9 @@
     {
       "id": "0tz8zgb1pk",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-kwic.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --keywords \"{{_KWICKeywords}}\" --context-size \"{{_KWICContextSize}}\" --case-sensitive \"{{_KWICCaseSensitive}}\" --max-per-file \"{{_KWICMaxPerFile}}\" --lemmatize \"{{_KWICLemmatize}}\" --language \"{{_KWICLanguage}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-kwic.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --keywords \"{{_KWICKeywords}}\" --context-size \"{{_KWICContextSize}}\" --case-sensitive \"{{_KWICCaseSensitive}}\" --max-per-file \"{{_KWICMaxPerFile}}\" --lemmatize \"{{_KWICLemmatize}}\" --language \"{{_KWICLanguage}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-kwic\" --vault-path \"./\" --folder-path \"{{event_folder_path:absolute}}\" --keywords \"{{_KWICKeywords}}\" --context-size \"{{_KWICContextSize}}\" --case-sensitive \"{{_KWICCaseSensitive}}\" --max-per-file \"{{_KWICMaxPerFile}}\" --lemmatize \"{{_KWICLemmatize}}\" --language \"{{_KWICLanguage}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-kwic.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --keywords \"{{_KWICKeywords}}\" --context-size \"{{_KWICContextSize}}\" --case-sensitive \"{{_KWICCaseSensitive}}\" --max-per-file \"{{_KWICMaxPerFile}}\" --lemmatize \"{{_KWICLemmatize}}\" --language \"{{_KWICLanguage}}\""
       },
       "shells": {},
       "alias": "Análisis de Contexto",
@@ -322,7 +340,9 @@
     {
       "id": "2cbuff4uw0",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\python.exe\" -m obsidian_qda_suite topic --vault-path \"{{vault_path}}\" --file-path \"{{event_folder_path:absolute}}\" --file-name \"{{event_folder_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\python.exe\" -m obsidian_qda_suite topic --vault-path \"{{vault_path}}\" --file-path \"{{event_folder_path:absolute}}\" --file-name \"{{event_folder_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/python\" -m obsidian_qda_suite topic --vault-path \"./\" --file-path \"{{event_folder_path:absolute}}\" --file-name \"{{event_folder_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\python.exe\" -m obsidian_qda_suite topic --vault-path \"{{vault_path}}\" --file-path \"{{event_folder_path:absolute}}\" --file-name \"{{event_folder_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\""
       },
       "shells": {},
       "alias": "Análisis de Topicos",
@@ -368,7 +388,9 @@
     {
       "id": "eng7fyzd3o",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe-youtube.exe\" \"{{_youtube_link}}\" --output-dir \"{{vault_path}}\" --api-key \"{{_OpenAIKey}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe-youtube.exe\" \"{{_youtube_link}}\" --output-dir \"{{vault_path}}\" --api-key \"{{_OpenAIKey}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-transcribe-youtube\" \"{{_youtube_link}}\" --output-dir \"./\" --api-key \"{{_OpenAIKey}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe-youtube.exe\" \"{{_youtube_link}}\" --output-dir \"{{vault_path}}\" --api-key \"{{_OpenAIKey}}\""
       },
       "shells": {},
       "alias": "Transcribir de Youtube",
@@ -415,7 +437,9 @@
     {
       "id": "tq0e6z3q4l",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --aggregate \"{{_SentimentAggregate}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --aggregate \"{{_SentimentAggregate}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-sentiment\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --aggregate \"{{_SentimentAggregate}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --aggregate \"{{_SentimentAggregate}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\""
       },
       "shells": {},
       "alias": "Análisis de Sentimientos",
@@ -461,7 +485,9 @@
     {
       "id": "6xip14v8yv",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\"  --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --max-length \"{{_SentimentMaxLength}}\" --aggregate \"{{_SentimentAggregate}}\" --file-pattern \"{{_SentimentFilePattern}}\" --no-recursive \"{{_SentimentNoRecursive}}\" --min-document-length \"{{_SentimentMinDocumentLength}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\" --min-paragraph-length \"{{_SentimentMinParagraphLength}}\" --corpus-report \"{{_SentimentCorpusReport}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\"  --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --max-length \"{{_SentimentMaxLength}}\" --aggregate \"{{_SentimentAggregate}}\" --file-pattern \"{{_SentimentFilePattern}}\" --no-recursive \"{{_SentimentNoRecursive}}\" --min-document-length \"{{_SentimentMinDocumentLength}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\" --min-paragraph-length \"{{_SentimentMinParagraphLength}}\" --corpus-report \"{{_SentimentCorpusReport}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-sentiment\" --vault-path \"./\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --max-length \"{{_SentimentMaxLength}}\" --aggregate \"{{_SentimentAggregate}}\" --file-pattern \"{{_SentimentFilePattern}}\" --no-recursive \"{{_SentimentNoRecursive}}\" --min-document-length \"{{_SentimentMinDocumentLength}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\" --min-paragraph-length \"{{_SentimentMinParagraphLength}}\" --corpus-report \"{{_SentimentCorpusReport}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\"  --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --max-length \"{{_SentimentMaxLength}}\" --aggregate \"{{_SentimentAggregate}}\" --file-pattern \"{{_SentimentFilePattern}}\" --no-recursive \"{{_SentimentNoRecursive}}\" --min-document-length \"{{_SentimentMinDocumentLength}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\" --min-paragraph-length \"{{_SentimentMinParagraphLength}}\" --corpus-report \"{{_SentimentCorpusReport}}\""
       },
       "shells": {},
       "alias": "Análisis de Sentimientos",
@@ -507,7 +533,9 @@
     {
       "id": "2x1nrv2lj7",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-emotion\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\""
       },
       "shells": {},
       "alias": "Análisis de Emociones",
@@ -553,7 +581,9 @@
     {
       "id": "53fvbrs25g",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --no-recursive \"{{_EmotionNoRecursive}}\" --min-document-length \"{{_EmotionMinDocumentLength}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\" --corpus-report \"{{_EmotionCorpusReport}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --no-recursive \"{{_EmotionNoRecursive}}\" --min-document-length \"{{_EmotionMinDocumentLength}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\" --corpus-report \"{{_EmotionCorpusReport}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-emotion\" --vault-path \"./\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --no-recursive \"{{_EmotionNoRecursive}}\" --min-document-length \"{{_EmotionMinDocumentLength}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\" --corpus-report \"{{_EmotionCorpusReport}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --no-recursive \"{{_EmotionNoRecursive}}\" --min-document-length \"{{_EmotionMinDocumentLength}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\" --corpus-report \"{{_EmotionCorpusReport}}\""
       },
       "shells": {},
       "alias": "Análisis de Emociones",
@@ -599,7 +629,9 @@
     {
       "id": "lbxctinzvm",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --api-key \"{{_OpenAIKey}}\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --api-key \"{{_OpenAIKey}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-transcribe\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --api-key \"{{_OpenAIKey}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --api-key \"{{_OpenAIKey}}\""
       },
       "shells": {},
       "alias": "Transcribir (OpenAI)",
@@ -639,7 +671,9 @@
     {
       "id": "tb16hp1k5l",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribex.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es"
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribex.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-transcribex\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribex.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es"
       },
       "shells": {},
       "alias": "Transcribir X",
@@ -679,7 +713,9 @@
     {
       "id": "kh8atjq93w",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\ontology-explorer.exe\" --input-dir \"{{event_folder_path:absolute}}\" --config-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\\Config\" --domain \"venture-capital\" --provider \"openai\" --model \"gpt-5.2\" --api-key \"{{_OpenAIKey}}\" --output-format \"ontologia\" --ontology-format \"vault\"  --workers 4 --output-name  \"Ontology\" --cache-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\\.cache\" --output-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\""
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\ontology-explorer.exe\" --input-dir \"{{event_folder_path:absolute}}\" --config-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\\Config\" --domain \"venture-capital\" --provider \"openai\" --model \"gpt-5.2\" --api-key \"{{_OpenAIKey}}\" --output-format \"ontologia\" --ontology-format \"vault\"  --workers 4 --output-name  \"Ontology\" --cache-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\\.cache\" --output-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\"",
+        "darwin": "eval $( echo '\"../.venv/bin/ontology-explorer\" --input-dir \"{{event_folder_path:absolute}}\" --config-dir \"./Analysis/Ontology Analisys/Config\" --domain \"venture-capital\" --provider \"openai\" --model \"gpt-5.2\" --api-key \"{{_OpenAIKey}}\" --output-format \"ontologia\" --ontology-format \"vault\" --workers 4 --output-name \"Ontology\" --cache-dir \"./Analysis/Ontology Analysis/.cache\" --output-dir \"./Analysis/Ontology Analysis\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\ontology-explorer.exe\" --input-dir \"{{event_folder_path:absolute}}\" --config-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\\Config\" --domain \"venture-capital\" --provider \"openai\" --model \"gpt-5.2\" --api-key \"{{_OpenAIKey}}\" --output-format \"ontologia\" --ontology-format \"vault\"  --workers 4 --output-name  \"Ontology\" --cache-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\\.cache\" --output-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\""
       },
       "shells": {},
       "alias": "Ontology Analisys",

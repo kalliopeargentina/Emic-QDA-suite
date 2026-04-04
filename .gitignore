@@ -1,6 +1,7 @@
 # Installer outputs (large binaries)
 installer/*.exe
 installer/dist/
+installer/macos-distribution/dist/
 # Certificado de firma (no subir)
 installer/*.pfx
 # Variables de firma locales (contraseña del PFX)
