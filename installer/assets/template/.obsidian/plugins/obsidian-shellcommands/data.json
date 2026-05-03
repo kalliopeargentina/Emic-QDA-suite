@@ -671,9 +671,9 @@
     {
       "id": "tb16hp1k5l",
       "platform_specific_commands": {
-        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribex.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es",
-        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-transcribex\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es' | sed 's|\\\\||g' )",
-        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribex.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es"
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribex.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es --timestamps {{_timestamps_x}}",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-transcribex\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es --timestamps {{_timestamps_x}}' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribex.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es --timestamps {{_timestamps_x}}"
       },
       "shells": {},
       "alias": "Transcribir X",
@@ -707,7 +707,13 @@
       },
       "debounce": null,
       "command_palette_availability": "enabled",
-      "preactions": [],
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "x1r9jzi86g"
+        }
+      ],
       "variable_default_values": {}
     },
     {
@@ -742,11 +748,7 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": "permanent",
-      "events": {
-        "folder-menu": {
-          "enabled": true
-        }
-      },
+      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
@@ -1237,6 +1239,35 @@
         }
       ],
       "execute_button_text": "Analizar"
+    },
+    {
+      "id": "x1r9jzi86g",
+      "title": "Transcribir X",
+      "description": "",
+      "preview_shell_command": false,
+      "fields": [
+        {
+          "type": "toggle",
+          "label": "¿Necesitas reconocer diferentes hablantes?",
+          "description": "",
+          "default_value": "true",
+          "target_variable_id": "7oiza9y05h",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        },
+        {
+          "type": "toggle",
+          "label": "¿Necesitas agregar marcas temporales?",
+          "description": "",
+          "default_value": "true",
+          "target_variable_id": "aly8u3o4ub",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        }
+      ],
+      "execute_button_text": "Execute"
     }
   ],
   "builtin_variables": {},
@@ -1246,8 +1277,8 @@
       "name": "OpenAIKey",
       "description": "",
       "default_value": {
-        "type": "value",
-        "value": ""
+        "type": "from-keyring",
+        "value": "openai"
       }
     },
     {
@@ -1392,7 +1423,10 @@
       "id": "saj1wx7tyy",
       "name": "huggface",
       "description": "token de huggingface",
-      "default_value": null
+      "default_value": {
+        "type": "from-keyring",
+        "value": "huggingface"
+      }
     },
     {
       "id": "mw44sq6kzl",
@@ -1555,6 +1589,15 @@
       "name": "EmotionNoRecursive",
       "description": "",
       "default_value": null
+    },
+    {
+      "id": "aly8u3o4ub",
+      "name": "timestamps_x",
+      "description": "",
+      "default_value": {
+        "type": "value",
+        "value": "true"
+      }
     }
   ],
   "custom_variables_notify_changes_via": {

@@ -345,5 +345,8 @@
   "emicQdaDefaultCoder": "Emic",
   "emicQdaShowInContextMenu": true,
   "emicQdaShowInToolbar": true,
-  "fixObsidianTextSelectionBug": true
+  "emicQdaDeferPdfAnnotationWrites": true,
+  "emicQdaPdfAnnotationDeferMs": 2500,
+  "fixObsidianTextSelectionBug": true,
+  "interfaceLanguage": "auto"
 }

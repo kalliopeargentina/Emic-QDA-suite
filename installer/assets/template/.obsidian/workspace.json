@@ -177,6 +177,11 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "media-extended:Open media library": true,
+      "media-extended:Open media quick switcher": true,
+      "pdf-plus:EMIC PDF++: Toggle auto-focus": true,
+      "pdf-plus:EMIC PDF++: Toggle auto-paste": true,
+      "pdf-plus:EMIC PDF++: Toggle auto-copy": true,
       "templater-obsidian:Templater": true,
       "emic-qda:Emic-QDA: Asignar codigo al parrafo": true,
       "emic-qda:Emic-QDA: Renombrar codigo": true,
@@ -247,10 +252,7 @@
       "switcher:Abrir selector rápido": true,
       "emic-qda:Emic-QDA: Abrir definicion del libro de codigos": true,
       "emic-qda:Emic-QDA: Eliminar tipo de extraccion": true,
-      "media-extended:Open external media": false,
-      "obsidian-shellcommands:Shell commands: Custom variables": false,
-      "emic-reports:Open report composer": false,
-      "emic-reports:Open style template editor": false,
+      "obsidian-shellcommands:Shell commands: Custom variables": true,
       "cmdr:Templater: Create Coocurrencias de Códigos": false,
       "cmdr:Templater: Create Extractions Overview": false,
       "cmdr:AI Suggest Codes": false,
@@ -262,11 +264,15 @@
       "cmdr:Zotero Integration: Research Notes": false,
       "cmdr:Emic-QDA: Emic-QDA: alternar barra lateral de resaltados": false,
       "cmdr:Emic Charts View: Wizard": false,
-      "workspaces:Gestionar disposiciones de espacio de trabajo": true
+      "workspaces:Gestionar disposiciones de espacio de trabajo": true,
+      "emic-reports:Abrir compositor de informes": false,
+      "emic-reports:Abrir editor de plantillas de estilo": false
     }
   },
   "active": "aa9e03757d47bee2",
   "lastOpenFiles": [
+    "Recording 20260404211212.m4a",
+    "Recording 20260404211042.m4a",
     "Notas de Campo/2026-03-30.md",
     "Utils/Templater/Nota de Campo.md",
     "Análisis/Reportes/2025-03-02 Lenguaje y jerga técnica en la oficina.pdf",

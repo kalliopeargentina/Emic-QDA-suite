@@ -11,7 +11,7 @@
 
 ; Versión del suite (ej. 1.0.0) y build (ej. fecha-hora). El .exe se nombra Emic-QDA-Installer-<VERSION>-<BUILD>.exe
 !define VERSION "0.5.8"
-!define BUILD "2026-03-30"
+!define BUILD "2026-05-03"
 
 !define PY_LAUNCHER "py"
 !define PY_MAJOR "3.12"
@@ -23,6 +23,8 @@
 !define TEMPLATE_DIR "template"
 !define ONTOLOGY_WHL "ontology_explorer-0.1.1-py3-none-any.whl"
 !define QDA_WHL "obsidian_qda_suite-0.1.7-py3-none-any.whl"
+; Ontology Explorer (.whl en assets + pip + verificación). Descomentá la siguiente línea cuando el paquete esté listo para distribuir.
+; !define INCLUDE_ONTOLOGY_EXPLORER
 
 ; Incluir ffmpeg: poné la carpeta ffmpeg (con subcarpeta bin) en installer/assets/ffmpeg/
 ; Comentá la línea siguiente si no incluís los binarios en esta build.

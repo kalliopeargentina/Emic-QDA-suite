@@ -5,9 +5,46 @@ const TARGET_FOLDER = emic?.settings?.analysis?.folder ?? "Analysis";
 const EXTRACTIONS_FOLDER = emic?.settings?.extraction?.folder ?? "Extractions";
 // --- FIN DE LA CONFIGURACIÓN ---
 
+// --- PATH RESOLUTION (supports subfolders) ---
+const trimSlashes = (p) => (p ?? "").trim().replace(/^\/+|\/+$/g, "");
+
+function resolveFolderPath(folderOrPath) {
+    const wanted = trimSlashes(folderOrPath);
+    if (!wanted) return "";
+
+    if (wanted.includes("/")) return wanted;
+
+    const files = app.vault.getMarkdownFiles();
+    const candidates = new Set();
+
+    for (const f of files) {
+        const parts = f.path.split("/");
+        for (let i = 0; i < parts.length - 1; i++) {
+            if (parts[i] === wanted) {
+                candidates.add(parts.slice(0, i + 1).join("/"));
+            }
+        }
+    }
+
+    if (candidates.size === 1) return [...candidates][0];
+    if (candidates.size > 1) {
+        return [...candidates].sort((a, b) => a.length - b.length)[0];
+    }
+
+    return wanted;
+}
+
+const extractionRoot = resolveFolderPath(EXTRACTIONS_FOLDER);
+const targetRoot = resolveFolderPath(TARGET_FOLDER);
+
+const joinVaultPath = (folderPath, name) => folderPath ? `${folderPath}/${name}` : name;
+// --- END PATH RESOLUTION ---
+
 // --- PASO 1: OBTENER CLAVES DE PROPIEDAD DE LA CARPETA DE EXTRACCIONES ---
 const allFiles = app.vault.getMarkdownFiles();
-const extractionFiles = allFiles.filter(file => file.path.startsWith(EXTRACTIONS_FOLDER + "/"));
+const extractionFiles = extractionRoot
+    ? allFiles.filter(file => file.path.startsWith(extractionRoot + "/"))
+    : allFiles;
 
 const propertyKeysSet = new Set();
 extractionFiles.forEach(file => {
@@ -19,7 +56,7 @@ extractionFiles.forEach(file => {
 const propertyKeys = Array.from(propertyKeysSet).sort();
 
 if (propertyKeys.length === 0) {
-    new Notice(`❌ No se encontraron propiedades en las notas de la carpeta "${EXTRACTIONS_FOLDER}".`, 5000);
+    new Notice(`❌ No se encontraron propiedades en las notas de la carpeta "${extractionRoot}".`, 5000);
     return "";
 }
 
@@ -69,7 +106,7 @@ for (const file of extractionFiles) {
 // --- PASO 4: CONSTRUIR LA NOTA CON LA TABLA ---
 
 const newTitle = `Coocurrencia Extracciones - ${value1} (${prop1}) AND ${value2} (${prop2})`;
-const newFilePath = `/${TARGET_FOLDER}/${newTitle}.md`;
+const newFilePath = joinVaultPath(targetRoot, `${newTitle}.md`);
 
 const existingFile = app.vault.getAbstractFileByPath(newFilePath);
 if (existingFile) {
@@ -86,7 +123,13 @@ let content = `Resultados para la búsqueda de notas con **${prop1}: ${value1}**
 if (matchingFiles.length > 0) {
     let table = "| Carpeta | Archivo | Fuente | Fecha de Extracción |\n|---|---|---|---|\n";
     matchingFiles.forEach(file => {
-        const relativePath = file.parent.path.replace(EXTRACTIONS_FOLDER + '/', '');
+        const parentPath = file.parent?.path ?? "";
+        const underExtraction =
+            extractionRoot &&
+            (parentPath === extractionRoot || parentPath.startsWith(extractionRoot + "/"));
+        const relativePath = underExtraction
+            ? (parentPath === extractionRoot ? "" : parentPath.slice(extractionRoot.length + 1))
+            : parentPath;
         const frontmatter = app.metadataCache.getFileCache(file)?.frontmatter;
 
         let extractionSource = frontmatter && frontmatter['extraction-source'] ? frontmatter['extraction-source'] : 'N/A';

@@ -10,8 +10,8 @@
 Colocar estos archivos en `installer/assets/`:
 - `Emic-Splash.bmp` — opcional: imagen del splash (BMP, JPG o GIF). Solo si definís `INCLUDE_SPLASH` en `config.nsi`. Usa el plugin [NewAdvSplash](https://nsis.sourceforge.io/NewAdvSplash_plug-in).
 - `Template-v0.1.0.zip`
-- `ontology_explorer-0.1.1-py3-none-any.whl`
-- `ontology_explorer-0.1.1.tar.gz`
+- `ontology_explorer-0.1.1-py3-none-any.whl` — solo si descomentás `INCLUDE_ONTOLOGY_EXPLORER` en `config.nsi` (Windows). En macOS, `INCLUDE_ONTOLOGY_EXPLORER=1` en `macos/install.sh`.
+- `ontology_explorer-0.1.1.tar.gz` — mismo criterio que el `.whl` de ontology (solo con `INCLUDE_ONTOLOGY_EXPLORER`).
 - `obsidian_qda_suite-0.1.3-py3-none-any.whl`
 - `obsidian_qda_suite-0.1.3.tar.gz`
 

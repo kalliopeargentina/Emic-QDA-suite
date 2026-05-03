@@ -19,6 +19,8 @@ PYTHON_VERSIONS_ACCEPTED="3.12 3.13 3.14 3.15 3.16"
 TEMPLATE_DIR="template"
 ONTOLOGY_WHL="ontology_explorer-0.1.1-py3-none-any.whl"
 QDA_WHL="obsidian_qda_suite-0.1.4-py3-none-any.whl"
+# 1 = instalar ontology_explorer (paridad con !define INCLUDE_ONTOLOGY_EXPLORER en config.nsi). 0 = omitir hasta que el wheel esté listo.
+INCLUDE_ONTOLOGY_EXPLORER=0
 
 # FFmpeg en macOS: solo vía Homebrew (no bundle estilo Windows INCLUDE_FFMPEG).
 
@@ -488,9 +490,13 @@ create_venv_and_pip() {
   [[ -x "$py" ]] || die "No se encontró $py"
   log "Actualizando pip..."
   "$py" -m pip install --upgrade pip >>"$LOG_FILE" 2>&1 || true
-  log "Instalando $ONTOLOGY_WHL ..."
-  "$py" -m pip install -v --find-links "$ASSETS_DIR" "$ASSETS_DIR/$ONTOLOGY_WHL" >>"$LOG_FILE" 2>&1 || die "No se pudo instalar OntologyExplorer."
-  "$py" -m pip show ontology_explorer >/dev/null 2>&1 || die "Verificación pip show ontology_explorer falló."
+  if [[ "${INCLUDE_ONTOLOGY_EXPLORER:-0}" == "1" ]]; then
+    log "Instalando $ONTOLOGY_WHL ..."
+    "$py" -m pip install -v --find-links "$ASSETS_DIR" "$ASSETS_DIR/$ONTOLOGY_WHL" >>"$LOG_FILE" 2>&1 || die "No se pudo instalar OntologyExplorer."
+    "$py" -m pip show ontology_explorer >/dev/null 2>&1 || die "Verificación pip show ontology_explorer falló."
+  else
+    log "Ontology Explorer omitido en esta build (INCLUDE_ONTOLOGY_EXPLORER=0; alinear con config.nsi en Windows)."
+  fi
   log "Instalando $QDA_WHL ..."
   "$py" -m pip install -v --find-links "$ASSETS_DIR" "$ASSETS_DIR/$QDA_WHL" >>"$LOG_FILE" 2>&1 || die "No se pudo instalar obsidian_qda_suite."
   "$py" -m pip show obsidian_qda_suite >/dev/null 2>&1 || die "Verificación pip show obsidian_qda_suite falló."

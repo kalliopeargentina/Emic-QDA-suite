@@ -141,9 +141,9 @@ Function DirLeave
   WriteRegStr HKCU "Software\Emic-QDA" "InstallPath" "$INSTDIR"
 FunctionEnd
 
-; Si el usuario dejó marcado "Abrir el nuevo repositorio", abrir Obsidian vía PowerShell
+; Si el usuario dejó marcado "Abrir el nuevo repositorio", abrir Obsidian por el protocolo (sin ventana de consola)
 Function RunOpenVault
-  Exec 'powershell.exe -NoProfile -Command $\"Start-Process \$\"obsidian:$\"$\"'
+  ExecShell "open" "obsidian:"
 FunctionEnd
 
 Function .onInit
@@ -573,7 +573,11 @@ Section "Vault y entorno Python (requerido)" SEC_VAULT
 
   CreateDirectory "$TempDir\\assets"
   SetOutPath "$TempDir\\assets"
+!ifdef INCLUDE_ONTOLOGY_EXPLORER
   File "assets\\${ONTOLOGY_WHL}"
+!else
+  DetailPrint "Ontology Explorer no incluido en esta compilación (definí INCLUDE_ONTOLOGY_EXPLORER en config.nsi y el .whl en assets)."
+!endif
   File "assets\\${QDA_WHL}"
   Push "tempdir_assets_ready"
   Call AppendInstallLog
@@ -601,12 +605,112 @@ vault_ok:
   FileWrite $R0 "try { $$Host.UI.RawUI.WindowSize = New-Object System.Management.Automation.Host.Size(80, 30); $$Host.UI.RawUI.BufferSize = New-Object System.Management.Automation.Host.Size(80, 30) } catch {}$\r$\n"
   FileWrite $R0 "$$ErrorActionPreference = 'Stop'$\r$\n"
   FileWrite $R0 "if ($$LogPath) { '[venv] VenvPath=' + $$VenvPath | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host '[venv] VenvPath=' $$VenvPath$\r$\n"
+  FileWrite $R0 "function SafeLogVenv([string]$$m) { if ($$LogPath) { try { $$m | Out-File -FilePath $$LogPath -Append -Encoding utf8 } catch {} } }$\r$\n"
   FileWrite $R0 "$$versions = ($$Versions.Trim() -split '\s+') | Where-Object { $$_.Length -gt 0 }$\r$\n"
-  FileWrite $R0 "$$regPaths = $$versions | ForEach-Object { $$v = $$_; 'HKCU:\Software\Python\PythonCore\' + $$v + '\InstallPath'; 'HKLM:\Software\Python\PythonCore\' + $$v + '\InstallPath' }$\r$\n"
-  FileWrite $R0 "$$installPath = $$regPaths | Where-Object { Test-Path $$_ } | ForEach-Object { (Get-ItemProperty $$_).'(default)' } | Select-Object -First 1$\r$\n"
-  FileWrite $R0 "$$pythonExe = $$null; if ($$installPath) { $$p = Join-Path $$installPath 'python.exe'; if (Test-Path $$p) { $$pythonExe = $$p } }$\r$\n"
-  FileWrite $R0 "$$venvExe = if ($$pythonExe) { $$pythonExe } else { 'py' }; $$venvArgs = if ($$pythonExe) { '-m', 'venv', $$VenvPath } else { '-${PY_MAJOR}', '-m', 'venv', $$VenvPath }$\r$\n"
-  FileWrite $R0 "if ($$LogPath) { '[venv] Python=' + $$venvExe | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host '[venv] Python=' $$venvExe$\r$\n"
+  FileWrite $R0 "function Get-AllPythonExesFromRegistry { param([string[]]$$VersionTags)$\r$\n"
+  FileWrite $R0 "  $$list = [System.Collections.Generic.List[string]]::new()$\r$\n"
+  FileWrite $R0 "  $$seen = @{}$\r$\n"
+  FileWrite $R0 "  $$add = { param([string]$$full)$\r$\n"
+  FileWrite $R0 "    if (-not $$full -or -not (Test-Path -LiteralPath $$full)) { return }$\r$\n"
+  FileWrite $R0 "    try { $$r = (Resolve-Path -LiteralPath $$full).Path } catch { return }$\r$\n"
+  FileWrite $R0 "    if ($$seen.ContainsKey($$r)) { return }; $$seen[$$r] = $$true; [void]$$list.Add($$r) }$\r$\n"
+  FileWrite $R0 "  $$roots = @('HKCU:\Software\Python\PythonCore', 'HKLM:\Software\Python\PythonCore', 'HKLM:\Software\WOW6432Node\Python\PythonCore')$\r$\n"
+  FileWrite $R0 "  foreach ($$root in $$roots) {$\r$\n"
+  FileWrite $R0 "    if (-not (Test-Path -LiteralPath $$root)) { continue }$\r$\n"
+  FileWrite $R0 "    Get-ChildItem -LiteralPath $$root -ErrorAction SilentlyContinue | ForEach-Object {$\r$\n"
+  FileWrite $R0 "      $$ipKey = Join-Path $$root ($$_.PSChildName + '\InstallPath')$\r$\n"
+  FileWrite $R0 "      if ((Test-Path -LiteralPath $$ipKey)) {$\r$\n"
+  FileWrite $R0 "        $$d = (Get-ItemProperty -LiteralPath $$ipKey -ErrorAction SilentlyContinue).'(default)'$\r$\n"
+  FileWrite $R0 "        if ($$d) { & $$add (Join-Path $$d 'python.exe') }$\r$\n"
+  FileWrite $R0 "      }$\r$\n"
+  FileWrite $R0 "    }$\r$\n"
+  FileWrite $R0 "  }$\r$\n"
+  FileWrite $R0 "  foreach ($$v in $$VersionTags) {$\r$\n"
+  FileWrite $R0 "    $$tv = $$v.Trim(); if ($$tv.Length -eq 0) { continue }$\r$\n"
+  FileWrite $R0 "    foreach ($$hive in @('HKCU', 'HKLM')) {$\r$\n"
+  FileWrite $R0 "      $$ipKey = $$hive + ':\Software\Python\PythonCore\' + $$tv + '\InstallPath'$\r$\n"
+  FileWrite $R0 "      if (-not (Test-Path -LiteralPath $$ipKey)) { continue }$\r$\n"
+  FileWrite $R0 "      $$d = (Get-ItemProperty -LiteralPath $$ipKey -ErrorAction SilentlyContinue).'(default)'$\r$\n"
+  FileWrite $R0 "      if ($$d) { & $$add (Join-Path $$d 'python.exe') }$\r$\n"
+  FileWrite $R0 "    }$\r$\n"
+  FileWrite $R0 "  }$\r$\n"
+  FileWrite $R0 "  return $$list.ToArray()$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "function Get-PythonMinorVersionLine { param([string]$$Exe)$\r$\n"
+  FileWrite $R0 "  try { return (& $$Exe -c 'import sys; print(str(sys.version_info[0]) + chr(46) + str(sys.version_info[1]))' 2>$$null | Select-Object -First 1) } catch { return $$null }$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "function Normalize-MMVer { param([string]$$s)$\r$\n"
+  FileWrite $R0 "  if (-not $$s) { return '' }; $$t = ($$s + '').Trim(); if ($$t -match '(\d+)\.(\d+)') { return $$matches[1] + '.' + $$matches[2] }; return $$t$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "function Resolve-PythonExeFromList { param([string[]]$$WantVersions, [string[]]$$Exes)$\r$\n"
+  FileWrite $R0 "  foreach ($$want in $$WantVersions) { $$wv = $$want.Trim(); if ($$wv.Length -eq 0) { continue }; $$wm = Normalize-MMVer -s $$wv$\r$\n"
+  FileWrite $R0 "    foreach ($$exe in $$Exes) { $$line = Get-PythonMinorVersionLine -Exe $$exe; if (-not $$line) { continue }; if ((Normalize-MMVer -s $$line) -eq $$wm) { return $$exe } }$\r$\n"
+  FileWrite $R0 "  }; return $$null$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "function Resolve-PyLauncherTag { param([string[]]$$WantVersions)$\r$\n"
+  FileWrite $R0 "  if (-not (Get-Command py -ErrorAction SilentlyContinue)) { return $$null }$\r$\n"
+  FileWrite $R0 "  foreach ($$want in $$WantVersions) { $$wv = $$want.Trim(); if ($$wv.Length -eq 0) { continue }; $$wm = Normalize-MMVer -s $$wv; $$arg = '-' + $$wv$\r$\n"
+  FileWrite $R0 "    $$line = $$null; try { $$line = (& py $$arg -c 'import sys; print(str(sys.version_info[0]) + chr(46) + str(sys.version_info[1]))' 2>$$null | Select-Object -First 1) } catch { }$\r$\n"
+  FileWrite $R0 "    if ($$line -and (Normalize-MMVer -s $$line) -eq $$wm) { return $$wv }$\r$\n"
+  FileWrite $R0 "  }$\r$\n"
+  FileWrite $R0 "  try {$\r$\n"
+  FileWrite $R0 "    $$line = (& py -c 'import sys; print(str(sys.version_info[0]) + chr(46) + str(sys.version_info[1]))' 2>$$null | Select-Object -First 1)$\r$\n"
+  FileWrite $R0 "    $$mm = Normalize-MMVer -s $$line$\r$\n"
+  FileWrite $R0 "    foreach ($$want in $$WantVersions) { $$wv = $$want.Trim(); if ($$wv.Length -eq 0) { continue }; if ($$mm -eq (Normalize-MMVer -s $$wv)) { return $$wv } }$\r$\n"
+  FileWrite $R0 "  } catch { }$\r$\n"
+  FileWrite $R0 "  return $$null$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "function Get-PythonExesFromPathCommands {$\r$\n"
+  FileWrite $R0 "  $$list = [System.Collections.Generic.List[string]]::new()$\r$\n"
+  FileWrite $R0 "  foreach ($$n in @('python', 'python3')) {$\r$\n"
+  FileWrite $R0 "    $$cmds = Get-Command $$n -CommandType Application -ErrorAction SilentlyContinue -All$\r$\n"
+  FileWrite $R0 "    foreach ($$c in $$cmds) {$\r$\n"
+  FileWrite $R0 "      $$src = $$c.Source; if (-not $$src -or -not (Test-Path -LiteralPath $$src)) { continue }$\r$\n"
+  FileWrite $R0 "      if ($$src -match '(?i)\\\\WindowsApps\\\\') { continue }$\r$\n"
+  FileWrite $R0 "      try { [void]$$list.Add((Resolve-Path -LiteralPath $$src).Path) } catch { }$\r$\n"
+  FileWrite $R0 "    }$\r$\n"
+  FileWrite $R0 "  }; return $$list.ToArray()$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "function Get-PythonExesFromWhereExe {$\r$\n"
+  FileWrite $R0 "  $$list = [System.Collections.Generic.List[string]]::new()$\r$\n"
+  FileWrite $R0 "  $$whereExe = Join-Path $$env:SystemRoot 'System32\where.exe'$\r$\n"
+  FileWrite $R0 "  if (-not (Test-Path -LiteralPath $$whereExe)) { return $$list.ToArray() }$\r$\n"
+  FileWrite $R0 "  foreach ($$n in @('python.exe', 'python3.exe')) {$\r$\n"
+  FileWrite $R0 "    $$lines = $$null; try { $$lines = & $$whereExe $$n 2>$$null } catch { $$lines = $$null }$\r$\n"
+  FileWrite $R0 "    foreach ($$line in @($$lines)) {$\r$\n"
+  FileWrite $R0 "      $$p = ($$line + '').Trim(); if ($$p.Length -eq 0) { continue }$\r$\n"
+  FileWrite $R0 "      if ($$p -match '(?i)\\\\WindowsApps\\\\') { continue }$\r$\n"
+  FileWrite $R0 "      if (-not (Test-Path -LiteralPath $$p)) { continue }$\r$\n"
+  FileWrite $R0 "      try { [void]$$list.Add((Resolve-Path -LiteralPath $$p).Path) } catch { }$\r$\n"
+  FileWrite $R0 "    }$\r$\n"
+  FileWrite $R0 "  }; return $$list.ToArray()$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "function Merge-PythonExePaths { param([string[]]$$A, [string[]]$$B)$\r$\n"
+  FileWrite $R0 "  $$seenM = @{}; $$out = [System.Collections.Generic.List[string]]::new()$\r$\n"
+  FileWrite $R0 "  foreach ($$x in (@($$A) + @($$B))) { if (-not $$x) { continue }; try { $$k = (Resolve-Path -LiteralPath $$x).Path } catch { continue }; if ($$seenM.ContainsKey($$k)) { continue }; $$seenM[$$k] = $$true; [void]$$out.Add($$k) }$\r$\n"
+  FileWrite $R0 "  return $$out.ToArray()$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "$$pythonExe = $$null; $$pyTag = $$null$\r$\n"
+  FileWrite $R0 "for ($$attempt = 0; $$attempt -lt 12; $$attempt++) {$\r$\n"
+  FileWrite $R0 "  $$machinePath = [Environment]::GetEnvironmentVariable('Path', 'Machine')$\r$\n"
+  FileWrite $R0 "  $$userPath = [Environment]::GetEnvironmentVariable('Path', 'User')$\r$\n"
+  FileWrite $R0 "  $$env:Path = (@($$machinePath, $$userPath | Where-Object { $$_ }) -join ';')$\r$\n"
+  FileWrite $R0 "  $$regExes = @(Get-AllPythonExesFromRegistry -VersionTags $$versions)$\r$\n"
+  FileWrite $R0 "  $$pathCmd = @(Get-PythonExesFromPathCommands)$\r$\n"
+  FileWrite $R0 "  $$pathWhere = @(Get-PythonExesFromWhereExe)$\r$\n"
+  FileWrite $R0 "  $$pathExes = Merge-PythonExePaths -A $$pathCmd -B $$pathWhere$\r$\n"
+  FileWrite $R0 "  $$exes = Merge-PythonExePaths -A $$regExes -B $$pathExes$\r$\n"
+  FileWrite $R0 "  SafeLogVenv ('[venv] attempt=' + $$attempt + ' PATH_refreshed candidates=' + ($$exes -join '; '))$\r$\n"
+  FileWrite $R0 "  $$pythonExe = Resolve-PythonExeFromList -WantVersions $$versions -Exes $$exes$\r$\n"
+  FileWrite $R0 "  if ($$pythonExe) { break }$\r$\n"
+  FileWrite $R0 "  $$pyTag = Resolve-PyLauncherTag -WantVersions $$versions$\r$\n"
+  FileWrite $R0 "  if ($$pyTag) { break }$\r$\n"
+  FileWrite $R0 "  Start-Sleep -Milliseconds 400$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "if ($$pythonExe) { $$venvExe = $$pythonExe; $$venvArgs = @('-m', 'venv', $$VenvPath) }$\r$\n"
+  FileWrite $R0 "elseif ($$pyTag) { $$venvExe = 'py'; $$venvArgs = @('-' + $$pyTag, '-m', 'venv', $$VenvPath) }$\r$\n"
+  FileWrite $R0 "else { SafeLogVenv ('[venv] ERROR: no Python matched. Accepted=' + $$Versions + ' candidateCount=' + $$exes.Length); foreach ($$pe in $$exes) { SafeLogVenv ('[venv] probe ' + $$pe + ' -> ' + (Get-PythonMinorVersionLine -Exe $$pe)) }; if (Get-Command py -ErrorAction SilentlyContinue) { $$tl = $$null; try { $$tl = (& py -c 'import sys; print(str(sys.version_info[0]) + chr(46) + str(sys.version_info[1]))' 2>$$null | Select-Object -First 1) } catch { }; SafeLogVenv ('[venv] py default -> ' + $$tl) }; Write-Host '[venv] ERROR: no Python found'; exit 1 }$\r$\n"
+  FileWrite $R0 "SafeLogVenv ('[venv] Python=' + $$venvExe + ' ' + ($$venvArgs -join ' ')); Write-Host ('[venv] Python=' + $$venvExe)$\r$\n"
 !ifdef POWERSHELL_PAUSE_ON_ERROR
   FileWrite $R0 "$$exitCode = 0; try { & $$venvExe @venvArgs 2>&1 | ForEach-Object { Write-Host $$_; if ($$LogPath) { $$_ | Out-File -FilePath $$LogPath -Append -Encoding utf8 } }; $$exitCode = $$LASTEXITCODE; if ($$LogPath) { '[venv] exit=' + $$exitCode | Out-File -FilePath $$LogPath -Append -Encoding utf8 } } catch { if ($$LogPath) { $$_.ToString() | Out-File -FilePath $$LogPath -Append -Encoding utf8 }; Write-Host $$_.ToString(); $$exitCode = 1 }; if ($$exitCode -ne 0) { Read-Host 'Error. Presione Enter para cerrar' }; exit $$exitCode$\r$\n"
 !else
@@ -660,6 +764,7 @@ venv_ps1_ok:
   FileWrite $R0 "exit [int]$$pipExit$\r$\n"
   FileClose $R0
   StrCpy $R2 "$INSTDIR\EmicQDA-install-${BUILD}.log"
+!ifdef INCLUDE_ONTOLOGY_EXPLORER
   ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${ONTOLOGY_WHL}" -LogPath "$R2" -UpgradePip' $0
   Push "pip_ontology_whl_exit=$0"
   Call AppendInstallLog
@@ -673,7 +778,12 @@ venv_ps1_ok:
   MessageBox MB_ICONSTOP "No se pudo instalar OntologyExplorer. Revisá el log en la carpeta de instalación." /SD IDOK
   Abort
 ontology_ok:
+!endif
+!ifdef INCLUDE_ONTOLOGY_EXPLORER
   ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${QDA_WHL}" -LogPath "$R2"' $0
+!else
+  ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "$R9" -VenvPath "$VenvPath" -PackageName "${QDA_WHL}" -LogPath "$R2" -UpgradePip' $0
+!endif
   Push "pip_qda_whl_exit=$0"
   Call AppendInstallLog
   ExecWait '"$SYSDIR\\WindowsPowerShell\\v1.0\\powershell.exe" -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "& $\'$VenvPath\Scripts\python.exe$\' -m pip show obsidian_qda_suite"' $0

@@ -455,5 +455,6 @@
   "userSystemPromptsFolder": "copilot/system-prompts",
   "enableMiyo": false,
   "selfHostSearchProvider": "firecrawl",
-  "miyoRemoteVaultPath": ""
+  "miyoSearchAll": false,
+  "miyoServerUrl": ""
 }
