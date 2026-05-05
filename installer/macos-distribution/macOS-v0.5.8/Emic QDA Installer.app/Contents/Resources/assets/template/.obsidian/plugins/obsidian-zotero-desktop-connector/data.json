@@ -1,0 +1,54 @@
+{
+  "database": "Zotero",
+  "noteImportFolder": "Bibliografía",
+  "pdfExportImageDPI": 120,
+  "pdfExportImageFormat": "jpg",
+  "pdfExportImageQuality": 90,
+  "citeFormats": [
+    {
+      "name": "Bibliography_Link",
+      "format": "template",
+      "template": "{{bibliography}} \n[online]({{uri}}) [local]({{desktopURI}}) {%- for attachment in attachments | filterby(\"path\", \"endswith\", \".pdf\") %} [pdf](file://{{attachment.path | replace(\" \", \"%20\")}})\n{% if loop.last %} \n{% endif %}{%- endfor %}"
+    },
+    {
+      "name": "Cite",
+      "format": "template",
+      "template": "[{%- if creators and creators.length > 0 -%}\n(\n  {%- for creator in creators -%}\n    {%- if creator.name -%}\n      {{creator.name}}\n    {%- else -%}\n       {{creator.lastName}}\n    {%- endif -%}\n    {% if not loop.last %},  {% endif %}\n  {%- endfor -%}\n{%- endif -%}\n{%- if date -%}, {{date |  format(\"YYYY\") }}){%- endif -%}\n]\n{%- if attachments and attachments.length > 0 -%}\n    {%- set file = attachments | filterby(\"path\", \"endswith\", \".pdf\") | first -%}\n    {%- if file and file.path and file.path.endsWith(\".pdf\") -%}\n\t(zotero://open-pdf/library/items/{{file.itemKey}}?page={{page}})\n    {%- endif -%}\n{%- endif -%}",
+      "cslStyle": "apa"
+    }
+  ],
+  "exportFormats": [
+    {
+      "name": "Bibliography Card",
+      "outputPathTemplate": "Bibliografía/{{    (creators[0].lastName or creators[0].name or \"Anon\")  }}-{{    (date | format(\"YYYY\") or \"n.d.\")  }}-{{    (title | replace(\":\", \" -\")           | replace(\"/\", \"-\")           | replace(\"\\\\\", \"-\")           | replace(\"?\", \"\")           | replace(\"*\", \"\")           | replace(\"\\\"\", \"'\")           | replace(\"<\", \"(\")           | replace(\">\", \")\")           | replace(\"|\", \"-\"))  }}-{{    (itemType or \"Item\") | upper  }}.md",
+      "imageOutputPathTemplate": "Attachments/Bibliografía/{{citekey}}",
+      "imageBaseNameTemplate": "image",
+      "templatePath": "Utils/Templates/Bibliography Card.md",
+      "cslStyle": "apa"
+    },
+    {
+      "name": "Codification Import",
+      "outputPathTemplate": "Bibliografía/{{    (creators[0].lastName or creators[0].name or \"Anon\")  }}-{{    (date | format(\"YYYY\") or \"n.d.\")  }}-{{    (title | replace(\":\", \" -\")           | replace(\"/\", \"-\")           | replace(\"\\\\\", \"-\")           | replace(\"?\", \"\")           | replace(\"*\", \"\")           | replace(\"\\\"\", \"'\")           | replace(\"<\", \"(\")           | replace(\">\", \")\")           | replace(\"|\", \"-\"))  }}-{{    (itemType or \"Item\") | upper  }}-codification.md",
+      "imageOutputPathTemplate": "Attachments/Bibliografía/{{citekey}}/",
+      "imageBaseNameTemplate": "image",
+      "templatePath": "Utils/Templates/Extract Codification.md",
+      "cslStyle": "apa"
+    },
+    {
+      "name": "Research Notes",
+      "outputPathTemplate": "Bibliografía/{{    (creators[0].lastName or creators[0].name or \"Anon\")  }}-{{    (date | format(\"YYYY\") or \"n.d.\")  }}-{{    (title | replace(\":\", \" -\")           | replace(\"/\", \"-\")           | replace(\"\\\\\", \"-\")           | replace(\"?\", \"\")           | replace(\"*\", \"\")           | replace(\"\\\"\", \"'\")           | replace(\"<\", \"(\")           | replace(\">\", \")\")           | replace(\"|\", \"-\"))  }}-{{    (itemType or \"Item\") | upper  }}-annotations.md",
+      "imageOutputPathTemplate": "Attachments/Bibliografía/{{citekey}}/",
+      "imageBaseNameTemplate": "image",
+      "cslStyle": "apa",
+      "templatePath": "Utils/Templates/Research Note.md"
+    }
+  ],
+  "citeSuggestTemplate": "[[{{citekey}}]]",
+  "openNoteAfterImport": false,
+  "whichNotesToOpenAfterImport": "first-imported-note",
+  "shouldConcat": true,
+  "pdfExportImageOCR": false,
+  "pdfExportImageOCRLang": "spa+eng",
+  "pdfExportImageTessDataDir": "D:\\Tesseract-OCR\\tessdata",
+  "pdfExportImageTesseractPath": "D:\\Tesseract-OCR\\tesseract.exe"
+}

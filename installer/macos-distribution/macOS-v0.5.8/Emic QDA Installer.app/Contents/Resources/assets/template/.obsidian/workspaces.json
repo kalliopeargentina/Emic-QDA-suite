@@ -1,0 +1,279 @@
+{
+  "workspaces": {
+    "Default": {
+      "main": {
+        "id": "676549e57b9e9904",
+        "type": "split",
+        "children": [
+          {
+            "id": "2b911d1caff03228",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "aa9e03757d47bee2",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "Nueva pestaña"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "2e310a0d0deffe09",
+        "type": "split",
+        "children": [
+          {
+            "id": "8dac1a9b1d188b69",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "932813b69dbbff3d",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Explorador de archivos"
+                }
+              },
+              {
+                "id": "d1002bc2d1a0f929",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Buscar"
+                }
+              },
+              {
+                "id": "5309ae42aa00f7e4",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Marcadores"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 353.5
+      },
+      "right": {
+        "id": "2c7fb10812b4d53f",
+        "type": "split",
+        "children": [
+          {
+            "id": "3f71240ac9047fab",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "bc434fa6e6a5e4bf",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Enlaces entrantes"
+                }
+              },
+              {
+                "id": "25e7f9841247661f",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Enlaces salientes"
+                }
+              },
+              {
+                "id": "6f34324427acaf20",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Etiquetas"
+                }
+              },
+              {
+                "id": "2cced6f56488871f",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-archive",
+                  "title": "Todas las propiedades"
+                }
+              },
+              {
+                "id": "36cacee107650325",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Esquema"
+                }
+              },
+              {
+                "id": "8686cf8bb8572c6f",
+                "type": "leaf",
+                "state": {
+                  "type": "emic-qda-highlights-sidebar",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "Resaltados"
+                }
+              }
+            ],
+            "currentTab": 5
+          }
+        ],
+        "direction": "horizontal",
+        "width": 431.5
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "media-extended:Open media library": true,
+          "media-extended:Open media quick switcher": true,
+          "pdf-plus:EMIC PDF++: Toggle auto-focus": true,
+          "pdf-plus:EMIC PDF++: Toggle auto-paste": true,
+          "pdf-plus:EMIC PDF++: Toggle auto-copy": true,
+          "templater-obsidian:Templater": true,
+          "emic-qda:Emic-QDA: Asignar codigo al parrafo": true,
+          "emic-qda:Emic-QDA: Renombrar codigo": true,
+          "emic-qda:Emic-QDA: Quitar codigo del parrafo": true,
+          "emic-qda:Emic-QDA: Eliminar Code File y todas sus referencias": true,
+          "emic-qda:Emic-QDA: Fusionar otro Code File en el Code File actual": true,
+          "emic-qda:Emic-QDA: Crear relacion entre codigos": true,
+          "emic-qda:Emic-QDA: Crear tipo de relacion de codigo": true,
+          "emic-qda:Emic-QDA: Editar tipo de relacion de codigo": true,
+          "emic-qda:Emic-QDA: Eliminar tipo de relacion de codigo": true,
+          "emic-qda:Emic-QDA: Editar relacion del codigo actual": true,
+          "emic-qda:Emic-QDA: Eliminar relacion del codigo actual": true,
+          "emic-qda:Emic-QDA: Dividir referencias seleccionadas hacia otro Code File": true,
+          "emic-qda:Emic-QDA: Crear multiples Code Files": true,
+          "emic-qda:Emic-QDA: Mostrar resumen de codigos": true,
+          "emic-qda:Emic-QDA: Regenerar markdown de codigos desde JSON canonico": true,
+          "emic-qda:Emic-QDA: Exportar definicion del libro de codigos (JSON/CSV)": true,
+          "emic-qda:Emic-QDA: Exportar codigos del libro de codigos (CSV)": true,
+          "emic-qda:Emic-QDA: Eliminar libro de codigos": true,
+          "emic-qda:Emic-QDA: Extraer desde parrafo": true,
+          "emic-qda:Emic-QDA: Agregar parrafo como fuente a un Extraction File existente": true,
+          "emic-qda:Emic-QDA: Quitar parrafo de extraccion": true,
+          "emic-qda:Emic-QDA: Editar atributos de extraccion": true,
+          "emic-qda:Emic-QDA: Eliminar Extraction File actual": true,
+          "emic-qda:Emic-QDA: Fusionar otro Extraction File en el Extraction File actual": true,
+          "emic-qda:Emic-QDA: Crear nuevo tipo de extraccion": true,
+          "emic-qda:Emic-QDA: Exportar todas las extracciones como .csv": true,
+          "emic-qda:Emic-QDA: Exportar todas las extracciones como .json": true,
+          "emic-qda:Emic-QDA: Mostrar resumen de tipo de extraccion": true,
+          "emic-qda:Emic-QDA: Regenerar markdown de extracciones desde JSON canonico": true,
+          "emic-qda:Emic-QDA: Extraer entidad desde parrafo": true,
+          "emic-qda:Emic-QDA: Extraer relacion desde parrafo": true,
+          "emic-qda:Emic-QDA: Crear relacion": true,
+          "emic-qda:Emic-QDA: Agregar relacion a la entidad actual": true,
+          "emic-qda:Emic-QDA: Eliminar relacion de la entidad actual": true,
+          "emic-qda:Emic-QDA: Eliminar entidad actual": true,
+          "emic-qda:Emic-QDA: Agregar evidencia a la relacion": true,
+          "emic-qda:Emic-QDA: Eliminar evidencia de la relacion de la entidad actual": true,
+          "emic-qda:Emic-QDA: Eliminar dominio": true,
+          "emic-qda:Emic-QDA: Crear nuevo tipo de entidad": true,
+          "emic-qda:Emic-QDA: Editar propiedades literales del tipo de entidad": true,
+          "emic-qda:Emic-QDA: Editar propiedades literales de la entidad": true,
+          "emic-qda:Emic-QDA: Crear nuevo tipo de relacion": true,
+          "emic-qda:Emic-QDA: Editar tipo de relacion": true,
+          "emic-qda:Emic-QDA: Abrir Domain Definition": true,
+          "emic-qda:Emic-QDA: Fusionar otro Entity File en el Entity File actual": true,
+          "emic-qda:Emic-QDA: Validar/Reconciliar grafo de dominio": true,
+          "emic-qda:Emic-QDA: Regenerar todos los archivos markdown de entidades": true,
+          "emic-qda:Emic-QDA: Exportar Domain Definition (JSON/Turtle)": true,
+          "emic-qda:Emic-QDA: Exportar Knowledge Graph (JSON/GraphML/GML/CSV)": true,
+          "emic-qda:Emic-QDA: Abrir Data File no leido aleatorio": true,
+          "emic-qda:Emic-QDA: Mostrar archivo de progreso del analisis": true,
+          "emic-qda:Emic-QDA: Marcar Data File actual como leido": true,
+          "emic-qda:Emic-QDA: Cambiar libro de codigos activo": false,
+          "emic-qda:Emic-QDA: Crear definicion del libro de codigos": false,
+          "emic-qda:Emic-QDA: Crear Domain Definition": false,
+          "emic-qda:Emic-QDA: Cambiar dominio activo": false,
+          "daily-notes:Abrir la nota de hoy": false,
+          "audio-recorder:Iniciar/Detener la grabación": false,
+          "emic-camera:Emic-Camera": false,
+          "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
+          "obsidian-map-view:Open map view": false,
+          "cmdr:Templater: Create Nota Analítica": false,
+          "bases:Crear nueva base": false,
+          "graph:Abrir vista gráfica": false,
+          "command-palette:Abrir paleta de comandos": false,
+          "copilot:Open Copilot Chat": false,
+          "switcher:Abrir selector rápido": true,
+          "emic-qda:Emic-QDA: Abrir definicion del libro de codigos": true,
+          "emic-qda:Emic-QDA: Eliminar tipo de extraccion": true,
+          "obsidian-shellcommands:Shell commands: Custom variables": true,
+          "cmdr:Templater: Create Coocurrencias de Códigos": false,
+          "cmdr:Templater: Create Extractions Overview": false,
+          "cmdr:AI Suggest Codes": false,
+          "cmdr:Shell commands: Execute: Transcribir de Youtube": false,
+          "cmdr:Zotero Integration: Bibliography Card": false,
+          "cmdr:Zotero Integration: Cite": true,
+          "cmdr:Zotero Integration: Bibliography_Link": true,
+          "cmdr:Zotero Integration: Codification Import": true,
+          "cmdr:Zotero Integration: Research Notes": false,
+          "cmdr:Emic-QDA: Emic-QDA: alternar barra lateral de resaltados": false,
+          "cmdr:Emic Charts View: Wizard": false,
+          "workspaces:Gestionar disposiciones de espacio de trabajo": true,
+          "emic-reports:Abrir compositor de informes": false,
+          "emic-reports:Abrir editor de plantillas de estilo": false
+        }
+      },
+      "active": "aa9e03757d47bee2",
+      "mtime": "2026-05-03T15:26:39-03:00"
+    }
+  },
+  "active": "Default"
+}

@@ -1,0 +1,7 @@
+{
+  "cssTheme": "Minimal",
+  "theme": "system",
+  "enabledCssSnippets": [
+    "minor-adjustments"
+  ]
+}

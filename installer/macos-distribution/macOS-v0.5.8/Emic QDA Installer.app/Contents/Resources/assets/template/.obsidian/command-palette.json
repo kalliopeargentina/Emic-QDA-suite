@@ -1,0 +1,29 @@
+{
+  "pinned": [
+    "obsidian-another-quick-switcher:search-command_search-code-files",
+    "obsidian-another-quick-switcher:search-command_search-data-files",
+    "obsidian-another-quick-switcher:search-command_search-extraction-files",
+    "canvas:new-file",
+    "properties:open",
+    "canvas:export-as-image",
+    "semantic-canvas:create-canvas-from-note",
+    "semantic-canvas:set-canvas-to-note-properties",
+    "workspace:export-pdf",
+    "file-recovery:open",
+    "quadro:assign-code",
+    "quadro:unassign-code",
+    "quadro:delete-code-everywhere",
+    "quadro:rename-code",
+    "quadro:bulk-create-new-code-files",
+    "quadro:extract-from-paragraph",
+    "quadro:create-new-extraction-type",
+    "quadro:export-all-extractions-as-csv",
+    "file-diff:compare-and-merge",
+    "obsidian-zotero-desktop-connector:zdc-exp-Bibliography Card",
+    "obsidian-zotero-desktop-connector:zdc-exp-Codification Import",
+    "obsidian-zotero-desktop-connector:zdc-import-notes",
+    "obsidian-zotero-desktop-connector:zdc-insert-notes",
+    "obsidian-zotero-desktop-connector:zdc-Cite",
+    "obsidian-zotero-desktop-connector:zdc-Bibliography_Link"
+  ]
+}

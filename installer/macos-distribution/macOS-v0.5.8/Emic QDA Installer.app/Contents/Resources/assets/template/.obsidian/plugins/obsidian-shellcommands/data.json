@@ -1,0 +1,1609 @@
+{
+  "settings_version": "0.23.0",
+  "debug": false,
+  "obsidian_command_palette_prefix": "Execute: ",
+  "preview_variables_in_command_palette": true,
+  "show_autocomplete_menu": true,
+  "working_directory": "",
+  "default_shells": {
+    "win32": "pwsh.exe",
+    "darwin": "/bin/zsh"
+  },
+  "environment_variable_path_augmentations": {},
+  "show_installation_warnings": true,
+  "error_message_duration": 20,
+  "notification_message_duration": 10,
+  "execution_notification_mode": "disabled",
+  "output_channel_clipboard_also_outputs_to_notification": true,
+  "output_channel_notification_decorates_output": true,
+  "enable_events": true,
+  "approve_modals_by_pressing_enter_key": true,
+  "command_palette": {
+    "re_execute_last_shell_command": {
+      "enabled": true,
+      "prefix": "Re-execute: "
+    }
+  },
+  "max_visible_lines_in_shell_command_fields": false,
+  "shell_commands": [
+    {
+      "id": "pybhxwnyve",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-clean-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-clean-audio\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-clean-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
+      },
+      "shells": {
+        "win32": "pwsh.exe",
+        "darwin": "/bin/zsh"
+      },
+      "alias": "Limpiar Audio",
+      "icon": "lucide-wand-2",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "clipboard",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "permanent",
+      "events": {
+        "file-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
+    },
+    {
+      "id": "hmlv247ie6",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-convert-compress-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-convert-compress-audio\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-convert-compress-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
+      },
+      "shells": {
+        "win32": "pwsh.exe",
+        "darwin": "/bin/zsh"
+      },
+      "alias": "Convertir y Comprimir",
+      "icon": "lucide-file-audio",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "clipboard",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": null,
+      "events": {
+        "file-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
+    },
+    {
+      "id": "ia3a6xknii",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-split-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-split-audio\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-split-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
+      },
+      "shells": {
+        "win32": "pwsh.exe",
+        "darwin": "/bin/zsh"
+      },
+      "alias": "Dividir Audio",
+      "icon": "lucide-split-square-horizontal",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "permanent",
+      "events": {
+        "file-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
+    },
+    {
+      "id": "wfx9n9sf0m",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-regenerate-srt.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{file_path:absolute}}\" --media-path \"{{_mediaPath}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-regenerate-srt\" --vault-path \"./\" --file-path \"{{file_path:absolute}}\" --media-path \"{{_mediaPath}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-regenerate-srt.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{file_path:absolute}}\" --media-path \"{{_mediaPath}}\""
+      },
+      "shells": {},
+      "alias": "Regenerar SRT",
+      "icon": null,
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "realtime",
+      "execution_notification_mode": "if-long",
+      "events": {},
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
+    },
+    {
+      "id": "e0h7g5awek",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-extract-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-extract-audio\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-extract-audio.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\""
+      },
+      "shells": {},
+      "alias": "Extraer Audio",
+      "icon": "lucide-audio-waveform",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "permanent",
+      "events": {
+        "file-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
+    },
+    {
+      "id": "q8zetxe00s",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-topic.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-topic\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-topic.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\""
+      },
+      "shells": {},
+      "alias": "Análisis de Tópicos",
+      "icon": "lucide-text-search",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "clipboard",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "if-long",
+      "events": {
+        "file-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "hta64ycx4u"
+        }
+      ],
+      "variable_default_values": {}
+    },
+    {
+      "id": "0tz8zgb1pk",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-kwic.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --keywords \"{{_KWICKeywords}}\" --context-size \"{{_KWICContextSize}}\" --case-sensitive \"{{_KWICCaseSensitive}}\" --max-per-file \"{{_KWICMaxPerFile}}\" --lemmatize \"{{_KWICLemmatize}}\" --language \"{{_KWICLanguage}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-kwic\" --vault-path \"./\" --folder-path \"{{event_folder_path:absolute}}\" --keywords \"{{_KWICKeywords}}\" --context-size \"{{_KWICContextSize}}\" --case-sensitive \"{{_KWICCaseSensitive}}\" --max-per-file \"{{_KWICMaxPerFile}}\" --lemmatize \"{{_KWICLemmatize}}\" --language \"{{_KWICLanguage}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-kwic.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --keywords \"{{_KWICKeywords}}\" --context-size \"{{_KWICContextSize}}\" --case-sensitive \"{{_KWICCaseSensitive}}\" --max-per-file \"{{_KWICMaxPerFile}}\" --lemmatize \"{{_KWICLemmatize}}\" --language \"{{_KWICLanguage}}\""
+      },
+      "shells": {},
+      "alias": "Análisis de Contexto",
+      "icon": "lucide-text-select",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "realtime",
+      "execution_notification_mode": "if-long",
+      "events": {
+        "folder-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "9er6onpwto"
+        }
+      ],
+      "variable_default_values": {}
+    },
+    {
+      "id": "2cbuff4uw0",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\python.exe\" -m obsidian_qda_suite topic --vault-path \"{{vault_path}}\" --file-path \"{{event_folder_path:absolute}}\" --file-name \"{{event_folder_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/python\" -m obsidian_qda_suite topic --vault-path \"./\" --file-path \"{{event_folder_path:absolute}}\" --file-name \"{{event_folder_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\python.exe\" -m obsidian_qda_suite topic --vault-path \"{{vault_path}}\" --file-path \"{{event_folder_path:absolute}}\" --file-name \"{{event_folder_name}}\" --method \"{{_TextAnalysisMethod}}\" --seed-words \"{{_SeedWordsLDA}}\" --topics \"{{_TATopics}}\" --top2vec-embedding \"{{_top2vecEmbedding}}\" --hdp-gamma \"{{_HDPGamma}}\" --hdp-alpha \"{{_HDPAlpha}}\" --bertopic-min-topic-size \"{{_BERTopicMinTopicSize}}\" --bertopic-top-n-words \"{{_BERTopicTopNWords}}\" --bertopic-diversity \"{{_BERTopicDiversity}}\" --bertopic-calc-probs \"{{_BERTopicCalcProbs}}\" --bertopic-embedding-model \"{{_BERTopicEmbeddingModel}}\""
+      },
+      "shells": {},
+      "alias": "Análisis de Topicos",
+      "icon": "lucide-text-search",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "clipboard",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "if-long",
+      "events": {
+        "folder-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "hta64ycx4u"
+        }
+      ],
+      "variable_default_values": {}
+    },
+    {
+      "id": "eng7fyzd3o",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe-youtube.exe\" \"{{_youtube_link}}\" --output-dir \"{{vault_path}}\" --api-key \"{{_OpenAIKey}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-transcribe-youtube\" \"{{_youtube_link}}\" --output-dir \"./\" --api-key \"{{_OpenAIKey}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe-youtube.exe\" \"{{_youtube_link}}\" --output-dir \"{{vault_path}}\" --api-key \"{{_OpenAIKey}}\""
+      },
+      "shells": {},
+      "alias": "Transcribir de Youtube",
+      "icon": "lucide-youtube",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "if-long",
+      "events": {},
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "gm1ru5j7ly"
+        }
+      ],
+      "variable_default_values": {
+        "24d68weajg": {
+          "type": "show-errors",
+          "value": ""
+        }
+      }
+    },
+    {
+      "id": "tq0e6z3q4l",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --aggregate \"{{_SentimentAggregate}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-sentiment\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --aggregate \"{{_SentimentAggregate}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --aggregate \"{{_SentimentAggregate}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\""
+      },
+      "shells": {},
+      "alias": "Análisis de Sentimientos",
+      "icon": "lucide-scan-eye",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "if-long",
+      "events": {
+        "file-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "sziuwbk47c"
+        }
+      ],
+      "variable_default_values": {}
+    },
+    {
+      "id": "6xip14v8yv",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\"  --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --max-length \"{{_SentimentMaxLength}}\" --aggregate \"{{_SentimentAggregate}}\" --file-pattern \"{{_SentimentFilePattern}}\" --no-recursive \"{{_SentimentNoRecursive}}\" --min-document-length \"{{_SentimentMinDocumentLength}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\" --min-paragraph-length \"{{_SentimentMinParagraphLength}}\" --corpus-report \"{{_SentimentCorpusReport}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-sentiment\" --vault-path \"./\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --max-length \"{{_SentimentMaxLength}}\" --aggregate \"{{_SentimentAggregate}}\" --file-pattern \"{{_SentimentFilePattern}}\" --no-recursive \"{{_SentimentNoRecursive}}\" --min-document-length \"{{_SentimentMinDocumentLength}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\" --min-paragraph-length \"{{_SentimentMinParagraphLength}}\" --corpus-report \"{{_SentimentCorpusReport}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-sentiment.exe\"  --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_SentimentAlgorithm}}\" --model \"{{_SentimentModel}}\" --device \"{{_SentimentDevice}}\" --max-length \"{{_SentimentMaxLength}}\" --aggregate \"{{_SentimentAggregate}}\" --file-pattern \"{{_SentimentFilePattern}}\" --no-recursive \"{{_SentimentNoRecursive}}\" --min-document-length \"{{_SentimentMinDocumentLength}}\" --output \"{{_SentimentOutput}}\" --top-k \"{{_SentimentTopK}}\" --min-score \"{{_SentimentMinScore}}\" --min-confidence \"{{_SentimentMinConfidence}}\" --min-score-diff \"{{_SentimentMinScoreDiff}}\" --min-paragraph-length \"{{_SentimentMinParagraphLength}}\" --corpus-report \"{{_SentimentCorpusReport}}\""
+      },
+      "shells": {},
+      "alias": "Análisis de Sentimientos",
+      "icon": "lucide-scan-eye",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "clipboard",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "if-long",
+      "events": {
+        "folder-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "sziuwbk47c"
+        }
+      ],
+      "variable_default_values": {}
+    },
+    {
+      "id": "2x1nrv2lj7",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-emotion\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\""
+      },
+      "shells": {},
+      "alias": "Análisis de Emociones",
+      "icon": "lucide-scan-face",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "if-long",
+      "events": {
+        "file-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "k44u9m2aw6"
+        }
+      ],
+      "variable_default_values": {}
+    },
+    {
+      "id": "53fvbrs25g",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --no-recursive \"{{_EmotionNoRecursive}}\" --min-document-length \"{{_EmotionMinDocumentLength}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\" --corpus-report \"{{_EmotionCorpusReport}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-emotion\" --vault-path \"./\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --no-recursive \"{{_EmotionNoRecursive}}\" --min-document-length \"{{_EmotionMinDocumentLength}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\" --corpus-report \"{{_EmotionCorpusReport}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-emotion.exe\" --vault-path \"{{vault_path}}\" --folder-path \"{{event_folder_path:absolute}}\" --folder-name \"{{event_folder_name}}\" --algo \"{{_EmotionAlgorithm}}\" --model \"{{_EmotionModel}}\" --device \"{{_EmotionDevice}}\" --max-length \"{{_EmotionMaxLength}}\" --aggregate \"{{_EmotionAggregate}}\" --no-recursive \"{{_EmotionNoRecursive}}\" --min-document-length \"{{_EmotionMinDocumentLength}}\" --output \"{{_EmotionOutput}}\" --top-k \"{{_EmotionTopK}}\" --min-score \"{{_EmotionMinScore}}\" --min-confidence \"{{_EmotionMinConfidence}}\" --min-score-diff \"{{_EmotionMinScoreDiff}}\" --min-paragraph-length \"{{_EmotionMinParagraphLength}}\" --corpus-report \"{{_EmotionCorpusReport}}\""
+      },
+      "shells": {},
+      "alias": "Análisis de Emociones",
+      "icon": "lucide-scan-face",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "realtime",
+      "execution_notification_mode": "if-long",
+      "events": {
+        "folder-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "k44u9m2aw6"
+        }
+      ],
+      "variable_default_values": {}
+    },
+    {
+      "id": "lbxctinzvm",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --api-key \"{{_OpenAIKey}}\"",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-transcribe\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --api-key \"{{_OpenAIKey}}\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribe.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --api-key \"{{_OpenAIKey}}\""
+      },
+      "shells": {},
+      "alias": "Transcribir (OpenAI)",
+      "icon": "lucide-mic-2",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "quick",
+      "events": {
+        "file-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
+    },
+    {
+      "id": "tb16hp1k5l",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribex.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es --timestamps {{_timestamps_x}}",
+        "darwin": "eval $( echo '\"../.venv/bin/obsidianqda-transcribex\" --vault-path \"./\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es --timestamps {{_timestamps_x}}' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\obsidianqda-transcribex.exe\" --vault-path \"{{vault_path}}\" --file-path \"{{event_file_path:absolute}}\" --file-name \"{{event_file_name}}\" --diarizar \"{{_diarizar}}\" --hf-token \"{{_huggface}}\" --device cpu --language es --timestamps {{_timestamps_x}}"
+      },
+      "shells": {},
+      "alias": "Transcribir X",
+      "icon": "lucide-mic-2",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "ignore",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "if-long",
+      "events": {
+        "file-menu": {
+          "enabled": true
+        }
+      },
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [
+        {
+          "type": "prompt",
+          "enabled": true,
+          "prompt_id": "x1r9jzi86g"
+        }
+      ],
+      "variable_default_values": {}
+    },
+    {
+      "id": "kh8atjq93w",
+      "platform_specific_commands": {
+        "default": "& \"{{vault_path}}\\..\\.venv\\Scripts\\ontology-explorer.exe\" --input-dir \"{{event_folder_path:absolute}}\" --config-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\\Config\" --domain \"venture-capital\" --provider \"openai\" --model \"gpt-5.2\" --api-key \"{{_OpenAIKey}}\" --output-format \"ontologia\" --ontology-format \"vault\"  --workers 4 --output-name  \"Ontology\" --cache-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\\.cache\" --output-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\"",
+        "darwin": "eval $( echo '\"../.venv/bin/ontology-explorer\" --input-dir \"{{event_folder_path:absolute}}\" --config-dir \"./Analysis/Ontology Analisys/Config\" --domain \"venture-capital\" --provider \"openai\" --model \"gpt-5.2\" --api-key \"{{_OpenAIKey}}\" --output-format \"ontologia\" --ontology-format \"vault\" --workers 4 --output-name \"Ontology\" --cache-dir \"./Analysis/Ontology Analysis/.cache\" --output-dir \"./Analysis/Ontology Analysis\"' | sed 's|\\\\||g' )",
+        "win32": "& \"{{vault_path}}\\..\\.venv\\Scripts\\ontology-explorer.exe\" --input-dir \"{{event_folder_path:absolute}}\" --config-dir \"{{vault_path}}\\Analysis\\Ontology Analisys\\Config\" --domain \"venture-capital\" --provider \"openai\" --model \"gpt-5.2\" --api-key \"{{_OpenAIKey}}\" --output-format \"ontologia\" --ontology-format \"vault\"  --workers 4 --output-name  \"Ontology\" --cache-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\\.cache\" --output-dir \"{{vault_path}}\\Analysis\\Ontology Analysis\""
+      },
+      "shells": {},
+      "alias": "Ontology Analisys",
+      "icon": "lucide-infinity",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "input_contents": {
+        "stdin": null
+      },
+      "output_handlers": {
+        "stdout": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        },
+        "stderr": {
+          "handler": "notification",
+          "convert_ansi_code": true
+        }
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "output_handling_mode": "buffered",
+      "execution_notification_mode": "permanent",
+      "events": {},
+      "debounce": null,
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
+    }
+  ],
+  "prompts": [
+    {
+      "id": "hta64ycx4u",
+      "title": "Análisis de Topicos",
+      "description": "",
+      "preview_shell_command": false,
+      "fields": [
+        {
+          "type": "single-choice",
+          "label": "¿Que método preferís?",
+          "description": "Método elegido para el análisis de texto",
+          "default_value": "LDA",
+          "target_variable_id": "wk6rx41u9u",
+          "required": true,
+          "choices": [
+            [
+              "lda",
+              "Latent Dirichlet Allocation (LDA)"
+            ],
+            [
+              "nmf",
+              "Non-negative Matrix Factorization (NMF)"
+            ],
+            [
+              "guided",
+              "Latent Dirichlet Allocation (LDA) Guiado"
+            ],
+            [
+              "hdp",
+              "Hierarchical Dirichlet Process"
+            ],
+            [
+              "corex",
+              "CorEx (Correlation Explanation)"
+            ],
+            [
+              "lsi",
+              "Latent Semantic Analysis (LSI)"
+            ],
+            [
+              "lsa",
+              "Latent Semantic Analysis (LSA)"
+            ],
+            [
+              "top2vec",
+              "Top2Vec"
+            ],
+            [
+              "bertopic",
+              "BERTopic"
+            ],
+            ""
+          ]
+        },
+        {
+          "type": "single-line-text",
+          "label": "Cantidad deseada de tópicos",
+          "description": "",
+          "default_value": "Auto",
+          "target_variable_id": "2yal7iagcj",
+          "required": true
+        },
+        {
+          "type": "single-choice",
+          "label": "Embedding (top2vec)",
+          "description": "Embedding a utilizar cuando se ejecuta el algoritmo Top2Vec",
+          "default_value": "all-MiniLM-L6-v2",
+          "target_variable_id": "v990mmw0oj",
+          "required": true,
+          "choices": [
+            "all-MiniLM-L6-v2",
+            "universal-sentence-encoder-multilingual",
+            "distiluse-base-multilingual-cased",
+            "doc2vec"
+          ]
+        },
+        {
+          "type": "single-line-text",
+          "label": "HDP Gamma",
+          "description": "Controla la concentración de temas a nivel global",
+          "default_value": "0.3",
+          "target_variable_id": "63d1xlo72a",
+          "required": true
+        },
+        {
+          "type": "single-line-text",
+          "label": "HDP Alpha",
+          "description": "Controla cuántos temas típicamente aparecen mezclados en cada documento individual",
+          "default_value": "0.3",
+          "target_variable_id": "06yvjehqaq",
+          "required": true
+        },
+        {
+          "type": "single-line-text",
+          "label": "Minimum cluster size (BERTopic)",
+          "description": "Minimum cluster size for BERTopic HDBSCAN clustering. Larger values = fewer topics.",
+          "default_value": "15",
+          "target_variable_id": "w1tr23fzip",
+          "required": true
+        },
+        {
+          "type": "single-line-text",
+          "label": "Number of top words (BERTopic)",
+          "description": "Number of top words to extract per topic in BERTopic.",
+          "default_value": "15",
+          "target_variable_id": "17cdph6v04",
+          "required": true
+        },
+        {
+          "type": "single-line-text",
+          "label": "MMR diversity (BERTopic)",
+          "description": "MMR diversity parameter for BERTopic (0.0 to 1.0). 0.0 = relevance only, 1.0 = maximum diversity.",
+          "default_value": "0.5",
+          "target_variable_id": "kp2ndispav",
+          "required": true
+        },
+        {
+          "type": "toggle",
+          "label": "Calculate Probabilities (BERTopic)",
+          "description": "Calculate topic probabilities for documents in BERTopic.",
+          "default_value": "true",
+          "target_variable_id": "fmpiyq60nq",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        },
+        {
+          "type": "single-choice",
+          "label": "Embedding Model  (BERTopic)",
+          "description": "Custom embedding model for BERTopic (e.g., 'all-MiniLM-L6-v2', 'paraphrase-multilingual-MiniLM-L12-v2')",
+          "default_value": "paraphrase-multilingual-MiniLM-L12-v2",
+          "target_variable_id": "mkqn61cld3",
+          "required": true,
+          "choices": [
+            "paraphrase-multilingual-MiniLM-L12-v2",
+            "distiluse-base-multilingual-cased",
+            "universal-sentence-encoder-multilingual",
+            "paraphrase-multilingual-mpnet-base-v2",
+            "LaBSE"
+          ]
+        }
+      ],
+      "execute_button_text": "Analizar"
+    },
+    {
+      "id": "9er6onpwto",
+      "title": "Análisis de Contexto",
+      "description": "Análisis de contexto de una serie de palabras claves",
+      "preview_shell_command": false,
+      "fields": [
+        {
+          "type": "single-line-text",
+          "label": "Palabras Clave",
+          "description": "Valores separados por comma",
+          "default_value": "",
+          "target_variable_id": "5gxpbf6b5j",
+          "required": true
+        },
+        {
+          "type": "single-line-text",
+          "label": "Tamaño del contexto",
+          "description": "Palabras antes y después de la palabra clave",
+          "default_value": "10",
+          "target_variable_id": "ovczn3i1p0",
+          "required": true
+        },
+        {
+          "type": "toggle",
+          "label": "¿Sensible a mayúsculas?",
+          "description": "Si las palabras claves deben ser sensibles a mayúsculas o no",
+          "default_value": "false",
+          "target_variable_id": "2zh4kebgx9",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        },
+        {
+          "type": "single-line-text",
+          "label": "Cantidad de resultados por documento",
+          "description": "cantidad de resultados totales por documento",
+          "default_value": "20",
+          "target_variable_id": "xrv0qht67v",
+          "required": true
+        },
+        {
+          "type": "toggle",
+          "label": "¿Lematizar los textos?",
+          "description": "Si se lematizan los textos se pueden encontrar palabras afines aunque no sean exactamente las ingresadas.",
+          "default_value": "false",
+          "target_variable_id": "7mimt7z2px",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        }
+      ],
+      "execute_button_text": "Execute"
+    },
+    {
+      "id": "gm1ru5j7ly",
+      "title": "Transcribir de Youtube",
+      "description": "Ingresar el link de youtube para su transcripción.",
+      "preview_shell_command": false,
+      "fields": [
+        {
+          "type": "single-line-text",
+          "label": "Link de Youtube",
+          "description": "link a ser transcripto",
+          "default_value": "",
+          "target_variable_id": "24d68weajg",
+          "required": true
+        }
+      ],
+      "execute_button_text": "Transcribir"
+    },
+    {
+      "id": "sziuwbk47c",
+      "title": "Análisis de Sentimiento",
+      "description": "",
+      "preview_shell_command": false,
+      "fields": [
+        {
+          "type": "single-choice",
+          "label": "Algoritmo",
+          "description": "Algoritmo: pysentimiento | transformers",
+          "default_value": "pysentimiento",
+          "target_variable_id": "mw44sq6kzl",
+          "required": true,
+          "choices": [
+            "pysentimiento ",
+            "transformers"
+          ]
+        },
+        {
+          "type": "single-choice",
+          "label": "Modelo (Transformers)",
+          "description": "Modelo específico (opcional)",
+          "default_value": "cardiffnlp/twitter-xlm-roberta-base-sentiment",
+          "target_variable_id": "ktlfiawuw1",
+          "required": false,
+          "choices": [
+            "cardiffnlp/twitter-xlm-roberta-base-sentiment",
+            "nlptown/bert-base-multilingual-uncased-sentiment",
+            "tabularisai/multilingual-sentiment-analysis",
+            "xlm-roberta-base",
+            ""
+          ]
+        },
+        {
+          "type": "single-line-text",
+          "label": "Dispositivo (CUDA)",
+          "description": "Dispositivo: 0/1... | cuda | cpu | -1",
+          "default_value": "",
+          "target_variable_id": "gpw9kzw4v2",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Longitud máxima de texto",
+          "description": "Truncado de texto para transformers",
+          "default_value": "4000",
+          "target_variable_id": "4ukj9jca57",
+          "required": false
+        },
+        {
+          "type": "single-choice",
+          "label": "Modo de agregación",
+          "description": "Modo de agregación: document | sentence | paragraph",
+          "default_value": "document",
+          "target_variable_id": "6ibky1vmu0",
+          "required": false,
+          "choices": [
+            "document",
+            "sentence",
+            "paragraph"
+          ]
+        },
+        {
+          "type": "single-line-text",
+          "label": "Output",
+          "description": "Carpeta de Salida",
+          "default_value": "Análisis/Análisis de Sentimiento",
+          "target_variable_id": "z9238qhcif",
+          "required": true
+        },
+        {
+          "type": "single-line-text",
+          "label": "Top K párrafos por clase",
+          "description": "",
+          "default_value": "5",
+          "target_variable_id": "ysx1p85lmv",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Puntaje Mínimo",
+          "description": "Puntaje mínimo para incluir párrafo",
+          "default_value": "",
+          "target_variable_id": "uv6q0rxyjb",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Confianza Mínima",
+          "description": "Confianza mínima de etiqueta",
+          "default_value": "",
+          "target_variable_id": "ju1s2k94vv",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Diferencia Mínima",
+          "description": "Diferencia mínima entre mejor y segunda mejor",
+          "default_value": "",
+          "target_variable_id": "x3iduob8uo",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Longitud mínima de párrafo",
+          "description": "Longitud mínima de párrafo",
+          "default_value": "50",
+          "target_variable_id": "qclbcxvn45",
+          "required": false
+        },
+        {
+          "type": "toggle",
+          "label": "Informe consolidado (Solo Carpetas)",
+          "description": "Hacer un informe sobre todos los documentos de la carpeta",
+          "default_value": "false",
+          "target_variable_id": "29lnl85jc1",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        },
+        {
+          "type": "toggle",
+          "label": "Recursivo",
+          "description": "Incluir documentos en subcarpetas",
+          "default_value": "false",
+          "target_variable_id": "qtt5szlsp5",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        }
+      ],
+      "execute_button_text": "Analizar"
+    },
+    {
+      "id": "k44u9m2aw6",
+      "title": "Análisis de Emociones",
+      "description": "",
+      "preview_shell_command": false,
+      "fields": [
+        {
+          "type": "single-choice",
+          "label": "Algoritmo",
+          "description": "Pysentiminto incluye \"others\", transformers puede especificar modelo entre los disponibles.",
+          "default_value": "pysentimiento-emotion",
+          "target_variable_id": "ggfg0oey7v",
+          "required": true,
+          "choices": [
+            "pysentimiento-emotion",
+            "transformers-emotion"
+          ]
+        },
+        {
+          "type": "single-choice",
+          "label": "Modelo (opcional)",
+          "description": "",
+          "default_value": "cardiffnlp/twitter-roberta-base-emotion",
+          "target_variable_id": "n1slq3zphj",
+          "required": false,
+          "choices": [
+            "cardiffnlp/twitter-roberta-base-emotion",
+            "maxpe/bertin-roberta-base-spanish_sem_eval_2018_task_1"
+          ]
+        },
+        {
+          "type": "single-line-text",
+          "label": "Device (CUDA)",
+          "description": "",
+          "default_value": "",
+          "target_variable_id": "7xhj2xyi85",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Longitud Máxima del texto",
+          "description": "Longitud máxima de texto",
+          "default_value": "",
+          "target_variable_id": "gy2i6ufxwa",
+          "required": false
+        },
+        {
+          "type": "single-choice",
+          "label": "Modo de Agregación",
+          "description": "",
+          "default_value": "Modo de agregación: document | sentence | paragraph",
+          "target_variable_id": "lte06kocb2",
+          "required": false,
+          "choices": [
+            "document",
+            "sentence",
+            "paragraph"
+          ]
+        },
+        {
+          "type": "single-line-text",
+          "label": "Carpeta de salida",
+          "description": "Carpeta de salida",
+          "default_value": "Análisis/Análisis de Emociones",
+          "target_variable_id": "u7au3r12dl",
+          "required": true
+        },
+        {
+          "type": "single-line-text",
+          "label": "Top K parrafos",
+          "description": "Top K párrafos por emoción",
+          "default_value": "3",
+          "target_variable_id": "afeo0wk8a6",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Puntaje mínimo para incluir párrafo",
+          "description": "",
+          "default_value": "",
+          "target_variable_id": "m49dbnzstk",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Confianza mínima de etiqueta",
+          "description": "",
+          "default_value": "",
+          "target_variable_id": "460s0xdjaj",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Diferencia",
+          "description": "Diferencia mínima entre mejor y segunda mejor",
+          "default_value": "",
+          "target_variable_id": "5liusu6ym7",
+          "required": false
+        },
+        {
+          "type": "single-line-text",
+          "label": "Longitud mínima de párrafo",
+          "description": "",
+          "default_value": "50",
+          "target_variable_id": "rleavghsk9",
+          "required": false
+        },
+        {
+          "type": "toggle",
+          "label": "¿Informe consolidado?",
+          "description": "",
+          "default_value": "true",
+          "target_variable_id": "qr05nuyx9j",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        },
+        {
+          "type": "single-line-text",
+          "label": "Tamaño mínimo del documento",
+          "description": "",
+          "default_value": "100",
+          "target_variable_id": "ca96eub0yr",
+          "required": true
+        },
+        {
+          "type": "toggle",
+          "label": "Recursivo",
+          "description": "",
+          "default_value": "true",
+          "target_variable_id": "km8scmwf35",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        }
+      ],
+      "execute_button_text": "Analizar"
+    },
+    {
+      "id": "x1r9jzi86g",
+      "title": "Transcribir X",
+      "description": "",
+      "preview_shell_command": false,
+      "fields": [
+        {
+          "type": "toggle",
+          "label": "¿Necesitas reconocer diferentes hablantes?",
+          "description": "",
+          "default_value": "true",
+          "target_variable_id": "7oiza9y05h",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        },
+        {
+          "type": "toggle",
+          "label": "¿Necesitas agregar marcas temporales?",
+          "description": "",
+          "default_value": "true",
+          "target_variable_id": "aly8u3o4ub",
+          "required": false,
+          "on_result": "true",
+          "off_result": "false"
+        }
+      ],
+      "execute_button_text": "Execute"
+    }
+  ],
+  "builtin_variables": {},
+  "custom_variables": [
+    {
+      "id": "n0zn0o303s",
+      "name": "OpenAIKey",
+      "description": "",
+      "default_value": {
+        "type": "from-keyring",
+        "value": "openai"
+      }
+    },
+    {
+      "id": "ozw885hs9d",
+      "name": "mediaPath",
+      "description": "",
+      "default_value": {
+        "type": "value",
+        "value": "Attachments/Medios"
+      }
+    },
+    {
+      "id": "wk6rx41u9u",
+      "name": "TextAnalysisMethod",
+      "description": "Método elegido para el análisis de texto",
+      "default_value": {
+        "type": "value",
+        "value": "LDA"
+      }
+    },
+    {
+      "id": "6darxwb6uf",
+      "name": "SeedWordsLDA",
+      "description": "Palabras semilla para reconocer temas",
+      "default_value": {
+        "type": "value",
+        "value": "Análisis/Análisis de Tópicos/Temas-LDA-Guiado.md"
+      }
+    },
+    {
+      "id": "2yal7iagcj",
+      "name": "TATopics",
+      "description": "Cantidad de totales tópicos deseados para detectar. Si no se especifica, el algoritmo estima el número optimo",
+      "default_value": null
+    },
+    {
+      "id": "v990mmw0oj",
+      "name": "top2vecEmbedding",
+      "description": "Embedding a usar cuando se ejecuta top2vec}}",
+      "default_value": null
+    },
+    {
+      "id": "jsw9rm3pwu",
+      "name": "_HDPGamma",
+      "description": "HDP Gamma parameter in Text analysis",
+      "default_value": null
+    },
+    {
+      "id": "06yvjehqaq",
+      "name": "HDPAlpha",
+      "description": "HDP Alpha parameter in text analysis",
+      "default_value": null
+    },
+    {
+      "id": "63d1xlo72a",
+      "name": "HDPGamma",
+      "description": "HDP Gamma parameter in text analysis",
+      "default_value": null
+    },
+    {
+      "id": "w1tr23fzip",
+      "name": "BERTopicMinTopicSize",
+      "description": "BERTopicMinTopicSize for text analysis",
+      "default_value": null
+    },
+    {
+      "id": "17cdph6v04",
+      "name": "BERTopicTopNWords",
+      "description": "BERTopicTopNWords  for text analysis",
+      "default_value": null
+    },
+    {
+      "id": "kp2ndispav",
+      "name": "BERTopicDiversity",
+      "description": "BERTopicDiversity for text analysis",
+      "default_value": null
+    },
+    {
+      "id": "fmpiyq60nq",
+      "name": "BERTopicCalcProbs",
+      "description": "BERTopicCalcProbs for text analysis",
+      "default_value": null
+    },
+    {
+      "id": "mkqn61cld3",
+      "name": "BERTopicEmbeddingModel",
+      "description": "BERTopicEmbeddingModel for text analysis",
+      "default_value": null
+    },
+    {
+      "id": "5gxpbf6b5j",
+      "name": "KWICKeywords",
+      "description": "KWICKeywords for context analysis",
+      "default_value": null
+    },
+    {
+      "id": "ovczn3i1p0",
+      "name": "KWICContextSize",
+      "description": "KWICContextSize for context analysis",
+      "default_value": null
+    },
+    {
+      "id": "2zh4kebgx9",
+      "name": "KWICCaseSensitive",
+      "description": "KWICCaseSensitive Context Analysis",
+      "default_value": null
+    },
+    {
+      "id": "xrv0qht67v",
+      "name": "KWICMaxPerFile",
+      "description": "KWICMaxPerFile context analysis",
+      "default_value": null
+    },
+    {
+      "id": "7mimt7z2px",
+      "name": "KWICLemmatize",
+      "description": "KWICLemmatize Context Analysis",
+      "default_value": null
+    },
+    {
+      "id": "61677tu9n0",
+      "name": "TALemmatize",
+      "description": "lematizar para topic analysis",
+      "default_value": null
+    },
+    {
+      "id": "24d68weajg",
+      "name": "youtube_link",
+      "description": "Youtube link to be transcribed",
+      "default_value": null
+    },
+    {
+      "id": "7oiza9y05h",
+      "name": "diarizar",
+      "description": "Opcion para detectar personas en audio",
+      "default_value": {
+        "type": "value",
+        "value": "true"
+      }
+    },
+    {
+      "id": "saj1wx7tyy",
+      "name": "huggface",
+      "description": "token de huggingface",
+      "default_value": {
+        "type": "from-keyring",
+        "value": "huggingface"
+      }
+    },
+    {
+      "id": "mw44sq6kzl",
+      "name": "SentimentAlgorithm",
+      "description": "Algoritmo: pysentimiento | transformers",
+      "default_value": null
+    },
+    {
+      "id": "ktlfiawuw1",
+      "name": "SentimentModel",
+      "description": "Modelo específico de análisis de sentimientos",
+      "default_value": null
+    },
+    {
+      "id": "gpw9kzw4v2",
+      "name": "SentimentDevice",
+      "description": "Dispositivo: 0/1... | cuda | cpu | -1",
+      "default_value": null
+    },
+    {
+      "id": "4ukj9jca57",
+      "name": "SentimentMaxLength",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "6ibky1vmu0",
+      "name": "SentimentAggregate",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "z9238qhcif",
+      "name": "SentimentOutput",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "ysx1p85lmv",
+      "name": "SentimentTopK",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "uv6q0rxyjb",
+      "name": "SentimentMinScore",
+      "description": "Puntaje mínimo para incluir párrafo",
+      "default_value": null
+    },
+    {
+      "id": "ju1s2k94vv",
+      "name": "SentimentMinConfidence",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "x3iduob8uo",
+      "name": "SentimentMinScoreDiff",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "qclbcxvn45",
+      "name": "SentimentMinParagraphLength",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "29lnl85jc1",
+      "name": "SentimentCorpusReport",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "qtt5szlsp5",
+      "name": "SentimentNoRecursive",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "ggfg0oey7v",
+      "name": "EmotionAlgorithm",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "n1slq3zphj",
+      "name": "EmotionModel",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "7xhj2xyi85",
+      "name": "EmotionDevice",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "gy2i6ufxwa",
+      "name": "EmotionMaxLength",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "lte06kocb2",
+      "name": "EmotionAggregate",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "u7au3r12dl",
+      "name": "EmotionOutput",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "afeo0wk8a6",
+      "name": "EmotionTopK",
+      "description": "Top K párrafos por emoción",
+      "default_value": null
+    },
+    {
+      "id": "m49dbnzstk",
+      "name": "EmotionMinScore",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "460s0xdjaj",
+      "name": "EmotionMinConfidence",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "5liusu6ym7",
+      "name": "EmotionMinScoreDiff",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "rleavghsk9",
+      "name": "EmotionMinParagraphLength",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "qr05nuyx9j",
+      "name": "EmotionCorpusReport",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "ca96eub0yr",
+      "name": "EmotionMinDocumentLength",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "km8scmwf35",
+      "name": "EmotionNoRecursive",
+      "description": "",
+      "default_value": null
+    },
+    {
+      "id": "aly8u3o4ub",
+      "name": "timestamps_x",
+      "description": "",
+      "default_value": {
+        "type": "value",
+        "value": "true"
+      }
+    }
+  ],
+  "custom_variables_notify_changes_via": {
+    "obsidian_uri": true,
+    "output_assignment": true
+  },
+  "custom_shells": [],
+  "output_wrappers": []
+}

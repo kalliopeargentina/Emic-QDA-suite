@@ -9,17 +9,17 @@ set -euo pipefail
 # Python: vía Homebrew (python@3.12), no .pkg ni .exe.
 PYTHON_VERSION_LABEL="3.12 (Homebrew python@3.12)"
 
-# Referencia respecto al instalador Windows (NSIS); en Mac el cask suele ser la última estable.
-OBSIDIAN_VERSION_REF="1.12.7"
+# Referencia al número de versión en installer/config.nsi (!define OBSIDIAN_VERSION); en Mac el cask suele traer la última estable.
+OBSIDIAN_VERSION_REF="1.11.5"
 
-VERSION="0.5.7"
-BUILD="2026-03-30"
+VERSION="0.5.8"
+BUILD="2026-05-03"
 
 PYTHON_VERSIONS_ACCEPTED="3.12 3.13 3.14 3.15 3.16"
 TEMPLATE_DIR="template"
 ONTOLOGY_WHL="ontology_explorer-0.1.1-py3-none-any.whl"
-QDA_WHL="obsidian_qda_suite-0.1.4-py3-none-any.whl"
-# 1 = instalar ontology_explorer (paridad con !define INCLUDE_ONTOLOGY_EXPLORER en config.nsi). 0 = omitir hasta que el wheel esté listo.
+QDA_WHL="obsidian_qda_suite-0.1.7-py3-none-any.whl"
+# Ontology Explorer es opcional y viene desactivado por defecto (igual que Windows sin !define INCLUDE_ONTOLOGY_EXPLORER en config.nsi). 1 = instalar; 0 = omitir.
 INCLUDE_ONTOLOGY_EXPLORER=0
 
 # FFmpeg en macOS: solo vía Homebrew (no bundle estilo Windows INCLUDE_FFMPEG).
@@ -495,7 +495,7 @@ create_venv_and_pip() {
     "$py" -m pip install -v --find-links "$ASSETS_DIR" "$ASSETS_DIR/$ONTOLOGY_WHL" >>"$LOG_FILE" 2>&1 || die "No se pudo instalar OntologyExplorer."
     "$py" -m pip show ontology_explorer >/dev/null 2>&1 || die "Verificación pip show ontology_explorer falló."
   else
-    log "Ontology Explorer omitido en esta build (INCLUDE_ONTOLOGY_EXPLORER=0; alinear con config.nsi en Windows)."
+    log "Ontology Explorer omitido (opcional; INCLUDE_ONTOLOGY_EXPLORER=0, paridad con Windows sin INCLUDE_ONTOLOGY_EXPLORER en config.nsi)."
   fi
   log "Instalando $QDA_WHL ..."
   "$py" -m pip install -v --find-links "$ASSETS_DIR" "$ASSETS_DIR/$QDA_WHL" >>"$LOG_FILE" 2>&1 || die "No se pudo instalar obsidian_qda_suite."

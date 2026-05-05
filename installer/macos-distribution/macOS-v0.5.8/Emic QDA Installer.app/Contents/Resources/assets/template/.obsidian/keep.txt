@@ -1,0 +1,2 @@
+# Placeholder para que NSIS empaquete la carpeta .obsidian.
+# Reemplazá el contenido de .obsidian con el de tu template.

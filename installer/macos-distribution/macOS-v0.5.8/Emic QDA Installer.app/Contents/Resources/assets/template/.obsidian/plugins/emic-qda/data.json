@@ -1,0 +1,73 @@
+{
+  "language": "auto",
+  "coding": {
+    "folder": "Códigos",
+    "storageRoot": "Utils/Emic-QDA/Codebooks",
+    "activeCodebookId": "codebook-de-prueba",
+    "displayCount": true,
+    "sortFunc": "last used first"
+  },
+  "extraction": {
+    "folder": "Extracciones",
+    "storageRoot": "Utils/Emic-QDA/Extractions",
+    "displayCount": true,
+    "openingMode": "tab",
+    "csvSeparator": ",",
+    "ignorePropertyOnMerge": [],
+    "displayProperty": []
+  },
+  "entity": {
+    "folder": "Entidades",
+    "storageRoot": "Utils/Emic-QDA/Ontología",
+    "activeDomainId": "dominio-2",
+    "displayCount": true,
+    "openingMode": "tab",
+    "coder": "default-coder",
+    "quality": {
+      "maxUnderdeterminedRatio": 0.25
+    }
+  },
+  "analysis": {
+    "folder": "Análisis"
+  },
+  "memos": {
+    "folder": "Notas Analíticas"
+  },
+  "data": {
+    "folder": "Datos"
+  },
+  "suppressSuggestionInFields": [],
+  "propertiesKeysWidthPercent": 35,
+  "statusbar": {
+    "shortened": false
+  },
+  "highlights": {
+    "sidebarPosition": "right",
+    "defaultTab": "current",
+    "perPage": 75,
+    "collections": {
+      "collection-mmwx71sf": {
+        "id": "collection-mmwx71sf",
+        "name": "TestColection",
+        "description": "",
+        "highlightIds": []
+      },
+      "collection-mmwx7igb": {
+        "id": "collection-mmwx7igb",
+        "name": "Test2Col",
+        "description": "",
+        "highlightIds": []
+      }
+    },
+    "highlightColors": {
+      "codebooks": {},
+      "entityTypes": {},
+      "extractionTypes": {}
+    }
+  },
+  "bridge": {
+    "enabled": true,
+    "storageRoot": "Utils/Emic-QDA/bridge",
+    "pollIntervalMs": 1200
+  }
+}

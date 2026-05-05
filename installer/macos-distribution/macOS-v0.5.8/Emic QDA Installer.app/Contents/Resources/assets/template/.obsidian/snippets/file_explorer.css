@@ -1,0 +1,113 @@
+/* Folder named "Referencia" */
+.nav-folder-title[data-path="Referencia"] {
+  color: #125d98;
+  font-weight: 600;
+}
+.nav-folder-title[data-path="Referencia"]::before {
+  content: "📙 ";
+}
+/* Folder named "Data" */
+.nav-folder-title[data-path="Data"] {
+  color: #ffb400;
+  font-weight: 600;
+}
+.nav-folder-title[data-path="Data"]::before {
+  content: "🗃️ ";
+}
+/* Folder named "Bibliografía" */
+.nav-folder-title[data-path^="Bibliografía"] {
+  color: #ffb400;
+
+}
+.nav-folder-title[data-path="Bibliografía"]::before {
+  content: "📚 ";
+}
+/* Folder named "Notas de Campo" */
+.nav-folder-title[data-path="Notas de Campo"] {
+  color: #ffb400;
+}
+.nav-folder-title[data-path="Notas de Campo"]::before {
+  content: "📄 ";
+}
+/* Subfolders inside "Codes" */
+.nav-folder-title[data-path^="Codes"] {
+  color: #6adef7;
+}
+
+.nav-folder-title[data-path="Codes"]::before {
+  content: "🏷️ ";
+}
+/* Folder named "Memos" */
+.nav-folder-title[data-path^="Memos"] {
+  color: #ffb400;
+}
+.nav-folder-title[data-path="Memos"]::before {
+  content: "🧠 ";
+}
+/* Folder named "Entrevistas" */
+.nav-folder-title[data-path^="Data/Entrevistas"] {
+  color: #ffb400;
+}
+
+.nav-folder-title[data-path="Data/Entrevistas"]::before {
+  content: "🎙️ ";
+}
+
+.nav-folder-title[data-path="Data/Documentos"]::before {
+  content: "📄 ";
+}
+/* Subfolders inside "Codes" */
+.nav-folder-title[data-path^="Data/Documentos"] {
+  color: #ffb400;
+}
+
+
+
+/* Folder named "Entidades" */
+.nav-folder-title[data-path^="Entidades"] {
+  color: #6adef7;
+}
+.nav-folder-title[data-path="Entidades"]::before {
+  content: "🕸️ ";
+}
+
+/* Folder named "Extractions" */
+.nav-folder-title[data-path^="Extractions"] {
+  color: #6adef7;
+}
+.nav-folder-title[data-path="Extractions"]::before {
+  content: "🧩 ";
+}
+/* Folder named "Analysis" */
+.nav-folder-title[data-path^="Analysis"] {
+  color: #6adef7;
+}
+.nav-folder-title[data-path="Analysis"]::before {
+  content: "🔍 ";
+}
+/* Folder named "Bases" */
+.nav-folder-title[data-path^="Bases"] {
+  color: #6adef7;
+}
+.nav-folder-title[data-path="Bases"]::before {
+  content: "📊 ";
+}
+/* Folder named "Attachments" */
+.nav-folder-title[data-path^="Attachments"] {
+  color: #c56dc9;
+}
+.nav-folder-title[data-path="Attachments"]::before {
+  content: "📎 ";
+}
+/* Folder named "Clippings" */
+.nav-folder-title[data-path^="Clippings"] {
+  color: #c56dc9;
+}
+.nav-folder-title[data-path="Clippings"]::before {
+  content: "✂️ ";
+}
+
+
+.nav-folder-title[data-path="Utils"]::before {
+  content: "⛔️ ";
+}

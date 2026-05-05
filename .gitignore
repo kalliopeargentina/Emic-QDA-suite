@@ -2,6 +2,9 @@
 installer/*.exe
 installer/dist/
 installer/macos-distribution/dist/
+# DMG/ZIP superan el límite de 100 MB de GitHub; subirlos como assets de Release, no al repo
+installer/macos-distribution/**/*.dmg
+installer/macos-distribution/**/*.zip
 # Certificado de firma (no subir)
 installer/*.pfx
 # Variables de firma locales (contraseña del PFX)

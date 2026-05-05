@@ -1,0 +1,16 @@
+views:
+  - type: map
+    name: Notas de Campo
+    filters:
+      and:
+        - "!coordinates.isEmpty()"
+        - file.folder == "Notas de Campo"
+    order:
+      - file.name
+      - coordinates
+      - location
+      - date
+    coordinates: note.coordinates
+    markerIcon: note.icon
+    markerColor: note.color
+    defaultZoom: 4

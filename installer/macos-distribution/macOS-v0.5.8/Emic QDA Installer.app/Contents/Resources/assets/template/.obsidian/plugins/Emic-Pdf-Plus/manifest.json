@@ -1,0 +1,10 @@
+{
+    "id": "pdf-plus",
+    "name": "EMIC PDF++",
+    "version": "1.0.0",
+    "minAppVersion": "1.5.8",
+    "description": "PDF viewer enhancements for Obsidian with Emic-QDA integration: vault file-bridge sync for highlights and annotations, backlinks, copy-link workflows, optional in-PDF editing, and QDA actions on PDFs.",
+    "author": "Marcos Buccellato",
+    "authorUrl": "https://github.com/kalliopeargentina/Emic-pdf-plus",
+    "isDesktopOnly": false
+}

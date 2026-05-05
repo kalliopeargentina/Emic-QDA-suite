@@ -1,0 +1,21 @@
+{
+  "appMap": {},
+  "defaultApp": "",
+  "ignoredExtensions": [
+    "md",
+    "canvas",
+    "pdf",
+    "png",
+    "jpg",
+    "jpeg",
+    "gif",
+    "bmp",
+    "svg",
+    "webp",
+    "mp4",
+    "mov",
+    "avi",
+    "mkv",
+    "webm"
+  ]
+}

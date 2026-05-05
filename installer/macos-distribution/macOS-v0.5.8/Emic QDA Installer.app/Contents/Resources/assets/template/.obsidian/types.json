@@ -1,0 +1,21 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "extraction-date": "datetime",
+    "merge-date": "datetime",
+    "extraction-source": "multitext",
+    "code description": "text",
+    "extraction-id": "text",
+    "createdAt": "datetime",
+    "updatedAt": "datetime",
+    "entity-id": "text",
+    "entity-type": "text",
+    "display-name": "text",
+    "relations-summary-json": "text",
+    "targets-summary-json": "text",
+    "updated-at": "datetime",
+    "paragraphs-count": "number"
+  }
+}

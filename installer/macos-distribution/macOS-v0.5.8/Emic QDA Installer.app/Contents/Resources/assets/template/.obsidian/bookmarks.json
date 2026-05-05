@@ -1,0 +1,172 @@
+{
+  "items": [
+    {
+      "type": "graph",
+      "ctime": 1762271998230,
+      "title": "Code-Document Graph",
+      "options": {
+        "collapse-filter": false,
+        "search": " -path:Codes/pre-merge-backups path:Codes  OR path:Data",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:Data/Documentos  ",
+            "color": {
+              "a": 1,
+              "rgb": 14701138
+            }
+          },
+          {
+            "query": "path:Codes  ",
+            "color": {
+              "a": 1,
+              "rgb": 14725458
+            }
+          }
+        ],
+        "collapse-display": true,
+        "showArrow": false,
+        "textFadeMultiplier": 0,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "collapse-forces": false,
+        "centerStrength": 0.518713248970312,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "scale": 0.6666666602219731,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1762272108454,
+      "title": "Actores y Notas",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:Entidades/Actores OR path:Data ",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "collapse-color-groups": true,
+        "colorGroups": [
+          {
+            "query": "path:Entidades/Actores",
+            "color": {
+              "a": 1,
+              "rgb": 14701138
+            }
+          },
+          {
+            "query": "  path:Data/Documentos  ",
+            "color": {
+              "a": 1,
+              "rgb": 14725458
+            }
+          }
+        ],
+        "collapse-display": true,
+        "showArrow": false,
+        "textFadeMultiplier": 0,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "collapse-forces": false,
+        "centerStrength": 0.518713248970312,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "scale": 0.6666666602219731,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1762272177615,
+      "title": "Actores e Instituciones",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:Entidades  ",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:Entidades/Actores",
+            "color": {
+              "a": 1,
+              "rgb": 14701138
+            }
+          },
+          {
+            "query": "  path:Entidades/Instituciones  ",
+            "color": {
+              "a": 1,
+              "rgb": 14725458
+            }
+          }
+        ],
+        "collapse-display": true,
+        "showArrow": false,
+        "textFadeMultiplier": 0,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "collapse-forces": false,
+        "centerStrength": 0.518713248970312,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "scale": 0.6666666602219731,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1762269906921,
+      "title": "Extraction Graph",
+      "options": {
+        "collapse-filter": false,
+        "search": "-file:Template  -path:pre-merge-backup path:Extractions  OR path:Memos  ",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": false,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:\"Extractions/Comentarios Director\"  ",
+            "color": {
+              "a": 1,
+              "rgb": 14725458
+            }
+          },
+          {
+            "query": "path:Memos  ",
+            "color": {
+              "a": 1,
+              "rgb": 13193952
+            }
+          }
+        ],
+        "collapse-display": true,
+        "showArrow": false,
+        "textFadeMultiplier": 0,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "collapse-forces": false,
+        "centerStrength": 0.518713248970312,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "scale": 0.6666666602219731,
+        "close": false
+      }
+    }
+  ]
+}

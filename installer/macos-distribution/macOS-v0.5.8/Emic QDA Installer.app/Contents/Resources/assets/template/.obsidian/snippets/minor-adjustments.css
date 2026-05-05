@@ -1,0 +1,9 @@
+/* FIX bug where the save button is not properly clickable */
+body .dynamic-highlights-settings .query-wrapper input {
+	width: 100%;
+}
+
+/* Confusing for new users what these mean */
+.another-quick-switcher__item__hot-key-guide {
+	display: none;
+}

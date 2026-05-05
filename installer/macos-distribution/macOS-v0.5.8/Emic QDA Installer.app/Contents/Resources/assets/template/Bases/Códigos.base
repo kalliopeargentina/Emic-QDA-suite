@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.folder.startsWith("Codes")
+        - '!file.folder.contains("pre-merge-backups")'
+    order:
+      - file.name
+      - file.folder
+      - code description
+      - related code
+    columnSize:
+      note.code description: 511
