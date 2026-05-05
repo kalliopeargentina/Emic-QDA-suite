@@ -1,18 +1,18 @@
-# Emic QDA Suite
+# Emic+ QDA
 
-Guía de instalación de **Emic QDA Suite** en **Windows** (instalador NSIS) y **macOS** (paquete de la [release](https://github.com/kalliopeargentina/Emic-QDA-suite/releases): ZIP con la app y el DMG).
+Guía de instalación de **Emic+ QDA** en **Windows** (instalador NSIS) y **macOS** (ZIP con la app y el DMG). **Los instaladores y paquetes listos para usar se descargan solo desde la sección [Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases) del repositorio en GitHub** (apartado *Releases*, no el código fuente). La última release publicada es [**v0.5.8**](https://github.com/kalliopeargentina/Emic-QDA-suite/releases/tag/v0.5.8). **Emic+ QDA** es desarrollado por **Emic+ Consultora** y **EIDAES** (Escuela IDAES, Universidad Nacional de San Martín).
 
 <p align="center">
-  <img src="installer/img/Emic-Splash.jpeg" alt="Emic QDA" width="550"/>
+  <img src="installer/img/Emic-Splash.jpeg" alt="Emic+ QDA" width="550"/>
 </p>
 
 ## Tabla de contenidos
 
-- [¿Qué es Emic QDA Suite?](#qué-es-emic-qda-suite)
+- [¿Qué es Emic+ QDA?](#qué-es-emic-qda)
   - [¿Qué habilita?](#qué-habilita)
-  - [Herramientas desarrolladas para el suite](#herramientas-desarrolladas-para-el-suite)
+  - [Herramientas desarrolladas para Emic+ QDA](#herramientas-desarrolladas-para-emic-qda)
   - [¿Para quién es?](#para-quién-es)
-  - [Repositorios que componen Emic-QDA-Suite](#repositorios-que-componen-emic-qda-suite)
+  - [Repositorios del ecosistema Emic+ QDA](#repositorios-del-ecosistema-emic-qda)
   - [Plugins de Obsidian incluidos en la plantilla](#plugins-de-obsidian-incluidos-en-la-plantilla)
   - [Plugins desarrollados por Emic](#plugins-desarrollados-por-emic)
   - [Otros plugins](#otros-plugins)
@@ -28,15 +28,15 @@ Guía de instalación de **Emic QDA Suite** en **Windows** (instalador NSIS) y *
   - [Requisitos](#requisitos)
   - [Pasos](#pasos)
   - [Desinstalación (macOS)](#desinstalación-macos)
-- [Sobre Emic+ Consultora](#sobre-emic-consultora)
+- [Sobre Emic+ Consultora y EIDAES](#sobre-emic-consultora-y-eidaes)
 
 ---
 
-## ¿Qué es Emic QDA Suite?
+## ¿Qué es Emic+ QDA?
 
-**Emic QDA Suite** es un conjunto de herramientas para **análisis cualitativo de datos (QDA)** y **ciencias sociales computacionales**, pensado para que **no hace falta programar** para usarlo.
+**Emic+ QDA** es un conjunto de herramientas para **análisis cualitativo de datos (QDA)** y **ciencias sociales computacionales**, pensado para que **no hace falta programar** para usarlo.
 
-En **Windows**, el instalador NSIS deja en un solo entorno **Obsidian**, un **vault de plantilla**, **Python** (y paquetes del suite) y, opcionalmente, **Zotero** y **FFmpeg**. En **macOS**, el contenido del ZIP de la release (app + DMG) ejecuta un flujo equivalente usando **Homebrew** para esos componentes. Todo queda orientado a trabajar en una misma bóveda.
+En **Windows**, el instalador NSIS deja en un solo entorno **Obsidian**, un **vault de plantilla**, **Python** (y paquetes de Emic+ QDA) y, opcionalmente, **Zotero** y **FFmpeg**. En **macOS**, el contenido del ZIP de la release (app + DMG) ejecuta un flujo equivalente usando **Homebrew** para esos componentes. Todo queda orientado a trabajar en una misma bóveda.
 
 ### ¿Qué habilita?
 
@@ -53,9 +53,9 @@ El conjunto de extensiones y herramientas incluidas permite:
 - **Importación y exportación:** traer documentos Word, JSON/CSV (p. ej. encuestas o bases) y contenido web; exportar notas a Word.
 - **Organización y mantenimiento:** copias de seguridad versionadas de los archivos, formateo y estilo de notas, comparación entre archivos y conversión/gestión de imágenes.
 
-### Herramientas desarrolladas para el suite
+### Herramientas desarrolladas para Emic+ QDA
 
-Además, el suite incluye **herramientas propias** (paquetes Python) que amplían el análisis:
+Además, Emic+ QDA incluye **herramientas propias** (paquetes Python) que amplían el análisis:
 
 - **Análisis ontológico:** creación de **redes semánticas y grafos** a partir de los documentos y los datos de la bóveda.
 - **Análisis de tópicos:** extracción de tópicos sobre el contenido de la bóveda (p. ej. LDA, BERTopic y otros métodos), integrable con el flujo de trabajo desde la interfaz de notas.
@@ -65,9 +65,9 @@ Además, el suite incluye **herramientas propias** (paquetes Python) que amplía
 
 ### ¿Para quién es?
 
-Para quienes hacen **investigación cualitativa** o **ciencias sociales** y quieren una alternativa abierta, en Markdown, que permita codificar, extraer, analizar coocurrencias y acercarse a técnicas computacionales sin programar. Es un aporte de **Emic+ Consultora** ([emic-consultora.com.ar](https://emic-consultora.com.ar)).
+Para quienes hacen **investigación cualitativa** o **ciencias sociales** y quieren una alternativa abierta, en Markdown, que permita codificar, extraer, analizar coocurrencias y acercarse a técnicas computacionales sin programar. **Emic+ QDA** es una iniciativa de **Emic+ Consultora** y **EIDAES** ([emic-consultora.com.ar](https://emic-consultora.com.ar)).
 
-### Repositorios que componen Emic-QDA-Suite
+### Repositorios del ecosistema Emic+ QDA
 
 - https://github.com/kalliopeargentina/Emic-Charts-View
 - https://github.com/kalliopeargentina/Emic-Camera
@@ -82,7 +82,7 @@ Para quienes hacen **investigación cualitativa** o **ciencias sociales** y quie
 
 ### Plugins de Obsidian incluidos en la plantilla
 
-La bóveda de ejemplo trae una selección de complementos ya configurados para el flujo de trabajo cualitativo: unos son **desarrollados por Emic** para este suite; el resto son **plugins de la comunidad** de Obsidian que suman mapas, literatura, plantillas, medios y más.
+La bóveda de ejemplo trae una selección de complementos ya configurados para el flujo de trabajo cualitativo: unos son **desarrollados por Emic** para Emic+ QDA; el resto son **plugins de la comunidad** de Obsidian que suman mapas, literatura, plantillas, medios y más.
 
 #### Plugins desarrollados por Emic
 
@@ -119,7 +119,7 @@ Complementos de la comunidad de Obsidian que la plantilla incluye para mapas, ti
 - **Multi Properties** — Editar propiedades en muchas notas a la vez.
 - **Note Toolbar** — Barras de herramientas por nota o carpeta.
 - **Quadro** — Apoyo a codificación y extracciones en tablero.
-- **Shell commands** — Comandos del sistema y atajos ([versión usada en el suite](https://github.com/kalliopeargentina/obsidian-shellcommands)).
+- **Shell commands** — Comandos del sistema y atajos ([versión usada en Emic+ QDA](https://github.com/kalliopeargentina/obsidian-shellcommands)).
 - **Templater** — Plantillas con variables y lógica.
 - **Zotero Integration** — Citas, bibliografía y notas enlazadas con Zotero.
 
@@ -136,11 +136,13 @@ Complementos de la comunidad de Obsidian que la plantilla incluye para mapas, ti
 
 ### Cómo obtener el instalador
 
-1. En [Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases), descargá el **`.exe`**, por ejemplo:  
+1. Entrá a [Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases) del repositorio [Emic-QDA-suite](https://github.com/kalliopeargentina/Emic-QDA-suite). La release más reciente es [**v0.5.8**](https://github.com/kalliopeargentina/Emic-QDA-suite/releases/tag/v0.5.8); abrila o elegí otra versión en la lista si necesitás una anterior.
+2. En esa página, bajá el **`.exe`** del instalador Windows desde el bloque **Assets** (archivos adjuntos de la release), por ejemplo:  
    `Emic-QDA-Installer-<versión>-<build>.exe`  
-   (el nombre exacto depende de la release).
+   (el nombre exacto figura en *Assets* de cada release).
+3. Guardá el archivo en una carpeta de tu elección (por ejemplo, Escritorio o Descargas) y seguí con [Pasos para instalar](#pasos-para-instalar).
 
-2. Guardalo en una carpeta de tu elección (por ejemplo, Escritorio o Descargas).
+> **Nota:** el instalador no se obtiene con el botón verde *Code* → *Download ZIP*; eso baja el código del repo, no el programa empaquetado. Los `.exe` oficiales están solo en **Releases** → **Assets**.
 
 ### Pasos para instalar
 
@@ -162,10 +164,10 @@ Elegí qué querés que el instalador instale o configure:
 
 | Componente | Descripción |
 |------------|-------------|
-| **Python** | Python 3.12 (necesario para las herramientas de línea de comandos del suite). Si ya tenés Python 3.12 o superior instalado, podés desmarcarlo. |
+| **Python** | Python 3.12 (necesario para las herramientas de línea de comandos de Emic+ QDA). Si ya tenés Python 3.12 o superior instalado, podés desmarcarlo. |
 | **Obsidian** | Editor de notas para el vault de análisis cualitativo. Si ya tenés Obsidian instalado, podés desmarcarlo. |
 | **Zotero** | Gestor de referencias. Opcional; desmarcalo si ya lo tenés o no lo usás. |
-| **Repositorio (vault) EMIC-QDA** | Crea la carpeta del proyecto con la plantilla del suite (notas, configuración, etc.). Recomendado dejarlo marcado. |
+| **Repositorio (vault) Emic+ QDA** | Crea la carpeta del proyecto con la plantilla de Emic+ QDA (notas, configuración, etc.). Recomendado dejarlo marcado. |
 | **FFmpeg** | Incluido solo si esta build del instalador lo trae; útil para medios. Podés desmarcarlo si no lo necesitás. |
 
 ![Selección de componentes](installer/img/seleccion-componentes.png)
@@ -176,7 +178,7 @@ Hacé clic en **“Siguiente”** cuando termines.
 
 - El instalador sugiere por defecto: **Documentos\Emic-QDA**.
 - Podés cambiar la ruta si querés otra ubicación.
-- Todos los componentes del suite (vault, entorno virtual de Python, etc.) se instalarán dentro de esta carpeta.
+- Todos los componentes de Emic+ QDA (vault, entorno virtual de Python, etc.) se instalarán dentro de esta carpeta.
 
 Hacé clic en **“Siguiente”**.
 
@@ -191,19 +193,19 @@ Hacé clic en **“Siguiente”**.
 
 - El instalador descargará e instalará los componentes marcados (Python, Obsidian, Zotero, etc.) y configurará el vault y los paquetes Python. La instalación se hace con **instaladores oficiales** de cada aplicación.
 - Seguí los pasos de cada instalador que se abra; si no querés cambios específicos, **aceptá los valores por defecto**.
-- **No marques** la opción “Abrir la aplicación al terminar” (o similar) al final de cada instalador; cerrando cada uno, el instalador de Emic QDA continuará con el siguiente componente.
-- Podés seguir el progreso en la ventana de detalles del instalador de Emic QDA.
+- **No marques** la opción “Abrir la aplicación al terminar” (o similar) al final de cada instalador; cerrando cada uno, el instalador de Emic+ QDA continuará con el siguiente componente.
+- Podés seguir el progreso en la ventana de detalles del instalador de Emic+ QDA.
 - No cierres el instalador principal hasta que termine.
 
 #### 7. Finalización
 
-- Al finalizar, podés marcar la opción **“Abrir el nuevo repositorio de EMIC-QDA”** para abrir Obsidian al cerrar el asistente. Si es la **primera vez** que usás Obsidian, se abrirá el administrador de vaults: ahí elegí **“Abrir carpeta como repositorio”** y seleccioná la carpeta del repositorio que el instalador acaba de crear. Solo hay que hacer esto la primera vez; después el repositorio ya queda agregado a Obsidian.
+- Al finalizar, podés marcar la opción para **abrir el nuevo repositorio de Emic+ QDA** en Obsidian al cerrar el asistente. Si es la **primera vez** que usás Obsidian, se abrirá el administrador de vaults: ahí elegí **“Abrir carpeta como repositorio”** y seleccioná la carpeta del repositorio que el instalador acaba de crear. Solo hay que hacer esto la primera vez; después el repositorio ya queda agregado a Obsidian.
 - Hacé clic en **“Finalizar”**.
 
 ### Qué se instala
 
 - **Carpeta base:** La que elegiste (por defecto `Documentos\Emic-QDA`).
-- **Vault:** Una subcarpeta con el nombre que indicaste, con la plantilla del suite (archivos de Obsidian, notas, etc.).
+- **Vault:** Una subcarpeta con el nombre que indicaste, con la plantilla de Emic+ QDA (archivos de Obsidian, notas, etc.).
 - **Entorno virtual de Python:** Dentro de la carpeta del vault o de la instalación; ahí se instalan los paquetes `ontology_explorer` (opcional, según build) y `obsidian_qda_suite`.
 - **Python / Obsidian / Zotero:** Solo si los seleccionaste y el instalador los descargó e instaló (Python suele instalarse en el sistema vía instalador oficial; Obsidian y Zotero en sus ubicaciones habituales).
 
@@ -211,7 +213,7 @@ Hacé clic en **“Siguiente”**.
 
 - **SmartScreen o antivirus:** Si el .exe no está firmado, Windows puede advertir. Usá “Más información” → “Ejecutar de todas formas” si confiás en el origen del instalador.
 - **UAC:** Si no aceptás la elevación, la instalación de Python/Obsidian/Zotero puede fallar. Ejecutá de nuevo el instalador y aceptá cuando pida permisos.
-- **Python ya instalado:** Si tenés otra versión de Python (por ejemplo 3.11), el instalador puede instalar 3.12 en paralelo; podés desmarcar “Python” si preferís usar solo tu instalación y cumplir vos mismo los requisitos del suite.
+- **Python ya instalado:** Si tenés otra versión de Python (por ejemplo 3.11), el instalador puede instalar 3.12 en paralelo; podés desmarcar “Python” si preferís usar solo tu instalación y cumplir vos mismo los requisitos de Emic+ QDA.
 - **Log de instalación:** En caso de error, el instalador puede generar un archivo de log en `%TEMP%` (por ejemplo `EmicQDA-install-<build>.log`). Ese archivo ayuda a diagnosticar fallos.
 
 ### Desinstalación
@@ -225,7 +227,9 @@ Hacé clic en **“Siguiente”**.
 
 ### Qué incluye la release
 
-En [Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases), el artefacto de macOS es un **archivo ZIP** (p. ej. `macOS-v0.5.8.zip`). Al descomprimirlo encontrás, entre otros:
+Como en Windows, los archivos para macOS se bajan desde la sección [**Releases**](https://github.com/kalliopeargentina/Emic-QDA-suite/releases) (pestaña *Releases* del repo, no *Code*). En la release [**v0.5.8**](https://github.com/kalliopeargentina/Emic-QDA-suite/releases/tag/v0.5.8) (la última publicada) verás en **Assets** el **ZIP** de macOS y el **DMG**; nombres de ejemplo: `macOS-v0.5.8.zip`, `Emic-QDA-Installer-macOS-0.5.8-2026-05-03.dmg` (pueden variar según la release).
+
+El artefacto principal es un **archivo ZIP** (p. ej. `macOS-v0.5.8.zip`). Al descomprimirlo encontrás, entre otros:
 
 - **`Emic QDA Installer.app`** — aplicación del instalador (misma lógica que el script `install.sh` empaquetado en los recursos de la app).
 - Un **`.dmg`** con el mismo instalador en formato disco (p. ej. `Emic-QDA-Installer-macOS-0.5.8-2026-05-03.dmg`): podés montarlo y copiar la app a **Aplicaciones** o ejecutarla desde el volumen.
@@ -250,7 +254,7 @@ Seguí las instrucciones que imprime el instalador de Homebrew para añadir `bre
 
 ### Pasos
 
-1. Descargá el **ZIP** de macOS desde la [página de Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases).
+1. En [Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases), abrí la [release v0.5.8](https://github.com/kalliopeargentina/Emic-QDA-suite/releases/tag/v0.5.8) (o la más reciente) y descargá el **ZIP** de macOS y, si lo necesitás, el **`.dmg`**, desde **Assets**.
 2. Descomprimí el ZIP y ubicá **`Emic QDA Installer.app`** y el **`.dmg`**.
 3. **Opción A — Solo la app:** abrí `Emic QDA Installer.app` desde la carpeta descomprimida, o mové la app a **Aplicaciones** y ejecutala desde ahí.
 4. **Opción B — DMG:** abrí el `.dmg`, arrastrá la app a **Aplicaciones** (o ejecutá la app desde la ventana del disco montado).
@@ -258,7 +262,7 @@ Seguí las instrucciones que imprime el instalador de Homebrew para añadir `bre
 6. En el asistente: aceptá términos si aparecen, elegí carpeta de instalación, nombre del vault y qué instalar (Python, Obsidian, Zotero, FFmpeg). El script instala la plantilla del vault, crea el entorno virtual y ejecuta `pip` para **`obsidian_qda_suite`** (y Ontology Explorer solo si la build lo habilitó).
 7. Al terminar, abrí **Obsidian** y usá **Abrir carpeta como bóveda** apuntando al vault creado (ruta que indique el instalador).
 
-La **versión** y el **build** del suite en macOS coinciden con los de Windows (definidos en `installer/macos/install.sh` y `installer/config.nsi`, p. ej. `0.5.8` / `2026-05-03`).
+La **versión** y el **build** de Emic+ QDA en macOS coinciden con los de Windows (definidos en `installer/macos/install.sh` y `installer/config.nsi`, p. ej. `0.5.8` / `2026-05-03`).
 
 ### Desinstalación (macOS)
 
@@ -267,17 +271,19 @@ La **versión** y el **build** del suite en macOS coinciden con los de Windows (
 
 ---
 
-## Sobre Emic+ Consultora
+## Sobre Emic+ Consultora y EIDAES
 
 <p align="center">
   <img src="installer/assets/template/EMIC-1777943015131.webp" alt="Emic+ Consultora" width="400"/>
 </p>
 
-En **Emic+ Consultora** nos consolidamos como referentes en investigación social aplicada, en particular en el análisis de territorios, mercados, opinión pública y comportamiento de personas. Nacimos de la universidad pública, de la Escuela IDAES de la Universidad Nacional de San Martín. Nuestro principal objetivo es traducir la complejidad social y la saturación de datos en análisis claros y accionables concretos, sin perder complejidad analítica ni sensibilidad por los contextos donde ocurren los fenómenos que estudiamos. Nos guía una ética profesional que pone en primer lugar el compromiso, la integridad en las relaciones humanas y la confidencialidad de la información.
+**Emic+ QDA** es desarrollado por **Emic+ Consultora** y **EIDAES** (Escuela IDAES, Universidad Nacional de San Martín). **Emic+ Consultora** se consolidó como referente en investigación social aplicada —territorios, mercados, opinión pública y comportamiento— con raíces en la universidad pública. **EIDAES** aporta el marco académico y la colaboración en la mejora continua del producto.
 
-De esa vocación, del conocimiento en ciencia de datos y de la experiencia en más de treinta proyectos de investigación aplicada, surge **Emic+ QDA**: un conjunto de herramientas integradas que acompañan la investigación cualitativa. Al detectar la frustración generalizada por los altos costos y la cautividad de datos que imponen los programas comerciales, desarrollamos esta suite gratuita, de código abierto y que funciona de manera **100% local** para proteger la información sensible, pensada para reunir en un solo entorno funciones clave (registro en distintos formatos, codificación, análisis avanzado, visualización e IA). Actualmente impulsamos un proyecto colaborativo con la comunidad de investigadores de la Escuela IDAES orientado a mejorar las funciones y la experiencia de usuario.
+En **Emic+ Consultora** nos guía una ética que prioriza el compromiso, la integridad en las relaciones humanas y la confidencialidad de la información. Nuestro objetivo es traducir la complejidad social y la saturación de datos en análisis claros y accionables concretos, sin perder rigor ni sensibilidad por los contextos donde ocurren los fenómenos que estudiamos.
 
-Con el vínculo entre nuestra labor en investigación aplicada y el desarrollo de tecnologías, buscamos mostrar que desde las ciencias sociales podemos crear instrumentos avanzados para el quehacer profesional. En esa apuesta hay un reposicionamiento explícito: las ciencias sociales no solo producen conocimiento sobre la sociedad; también pueden diseñar y desarrollar tecnologías para aportar, de forma colaborativa, a la comunidad científica en su conjunto.
+De esa vocación, del conocimiento en ciencia de datos y de la experiencia en más de treinta proyectos de investigación aplicada, surge **Emic+ QDA**: herramientas integradas para la investigación cualitativa. Ante los altos costos y la cautividad de datos de muchos programas comerciales, desarrollamos esta solución gratuita, de código abierto y **100% local** para proteger información sensible, reuniendo en un solo entorno registro en distintos formatos, codificación, análisis avanzado, visualización e IA. Junto a investigadores de **EIDAES**, seguimos mejorando funciones y experiencia de usuario.
+
+Con el vínculo entre investigación aplicada y desarrollo tecnológico, buscamos demostrar que las ciencias sociales también pueden diseñar instrumentos profesionales y aportar de forma colaborativa a la comunidad científica.
 
 Más información: [emic-consultora.com.ar](https://emic-consultora.com.ar)
 
