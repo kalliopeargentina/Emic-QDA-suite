@@ -145,7 +145,7 @@ Complementos de la comunidad de Obsidian que la plantilla incluye para mapas, ti
 > **Nota:** el instalador no se obtiene con el botón verde *Code* → *Download ZIP*; eso baja el código del repo, no el programa empaquetado. Los `.exe` oficiales están solo en **Releases** → **Assets**.
 
 ### Pasos para instalar
-
+[![Instalación windows 10 Pro](https://img.youtube.com/vi/bkMSSwoIzos/0.jpg)](https://www.youtube.com/watch?v=bkMSSwoIzos)
 #### 1. Ejecutar el instalador
 
 - Hacé **doble clic** en `Emic-QDA-Installer-....exe`.
