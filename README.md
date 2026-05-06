@@ -137,7 +137,7 @@ Complementos de la comunidad de Obsidian que la plantilla incluye para mapas, ti
 
 ### Cómo obtener el instalador
 
-1. Entrá a [Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases) del repositorio [Emic-QDA-suite](https://github.com/kalliopeargentina/Emic-QDA-suite). La release más reciente es [**v0.5.8**](https://github.com/kalliopeargentina/Emic-QDA-suite/releases/tag/v0.5.8); abrila o elegí otra versión en la lista si necesitás una anterior.
+1. Entrá a [Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases) del repositorio [Emic-QDA-suite](https://github.com/kalliopeargentina/Emic-QDA-suite). La release más reciente es [**v0.5.8.1**](https://github.com/kalliopeargentina/Emic-QDA-suite/releases/tag/v0.5.8.1); abrila o elegí otra versión en la lista si necesitás una anterior.
 2. En esa página, bajá el **`.exe`** del instalador Windows desde el bloque **Assets** (archivos adjuntos de la release), por ejemplo:  
    `Emic-QDA-Installer-<versión>-<build>.exe`  
    (el nombre exacto figura en *Assets* de cada release).
