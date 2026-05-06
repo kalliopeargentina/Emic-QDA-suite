@@ -63,6 +63,7 @@ Además, Emic+ QDA incluye **herramientas propias** (paquetes Python) que amplí
 - **Análisis de emociones:** identificación de dimensiones emocionales en el material cualitativo.
 - **Análisis de contextos:** procesamiento y etiquetado de contextos discursivos o situacionales en los datos.
 
+
 ### ¿Para quién es?
 
 Para quienes hacen **investigación cualitativa** o **ciencias sociales** y quieren una alternativa abierta, en Markdown, que permita codificar, extraer, analizar coocurrencias y acercarse a técnicas computacionales sin programar. **Emic+ QDA** es una iniciativa de **Emic+ Consultora** y **EIDAES** ([emic-consultora.com.ar](https://emic-consultora.com.ar)).
@@ -197,7 +198,7 @@ Hacé clic en **“Siguiente”**.
 - Podés seguir el progreso en la ventana de detalles del instalador de Emic+ QDA.
 - En algún momento de la instalación se abre una ventana emergente que puede quedar instalando sin cambios durante un largo rato, esta instalando todas las librerías de python. Es normal que tarde varios minutos.
 
-![Selección de componentes](installer/img/Install.png)
+![Instalación de librerías python](installer/img/Install.png)
 
 - No cierres el instalador principal hasta que termine.
 
