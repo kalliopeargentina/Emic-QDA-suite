@@ -195,6 +195,7 @@ Hacé clic en **“Siguiente”**.
 - Seguí los pasos de cada instalador que se abra; si no querés cambios específicos, **aceptá los valores por defecto**.
 - **No marques** la opción “Abrir la aplicación al terminar” (o similar) al final de cada instalador; cerrando cada uno, el instalador de Emic+ QDA continuará con el siguiente componente.
 - Podés seguir el progreso en la ventana de detalles del instalador de Emic+ QDA.
+- En algún momento de la instalación se abre una ventana emergente que puede quedar instalando sin cambios durante un largo rato, esta instalando todas las librerías de python. Es normal que tarde varios minutos.
 - No cierres el instalador principal hasta que termine.
 
 #### 7. Finalización
