@@ -6,6 +6,10 @@ Guía de instalación de **Emic+ QDA** en **Windows** (instalador NSIS) y **macO
   <img src="installer/img/Emic-Splash.jpeg" alt="Emic+ QDA" width="550"/>
 </p>
 
+
+[![Overview de Emic+ QDA](https://img.youtube.com/vi/9aQGAu2WphY/0.jpg)](https://www.youtube.com/watch?v=9aQGAu2WphY)
+
+
 ## Tabla de contenidos
 
 - [¿Qué es Emic+ QDA?](#qué-es-emic-qda)
