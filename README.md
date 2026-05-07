@@ -7,9 +7,6 @@ Guía de instalación de **Emic+ QDA** en **Windows** (instalador NSIS) y **macO
 </p>
 
 
-[![Overview de Emic+ QDA](https://img.youtube.com/vi/9aQGAu2WphY/0.jpg)](https://www.youtube.com/watch?v=9aQGAu2WphY)
-
-
 ## Tabla de contenidos
 
 - [¿Qué es Emic+ QDA?](#qué-es-emic-qda)
@@ -37,6 +34,12 @@ Guía de instalación de **Emic+ QDA** en **Windows** (instalador NSIS) y **macO
 ---
 
 ## ¿Qué es Emic+ QDA?
+
+
+
+[![Overview de Emic+ QDA](https://img.youtube.com/vi/9aQGAu2WphY/0.jpg)](https://www.youtube.com/watch?v=9aQGAu2WphY)
+
+
 
 **Emic+ QDA** es un conjunto de herramientas para **análisis cualitativo de datos (QDA)** y **ciencias sociales computacionales**, pensado para que **no hace falta programar** para usarlo.
 
