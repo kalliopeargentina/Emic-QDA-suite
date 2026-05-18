@@ -4,6 +4,9 @@ Guía de instalación de **Emic+ QDA** en **Windows** (instalador NSIS) y **macO
 
 Ver tutoriales en [**youtube**](https://www.youtube.com/watch?v=9aQGAu2WphY&list=PL-kAWnJcnOhelnH3x9CtDvLR6woILLDZo) 
 
+
+Estos son los **BUGS** que solucionaremos en la siguiente versión [**v0.5.8.4**](https://github.com/kalliopeargentina/Emic-QDA-suite/milestone/6) . Si tenes algún problema podes cargar el issue en [**issues**](https://github.com/kalliopeargentina/Emic-QDA-suite/issues) o si no te resulta cómodo en este formulario [**Errores en EMIC+QDA**](https://forms.gle/J5zR1iavCT4pLeKY8) 
+
 <p align="center">
   <img src="installer/img/Emic-Splash.jpeg" alt="Emic+ QDA" width="550"/>
 </p>
