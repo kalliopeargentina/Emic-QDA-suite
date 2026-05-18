@@ -70,6 +70,7 @@ Var VenvPath
 Var ObsidianInstalled
 Var ZoteroInstalled
 Var PythonInstalled
+Var PythonDetectedVersion
 Var FFmpegInstalled
 
 ; Escribe una línea en el log. En modo "a" NSIS deja el puntero al inicio; hay que FileSeek 0 END (doc NSIS).
@@ -273,57 +274,129 @@ Function CheckPythonVersion
   Push $1
   Push $2
   Push $3
-  StrCpy $0 "$TEMP\EmicQDA-pyver.txt"
+  StrCpy $PythonDetectedVersion ""
+  StrCpy $0 "$TEMP\EmicQDA-pydetect.txt"
+  StrCpy $R7 "$TEMP\EmicQDA-pydetect-debug.txt"
   StrCpy $R8 "$TEMP\EmicQDA-pycheck.ps1"
   FileOpen $R0 $R8 w
   FileWrite $R0 "$$outFile = '$0'$\r$\n"
-  FileWrite $R0 "$$psi = New-Object System.Diagnostics.ProcessStartInfo$\r$\n"
-  FileWrite $R0 "$$psi.FileName = 'py'$\r$\n"
-  FileWrite $R0 "$$psi.Arguments = '--version'$\r$\n"
-  FileWrite $R0 "$$psi.UseShellExecute = $$false$\r$\n"
-  FileWrite $R0 "$$psi.CreateNoWindow = $$true$\r$\n"
-  FileWrite $R0 "$$psi.RedirectStandardOutput = $$true$\r$\n"
-  FileWrite $R0 "$$psi.RedirectStandardError = $$true$\r$\n"
-  FileWrite $R0 "$$p = [System.Diagnostics.Process]::Start($$psi)$\r$\n"
-  FileWrite $R0 "$$out = $$p.StandardOutput.ReadToEnd() + $$p.StandardError.ReadToEnd()$\r$\n"
-  FileWrite $R0 "$$p.WaitForExit()$\r$\n"
-  FileWrite $R0 "$$out | Out-File -FilePath $$outFile -Encoding ascii$\r$\n"
-  FileWrite $R0 "$$p.ExitCode | Out-File -FilePath $$env:TEMP\EmicQDA-exitcode.txt -Encoding ascii$\r$\n"
+  FileWrite $R0 "$$dbgFile = '$R7'$\r$\n"
+  FileWrite $R0 "function Dbg([string]$$m) { try { if ($$dbgFile) { ($$m + '') | Out-File -FilePath $$dbgFile -Append -Encoding utf8 } } catch {} }$\r$\n"
+  FileWrite $R0 "Dbg '[dbg] nsis_build=${BUILD}'$\r$\n"
+  FileWrite $R0 "$$minMajor = 3$\r$\n"
+  FileWrite $R0 "$$minMinor = 12$\r$\n"
+  ; Nota: no usar $args como parámetro (colisiona con la variable automática $args de PowerShell)
+  FileWrite $R0 "function Try-GetVersion { param([string]$$exe, [string[]]$$argv)$\r$\n"
+  FileWrite $R0 "  try {$\r$\n"
+  FileWrite $R0 "    if (-not $$exe) { return $$null }$\r$\n"
+  FileWrite $R0 "    if ($$exe -like '*WindowsApps*') { return $$null }$\r$\n"
+  FileWrite $R0 "    Dbg ('[try] exe=' + $$exe + ' args=' + ($$argv -join '|'))$\r$\n"
+  FileWrite $R0 "    $$psi = New-Object System.Diagnostics.ProcessStartInfo$\r$\n"
+  FileWrite $R0 "    $$psi.FileName = $$exe$\r$\n"
+  FileWrite $R0 "    $$psi.Arguments = ($$argv -join ' ')$\r$\n"
+  FileWrite $R0 "    $$psi.UseShellExecute = $$false$\r$\n"
+  FileWrite $R0 "    $$psi.CreateNoWindow = $$true$\r$\n"
+  FileWrite $R0 "    $$psi.RedirectStandardOutput = $$true$\r$\n"
+  FileWrite $R0 "    $$psi.RedirectStandardError = $$true$\r$\n"
+  FileWrite $R0 "    $$p = [System.Diagnostics.Process]::Start($$psi)$\r$\n"
+  FileWrite $R0 "    if (-not $$p) { return $$null }$\r$\n"
+  FileWrite $R0 "    if (-not $$p.WaitForExit(5000)) { Dbg '[try] timeout'; try { $$p.Kill() } catch { } ; return $$null }$\r$\n"
+  FileWrite $R0 "    $$out = $$p.StandardOutput.ReadToEnd() + $$p.StandardError.ReadToEnd()$\r$\n"
+  FileWrite $R0 "    $$v = ($$out | Select-Object -First 1)$\r$\n"
+  FileWrite $R0 "    if (-not $$v) { return $$null }$\r$\n"
+  FileWrite $R0 "    $$v = ($$v.ToString()).Trim()$\r$\n"
+  FileWrite $R0 "    Dbg ('[try] outLen=' + $$out.Length)$\r$\n"
+  ; En PowerShell string single-quoted: usar \. (no \\.) para matchear puntos literales
+  FileWrite $R0 "    if ($$v -match '^([0-9]+)\.([0-9]+)\.([0-9]+)') { return @([int]$$Matches[1],[int]$$Matches[2],[int]$$Matches[3],$$Matches[0]) }$\r$\n"
+  FileWrite $R0 "    return $$null$\r$\n"
+  FileWrite $R0 "  } catch { Dbg ('[try] EX=' + ($$_.ToString())); return $$null }$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "function Is-Accepted { param([int]$$maj,[int]$$min)$\r$\n"
+  FileWrite $R0 "  if ($$maj -ne $$minMajor) { return $$false }$\r$\n"
+  FileWrite $R0 "  return ($$min -ge $$minMinor)$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "$$candidates = New-Object System.Collections.Generic.List[string]$\r$\n"
+  FileWrite $R0 "function Add-Exe([string]$$p) { if ($$p -and (Test-Path -LiteralPath $$p) -and -not $$candidates.Contains($$p)) { $$candidates.Add($$p) | Out-Null } }$\r$\n"
+  FileWrite $R0 "$$cmds = Get-Command python, python3 -CommandType Application -ErrorAction SilentlyContinue -All$\r$\n"
+  FileWrite $R0 "foreach ($$c in $$cmds) { Add-Exe $$c.Source }$\r$\n"
+  FileWrite $R0 "$$whereExe = Join-Path $$env:WINDIR 'System32\\where.exe'$\r$\n"
+  FileWrite $R0 "if (Test-Path -LiteralPath $$whereExe) {$\r$\n"
+  FileWrite $R0 "  foreach ($$n in @('python.exe','python3.exe')) {$\r$\n"
+  FileWrite $R0 "    try { $$lines = & $$whereExe $$n 2>$$null } catch { $$lines = $$null }$\r$\n"
+  FileWrite $R0 "    foreach ($$l in $$lines) { Add-Exe ($$l.ToString().Trim()) }$\r$\n"
+  FileWrite $R0 "  }$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "foreach ($$hive in @('HKCU','HKLM')) {$\r$\n"
+  FileWrite $R0 "  try {$\r$\n"
+  FileWrite $R0 "    $$app = Get-ItemProperty -LiteralPath ($$hive + ':\\Software\\Microsoft\\Windows\\CurrentVersion\\App Paths\\python.exe') -ErrorAction SilentlyContinue$\r$\n"
+  FileWrite $R0 "    if ($$app) { Add-Exe $$app.'(default)' }$\r$\n"
+  FileWrite $R0 "  } catch { }$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "$$roots = @('HKCU:\\Software\\Python\\PythonCore', 'HKLM:\\Software\\Python\\PythonCore', 'HKLM:\\Software\\WOW6432Node\\Python\\PythonCore')$\r$\n"
+  FileWrite $R0 "foreach ($$root in $$roots) {$\r$\n"
+  FileWrite $R0 "  try { $$vers = Get-ChildItem -LiteralPath $$root -ErrorAction SilentlyContinue } catch { $$vers = @() }$\r$\n"
+  FileWrite $R0 "  foreach ($$v in $$vers) {$\r$\n"
+  FileWrite $R0 "    try { $$ip = Get-ItemProperty -LiteralPath (Join-Path $$v.PSPath 'InstallPath') -ErrorAction SilentlyContinue } catch { $$ip = $$null }$\r$\n"
+  FileWrite $R0 "    if ($$ip -and $$ip.'(default)') { Add-Exe (Join-Path $$ip.'(default)' 'python.exe') }$\r$\n"
+  FileWrite $R0 "  }$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "try {$\r$\n"
+  FileWrite $R0 "$$pyOk = $$false$\r$\n"
+  FileWrite $R0 "if (Get-Command py -ErrorAction SilentlyContinue) {$\r$\n"
+  FileWrite $R0 "  # Primero: py por defecto (sirve si hay 3.13, 3.12, etc.)$\r$\n"
+  ; Nota: no usar espacios en el código de -c (ProcessStartInfo.Arguments se tokeniza por espacios)
+  FileWrite $R0 "  $$vv = Try-GetVersion -exe 'py' -argv @('-c','sys=__import__(''sys'');print(str(sys.version_info[0])+chr(46)+str(sys.version_info[1])+chr(46)+str(sys.version_info[2]))')$\r$\n"
+  FileWrite $R0 "  if ($$vv -and (Is-Accepted $$vv[0] $$vv[1])) { $$pyOk = $$true; ('OK py ' + $$vv[3]) | Out-File -FilePath $$outFile -Encoding ascii; exit 0 }$\r$\n"
+  FileWrite $R0 "  # Fallback: intentar forzar tag 3.12 si está instalado (por si py default apunta a algo viejo)$\r$\n"
+  FileWrite $R0 "  $$vv = Try-GetVersion -exe 'py' -argv @('-3.12','-c','sys=__import__(''sys'');print(str(sys.version_info[0])+chr(46)+str(sys.version_info[1])+chr(46)+str(sys.version_info[2]))')$\r$\n"
+  FileWrite $R0 "  if ($$vv -and (Is-Accepted $$vv[0] $$vv[1])) { $$pyOk = $$true; ('OK py ' + $$vv[3]) | Out-File -FilePath $$outFile -Encoding ascii; exit 0 }$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "foreach ($$exe in $$candidates) {$\r$\n"
+  FileWrite $R0 "  $$vv = Try-GetVersion -exe $$exe -argv @('-c','sys=__import__(''sys'');print(str(sys.version_info[0])+chr(46)+str(sys.version_info[1])+chr(46)+str(sys.version_info[2]))')$\r$\n"
+  FileWrite $R0 "  if ($$vv -and (Is-Accepted $$vv[0] $$vv[1])) { ('OK ' + $$vv[3]) | Out-File -FilePath $$outFile -Encoding ascii; exit 0 }$\r$\n"
+  FileWrite $R0 "}$\r$\n"
+  FileWrite $R0 "('NO') | Out-File -FilePath $$outFile -Encoding ascii$\r$\n"
+  FileWrite $R0 "} catch { Dbg ('[top] EX=' + ($$_.ToString())); ('NO') | Out-File -FilePath $$outFile -Encoding ascii }$\r$\n"
   FileClose $R0
   ExecWait '$\"$SYSDIR\wscript.exe$\" //B $\"$TEMP\EmicQDA-run.vbs$\" $\"$R8$\"' $1
-  Delete $R8
+  ; DEBUG: dejar el script para inspección en %TEMP%\EmicQDA-pycheck.ps1
+  ; Delete $R8
   IfFileExists "$0" 0 pyver_done
   ClearErrors
   FileOpen $1 "$0" r
   IfErrors pyver_close
   FileRead $1 $R9
   FileClose $1
-  Delete "$0"
-  ; Recorrer PYTHON_VERSIONS_ACCEPTED (versiones separadas por espacio en config.nsi)
-  StrCpy $0 "${PYTHON_VERSIONS_ACCEPTED}"
-pyver_loop:
-  StrCmp $0 "" pyver_done
+  ; DEBUG: no borrar el output; deja EmicQDA-pydetect.txt en %TEMP%
+  ; Delete "$0"
+  ; Formato esperado: "OK <x.y.z>" o "OK py <x.y.z>" o "NO"
+  ${StrStr} $1 $R9 "OK"
+  StrCmp $1 "" pyver_done
+  StrCpy $PythonInstalled "1"
+  ; Extraer la versión (último token si empieza por OK)
+  ; Normalizar saltos de línea
+  StrCpy $R9 $R9 -2
+  ${StrStr} $2 $R9 " "
+  StrCmp $2 "" pyver_done
+  ; Tomar lo que viene después del último espacio: buscar iterando
+  StrCpy $0 $R9
+  StrCpy $PythonDetectedVersion ""
+pyver_tok_loop:
   ${StrStr} $1 $0 " "
-  StrCmp $1 "" pyver_last
+  StrCmp $1 "" pyver_tok_last
   StrLen $2 $0
   StrLen $3 $1
   IntOp $2 $2 - $3
-  StrCpy $R8 $0 $2
+  StrCpy $PythonDetectedVersion $0 $2
   StrCpy $0 $1 "" 1
-  Goto pyver_check
-pyver_last:
-  StrCpy $R8 $0
-  StrCpy $0 ""
-pyver_check:
-  StrCmp $R8 "" pyver_loop
-  ${StrStr} $1 $R9 $R8
-  StrCmp $1 "" pyver_loop
-  StrCpy $PythonInstalled "1"
-  Goto pyver_done
-  Goto pyver_loop
+  Goto pyver_tok_loop
+pyver_tok_last:
+  StrCmp $0 "" pyver_done
+  StrCpy $PythonDetectedVersion $0
 pyver_close:
   FileClose $1
-  Delete "$0"
+  ; DEBUG: no borrar el output; deja EmicQDA-pydetect.txt en %TEMP%
+  ; Delete "$0"
 pyver_done:
   Pop $3
   Pop $2
@@ -643,20 +716,20 @@ vault_ok:
   FileWrite $R0 "  if (-not $$s) { return '' }; $$t = ($$s + '').Trim(); if ($$t -match '(\d+)\.(\d+)') { return $$matches[1] + '.' + $$matches[2] }; return $$t$\r$\n"
   FileWrite $R0 "}$\r$\n"
   FileWrite $R0 "function Resolve-PythonExeFromList { param([string[]]$$WantVersions, [string[]]$$Exes)$\r$\n"
-  FileWrite $R0 "  foreach ($$want in $$WantVersions) { $$wv = $$want.Trim(); if ($$wv.Length -eq 0) { continue }; $$wm = Normalize-MMVer -s $$wv$\r$\n"
-  FileWrite $R0 "    foreach ($$exe in $$Exes) { $$line = Get-PythonMinorVersionLine -Exe $$exe; if (-not $$line) { continue }; if ((Normalize-MMVer -s $$line) -eq $$wm) { return $$exe } }$\r$\n"
+  FileWrite $R0 "  foreach ($$want in $$WantVersions) { $$wv = $$want.Trim(); if ($$wv.Length -eq 0) { continue }; $$wm = Normalize-MMVer $$wv$\r$\n"
+  FileWrite $R0 "    foreach ($$exe in $$Exes) { $$line = Get-PythonMinorVersionLine -Exe $$exe; if (-not $$line) { continue }; if ((Normalize-MMVer $$line) -eq $$wm) { return $$exe } }$\r$\n"
   FileWrite $R0 "  }; return $$null$\r$\n"
   FileWrite $R0 "}$\r$\n"
   FileWrite $R0 "function Resolve-PyLauncherTag { param([string[]]$$WantVersions)$\r$\n"
   FileWrite $R0 "  if (-not (Get-Command py -ErrorAction SilentlyContinue)) { return $$null }$\r$\n"
-  FileWrite $R0 "  foreach ($$want in $$WantVersions) { $$wv = $$want.Trim(); if ($$wv.Length -eq 0) { continue }; $$wm = Normalize-MMVer -s $$wv; $$arg = '-' + $$wv$\r$\n"
+  FileWrite $R0 "  foreach ($$want in $$WantVersions) { $$wv = $$want.Trim(); if ($$wv.Length -eq 0) { continue }; $$wm = Normalize-MMVer $$wv; $$arg = '-' + $$wv$\r$\n"
   FileWrite $R0 "    $$line = $$null; try { $$line = (& py $$arg -c 'import sys; print(str(sys.version_info[0]) + chr(46) + str(sys.version_info[1]))' 2>$$null | Select-Object -First 1) } catch { }$\r$\n"
-  FileWrite $R0 "    if ($$line -and (Normalize-MMVer -s $$line) -eq $$wm) { return $$wv }$\r$\n"
+  FileWrite $R0 "    if ($$line -and (Normalize-MMVer $$line) -eq $$wm) { return $$wv }$\r$\n"
   FileWrite $R0 "  }$\r$\n"
   FileWrite $R0 "  try {$\r$\n"
   FileWrite $R0 "    $$line = (& py -c 'import sys; print(str(sys.version_info[0]) + chr(46) + str(sys.version_info[1]))' 2>$$null | Select-Object -First 1)$\r$\n"
-  FileWrite $R0 "    $$mm = Normalize-MMVer -s $$line$\r$\n"
-  FileWrite $R0 "    foreach ($$want in $$WantVersions) { $$wv = $$want.Trim(); if ($$wv.Length -eq 0) { continue }; if ($$mm -eq (Normalize-MMVer -s $$wv)) { return $$wv } }$\r$\n"
+  FileWrite $R0 "    $$mm = Normalize-MMVer $$line$\r$\n"
+  FileWrite $R0 "    foreach ($$want in $$WantVersions) { $$wv = $$want.Trim(); if ($$wv.Length -eq 0) { continue }; if ($$mm -eq (Normalize-MMVer $$wv)) { return $$wv } }$\r$\n"
   FileWrite $R0 "  } catch { }$\r$\n"
   FileWrite $R0 "  return $$null$\r$\n"
   FileWrite $R0 "}$\r$\n"
@@ -804,8 +877,19 @@ pip_done:
   Call AppendInstallLog
 
   ; Copiar log desde $TEMP a $INSTDIR para que quede en la carpeta de instalación
-  IfFileExists $DebugLogPath 0 +3
-    CopyFiles /SILENT $DebugLogPath "$INSTDIR\\EmicQDA-install-nsis-${BUILD}.log"
+  IfFileExists "$DebugLogPath" 0 +13
+    ; CopyFiles copia a un directorio (no permite renombrar en el destino). Copiamos al directorio y luego renombramos.
+    CreateDirectory "$INSTDIR"
+    ClearErrors
+    CopyFiles /SILENT "$DebugLogPath" "$INSTDIR\"
+    IfErrors +6
+      ClearErrors
+      ; El archivo copiado queda con el mismo nombre que en $TEMP
+      Rename "$INSTDIR\EmicQDA-install-${BUILD}.log" "$INSTDIR\EmicQDA-install-nsis-${BUILD}.log"
+      IfErrors 0 +2
+        DetailPrint "Aviso: no se pudo renombrar el log NSIS; se dejó EmicQDA-install-${BUILD}.log en la carpeta de instalación."
+    IfErrors 0 +2
+      DetailPrint "Aviso: no se pudo copiar el log NSIS desde $TEMP."
   ; Volcar el log de la ventana de detalles (todo lo que vio el usuario en "Detalles")
   Push "$INSTDIR\\EmicQDA-install-details-${BUILD}.log"
   Call DumpLog
@@ -827,10 +911,17 @@ Function ComponentsPageShow
     SectionSetFlags ${SEC_OBS} ${SF_SELECTED}
   obsidian_done:
   StrCmp $PythonInstalled "1" 0 python_mark_selected
-    SectionSetText ${SEC_PY} "Python (ya instalado)"
-    SectionSetFlags ${SEC_PY} ${SF_RO}
+    StrCmp $PythonDetectedVersion "" 0 +2
+      StrCpy $PythonDetectedVersion "${PY_MAJOR}+"
+    SectionSetText ${SEC_PY} "Python (detectado $PythonDetectedVersion - opcional reinstalar/actualizar)"
+    ; Aun si está detectado, permitir reinstalar/actualizar: no RO y no seleccionado por defecto
+    SectionGetFlags ${SEC_PY} $0
+    IntOp $1 ${SF_SELECTED} ^ 0xFFFFFFFF
+    IntOp $0 $0 & $1
+    SectionSetFlags ${SEC_PY} $0
   Goto python_done
   python_mark_selected:
+    SectionSetText ${SEC_PY} "Python (requerido: se instalará ${PYTHON_VERSION})"
     SectionSetFlags ${SEC_PY} ${SF_SELECTED}
   python_done:
   StrCmp $FFmpegInstalled "1" 0 ffmpeg_mark_selected

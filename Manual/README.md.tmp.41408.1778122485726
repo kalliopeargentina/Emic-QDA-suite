@@ -1,0 +1,22 @@
+# Manual de EMIC Plus QDA
+
+Este manual presenta, en formato escrito y con capturas de pantalla, el contenido de los videos didácticos sobre **EMIC Plus QDA**, un entorno integral para el análisis cualitativo de datos (QDA, *Qualitative Data Analysis*).
+
+El objetivo del manual es ofrecer una versión leíble de los videos: una transposición del lenguaje oral al escrito que conserve el orden, la lógica y los detalles operativos de cada explicación, complementada con imágenes que ilustren el proceso paso a paso.
+
+## Índice de capítulos
+
+| N° | Capítulo | Contenido |
+|----|----------|-----------|
+| 00 | [Resumen](./00-Resumen.md) | Visión general de las capacidades del entorno: documentos, codificación, entidades, dominios, ubicaciones, procesamiento y asistente de IA. |
+| 01 | [Interfase de usuario](./01-Interfase-de-usuario.md) | Recorrido por la barra lateral y los paneles principales: Análisis, Attachments, Bases, Bibliografía, Clippings, Códigos, Datos, Entidades, Extracciones, Notas Analíticas, Notas de Campo, Pizarra, Referencia y Utils. |
+
+## Convenciones del manual
+
+- Las **capturas de pantalla** se ubican en la carpeta `img/` y se referencian con rutas relativas para que el manual pueda leerse en cualquier visor de Markdown.
+- Los términos de la interfaz aparecen en *cursiva* cuando se mencionan dentro del texto (por ejemplo, *Códigos*, *Entidades*, *Dominio activo*).
+- Las **acciones del usuario** (clics, comandos del menú contextual, etc.) se describen en orden secuencial.
+
+## Cómo se actualiza este manual
+
+Cada vez que se incorpore un nuevo video al directorio del proyecto, se generará un capítulo adicional siguiendo la misma numeración. El proceso consiste en analizar el video, extraer los fotogramas significativos y redactar la explicación correspondiente como una guía leíble.

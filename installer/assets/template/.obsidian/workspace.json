@@ -11,10 +11,14 @@
             "id": "aa9e03757d47bee2",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Referencia/EMIC.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "EMIC"
             }
           }
         ]
@@ -271,10 +275,11 @@
   },
   "active": "aa9e03757d47bee2",
   "lastOpenFiles": [
-    "Referencia/EMIC.md",
     "Referencia/EIDAES.md",
-    "EMIC-1777943015131.webp",
-    "EIDAES-1777942837504.webp",
+    "Attachments/Referencia/EIDAES-1777942837504.webp",
+    "Attachments/Referencia/EMIC-1777943015131.webp",
+    "Attachments/Referencia",
+    "Referencia/EMIC.md",
     "Recording 20260404211212.m4a",
     "Recording 20260404211042.m4a",
     "Notas de Campo/2026-03-30.md",
