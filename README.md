@@ -291,8 +291,7 @@ La **versión** y el **build** de Emic+ QDA en macOS coinciden con los de Window
 ## Sobre Emic+ Consultora y EIDAES
 
 <p align="center">
-  <img src="installer/assets/template/Attachments
-/Referencia/EMIC-1777943015131.webp" alt="Emic+ Consultora" width="400"/>
+  <img src="installer/assets/template/Attachments/Referencia/EMIC-1777943015131.webp" alt="Emic+ Consultora" width="400"/>
 </p>
 
 **Emic+ QDA** es desarrollado por **Emic+ Consultora** y **EIDAES** (Escuela IDAES, Universidad Nacional de San Martín). **Emic+ Consultora** se consolidó como referente en investigación social aplicada —territorios, mercados, opinión pública y comportamiento— con raíces en la universidad pública. **EIDAES** aporta el marco académico y la colaboración en la mejora continua del producto.
