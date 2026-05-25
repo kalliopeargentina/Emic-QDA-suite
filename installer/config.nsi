@@ -10,8 +10,8 @@
 ; Nombre del instalador: fijo "Zotero_setup.exe" en installer.nsi (no depende de la versión devuelta por el servidor)
 
 ; Versión del suite (ej. 1.0.0) y build (ej. fecha-hora). El .exe se nombra Emic-QDA-Installer-<VERSION>-<BUILD>.exe
-!define VERSION "0.5.8.3"
-!define BUILD "2026-05-07"
+!define VERSION "0.5.8.4"
+!define BUILD "2026-05-25"
 
 !define PY_LAUNCHER "py"
 !define PY_MAJOR "3.12"
@@ -22,7 +22,7 @@
 ; Debe contener la raíz del vault (ej. .obsidian, README, etc.) directamente dentro.
 !define TEMPLATE_DIR "template"
 !define ONTOLOGY_WHL "ontology_explorer-0.1.1-py3-none-any.whl"
-!define QDA_WHL "obsidian_qda_suite-0.1.7-py3-none-any.whl"
+!define QDA_WHL "obsidian_qda_suite-0.1.9-py3-none-any.whl"
 ; Ontology Explorer (.whl en assets + pip + verificación). Descomentá la siguiente línea cuando el paquete esté listo para distribuir.
 ; !define INCLUDE_ONTOLOGY_EXPLORER
 

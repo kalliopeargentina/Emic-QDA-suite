@@ -12,13 +12,13 @@ PYTHON_VERSION_LABEL="3.12 (Homebrew python@3.12)"
 # Referencia al número de versión en installer/config.nsi (!define OBSIDIAN_VERSION); en Mac el cask suele traer la última estable.
 OBSIDIAN_VERSION_REF="1.11.5"
 
-VERSION="0.5.8"
-BUILD="2026-05-03"
+VERSION="0.5.8.4"
+BUILD="2026-05-25"
 
 PYTHON_VERSIONS_ACCEPTED="3.12 3.13 3.14 3.15 3.16"
 TEMPLATE_DIR="template"
 ONTOLOGY_WHL="ontology_explorer-0.1.1-py3-none-any.whl"
-QDA_WHL="obsidian_qda_suite-0.1.7-py3-none-any.whl"
+QDA_WHL="obsidian_qda_suite-0.1.9-py3-none-any.whl"
 # Ontology Explorer es opcional y viene desactivado por defecto (igual que Windows sin !define INCLUDE_ONTOLOGY_EXPLORER en config.nsi). 1 = instalar; 0 = omitir.
 INCLUDE_ONTOLOGY_EXPLORER=0
 

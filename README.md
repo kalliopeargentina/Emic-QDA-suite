@@ -1,6 +1,6 @@
 # Emic+ QDA
 
-Guía de instalación de **Emic+ QDA** en **Windows** (instalador NSIS) y **macOS** (ZIP con la app y el DMG). **Los instaladores y paquetes listos para usar se descargan solo desde la sección [Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases) del repositorio en GitHub** (apartado *Releases*, no el código fuente). La última release publicada es [**v0.5.8.3**](https://github.com/kalliopeargentina/Emic-QDA-suite/releases/tag/v0.5.8.3). **Emic+ QDA** es desarrollado por **Emic+ Consultora** y **EIDAES** (Escuela IDAES, Universidad Nacional de San Martín).
+Guía de instalación de **Emic+ QDA** en **Windows** (instalador NSIS) y **macOS** (ZIP con la app y el DMG). **Los instaladores y paquetes listos para usar se descargan solo desde la sección [Releases](https://github.com/kalliopeargentina/Emic-QDA-suite/releases) del repositorio en GitHub** (apartado *Releases*, no el código fuente). La última release publicada es [**v0.5.8.4**](https://github.com/kalliopeargentina/Emic-QDA-suite/releases/tag/v0.5.8.4). **Emic+ QDA** es desarrollado por **Emic+ Consultora** y **EIDAES** (Escuela IDAES, Universidad Nacional de San Martín).
 
 Ver tutoriales en [**youtube**](https://www.youtube.com/watch?v=9aQGAu2WphY&list=PL-kAWnJcnOhelnH3x9CtDvLR6woILLDZo) 
 
