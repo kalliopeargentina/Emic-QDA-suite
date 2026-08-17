@@ -9,3 +9,5 @@ installer/macos-distribution/**/*.zip
 installer/*.pfx
 # Variables de firma locales (contraseña del PFX)
 installer/.env
+# Cursor plans (local)
+.cursor/plans/

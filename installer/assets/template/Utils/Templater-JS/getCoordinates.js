@@ -1,33 +1,30 @@
 module.exports = async function () {
-  const toNums = (lat, lon) => {
-    const la = Number(lat);
-    const lo = Number(lon);
-    if (!Number.isFinite(la) || !Number.isFinite(lo)) return [null, null];
-    return [la, lo];
-  };
-
-  // GPS first
+  // 1. Try Hardware GPS First
   try {
     const pos = await new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resolve, reject, {
         enableHighAccuracy: true,
-        timeout: 12000,
+        timeout: 4000,
         maximumAge: 60000,
       });
     });
-
-    return toNums(pos.coords.latitude, pos.coords.longitude);
+    const lat = Number(pos.coords.latitude);
+    const lon = Number(pos.coords.longitude);
+    if (Number.isFinite(lat) && Number.isFinite(lon)) return [lat, lon];
   } catch (e) {
-    // fall back
+    // GPS unavailable, proceed to IP fallback
   }
 
-  // IP fallback (CORS-friendly)
+  // 2. CORS-Friendly IP Lookup (Using ip-api.com)
   try {
-    const r = await fetch("https://ipwho.is/");
-    const d = await r.json();
-    if (d && d.success === false) return [null, null];
-    return toNums(d.latitude, d.longitude);
+    const response = await fetch("http://ip-api.com/json/");
+    const data = await response.json();
+    if (data && data.status === "success") {
+      return [Number(data.lat), Number(data.lon)];
+    }
   } catch (e) {
-    return [null, null];
+    // Catch-all
   }
+
+  return [null, null]; // Always returns an iterable array to stop the crash!
 };
